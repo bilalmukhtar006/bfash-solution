@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
 import { Section } from "@/components/site/Section";
+import { ContactForm } from "@/components/site/ContactForm";
 import {
   ArrowRight,
   Globe,
@@ -12,7 +13,6 @@ import {
   Target,
   Headphones,
   Zap,
-  Send,
 } from "lucide-react";
 
 export const Route = createFileRoute("/")({
@@ -80,12 +80,6 @@ const values = [
 ];
 
 function Home() {
-  // Handle form submission
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    alert("Your message has been sent! We will get back to you within 24 hours.");
-  };
-
   return (
     <>
       {/* HERO */}
@@ -174,7 +168,6 @@ function Home() {
                 to={s.to}
                 className="group glass-card rounded-2xl p-8 hover:border-brand/50 transition-all hover:-translate-y-1 animate-fade-up"
                 style={{ animationDelay: `${i * 0.08}s` }}
-                onClick={(e) => e.stopPropagation()}
               >
                 <div className="grid h-12 w-12 place-items-center rounded-xl bg-gradient-to-br from-brand to-brand-strong mb-5 group-hover:scale-110 transition-transform">
                   <s.icon className="h-6 w-6 text-white" />
@@ -210,11 +203,10 @@ function Home() {
         </div>
       </Section>
 
-      {/* CONTACT - COMPLETELY SEPARATE SECTION */}
+      {/* CONTACT - Using the proper ContactForm component */}
       <Section>
         <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Left Column - Text Content */}
-          <div onClick={(e) => e.stopPropagation()}>
+          <div>
             <div className="inline-flex items-center gap-2 rounded-full border border-brand/30 bg-brand/10 px-3 py-1 text-xs font-medium text-brand uppercase tracking-wider mb-4">
               Free Consultation
             </div>
@@ -237,54 +229,7 @@ function Home() {
               ))}
             </ul>
           </div>
-
-          {/* Right Column - Form (Isolated) */}
-          <div 
-            className="glass-card rounded-2xl p-6 md:p-8 relative z-10"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <h3 className="text-xl font-display font-bold mb-4 gradient-text">Send us a message</h3>
-            <p className="text-sm text-muted-foreground mb-6">
-              Fill out the form below and we'll get back to you within 24 hours.
-            </p>
-            
-            <form onSubmit={handleSubmit} className="space-y-4">
-              <div>
-                <label className="text-sm font-medium text-white block mb-1">Your Name</label>
-                <input
-                  type="text"
-                  name="name"
-                  placeholder="John Doe"
-                  className="w-full px-4 py-2 rounded-lg bg-background/50 border border-border text-white placeholder:text-muted-foreground focus:outline-none focus:border-brand"
-                />
-              </div>
-              <div>
-                <label className="text-sm font-medium text-white block mb-1">Email Address</label>
-                <input
-                  type="email"
-                  name="email"
-                  placeholder="you@example.com"
-                  className="w-full px-4 py-2 rounded-lg bg-background/50 border border-border text-white placeholder:text-muted-foreground focus:outline-none focus:border-brand"
-                />
-              </div>
-              <div>
-                <label className="text-sm font-medium text-white block mb-1">Message</label>
-                <textarea
-                  name="message"
-                  rows={4}
-                  placeholder="Tell us about your project..."
-                  className="w-full px-4 py-2 rounded-lg bg-background/50 border border-border text-white placeholder:text-muted-foreground focus:outline-none focus:border-brand resize-none"
-                />
-              </div>
-              <Button
-                type="submit"
-                size="lg"
-                className="w-full bg-gradient-to-r from-brand to-brand-strong text-white border-0 brand-glow"
-              >
-                Send Message <Send className="ml-2 h-4 w-4" />
-              </Button>
-            </form>
-          </div>
+          <ContactForm />
         </div>
       </Section>
     </>

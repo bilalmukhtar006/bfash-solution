@@ -11,9 +11,14 @@ import { CheckCircle2, Send } from "lucide-react";
 export function ContactForm({ compact = false }: { compact?: boolean }) {
   const [sent, setSent] = useState(false);
   const [service, setService] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const submit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    
+    // Prevent multiple submissions
+    if (isSubmitting) return;
+    setIsSubmitting(true);
     
     const formData = new FormData(e.currentTarget);
     formData.append("access_key", "871b202d-31db-4929-9c44-4ab92415006e");
@@ -27,12 +32,19 @@ export function ContactForm({ compact = false }: { compact?: boolean }) {
       .then((data) => {
         if (data.success) {
           setSent(true);
-          setTimeout(() => setSent(false), 4000);
+          setTimeout(() => {
+            setSent(false);
+            setIsSubmitting(false);
+          }, 4000);
         } else {
           console.error("Form error:", data.message);
+          setIsSubmitting(false);
         }
       })
-      .catch((error) => console.error("Form submission error:", error));
+      .catch((error) => {
+        console.error("Form submission error:", error);
+        setIsSubmitting(false);
+      });
   };
 
   if (sent) {
@@ -49,15 +61,29 @@ export function ContactForm({ compact = false }: { compact?: boolean }) {
     <form 
       onSubmit={submit} 
       className={`glass-card rounded-2xl p-6 md:p-8 space-y-5 ${compact ? "" : ""}`}
+      onClick={(e) => e.stopPropagation()}
     >
       <div className="grid md:grid-cols-2 gap-5">
         <div className="space-y-2">
           <Label htmlFor="name">Name</Label>
-          <Input id="name" name="name" required placeholder="Your full name" className="bg-background/50 border-border" />
+          <Input 
+            id="name" 
+            name="name" 
+            required 
+            placeholder="Your full name" 
+            className="bg-background/50 border-border" 
+          />
         </div>
         <div className="space-y-2">
           <Label htmlFor="email">Email</Label>
-          <Input id="email" name="email" type="email" required placeholder="you@company.com" className="bg-background/50 border-border" />
+          <Input 
+            id="email" 
+            name="email" 
+            type="email" 
+            required 
+            placeholder="you@company.com" 
+            className="bg-background/50 border-border" 
+          />
         </div>
       </div>
       
@@ -79,11 +105,24 @@ export function ContactForm({ compact = false }: { compact?: boolean }) {
       
       <div className="space-y-2">
         <Label htmlFor="msg">Message</Label>
-        <Textarea id="msg" name="message" required rows={5} placeholder="Tell us about your project..." className="bg-background/50 border-border resize-none" />
+        <Textarea 
+          id="msg" 
+          name="message" 
+          required 
+          rows={5} 
+          placeholder="Tell us about your project..." 
+          className="bg-background/50 border-border resize-none" 
+        />
       </div>
       
-      <Button type="submit" size="lg" className="w-full bg-gradient-to-r from-brand to-brand-strong text-white border-0 brand-glow">
-        Submit Request <Send className="ml-2 h-4 w-4" />
+      <Button 
+        type="submit" 
+        size="lg" 
+        className="w-full bg-gradient-to-r from-brand to-brand-strong text-white border-0 brand-glow"
+        disabled={isSubmitting}
+      >
+        {isSubmitting ? "Sending..." : "Submit Request"}
+        <Send className="ml-2 h-4 w-4" />
       </Button>
     </form>
   );

@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHero, Section } from "@/components/site/Section";
+import { ContactForm } from "@/components/site/ContactForm";
 import { Mail, Phone, MapPin, Clock } from "lucide-react";
 
 export const Route = createFileRoute("/contact")({
@@ -34,12 +35,25 @@ function Contact() {
               {
                 icon: Mail,
                 label: "Email",
-                value: "hello@bfashsolutions.com",
-                href: "mailto:hello@bfashsolutions.com",
+                value: "info@bfash.us",
+                href: "mailto:info@bfash.us",
               },
-              { icon: Phone, label: "Phone", value: "+1 (555) 010-2030", href: "tel:+15550102030" },
-              { icon: MapPin, label: "Studio", value: "Innovation District · Remote-first" },
-              { icon: Clock, label: "Hours", value: "Mon–Fri · 9am – 7pm (EST)" },
+              { 
+                icon: Phone, 
+                label: "Phone", 
+                value: "+92 321 4602912", 
+                href: "tel:+923214602912" 
+              },
+              { 
+                icon: MapPin, 
+                label: "Studio", 
+                value: "Innovation District · Remote-first" 
+              },
+              { 
+                icon: Clock, 
+                label: "Hours", 
+                value: "Mon–Fri · 9am – 7pm (EST)" 
+              },
             ].map((c) => (
               <a
                 key={c.label}
@@ -78,14 +92,9 @@ function Contact() {
             </div>
           </div>
 
-          {/* Clean placeholder card replacing the missing ContactForm */}
-          <div className="glass-card rounded-2xl p-8 flex flex-col justify-center items-center text-center border border-dashed border-border min-h-[300px]">
-            <div className="max-w-sm space-y-2">
-              <h3 className="font-display text-xl font-semibold gradient-text">Send a Message</h3>
-              <p className="text-sm text-muted-foreground">
-                Our online contact portal is temporarily undergoing upgrades. Please use the direct email link or phone contact options listed beside to connect with our team immediately.
-              </p>
-            </div>
+          {/* FIX: Using the proper ContactForm component */}
+          <div className="relative z-10">
+            <ContactForm />
           </div>
         </div>
       </Section>
