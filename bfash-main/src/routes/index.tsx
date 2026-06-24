@@ -234,13 +234,14 @@ function Home() {
             <p className="text-sm text-muted-foreground mb-6">
               Fill out the form below and we'll get back to you within 24 hours.
             </p>
-            <form className="space-y-4">
+            <div className="space-y-4">
               <div>
                 <label className="text-sm font-medium text-white block mb-1">Your Name</label>
                 <input 
                   type="text" 
                   placeholder="John Doe" 
                   className="w-full px-4 py-2 rounded-lg bg-background/50 border border-border text-white placeholder:text-muted-foreground focus:outline-none focus:border-brand"
+                  onClick={(e) => e.stopPropagation()}
                 />
               </div>
               <div>
@@ -249,6 +250,7 @@ function Home() {
                   type="email" 
                   placeholder="you@example.com" 
                   className="w-full px-4 py-2 rounded-lg bg-background/50 border border-border text-white placeholder:text-muted-foreground focus:outline-none focus:border-brand"
+                  onClick={(e) => e.stopPropagation()}
                 />
               </div>
               <div>
@@ -257,16 +259,21 @@ function Home() {
                   rows={4}
                   placeholder="Tell us about your project..." 
                   className="w-full px-4 py-2 rounded-lg bg-background/50 border border-border text-white placeholder:text-muted-foreground focus:outline-none focus:border-brand resize-none"
+                  onClick={(e) => e.stopPropagation()}
                 />
               </div>
               <Button 
-                type="submit" 
+                type="button"
                 size="lg" 
                 className="w-full bg-gradient-to-r from-brand to-brand-strong text-white border-0 brand-glow"
+                onClick={(e) => {
+                  e.preventDefault();
+                  alert('Your message has been sent! We will get back to you within 24 hours.');
+                }}
               >
                 Send Message <Send className="ml-2 h-4 w-4" />
               </Button>
-            </form>
+            </div>
           </div>
         </div>
       </Section>
