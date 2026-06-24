@@ -1,5 +1,5 @@
 {
-  "name": "tanstack_start_ts",
+  "name": "bfash-website",
   "private": true,
   "sideEffects": false,
   "type": "module",
@@ -7,7 +7,7 @@
     "dev": "vinxi dev",
     "build": "vinxi build",
     "preview": "vinxi start",
-    "lint": "echo 'Linting skipped for production'",
+    "lint": "echo 'Skipping lint checks'",
     "format": "prettier --write ."
   },
   "dependencies": {
@@ -66,7 +66,6 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.32.0",
-    "@lovable.dev/vite-tanstack-config": "^2.3.2",
     "@types/node": "^22.16.5",
     "@types/react": "^19.2.0",
     "@types/react-dom": "^19.2.0",
