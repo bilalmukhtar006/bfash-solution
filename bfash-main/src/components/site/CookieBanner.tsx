@@ -20,12 +20,15 @@ export function CookieBanner() {
           </div>
           <div className="flex-1">
             <p className="text-sm text-foreground/90 leading-relaxed">
-              We use cookies to optimize your website experience, analyze traffic, and assist with our
-              marketing efforts. By clicking "Accept All", you consent to our use of cookies.
+              We use cookies to optimize your website experience, analyze traffic, and assist with
+              our marketing efforts. By clicking "Accept All", you consent to our use of cookies.
             </p>
             <div className="mt-4 flex gap-2">
               <Button
-                onClick={() => { localStorage.setItem("bfash-cookies", "1"); setShow(false); }}
+                onClick={() => {
+                  localStorage.setItem("bfash-cookies", "1");
+                  setShow(false);
+                }}
                 className="bg-gradient-to-r from-brand to-brand-strong text-white border-0 flex-1"
               >
                 Accept All

@@ -1,5 +1,14 @@
 import { Link } from "@tanstack/react-router";
-import { Sparkles, Mail, Phone, Linkedin, Instagram, Twitter, Facebook, MessageSquare } from "lucide-react";
+import {
+  Sparkles,
+  Mail,
+  Phone,
+  Linkedin,
+  Instagram,
+  Twitter,
+  Facebook,
+  MessageSquare,
+} from "lucide-react";
 
 const links = [
   { to: "/", label: "Home" },
@@ -21,15 +30,11 @@ export function Footer() {
       <div className="mx-auto max-w-7xl px-6 py-16 grid gap-12 md:grid-cols-3">
         <div>
           <div className="flex items-center gap-2">
-  <img 
-    src="/logo.png" 
-    alt="BFash Solution Logo" 
-    className="h-9 w-auto object-contain" 
-  />
-  <span className="font-display text-lg font-bold tracking-tight text-white">
-    BFash <span className="text-brand">Solution</span>
-  </span>
-</div>
+            <img src="/logo.png" alt="BFash Solution Logo" className="h-9 w-auto object-contain" />
+            <span className="font-display text-lg font-bold tracking-tight text-white">
+              BFash <span className="text-brand">Solution</span>
+            </span>
+          </div>
           <p className="text-muted-foreground text-sm leading-relaxed max-w-xs">
             Elevating your digital potential. We build, brand, and scale modern businesses online.
           </p>
@@ -42,7 +47,10 @@ export function Footer() {
           <ul className="grid grid-cols-2 gap-y-2 gap-x-4 text-sm">
             {links.map((l) => (
               <li key={l.to}>
-                <Link to={l.to} className="text-muted-foreground hover:text-foreground transition-colors">
+                <Link
+                  to={l.to}
+                  className="text-muted-foreground hover:text-foreground transition-colors"
+                >
                   {l.label}
                 </Link>
               </li>
@@ -68,7 +76,7 @@ export function Footer() {
               { Icon: Instagram, url: "https://www.instagram.com/bfash2026/" },
               { Icon: Twitter, url: "https://x.com/BFashSolution" },
               { Icon: Facebook, url: "https://www.facebook.com/BFashSolution" },
-              { Icon: MessageSquare, url: "https://wa.me/+923254258512" }
+              { Icon: MessageSquare, url: "https://wa.me/+923254258512" },
             ].map((social, i) => (
               <a
                 key={i}

@@ -16,7 +16,7 @@ export default defineConfig({
         try {
           copyFileSync(
             resolve(__dirname, "public/_redirects"),
-            resolve(__dirname, "dist/_redirects")
+            resolve(__dirname, "dist/_redirects"),
           );
           console.log("✅ _redirects copied to dist!");
         } catch (e) {

@@ -5,9 +5,18 @@ import { PageHero, Section } from "@/components/site/Section";
 import { CheckCircle2, ArrowRight, type LucideIcon } from "lucide-react";
 
 export function ServicePage({
-  eyebrow, title, subtitle, intro, features, deliverables, icon: Icon,
+  eyebrow,
+  title,
+  subtitle,
+  intro,
+  features,
+  deliverables,
+  icon: Icon,
 }: {
-  eyebrow: string; title: string; subtitle: string; intro: string;
+  eyebrow: string;
+  title: string;
+  subtitle: string;
+  intro: string;
   features: { title: string; desc: string }[];
   deliverables: string[];
   icon: LucideIcon;
@@ -53,7 +62,10 @@ export function ServicePage({
         </div>
         <div className="text-center mt-12">
           <Link to="/quote">
-            <Button size="lg" className="bg-gradient-to-r from-brand to-brand-strong text-white border-0 brand-glow px-8 h-12">
+            <Button
+              size="lg"
+              className="bg-gradient-to-r from-brand to-brand-strong text-white border-0 brand-glow px-8 h-12"
+            >
               Start a Project <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
           </Link>

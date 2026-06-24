@@ -33,10 +33,10 @@ export function Header() {
       >
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
           <Link to="/" className="flex items-center gap-2 group">
-            <img 
-              src="/logo.png" 
-              alt="BFash Solution Logo" 
-              className="h-9 w-auto object-contain transition-transform group-hover:scale-105" 
+            <img
+              src="/logo.png"
+              alt="BFash Solution Logo"
+              className="h-9 w-auto object-contain transition-transform group-hover:scale-105"
             />
             <span className="font-display text-lg font-bold tracking-tight">
               BFash <span className="text-brand">Solution</span>
@@ -87,7 +87,10 @@ export function Header() {
                 </Link>
               ))}
               <Button
-                onClick={() => { setOpen(false); setQuoteOpen(true); }}
+                onClick={() => {
+                  setOpen(false);
+                  setQuoteOpen(true);
+                }}
                 className="mt-2 bg-gradient-to-r from-brand to-brand-strong text-white"
               >
                 Get a Free Quote
