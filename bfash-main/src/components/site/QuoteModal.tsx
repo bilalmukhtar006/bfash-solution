@@ -5,7 +5,6 @@ import {
   DialogTitle,
   DialogDescription,
 } from "@/components/ui/dialog";
-import { ContactForm } from "./ContactForm";
 
 export function QuoteModal({
   open,
@@ -26,7 +25,12 @@ export function QuoteModal({
             business day.
           </DialogDescription>
         </DialogHeader>
-        <ContactForm />
+        
+        {/* Temporary clean placeholder so the builder doesn't crash */}
+        <div className="py-6 text-center border border-dashed border-muted-foreground/20 rounded-lg">
+          <p className="text-sm text-muted-foreground">Contact form functionality coming soon.</p>
+        </div>
+
       </DialogContent>
     </Dialog>
   );
