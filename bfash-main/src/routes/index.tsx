@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
 import { Section } from "@/components/site/Section";
+import { ContactForm } from "@/components/site/ContactForm";
 import {
   ArrowRight,
   Globe,
@@ -202,7 +203,7 @@ function Home() {
         </div>
       </Section>
 
-      {/* CONTACT - Placeholder instead of ContactForm */}
+      {/* CONTACT */}
       <Section>
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div>
@@ -228,16 +229,7 @@ function Home() {
               ))}
             </ul>
           </div>
-          <div className="glass-card rounded-2xl p-8 flex flex-col justify-center items-center text-center border border-dashed border-border min-h-[300px]">
-            <div className="max-w-sm space-y-2">
-              <h3 className="font-display text-xl font-semibold gradient-text">Send a Message</h3>
-              <p className="text-sm text-muted-foreground">
-                Our online contact portal is temporarily undergoing upgrades. Please use the direct
-                email link or phone contact options on our Contact page to connect with our team
-                immediately.
-              </p>
-            </div>
-          </div>
+          <ContactForm />
         </div>
       </Section>
     </>
