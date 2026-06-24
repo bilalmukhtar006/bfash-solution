@@ -16,7 +16,7 @@ export function ContactForm({ compact = false }: { compact?: boolean }) {
     e.preventDefault();
     
     const formData = new FormData(e.currentTarget);
-    formData.append("access_key", "YOUR_WEB3FORMS_KEY_HERE");
+    formData.append("access_key", "871b202d-31db-4929-9c44-4ab92415006e");
     formData.append("service", service);
 
     fetch("https://api.web3forms.com/submit", {
