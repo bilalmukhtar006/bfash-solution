@@ -1,7 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
 import { Section } from "@/components/site/Section";
-import { ContactForm } from "@/components/site/ContactForm";
 import {
   ArrowRight,
   Globe,
@@ -203,7 +202,7 @@ function Home() {
         </div>
       </Section>
 
-      {/* CONTACT - Using the proper ContactForm component */}
+      {/* CONTACT - Simplified (No ContactForm component) */}
       <Section>
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div>
@@ -229,7 +228,57 @@ function Home() {
               ))}
             </ul>
           </div>
-          <ContactForm />
+          <div className="glass-card rounded-2xl p-6 md:p-8">
+            <h3 className="text-xl font-display font-bold mb-4 gradient-text">Send us a message</h3>
+            <p className="text-sm text-muted-foreground mb-6">
+              Fill out the form below and we'll get back to you within 24 hours.
+            </p>
+            <form
+              action="https://api.web3forms.com/submit"
+              method="POST"
+              className="space-y-4"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <input type="hidden" name="access_key" value="871b202d-31db-4929-9c44-4ab92415006e" />
+              <div>
+                <label className="text-sm font-medium text-white block mb-1">Your Name</label>
+                <input
+                  type="text"
+                  name="name"
+                  required
+                  placeholder="John Doe"
+                  className="w-full px-4 py-2 rounded-lg bg-background/50 border border-border text-white placeholder:text-muted-foreground focus:outline-none focus:border-brand"
+                />
+              </div>
+              <div>
+                <label className="text-sm font-medium text-white block mb-1">Email Address</label>
+                <input
+                  type="email"
+                  name="email"
+                  required
+                  placeholder="you@example.com"
+                  className="w-full px-4 py-2 rounded-lg bg-background/50 border border-border text-white placeholder:text-muted-foreground focus:outline-none focus:border-brand"
+                />
+              </div>
+              <div>
+                <label className="text-sm font-medium text-white block mb-1">Message</label>
+                <textarea
+                  name="message"
+                  required
+                  rows={4}
+                  placeholder="Tell us about your project..."
+                  className="w-full px-4 py-2 rounded-lg bg-background/50 border border-border text-white placeholder:text-muted-foreground focus:outline-none focus:border-brand resize-none"
+                />
+              </div>
+              <Button
+                type="submit"
+                size="lg"
+                className="w-full bg-gradient-to-r from-brand to-brand-strong text-white border-0 brand-glow"
+              >
+                Send Message <ArrowRight className="ml-2 h-4 w-4" />
+              </Button>
+            </form>
+          </div>
         </div>
       </Section>
     </>
