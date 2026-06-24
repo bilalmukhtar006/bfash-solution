@@ -84,7 +84,7 @@ function Home() {
     <>
       {/* HERO */}
       <section className="relative pt-36 pb-24 md:pt-44 md:pb-32 overflow-hidden">
-        {/* FIX: Added pointer-events-none so the blobs don't intercept clicks */}
+        {/* FIX 1: Added pointer-events-none so blobs don't intercept clicks */}
         <div className="absolute inset-0 -z-10 pointer-events-none">
           <div className="absolute top-20 left-1/4 h-96 w-96 rounded-full bg-brand/30 blur-3xl animate-float" />
           <div
@@ -204,7 +204,7 @@ function Home() {
         </div>
       </Section>
 
-      {/* CONTACT */}
+      {/* CONTACT - FIXED */}
       <Section>
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div>
@@ -231,13 +231,13 @@ function Home() {
             </ul>
           </div>
 
-          {/* FIX: Added relative z-10 to lift the form above any overlapping elements */}
+          {/* FIX 2: Added relative z-10 to lift form above overlapping elements */}
           <div className="glass-card rounded-2xl p-6 md:p-8 relative z-10">
             <h3 className="text-xl font-display font-bold mb-4 gradient-text">Send us a message</h3>
             <p className="text-sm text-muted-foreground mb-6">
               Fill out the form below and we'll get back to you within 24 hours.
             </p>
-            {/* FIX: Removed all onClick stopPropagation hacks; form fields now work naturally */}
+            {/* FIX 3: Removed onClick stopPropagation hacks, they work naturally now */}
             <div className="space-y-4">
               <div>
                 <label className="text-sm font-medium text-white block mb-1">Your Name</label>
