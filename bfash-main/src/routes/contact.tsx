@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHero, Section } from "@/components/site/Section";
-import { ContactForm } from "@/components/site/ContactForm";
-import { Mail, Phone, MapPin, Clock } from "lucide-react";
+import { Mail, Phone, MapPin, Clock, ArrowRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -38,21 +38,21 @@ function Contact() {
                 value: "info@bfash.us",
                 href: "mailto:info@bfash.us",
               },
-              { 
-                icon: Phone, 
-                label: "Phone", 
-                value: "+92 321 4602912", 
-                href: "tel:+923214602912" 
+              {
+                icon: Phone,
+                label: "Phone",
+                value: "+92 321 4602912",
+                href: "tel:+923214602912",
               },
-              { 
-                icon: MapPin, 
-                label: "Studio", 
-                value: "Innovation District · Remote-first" 
+              {
+                icon: MapPin,
+                label: "Studio",
+                value: "Innovation District · Remote-first",
               },
-              { 
-                icon: Clock, 
-                label: "Hours", 
-                value: "Mon–Fri · 9am – 7pm (EST)" 
+              {
+                icon: Clock,
+                label: "Hours",
+                value: "Mon–Fri · 9am – 7pm (EST)",
               },
             ].map((c) => (
               <a
@@ -92,9 +92,57 @@ function Contact() {
             </div>
           </div>
 
-          {/* FIX: Using the proper ContactForm component */}
-          <div className="relative z-10">
-            <ContactForm />
+          {/* SIMPLE STATIC FORM - NO REACT STATE */}
+          <div className="glass-card rounded-2xl p-6 md:p-8">
+            <h3 className="text-xl font-display font-bold mb-4 gradient-text">Send us a message</h3>
+            <p className="text-sm text-muted-foreground mb-6">
+              Fill out the form below and we'll get back to you within 24 hours.
+            </p>
+            <form
+              action="https://api.web3forms.com/submit"
+              method="POST"
+              target="_blank"
+              className="space-y-4"
+            >
+              <input type="hidden" name="access_key" value="871b202d-31db-4929-9c44-4ab92415006e" />
+              <div>
+                <label className="text-sm font-medium text-white block mb-1">Your Name</label>
+                <input
+                  type="text"
+                  name="name"
+                  required
+                  placeholder="John Doe"
+                  className="w-full px-4 py-2 rounded-lg bg-background/50 border border-border text-white placeholder:text-muted-foreground focus:outline-none focus:border-brand"
+                />
+              </div>
+              <div>
+                <label className="text-sm font-medium text-white block mb-1">Email Address</label>
+                <input
+                  type="email"
+                  name="email"
+                  required
+                  placeholder="you@example.com"
+                  className="w-full px-4 py-2 rounded-lg bg-background/50 border border-border text-white placeholder:text-muted-foreground focus:outline-none focus:border-brand"
+                />
+              </div>
+              <div>
+                <label className="text-sm font-medium text-white block mb-1">Message</label>
+                <textarea
+                  name="message"
+                  required
+                  rows={4}
+                  placeholder="Tell us about your project..."
+                  className="w-full px-4 py-2 rounded-lg bg-background/50 border border-border text-white placeholder:text-muted-foreground focus:outline-none focus:border-brand resize-none"
+                />
+              </div>
+              <Button
+                type="submit"
+                size="lg"
+                className="w-full bg-gradient-to-r from-brand to-brand-strong text-white border-0 brand-glow"
+              >
+                Send Message <ArrowRight className="ml-2 h-4 w-4" />
+              </Button>
+            </form>
           </div>
         </div>
       </Section>

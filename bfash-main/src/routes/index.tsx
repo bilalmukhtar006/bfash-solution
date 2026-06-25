@@ -202,7 +202,7 @@ function Home() {
         </div>
       </Section>
 
-      {/* CONTACT - Simplified (No ContactForm component) */}
+      {/* CONTACT - Simple HTML Form */}
       <Section>
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div>
@@ -228,6 +228,8 @@ function Home() {
               ))}
             </ul>
           </div>
+
+          {/* SIMPLE STATIC FORM - NO REACT STATE */}
           <div className="glass-card rounded-2xl p-6 md:p-8">
             <h3 className="text-xl font-display font-bold mb-4 gradient-text">Send us a message</h3>
             <p className="text-sm text-muted-foreground mb-6">
@@ -236,8 +238,8 @@ function Home() {
             <form
               action="https://api.web3forms.com/submit"
               method="POST"
+              target="_blank"
               className="space-y-4"
-              onClick={(e) => e.stopPropagation()}
             >
               <input type="hidden" name="access_key" value="871b202d-31db-4929-9c44-4ab92415006e" />
               <div>
