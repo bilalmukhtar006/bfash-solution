@@ -202,7 +202,7 @@ function Home() {
         </div>
       </Section>
 
-      {/* CONTACT - Simple HTML Form */}
+      {/* CONTACT - Working HTML Form */}
       <Section>
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div>
@@ -229,7 +229,7 @@ function Home() {
             </ul>
           </div>
 
-          {/* SIMPLE STATIC FORM - NO REACT STATE */}
+          {/* WORKING FORM - Uses Web3Forms API */}
           <div className="glass-card rounded-2xl p-6 md:p-8">
             <h3 className="text-xl font-display font-bold mb-4 gradient-text">Send us a message</h3>
             <p className="text-sm text-muted-foreground mb-6">
@@ -242,6 +242,9 @@ function Home() {
               className="space-y-4"
             >
               <input type="hidden" name="access_key" value="871b202d-31db-4929-9c44-4ab92415006e" />
+              <input type="hidden" name="subject" value="New Contact Form Submission" />
+              <input type="hidden" name="from_name" value="BFash Solutions" />
+              
               <div>
                 <label className="text-sm font-medium text-white block mb-1">Your Name</label>
                 <input
@@ -272,13 +275,13 @@ function Home() {
                   className="w-full px-4 py-2 rounded-lg bg-background/50 border border-border text-white placeholder:text-muted-foreground focus:outline-none focus:border-brand resize-none"
                 />
               </div>
-              <Button
+              <button
                 type="submit"
-                size="lg"
-                className="w-full bg-gradient-to-r from-brand to-brand-strong text-white border-0 brand-glow"
+                className="w-full bg-gradient-to-r from-brand to-brand-strong text-white border-0 brand-glow py-3 px-6 rounded-lg font-medium text-base hover:opacity-90 transition-opacity flex items-center justify-center gap-2 cursor-pointer"
               >
-                Send Message <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
+                Send Message
+                <ArrowRight className="h-4 w-4" />
+              </button>
             </form>
           </div>
         </div>
