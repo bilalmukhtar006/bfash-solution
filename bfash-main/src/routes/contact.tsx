@@ -20,45 +20,40 @@ export const Route = createFileRoute("/contact")({
   component: Contact,
 });
 
-// Sample reviews - these will auto-update when new reviews come in
-// You can fetch these from GMB API in production
+// ✅ YOUR REAL REVIEWS FROM GMB
 const reviews = [
   {
-    name: "Sarah Ahmed",
+    name: "Bob",
     rating: 5,
-    text: "BFash Solutions completely transformed our online presence. Our website traffic increased by 300% in just 2 months!",
-    date: "2 weeks ago",
+    text: "I've partnered with several agencies in the past, but Bfash Solution truly stands out as a top-tier performance marketing partner. They didn't just handle my SEO; they completely revamped my local search visibility and drove a noticeable spike in qualified leads within the first few weeks. What impressed me most was their data-driven approach—they provided clear monthly reports that broke down organic traffic growth, keyword rankings, and conversion rates, so I always knew exactly where my money was going. They are hands-down the best value for money in the industry, offering enterprise-level strategies at a fraction of the cost. Their team is proactive, creative, and genuinely invested in their clients' success. If you want to scale your business and dominate search results without breaking the bank, Bfash Solution is the team to trust.",
+    date: "29 June 2026",
     platform: "Google",
   },
   {
-    name: "Usman Malik",
+    name: "Rao Zanu",
     rating: 5,
-    text: "The SEO strategy they implemented got us to page one of Google. Highly recommend their services!",
-    date: "1 month ago",
+    text: "I had an excellent experience working with Bfash Solution for digital marketing services. Their team delivered outstanding results within the promised timeline and exceeded my expectations in terms of quality and professionalism. What truly sets them apart is that they are genuinely an affordable SEO Agency without compromising on performance or strategy. Communication was smooth throughout the project, and they were always responsive to my requirements. I highly recommend Bfash Solution to anyone looking for reliable, effective, and budget-friendly digital marketing services.",
+    date: "26 June 2026",
     platform: "Google",
   },
   {
-    name: "Fatima Noor",
+    name: "Sehar Ansari",
     rating: 5,
-    text: "Professional, responsive, and delivered exactly what we needed. The Amazon store optimization was a game changer.",
-    date: "2 months ago",
+    text: "I had an excellent experience working with Bfash Solution for digital marketing services. Their team delivered outstanding results within the promised timeline and exceeded my expectations in terms of quality and professionalism. Communication was smooth throughout the project, and they were always responsive to my requirements. I highly recommend Bfash Solution to anyone looking for reliable and effective digital marketing services.",
+    date: "24 June 2026",
     platform: "Google",
   },
   {
-    name: "Ali Hassan",
-    rating: 4.5,
-    text: "Great team to work with. They understood our vision and brought it to life. Will definitely work with them again.",
-    date: "3 months ago",
-    platform: "Google",
-  },
-  {
-    name: "Zara Khan",
+    name: "Ahmad Mehfooz",
     rating: 5,
-    text: "The graphic design work was outstanding. Our brand identity has never looked better!",
-    date: "4 months ago",
+    text: "I needed a website's landing page and this is what you got from BFash solution they are young and great even though they gave me this it's awesome to have them. They met with my requirements highly recommend!!",
+    date: "22 June 2026",
     platform: "Google",
   },
 ];
+
+// ✅ GMB REVIEW LINK - Used when clicking on reviews or the "Leave a Review" button
+const GMB_REVIEW_LINK = "https://g.page/r/CavaEXQZnAMxEAE/review";
 
 function Contact() {
   const [currentReview, setCurrentReview] = useState(0);
@@ -82,7 +77,6 @@ function Contact() {
     if (hasHalfStar) {
       stars.push(<StarHalf key="half" className="h-4 w-4 fill-yellow-400 text-yellow-400" />);
     }
-    // Add empty stars to make 5 total
     const remaining = 5 - fullStars - (hasHalfStar ? 1 : 0);
     for (let i = 0; i < remaining; i++) {
       stars.push(<Star key={`empty-${i}`} className="h-4 w-4 text-gray-600" />);
@@ -117,7 +111,7 @@ function Contact() {
               {
                 icon: MapPin,
                 label: "Location",
-                value: "Kasur, Punjab, Pakistan",
+                value: "Lahore, Punjab, Pakistan",
                 href: "https://www.google.com/maps/place/31%C2%B029'56.1%22N+74%C2%B024'46.4%22E/@31.4989186,74.4103253,17z/data=!3m1!4b1!4m4!3m3!8m2!3d31.4989186!4d74.4129002?hl=en&entry=ttu",
               },
               {
@@ -217,12 +211,12 @@ function Contact() {
               </form>
             </div>
 
-            {/* GMB Reviews Section */}
+            {/* ✅ GMB Reviews Section with Real Reviews */}
             <div className="glass-card rounded-2xl p-6 md:p-8">
               <div className="flex items-center justify-between mb-4">
                 <h3 className="text-xl font-display font-bold gradient-text">What Our Clients Say</h3>
                 <a
-                  href="https://www.google.com/search?q=BFash+Solution&stick=H4sIAAAAAAAA_-NgU1I1qDAxNE0zTzM3TTU1N00xNzS0MqgwNjQwtkw2tDQ3MTRMSUxMWsTK5-SWWJyhEJyfU1qSmZ8HAA5274U6AAAA&hl=en"
+                  href={GMB_REVIEW_LINK}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-brand text-sm hover:underline flex items-center gap-1"
@@ -235,10 +229,16 @@ function Contact() {
                 See why our clients trust us with their digital growth
               </p>
 
-              {/* Review Cards */}
+              {/* Real Review Cards - Clicking takes you to GMB */}
               <div className="grid gap-4">
                 {reviews.slice(0, 3).map((review, index) => (
-                  <div key={index} className="bg-white/5 rounded-lg p-4 border border-white/5">
+                  <a
+                    key={index}
+                    href={GMB_REVIEW_LINK}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-white/5 rounded-lg p-4 border border-white/5 hover:bg-white/10 transition-colors block cursor-pointer"
+                  >
                     <div className="flex items-center justify-between">
                       <div>
                         <p className="font-medium text-white">{review.name}</p>
@@ -249,32 +249,27 @@ function Contact() {
                       </div>
                       <span className="text-xs bg-brand/20 text-brand px-2 py-0.5 rounded-full">{review.platform}</span>
                     </div>
-                    <p className="text-sm text-muted-foreground mt-2 line-clamp-2">{review.text}</p>
-                  </div>
+                    <p className="text-sm text-muted-foreground mt-2 line-clamp-3">{review.text}</p>
+                  </a>
                 ))}
               </div>
 
-              {/* Reviews Auto-Slider */}
+              {/* Auto-slider with Real Reviews */}
               <div className="mt-6 border-t border-border pt-6">
                 <div className="relative overflow-hidden">
-                  <div className="flex items-center gap-4">
-                    <div className="flex-1">
-                      <div className="flex items-center gap-2">
-                        {renderStars(reviews[currentReview].rating)}
-                        <span className="text-xs text-muted-foreground ml-2">{reviews[currentReview].date}</span>
-                      </div>
-                      <p className="text-sm text-white mt-1 line-clamp-2">{reviews[currentReview].text}</p>
-                      <p className="text-xs text-muted-foreground mt-1">- {reviews[currentReview].name}</p>
+                  <a
+                    href={GMB_REVIEW_LINK}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block cursor-pointer hover:bg-white/5 rounded-lg p-3 transition-colors"
+                  >
+                    <div className="flex items-center gap-2">
+                      {renderStars(reviews[currentReview].rating)}
+                      <span className="text-xs text-muted-foreground ml-2">{reviews[currentReview].date}</span>
                     </div>
-                    <a
-                      href="https://www.google.com/search?q=BFash+Solution&stick=H4sIAAAAAAAA_-NgU1I1qDAxNE0zTzM3TTU1N00xNzS0MqgwNjQwtkw2tDQ3MTRMSUxMWsTK5-SWWJyhEJyfU1qSmZ8HAA5274U6AAAA&hl=en"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="bg-brand/20 hover:bg-brand/30 text-brand px-4 py-2 rounded-lg text-sm font-medium transition-colors flex items-center gap-1 whitespace-nowrap"
-                    >
-                      Leave a Review <ExternalLink className="h-3 w-3" />
-                    </a>
-                  </div>
+                    <p className="text-sm text-white mt-1 line-clamp-2">{reviews[currentReview].text}</p>
+                    <p className="text-xs text-muted-foreground mt-1">- {reviews[currentReview].name}</p>
+                  </a>
                   {/* Auto-slider dots */}
                   <div className="flex justify-center gap-1 mt-4">
                     {reviews.map((_, index) => (
