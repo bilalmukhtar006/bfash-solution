@@ -17,17 +17,17 @@ import {
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Affordable SEO Agency in USA – BFash Solutions | Expert SEO Services" },
+      { title: "Affordable SEO Agency – BFash Solution | Expert SEO Services" },
       {
         name: "description",
         content:
-          "Looking for an affordable SEO agency that delivers real results? BFash Solutions offers affordable SEO services, packages & local SEO to grow your business. Get a free quote today!",
+          "Looking for an affordable SEO agency? BFash Solution delivers expert SEO services, affordable SEO packages & local SEO to grow your business. Get a free quote today!",
       },
-      { property: "og:title", content: "Affordable SEO Agency – BFash Solutions" },
+      { property: "og:title", content: "Affordable SEO Agency – BFash Solution" },
       {
         property: "og:description",
         content:
-          "Looking for an affordable SEO agency that delivers real results? BFash Solutions offers affordable SEO services, packages & local SEO to grow your business.",
+          "Looking for an affordable SEO agency? BFash Solution delivers expert SEO services, affordable SEO packages & local SEO to grow your business.",
       },
     ],
   }),
@@ -149,7 +149,7 @@ function Home() {
         center
       >
         <p className="text-lg text-muted-foreground leading-relaxed text-center max-w-4xl mx-auto">
-          At BFash Solutions, we bridge the gap between brilliant ideas and digital reality. As a
+          At BFash Solution, we bridge the gap between brilliant ideas and digital reality. As a
           full-service digital provider and your go-to affordable SEO agency, we are dedicated to
           helping brands stand out, scale up, and dominate their market. Whether you are a brand-new
           startup looking for a killer logo and web presence, an established business aiming for
@@ -185,7 +185,7 @@ function Home() {
       </div>
 
       {/* VALUE PROP */}
-      <Section eyebrow="Why BFash" title="Why Partner with BFash Solutions?" center>
+      <Section eyebrow="Why BFash" title="Why Partner with BFash Solution?" center>
         <div className="grid md:grid-cols-3 gap-6">
           {values.map((v, i) => (
             <div
@@ -215,7 +215,7 @@ function Home() {
           </p>
           
           <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-            In fact, the right <strong className="text-white">affordable SEO company</strong> understands that small and medium businesses need cost-effective strategies to compete. They focus on delivering measurable growth, not just empty promises. That's precisely where BFash Solutions stands out from the crowd.
+            In fact, the right <strong className="text-white">affordable SEO company</strong> understands that small and medium businesses need cost-effective strategies to compete. They focus on delivering measurable growth, not just empty promises. That's precisely where BFash Solution stands out from the crowd.
           </p>
 
           <h2 className="text-2xl md:text-3xl font-display font-bold text-white mt-8 mb-4">
@@ -365,7 +365,7 @@ function Home() {
             >
               <input type="hidden" name="access_key" value="871b202d-31db-4929-9c44-4ab92415006e" />
               <input type="hidden" name="subject" value="New Contact Form Submission" />
-              <input type="hidden" name="from_name" value="BFash Solutions" />
+              <input type="hidden" name="from_name" value="BFash Solution" />
               <input type="hidden" name="redirect" value="https://bfash-solution.vercel.app" />
 
               <div>
