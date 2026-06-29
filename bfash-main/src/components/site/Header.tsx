@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Sparkles } from "lucide-react";
 import { QuoteModal } from "./QuoteModal";
 import { Button } from "@/components/ui/button";
 
@@ -33,15 +33,15 @@ export function Header() {
       >
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
           <Link to="/" className="flex items-center gap-2 group">
-            <img
-              src="/logo.png"
-              alt="BFash Solution Logo"
-              className="h-9 w-auto object-contain transition-transform group-hover:scale-105"
-            />
+            {/* Logo Icon - No image loading issues */}
+            <div className="grid h-9 w-9 place-items-center rounded-lg bg-gradient-to-br from-brand to-brand-strong brand-glow">
+              <Sparkles className="h-5 w-5 text-white transition-transform group-hover:scale-110" />
+            </div>
             <span className="font-display text-lg font-bold tracking-tight">
               BFash <span className="text-brand">Solution</span>
             </span>
           </Link>
+
           <nav className="hidden lg:flex items-center gap-1">
             {nav.map((item) => (
               <Link
