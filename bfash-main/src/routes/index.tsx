@@ -251,6 +251,7 @@ function Home() {
                   type="text"
                   name="name"
                   required
+                  autoComplete="name"
                   placeholder="John Doe"
                   className="w-full px-4 py-2 rounded-lg bg-background/50 border border-border text-white placeholder:text-muted-foreground focus:outline-none focus:border-brand"
                 />
@@ -261,6 +262,7 @@ function Home() {
                   type="email"
                   name="email"
                   required
+                  autoComplete="email"
                   placeholder="you@example.com"
                   className="w-full px-4 py-2 rounded-lg bg-background/50 border border-border text-white placeholder:text-muted-foreground focus:outline-none focus:border-brand"
                 />
