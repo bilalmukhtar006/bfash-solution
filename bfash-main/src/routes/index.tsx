@@ -202,7 +202,7 @@ function Home() {
         </div>
       </Section>
 
-      {/* CONTACT - Working HTML Form */}
+      {/* CONTACT - Working HTML Form with Web3Forms */}
       <Section>
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div>
@@ -229,7 +229,6 @@ function Home() {
             </ul>
           </div>
 
-          {/* SIMPLE STATIC FORM - NO REACT STATE */}
           <div className="glass-card rounded-2xl p-6 md:p-8">
             <h3 className="text-xl font-display font-bold mb-4 gradient-text">Send us a message</h3>
             <p className="text-sm text-muted-foreground mb-6">
@@ -238,10 +237,13 @@ function Home() {
             <form
               action="https://api.web3forms.com/submit"
               method="POST"
-              target="_blank"
               className="space-y-4"
             >
               <input type="hidden" name="access_key" value="871b202d-31db-4929-9c44-4ab92415006e" />
+              <input type="hidden" name="subject" value="New Contact Form Submission" />
+              <input type="hidden" name="from_name" value="BFash Solutions" />
+              <input type="hidden" name="redirect" value="https://bfash-solution.vercel.app" />
+
               <div>
                 <label className="text-sm font-medium text-white block mb-1">Your Name</label>
                 <input
