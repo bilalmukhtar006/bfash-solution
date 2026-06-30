@@ -182,7 +182,7 @@ function Contact() {
                 <input type="hidden" name="access_key" value="871b202d-31db-4929-9c44-4ab92415006e" />
                 <input type="hidden" name="subject" value="New Contact Form Submission" />
                 <input type="hidden" name="from_name" value="BFash Solutions" />
-                <input type="hidden" name="redirect" value="https://localhost:5173/contact?success=true" />
+                <input type="hidden" name="redirect" value="https://localhost:5175/contact?success=true" />
 
                 <div>
                   <label className="text-sm font-medium text-white block mb-1">Your Name</label>
