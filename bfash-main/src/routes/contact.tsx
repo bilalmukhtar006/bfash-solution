@@ -4,8 +4,6 @@ import { Mail, Phone, MapPin, Clock, ArrowRight, Star, StarHalf, ExternalLink } 
 import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
 import { ContactForm } from "@/components/site/ContactForm";
-import { Button } from "@/components/ui/button";
-import { useState, useEffect } from "react";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
