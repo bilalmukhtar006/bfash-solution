@@ -81,7 +81,13 @@ export function ContactForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="glass-card rounded-2xl p-8 animate-fade-up">
+    <form onSubmit={handleSubmit} className="glass-card rounded-2xl p-6 md:p-8 space-y-4">
+      <div>
+        <h3 className="text-xl font-display font-bold mb-2 gradient-text">Send us a message</h3>
+        <p className="text-sm text-muted-foreground mb-6">
+          Fill out the form below and we'll get back to you within 24 hours.
+        </p>
+      </div>
       <div className="space-y-4">
         <div>
           <Label htmlFor="name">Name *</Label>
