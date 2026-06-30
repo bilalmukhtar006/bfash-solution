@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useSearch } from "@tanstack/react-router";
 import { PageHero, Section } from "@/components/site/Section";
-import { Mail, Phone, MapPin, Clock, ArrowRight, Star, StarHalf, ExternalLink } from "lucide-react";
+import { Mail, Phone, MapPin, Clock, ArrowRight, Star, StarHalf, ExternalLink, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
 
@@ -57,6 +58,8 @@ const GMB_REVIEW_LINK = "https://g.page/r/CavaEXQZnAMxEAE/review";
 
 function Contact() {
   const [currentReview, setCurrentReview] = useState(0);
+  const search = useSearch({ strict: false }) as { success?: string };
+  const showSuccess = search?.success === "true";
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -161,6 +164,16 @@ function Contact() {
               <p className="text-sm text-muted-foreground mb-6">
                 Fill out the form below and we'll get back to you within 24 hours.
               </p>
+              
+              {showSuccess ? (
+                <div className="text-center py-8">
+                  <CheckCircle2 className="h-16 w-16 text-brand mx-auto mb-4" />
+                  <h4 className="text-xl font-display font-bold mb-2">Message Sent!</h4>
+                  <p className="text-muted-foreground">
+                    Thank you for reaching out. We'll get back to you within 24 hours.
+                  </p>
+                </div>
+              ) : (
               <form
                 action="https://api.web3forms.com/submit"
                 method="POST"
@@ -169,7 +182,7 @@ function Contact() {
                 <input type="hidden" name="access_key" value="871b202d-31db-4929-9c44-4ab92415006e" />
                 <input type="hidden" name="subject" value="New Contact Form Submission" />
                 <input type="hidden" name="from_name" value="BFash Solutions" />
-                <input type="hidden" name="redirect" value="https://bfash-solution.vercel.app" />
+                <input type="hidden" name="redirect" value="https://localhost:5173/contact?success=true" />
 
                 <div>
                   <label className="text-sm font-medium text-white block mb-1">Your Name</label>
@@ -209,6 +222,7 @@ function Contact() {
                   Send Message <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
               </form>
+              )}
             </div>
 
             {/* ✅ GMB Reviews Section with Real Reviews */}
