@@ -73,7 +73,7 @@ export function Footer() {
           <div className="flex gap-3 mt-5">
             {[
               { Icon: Linkedin, url: "https://www.linkedin.com/company/bfashsolution" },
-              { Icon: Instagram, url: "https://www.instagram.com/bfash2026/" },
+              { Icon: Instagram, url: "https://www.instagram.com/bfash.us/" },
               { Icon: Twitter, url: "https://x.com/BFashSolution" },
               { Icon: Facebook, url: "https://www.facebook.com/BFashSolution" },
               { Icon: MessageSquare, url: "https://wa.me/+923254258512" },

@@ -1,7 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
 import { Section } from "@/components/site/Section";
-import { ContactForm } from "@/components/site/ContactForm";
 import {
   ArrowRight,
   Globe,
@@ -18,16 +17,17 @@ import {
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "BFash Solutions — Web Design, SEO & Amazon Growth Agency" },
+      { title: "Affordable SEO Agency – BFash Solution | Expert SEO Services" },
       {
         name: "description",
         content:
-          "Stunning websites, branding, SEO and Amazon growth — everything you need to thrive online, all under one roof.",
+          "Looking for an affordable SEO agency? BFash Solution delivers expert SEO services, affordable SEO packages & local SEO to grow your business. Get a free quote today!",
       },
-      { property: "og:title", content: "BFash Solutions — Premium Digital Agency" },
+      { property: "og:title", content: "Affordable SEO Agency – BFash Solution" },
       {
         property: "og:description",
-        content: "Web design, SEO, Amazon growth & branding under one roof.",
+        content:
+          "Looking for an affordable SEO agency? BFash Solution delivers expert SEO services, affordable SEO packages & local SEO to grow your business.",
       },
     ],
   }),
@@ -84,7 +84,7 @@ function Home() {
     <>
       {/* HERO */}
       <section className="relative pt-36 pb-24 md:pt-44 md:pb-32 overflow-hidden">
-        <div className="absolute inset-0 -z-10">
+        <div className="absolute inset-0 -z-10 pointer-events-none">
           <div className="absolute top-20 left-1/4 h-96 w-96 rounded-full bg-brand/30 blur-3xl animate-float" />
           <div
             className="absolute top-40 right-1/4 h-96 w-96 rounded-full bg-brand-strong/30 blur-3xl animate-float"
@@ -149,7 +149,7 @@ function Home() {
         center
       >
         <p className="text-lg text-muted-foreground leading-relaxed text-center max-w-4xl mx-auto">
-          At BFash Solutions, we bridge the gap between brilliant ideas and digital reality. As a
+          At BFash Solution, we bridge the gap between brilliant ideas and digital reality. As a
           full-service digital provider and your go-to affordable SEO agency, we are dedicated to
           helping brands stand out, scale up, and dominate their market. Whether you are a brand-new
           startup looking for a killer logo and web presence, an established business aiming for
@@ -185,7 +185,7 @@ function Home() {
       </div>
 
       {/* VALUE PROP */}
-      <Section eyebrow="Why BFash" title="Why Partner with BFash Solutions?" center>
+      <Section eyebrow="Why BFash" title="Why Partner with BFash Solution?" center>
         <div className="grid md:grid-cols-3 gap-6">
           {values.map((v, i) => (
             <div
@@ -203,7 +203,130 @@ function Home() {
         </div>
       </Section>
 
-      {/* CONTACT */}
+      {/* SEO ARTICLE SECTION */}
+      <Section>
+        <div className="max-w-4xl mx-auto">
+          <h1 className="text-4xl md:text-5xl font-display font-bold text-white mb-6">
+            Why You Need an Affordable SEO Agency That Delivers Real Results
+          </h1>
+          
+          <p className="text-lg text-muted-foreground leading-relaxed mb-6">
+            Finding the right digital partner can feel overwhelming, especially when you're on a budget. However, investing in search engine optimization doesn't have to break the bank. An <strong className="text-white">affordable SEO agency</strong> can help you dominate search results without draining your marketing budget.
+          </p>
+          
+          <p className="text-lg text-muted-foreground leading-relaxed mb-6">
+            In fact, the right <strong className="text-white">affordable SEO company</strong> understands that small and medium businesses need cost-effective strategies to compete. They focus on delivering measurable growth, not just empty promises. That's precisely where BFash Solution stands out from the crowd.
+          </p>
+
+          <h2 className="text-2xl md:text-3xl font-display font-bold text-white mt-8 mb-4">
+            What Makes an Affordable SEO Agency Truly Effective?
+          </h2>
+
+          <h3 className="text-xl font-display font-bold text-white mt-6 mb-3">
+            Data-Driven Strategies, Not Guesswork
+          </h3>
+          <p className="text-lg text-muted-foreground leading-relaxed mb-4">
+            Many agencies claim to offer <strong className="text-white">affordable SEO services</strong>, but they often rely on outdated tactics. A trustworthy partner uses data to drive every decision. They analyze your market, your competitors, and your customers' behavior to craft a winning plan.
+          </p>
+          <p className="text-lg text-muted-foreground leading-relaxed mb-4">
+            For example, they conduct thorough keyword research to identify high-intent search terms. Then, they optimize your website's content and structure accordingly. This approach ensures that every dollar you spend works hard for your business.
+          </p>
+
+          <h3 className="text-xl font-display font-bold text-white mt-6 mb-3">
+            Transparent Reporting and Communication
+          </h3>
+          <p className="text-lg text-muted-foreground leading-relaxed mb-4">
+            Another hallmark of a reliable <strong className="text-white">affordable SEO agency</strong> is transparency. You should always know exactly what you're paying for and what results you're getting. Regular reports and clear communication build trust and keep your campaign on track.
+          </p>
+          <p className="text-lg text-muted-foreground leading-relaxed mb-4">
+            Moreover, a good agency doesn't just send you a spreadsheet full of numbers. They explain what those numbers mean and how they impact your bottom line. This level of clarity is essential for long-term success.
+          </p>
+
+          <h2 className="text-2xl md:text-3xl font-display font-bold text-white mt-8 mb-4">
+            The Key Benefits of Choosing Affordable SEO Packages
+          </h2>
+
+          <h3 className="text-xl font-display font-bold text-white mt-6 mb-3">
+            Cost-Effective Growth Without Compromising Quality
+          </h3>
+          <p className="text-lg text-muted-foreground leading-relaxed mb-4">
+            One of the biggest misconceptions about SEO is that it's only for big corporations. That couldn't be further from the truth. <strong className="text-white">Affordable SEO packages</strong> make it possible for small businesses to compete with industry giants.
+          </p>
+          <p className="text-lg text-muted-foreground leading-relaxed mb-4">
+            These packages typically include everything from on-page optimization to link building. They also often cover technical SEO and content creation. By bundling these services, agencies can offer better value than à la carte options.
+          </p>
+
+          <h3 className="text-xl font-display font-bold text-white mt-6 mb-3">
+            Scalable Solutions That Grow With Your Business
+          </h3>
+          <p className="text-lg text-muted-foreground leading-relaxed mb-4">
+            Your business isn't static, and neither should your SEO strategy be. The best <strong className="text-white">affordable SEO packages</strong> are flexible and scalable. As your website gains authority and traffic, you can easily upgrade your plan to match your evolving needs.
+          </p>
+          <p className="text-lg text-muted-foreground leading-relaxed mb-4">
+            This scalability ensures that you're never paying for services you don't need. At the same time, you're always ready to seize new opportunities as they arise.
+          </p>
+
+          <h2 className="text-2xl md:text-3xl font-display font-bold text-white mt-8 mb-4">
+            Why Local Businesses Love Affordable Local SEO Services
+          </h2>
+
+          <h3 className="text-xl font-display font-bold text-white mt-6 mb-3">
+            Dominate Your Local Market
+          </h3>
+          <p className="text-lg text-muted-foreground leading-relaxed mb-4">
+            For brick-and-mortar businesses, local visibility is crucial. <strong className="text-white">Affordable local SEO services</strong> help you attract nearby customers who are actively searching for what you offer. This includes optimizing your Google Business Profile, building local citations, and earning positive reviews.
+          </p>
+          <p className="text-lg text-muted-foreground leading-relaxed mb-4">
+            Consequently, your business appears in front of high-intent customers at exactly the right moment. This targeted approach delivers an impressive return on investment.
+          </p>
+
+          <h3 className="text-xl font-display font-bold text-white mt-6 mb-3">
+            Build Trust and Credibility in Your Community
+          </h3>
+          <p className="text-lg text-muted-foreground leading-relaxed mb-4">
+            Appearing in local search results also builds trust with your community. People tend to trust businesses that show up prominently when they search for relevant products or services. An <strong className="text-white">affordable SEO company</strong> helps you establish that credibility.
+          </p>
+          <p className="text-lg text-muted-foreground leading-relaxed mb-4">
+            Furthermore, positive local signals—like reviews and accurate business information—reinforce your reputation. Over time, this translates into more foot traffic, phone calls, and sales.
+          </p>
+
+          <h2 className="text-2xl md:text-3xl font-display font-bold text-white mt-8 mb-4">
+            How to Choose the Right Affordable SEO Services for Your Business
+          </h2>
+
+          <h3 className="text-xl font-display font-bold text-white mt-6 mb-3">
+            Define Your Goals and Budget
+          </h3>
+          <p className="text-lg text-muted-foreground leading-relaxed mb-4">
+            Before you start looking for <strong className="text-white">affordable SEO services</strong>, take a moment to define your objectives. Are you trying to increase website traffic, generate more leads, or boost online sales? Knowing your goals will help you select the right package.
+          </p>
+          <p className="text-lg text-muted-foreground leading-relaxed mb-4">
+            Similarly, set a realistic budget. Remember, the cheapest option isn't always the best. Instead, look for value—a balance of cost and quality that delivers tangible results.
+          </p>
+
+          <h3 className="text-xl font-display font-bold text-white mt-6 mb-3">
+            Evaluate Their Track Record and Expertise
+          </h3>
+          <p className="text-lg text-muted-foreground leading-relaxed mb-4">
+            Next, research potential agencies thoroughly. Check their case studies, client testimonials, and online reviews. A proven track record is a strong indicator of reliability and competence.
+          </p>
+          <p className="text-lg text-muted-foreground leading-relaxed mb-4">
+            Additionally, ask about their approach to SEO. Do they follow white-hat techniques? Are they up to date with the latest algorithm changes? These questions will help you separate true experts from pretenders.
+          </p>
+
+          <h2 className="text-2xl md:text-3xl font-display font-bold text-white mt-8 mb-4">
+            Conclusion – Invest in an Affordable SEO Agency That Works
+          </h2>
+          <p className="text-lg text-muted-foreground leading-relaxed mb-4">
+            To sum up, SEO is one of the smartest investments you can make for your business. By partnering with an <strong className="text-white">affordable SEO agency</strong>, you gain access to expert knowledge and proven strategies at a price you can afford.
+          </p>
+          <p className="text-lg text-muted-foreground leading-relaxed mb-4">
+            Whether you need <strong className="text-white">affordable SEO services</strong>, <strong className="text-white">affordable local SEO services</strong>, or comprehensive <strong className="text-white">affordable SEO packages</strong>, the right partner makes all the difference. So don't wait—start improving your online visibility today and watch your business thrive.
+          </p>
+        </div>
+      </Section>
+
+      {/* CONTACT - Working HTML Form with Web3Forms */}
       <Section>
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div>
@@ -229,7 +352,61 @@ function Home() {
               ))}
             </ul>
           </div>
-          <ContactForm />
+
+          <div className="glass-card rounded-2xl p-6 md:p-8">
+            <h3 className="text-xl font-display font-bold mb-4 gradient-text">Send us a message</h3>
+            <p className="text-sm text-muted-foreground mb-6">
+              Fill out the form below and we'll get back to you within 24 hours.
+            </p>
+            <form
+              action="https://api.web3forms.com/submit"
+              method="POST"
+              className="space-y-4"
+            >
+              <input type="hidden" name="access_key" value="871b202d-31db-4929-9c44-4ab92415006e" />
+              <input type="hidden" name="subject" value="New Contact Form Submission" />
+              <input type="hidden" name="from_name" value="BFash Solution" />
+              <input type="hidden" name="redirect" value="https://bfash-solution.vercel.app" />
+
+              <div>
+                <label className="text-sm font-medium text-white block mb-1">Your Name</label>
+                <input
+                  type="text"
+                  name="name"
+                  required
+                  placeholder="John Doe"
+                  className="w-full px-4 py-2 rounded-lg bg-background/50 border border-border text-white placeholder:text-muted-foreground focus:outline-none focus:border-brand"
+                />
+              </div>
+              <div>
+                <label className="text-sm font-medium text-white block mb-1">Email Address</label>
+                <input
+                  type="email"
+                  name="email"
+                  required
+                  placeholder="you@example.com"
+                  className="w-full px-4 py-2 rounded-lg bg-background/50 border border-border text-white placeholder:text-muted-foreground focus:outline-none focus:border-brand"
+                />
+              </div>
+              <div>
+                <label className="text-sm font-medium text-white block mb-1">Message</label>
+                <textarea
+                  name="message"
+                  required
+                  rows={4}
+                  placeholder="Tell us about your project..."
+                  className="w-full px-4 py-2 rounded-lg bg-background/50 border border-border text-white placeholder:text-muted-foreground focus:outline-none focus:border-brand resize-none"
+                />
+              </div>
+              <button
+                type="submit"
+                className="w-full bg-gradient-to-r from-brand to-brand-strong text-white border-0 brand-glow py-3 px-6 rounded-lg font-medium text-base hover:opacity-90 transition-opacity flex items-center justify-center gap-2 cursor-pointer"
+              >
+                Send Message
+                <ArrowRight className="h-4 w-4" />
+              </button>
+            </form>
+          </div>
         </div>
       </Section>
     </>
