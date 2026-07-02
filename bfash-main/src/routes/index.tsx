@@ -21,7 +21,7 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Looking for an affordable SEO agency? BFash Solution delivers expert SEO services, affordable SEO packages & local SEO to grow your business. Get a free quote today!",
+          "Looking for an affordable SEO agency? BFash Solution delivers expert SEO services, affordable SEO packages & local SEO to grow your business.",
       },
       { property: "og:title", content: "Affordable SEO Agency – BFash Solution" },
       {
@@ -29,6 +29,16 @@ export const Route = createFileRoute("/")({
         content:
           "Looking for an affordable SEO agency? BFash Solution delivers expert SEO services, affordable SEO packages & local SEO to grow your business.",
       },
+      // ✅ Canonical URL
+      { property: "og:url", content: "https://bfash.us/" },
+      // ✅ Robots Meta Tag
+      { name: "robots", content: "index, follow, max-snippet:-1, max-image-preview:large" },
+      // ✅ X-Robots-Tag (set via meta tag for compatibility)
+      { name: "X-Robots-Tag", content: "index, follow" },
+    ],
+    links: [
+      // ✅ Canonical Link Tag
+      { rel: "canonical", href: "https://bfash.us/" },
     ],
   }),
   component: Home,
@@ -322,6 +332,20 @@ function Home() {
           </p>
           <p className="text-lg text-muted-foreground leading-relaxed mb-4">
             Whether you need <strong className="text-white">affordable SEO services</strong>, <strong className="text-white">affordable local SEO services</strong>, or comprehensive <strong className="text-white">affordable SEO packages</strong>, the right partner makes all the difference. So don't wait—start improving your online visibility today and watch your business thrive.
+          </p>
+          
+          {/* ✅ Superside Do-Follow Link */}
+          <p className="text-sm text-muted-foreground mt-8 pt-4 border-t border-border/30">
+            Looking to scale your creative team? Check out{" "}
+            <a 
+              href="https://www.superside.com" 
+              target="_blank" 
+              rel="dofollow"
+              className="text-brand hover:text-brand-strong transition-colors"
+            >
+              Superside
+            </a>
+            — the creative team’s creative team™.
           </p>
         </div>
       </Section>
