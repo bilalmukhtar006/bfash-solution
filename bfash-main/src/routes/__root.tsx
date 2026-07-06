@@ -43,12 +43,11 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   const errorReported = useRef(false);
   
   useEffect(() => {
-    // ✅ FIX: Only report error once, not on every render
     if (!errorReported.current) {
       errorReported.current = true;
       reportLovableError(error, { boundary: "tanstack_root_error_component" });
     }
-  }, []); // ✅ Empty dependency array - runs only once
+  }, []);
   
   return (
     <div className="flex min-h-screen items-center justify-center px-4">
@@ -121,6 +120,21 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         rel: "stylesheet",
         href: "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap",
+      },
+    ],
+    // ✅ GOOGLE ANALYTICS TAG - Added here
+    scripts: [
+      {
+        src: "https://www.googleapis.com/gtag/js?id=G-P9KF8CGYBL",
+        async: true,
+      },
+      {
+        children: `
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-P9KF8CGYBL');
+        `,
       },
     ],
   }),
