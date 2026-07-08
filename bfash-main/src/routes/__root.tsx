@@ -43,12 +43,11 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   const errorReported = useRef(false);
   
   useEffect(() => {
-    // ✅ FIX: Only report error once, not on every render
     if (!errorReported.current) {
       errorReported.current = true;
       reportLovableError(error, { boundary: "tanstack_root_error_component" });
     }
-  }, []); // ✅ Empty dependency array - runs only once
+  }, []);
   
   return (
     <div className="flex min-h-screen items-center justify-center px-4">
@@ -82,26 +81,29 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "BFash Solutions — Premium Digital Agency" },
+      { title: "Affordable SEO Agency – BFash Solution | Expert SEO Services" },
       {
         name: "description",
         content:
-          "Web design, SEO, Amazon growth & branding. BFash Solutions builds digital experiences that drive real business growth.",
+          "Looking for an affordable SEO agency? BFash Solution delivers expert SEO services, affordable SEO packages & local SEO to grow your business.",
       },
-      { name: "author", content: "BFash Solutions" },
-      { property: "og:title", content: "BFash Solutions — Premium Digital Agency" },
+      { name: "author", content: "BFash Solution" },
+      { property: "og:title", content: "Affordable SEO Agency – BFash Solution" },
       {
         property: "og:description",
         content:
-          "Web design, SEO, Amazon growth & branding. BFash Solutions builds digital experiences that drive real business growth.",
+          "Looking for an affordable SEO agency? BFash Solution delivers expert SEO services, affordable SEO packages & local SEO to grow your business.",
       },
       { property: "og:type", content: "website" },
+      { property: "og:url", content: "https://bfash.us/" },
+      { name: "robots", content: "index, follow, max-snippet:-1, max-image-preview:large" },
+      { name: "X-Robots-Tag", content: "index, follow" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "BFash Solutions — Premium Digital Agency" },
+      { name: "twitter:title", content: "Affordable SEO Agency – BFash Solution" },
       {
         name: "twitter:description",
         content:
-          "Web design, SEO, Amazon growth & branding. BFash Solutions builds digital experiences that drive real business growth.",
+          "Looking for an affordable SEO agency? BFash Solution delivers expert SEO services, affordable SEO packages & local SEO to grow your business.",
       },
       {
         property: "og:image",
@@ -116,6 +118,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     ],
     links: [
       { rel: "stylesheet", href: appCss },
+      { rel: "canonical", href: "https://bfash.us/" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
@@ -135,6 +138,18 @@ function RootShell({ children }: { children: ReactNode }) {
     <html lang="en">
       <head>
         <HeadContent />
+        {/* ✅ GOOGLE TAG (gtag.js) - Added directly in head */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-P9KF8CGYBL"></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-P9KF8CGYBL');
+            `,
+          }}
+        />
       </head>
       <body>
         {children}
