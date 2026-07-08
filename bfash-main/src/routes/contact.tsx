@@ -1,3 +1,5 @@
+'use client';
+
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHero, Section } from "@/components/site/Section";
 import { Mail, Phone, MapPin, Clock, ArrowRight, Star, StarHalf, ExternalLink } from "lucide-react";
