@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
 import { Section } from "@/components/site/Section";
+import { ContactForm } from "@/components/site/ContactForm";
 import {
   ArrowRight,
   Globe,
@@ -377,60 +378,7 @@ function Home() {
             </ul>
           </div>
 
-          <div className="glass-card rounded-2xl p-6 md:p-8">
-            <h3 className="text-xl font-display font-bold mb-4 gradient-text">Send us a message</h3>
-            <p className="text-sm text-muted-foreground mb-6">
-              Fill out the form below and we'll get back to you within 24 hours.
-            </p>
-            <form
-              action="https://api.web3forms.com/submit"
-              method="POST"
-              className="space-y-4"
-            >
-              <input type="hidden" name="access_key" value="871b202d-31db-4929-9c44-4ab92415006e" />
-              <input type="hidden" name="subject" value="New Contact Form Submission" />
-              <input type="hidden" name="from_name" value="BFash Solution" />
-              <input type="hidden" name="redirect" value="https://bfash-solution.vercel.app" />
-
-              <div>
-                <label className="text-sm font-medium text-white block mb-1">Your Name</label>
-                <input
-                  type="text"
-                  name="name"
-                  required
-                  placeholder="John Doe"
-                  className="w-full px-4 py-2 rounded-lg bg-background/50 border border-border text-white placeholder:text-muted-foreground focus:outline-none focus:border-brand"
-                />
-              </div>
-              <div>
-                <label className="text-sm font-medium text-white block mb-1">Email Address</label>
-                <input
-                  type="email"
-                  name="email"
-                  required
-                  placeholder="you@example.com"
-                  className="w-full px-4 py-2 rounded-lg bg-background/50 border border-border text-white placeholder:text-muted-foreground focus:outline-none focus:border-brand"
-                />
-              </div>
-              <div>
-                <label className="text-sm font-medium text-white block mb-1">Message</label>
-                <textarea
-                  name="message"
-                  required
-                  rows={4}
-                  placeholder="Tell us about your project..."
-                  className="w-full px-4 py-2 rounded-lg bg-background/50 border border-border text-white placeholder:text-muted-foreground focus:outline-none focus:border-brand resize-none"
-                />
-              </div>
-              <button
-                type="submit"
-                className="w-full bg-gradient-to-r from-brand to-brand-strong text-white border-0 brand-glow py-3 px-6 rounded-lg font-medium text-base hover:opacity-90 transition-opacity flex items-center justify-center gap-2 cursor-pointer"
-              >
-                Send Message
-                <ArrowRight className="h-4 w-4" />
-              </button>
-            </form>
-          </div>
+          <ContactForm />
         </div>
       </Section>
     </>
