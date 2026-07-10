@@ -1,14 +1,16 @@
 'use client';
 
-import { FormEvent, useState } from "react";
-import { ArrowRight } from "lucide-react";
+import { FormEvent, useState, useRef } from "react";
+import { ArrowRight, CheckCircle, Mail, User, MessageSquare } from "lucide-react";
 
 const WEB3FORMS_ACCESS_KEY = "871b202d-31db-4929-9c44-4ab92415006e";
+
+// Cloudflare Turnstile Site Key (replace with your own)
+const TURNSTILE_SITE_KEY = "YOUR_TURNSTILE_SITE_KEY";
 
 const initialFormState = {
   name: "",
   email: "",
-  company: "",
   message: "",
 };
 
@@ -16,15 +18,67 @@ export function ContactForm() {
   const [formState, setFormState] = useState(initialFormState);
   const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
   const [errorMessage, setErrorMessage] = useState("");
+  const [turnstileToken, setTurnstileToken] = useState<string | null>(null);
+  const turnstileRef = useRef<HTMLDivElement>(null);
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = event.target;
     setFormState((prev) => ({ ...prev, [name]: value }));
   };
 
+  // Load Cloudflare Turnstile script
+  const loadTurnstile = () => {
+    if (document.querySelector('script[src*="turnstile"]')) return;
+
+    const script = document.createElement("script");
+    script.src = "https://challenges.cloudflare.com/turnstile/v0/api.js";
+    script.async = true;
+    script.defer = true;
+    document.head.appendChild(script);
+
+    // Initialize after script loads
+    script.onload = () => {
+      renderTurnstile();
+    };
+  };
+
+  const renderTurnstile = () => {
+    if (!turnstileRef.current || typeof window === "undefined") return;
+
+    // @ts-ignore - Cloudflare Turnstile global
+    if (window.turnstile) {
+      // @ts-ignore
+      window.turnstile.render(turnstileRef.current, {
+        sitekey: TURNSTILE_SITE_KEY,
+        callback: (token: string) => {
+          setTurnstileToken(token);
+        },
+        "error-callback": () => {
+          setTurnstileToken(null);
+        },
+        "expired-callback": () => {
+          setTurnstileToken(null);
+        },
+        theme: "dark",
+      });
+    }
+  };
+
+  // Render Turnstile when component mounts
+  useState(() => {
+    loadTurnstile();
+  });
+
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     if (status === "sending") return;
+
+    // Check Turnstile
+    if (!turnstileToken) {
+      setErrorMessage("Please complete the security check.");
+      setStatus("error");
+      return;
+    }
 
     setStatus("sending");
     setErrorMessage("");
@@ -40,8 +94,9 @@ export function ContactForm() {
           subject: "New Contact Form Submission from BFash",
           name: formState.name,
           email: formState.email,
-          company: formState.company,
           message: formState.message,
+          // Send Turnstile token to Web3Forms (they verify it)
+          "cf-turnstile-response": turnstileToken,
         }),
       });
 
@@ -51,6 +106,13 @@ export function ContactForm() {
       }
 
       setFormState(initialFormState);
+      setTurnstileToken(null);
+      // Reset Turnstile
+      // @ts-ignore
+      if (window.turnstile) {
+        // @ts-ignore
+        window.turnstile.reset();
+      }
       setStatus("success");
     } catch (error) {
       setErrorMessage(
@@ -60,62 +122,76 @@ export function ContactForm() {
     }
   };
 
+  // Success state
+  if (status === "success") {
+    return (
+      <div className="glass-card rounded-2xl p-8 md:p-10 text-center">
+        <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-brand/20 mb-4">
+          <CheckCircle className="h-8 w-8 text-brand" />
+        </div>
+        <h3 className="text-2xl font-display font-bold text-white mb-2">You're all set! 🎉</h3>
+        <p className="text-muted-foreground max-w-sm mx-auto">
+          We received your message and will reply within one business day.
+        </p>
+      </div>
+    );
+  }
+
   return (
     <div className="glass-card rounded-2xl p-6 md:p-8">
-      <h3 className="text-xl font-display font-bold mb-2 gradient-text">Send us a message</h3>
-      <p className="text-sm text-muted-foreground mb-6">
-        Fill out the form below and we'll get back to you within 24 hours.
-      </p>
+      <div className="text-center mb-6">
+        <h3 className="text-2xl font-display font-bold gradient-text">Let's Talk</h3>
+        <p className="text-sm text-muted-foreground mt-1">
+          We'll get back to you within 24 hours
+        </p>
+      </div>
 
-      {status === "success" ? (
-        <div className="rounded-2xl border border-brand/20 bg-brand/5 p-6 text-center">
-          <p className="text-lg font-medium text-white mb-2">Thanks! Your message was sent.</p>
-          <p className="text-sm text-muted-foreground">
-            We received your message and will reply within one business day.
-          </p>
-        </div>
-      ) : (
-        <form onSubmit={handleSubmit} noValidate className="space-y-4">
-          <div>
-            <label className="text-sm font-medium text-white block mb-2">Name *</label>
+      <form onSubmit={handleSubmit} noValidate className="space-y-4">
+        {/* Name */}
+        <div>
+          <label className="text-sm font-medium text-white/80 block mb-1.5">
+            Your Name <span className="text-brand">*</span>
+          </label>
+          <div className="relative">
+            <User className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
             <input
               type="text"
               name="name"
               required
               value={formState.name}
               onChange={handleChange}
-              placeholder="Your name"
-              className="w-full px-4 py-2 rounded-lg bg-background/50 border border-border text-white placeholder:text-muted-foreground focus:outline-none focus:border-brand"
+              placeholder="John Doe"
+              className="w-full pl-10 pr-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder:text-muted-foreground focus:outline-none focus:border-brand/50 focus:ring-1 focus:ring-brand/50 transition-all"
             />
           </div>
+        </div>
 
-          <div>
-            <label className="text-sm font-medium text-white block mb-2">Email *</label>
+        {/* Email */}
+        <div>
+          <label className="text-sm font-medium text-white/80 block mb-1.5">
+            Email Address <span className="text-brand">*</span>
+          </label>
+          <div className="relative">
+            <Mail className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
             <input
               type="email"
               name="email"
               required
               value={formState.email}
               onChange={handleChange}
-              placeholder="your@email.com"
-              className="w-full px-4 py-2 rounded-lg bg-background/50 border border-border text-white placeholder:text-muted-foreground focus:outline-none focus:border-brand"
+              placeholder="john@company.com"
+              className="w-full pl-10 pr-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder:text-muted-foreground focus:outline-none focus:border-brand/50 focus:ring-1 focus:ring-brand/50 transition-all"
             />
           </div>
+        </div>
 
-          <div>
-            <label className="text-sm font-medium text-white block mb-2">Company</label>
-            <input
-              type="text"
-              name="company"
-              value={formState.company}
-              onChange={handleChange}
-              placeholder="Your company (optional)"
-              className="w-full px-4 py-2 rounded-lg bg-background/50 border border-border text-white placeholder:text-muted-foreground focus:outline-none focus:border-brand"
-            />
-          </div>
-
-          <div>
-            <label className="text-sm font-medium text-white block mb-2">Message *</label>
+        {/* Message */}
+        <div>
+          <label className="text-sm font-medium text-white/80 block mb-1.5">
+            Message <span className="text-brand">*</span>
+          </label>
+          <div className="relative">
+            <MessageSquare className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
             <textarea
               name="message"
               required
@@ -123,24 +199,45 @@ export function ContactForm() {
               value={formState.message}
               onChange={handleChange}
               placeholder="Tell us about your project..."
-              className="w-full px-4 py-2 rounded-lg bg-background/50 border border-border text-white placeholder:text-muted-foreground focus:outline-none focus:border-brand resize-none"
+              className="w-full pl-10 pr-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder:text-muted-foreground focus:outline-none focus:border-brand/50 focus:ring-1 focus:ring-brand/50 transition-all resize-none"
             />
           </div>
+        </div>
 
-          {status === "error" && (
-            <p className="text-sm text-destructive text-left">{errorMessage}</p>
+        {/* Cloudflare Turnstile */}
+        <div
+          ref={turnstileRef}
+          className="flex justify-center py-2"
+        />
+
+        {/* Error Message */}
+        {status === "error" && (
+          <p className="text-sm text-red-400 text-center">{errorMessage}</p>
+        )}
+
+        {/* Submit Button */}
+        <button
+          type="submit"
+          disabled={status === "sending"}
+          className="w-full px-6 py-3.5 rounded-xl bg-gradient-to-r from-brand to-brand-strong text-white font-medium hover:opacity-90 hover:scale-[1.01] transition-all flex items-center justify-center gap-2 disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:scale-100"
+        >
+          {status === "sending" ? (
+            <>
+              <span className="animate-pulse">Sending</span>
+              <span className="inline-block h-4 w-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+            </>
+          ) : (
+            <>
+              Send Message
+              <ArrowRight className="h-4 w-4" />
+            </>
           )}
+        </button>
 
-          <button
-            type="submit"
-            disabled={status === "sending"}
-            className="w-full px-6 py-2.5 rounded-lg bg-gradient-to-r from-brand to-brand-strong text-white font-medium hover:opacity-90 transition-opacity flex items-center justify-center gap-2 disabled:opacity-60 disabled:cursor-not-allowed"
-          >
-            {status === "sending" ? "Sending..." : "Send Message"}
-            <ArrowRight className="h-4 w-4" />
-          </button>
-        </form>
-      )}
+        <p className="text-xs text-muted-foreground text-center mt-2">
+          Protected by Cloudflare Turnstile. No spam, ever.
+        </p>
+      </form>
     </div>
   );
 }
