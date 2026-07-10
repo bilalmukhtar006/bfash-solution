@@ -1,7 +1,5 @@
 'use client';
 
-import { ArrowRight } from "lucide-react";
-
 import { FormEvent, useState } from "react";
 import { ArrowRight } from "lucide-react";
 
