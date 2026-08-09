@@ -1,11 +1,11 @@
 'use client';
 
-import { FormEvent, useState, useRef } from "react";
+import { FormEvent, useState, useRef, useEffect } from "react";
 import { ArrowRight, CheckCircle, Mail, User, MessageSquare } from "lucide-react";
 
 const WEB3FORMS_ACCESS_KEY = "871b202d-31db-4929-9c44-4ab92415006e";
 
-// Cloudflare Turnstile Site Key (replace with your own)
+// Cloudflare Turnstile Site Key (replace with your actual key)
 const TURNSTILE_SITE_KEY = "YOUR_TURNSTILE_SITE_KEY";
 
 const initialFormState = {
@@ -20,6 +20,7 @@ export function ContactForm() {
   const [errorMessage, setErrorMessage] = useState("");
   const [turnstileToken, setTurnstileToken] = useState<string | null>(null);
   const turnstileRef = useRef<HTMLDivElement>(null);
+  const turnstileRendered = useRef(false);
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = event.target;
@@ -28,7 +29,10 @@ export function ContactForm() {
 
   // Load Cloudflare Turnstile script
   const loadTurnstile = () => {
-    if (document.querySelector('script[src*="turnstile"]')) return;
+    if (document.querySelector('script[src*="turnstile"]')) {
+      renderTurnstile();
+      return;
+    }
 
     const script = document.createElement("script");
     script.src = "https://challenges.cloudflare.com/turnstile/v0/api.js";
@@ -36,7 +40,6 @@ export function ContactForm() {
     script.defer = true;
     document.head.appendChild(script);
 
-    // Initialize after script loads
     script.onload = () => {
       renderTurnstile();
     };
@@ -44,14 +47,16 @@ export function ContactForm() {
 
   const renderTurnstile = () => {
     if (!turnstileRef.current || typeof window === "undefined") return;
+    if (turnstileRendered.current) return;
 
-    // @ts-ignore - Cloudflare Turnstile global
+    // @ts-ignore
     if (window.turnstile) {
       // @ts-ignore
       window.turnstile.render(turnstileRef.current, {
         sitekey: TURNSTILE_SITE_KEY,
         callback: (token: string) => {
           setTurnstileToken(token);
+          setErrorMessage("");
         },
         "error-callback": () => {
           setTurnstileToken(null);
@@ -61,13 +66,29 @@ export function ContactForm() {
         },
         theme: "dark",
       });
+      turnstileRendered.current = true;
     }
   };
 
   // Render Turnstile when component mounts
-  useState(() => {
+  useEffect(() => {
     loadTurnstile();
-  });
+    return () => {
+      // Cleanup
+      if (typeof window !== "undefined") {
+        // @ts-ignore
+        if (window.turnstile) {
+          // @ts-ignore
+          const widgets = window.turnstile?.getWidgets?.();
+          if (widgets) {
+            // @ts-ignore
+            widgets.forEach((id: string) => window.turnstile.remove(id));
+          }
+        }
+      }
+      turnstileRendered.current = false;
+    };
+  }, []);
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -83,22 +104,28 @@ export function ContactForm() {
     setStatus("sending");
     setErrorMessage("");
 
+    // Create abort controller for timeout
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 15000);
+
     try {
       const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
+        signal: controller.signal,
         body: JSON.stringify({
           access_key: WEB3FORMS_ACCESS_KEY,
           subject: "New Contact Form Submission from BFash",
           name: formState.name,
           email: formState.email,
           message: formState.message,
-          // Send Turnstile token to Web3Forms (they verify it)
           "cf-turnstile-response": turnstileToken,
         }),
       });
+
+      clearTimeout(timeoutId);
 
       const result = await response.json();
       if (!response.ok || result.success !== true) {
@@ -115,9 +142,14 @@ export function ContactForm() {
       }
       setStatus("success");
     } catch (error) {
-      setErrorMessage(
-        error instanceof Error ? error.message : "Unable to submit. Please try again."
-      );
+      clearTimeout(timeoutId);
+      if (error instanceof Error && error.name === "AbortError") {
+        setErrorMessage("Request timed out. Please check your connection and try again.");
+      } else {
+        setErrorMessage(
+          error instanceof Error ? error.message : "Unable to submit. Please try again."
+        );
+      }
       setStatus("error");
     }
   };
