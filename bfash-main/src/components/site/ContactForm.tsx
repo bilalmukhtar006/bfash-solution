@@ -1,21 +1,32 @@
-'use client';
+// src/components/site/ContactForm.tsx
+"use client";
 
 import { FormEvent, useEffect, useRef, useState } from "react";
-import { ArrowRight, CheckCircle, Mail, User, MessageSquare } from "lucide-react";
+import {
+  ArrowRight,
+  CheckCircle,
+  Mail,
+  User,
+  MessageSquare,
+} from "lucide-react";
 
 const WEB3FORMS_ACCESS_KEY = "871b202d-31db-4929-9c44-4ab92415006e";
-const TURNSTILE_SITE_KEY = import.meta.env.VITE_TURNSTILE_SITE_KEY ?? "";
 
-type TurnstileApi = {
-  ready: (callback: () => void) => void;
+// Cloudflare Turnstile SITE KEY.
+// The secret key must NEVER be placed in this client-side file.
+const TURNSTILE_SITE_KEY = "0x4AAAAAAEKr0mZEnZWnrBwm";
+
+type TurnstileInstance = {
   render: (
     container: HTMLElement,
     options: {
       sitekey: string;
-      callback?: (token: string) => void;
-      "error-callback"?: () => void;
-      "expired-callback"?: () => void;
       theme?: "auto" | "light" | "dark";
+      size?: "normal" | "flexible" | "compact";
+      action?: string;
+      callback?: (token: string) => void;
+      "error-callback"?: (error?: unknown) => void;
+      "expired-callback"?: () => void;
     },
   ) => string;
   reset: (widgetId?: string) => void;
@@ -24,7 +35,7 @@ type TurnstileApi = {
 
 declare global {
   interface Window {
-    turnstile?: TurnstileApi;
+    turnstile?: TurnstileInstance;
   }
 }
 
@@ -36,151 +47,306 @@ const initialFormState = {
 
 export function ContactForm() {
   const [formState, setFormState] = useState(initialFormState);
-  const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
+  const [status, setStatus] = useState<
+    "idle" | "sending" | "success" | "error"
+  >("idle");
   const [errorMessage, setErrorMessage] = useState("");
   const [turnstileToken, setTurnstileToken] = useState<string | null>(null);
 
   const turnstileRef = useRef<HTMLDivElement>(null);
   const turnstileWidgetId = useRef<string | null>(null);
-
-  useEffect(() => {
-    // Do not run browser-only Turnstile code during SSR.
-    if (!TURNSTILE_SITE_KEY || !turnstileRef.current) return;
-
-    let cancelled = false;
-    let script = document.querySelector<HTMLScriptElement>(
-      'script[src^="https://challenges.cloudflare.com/turnstile/v0/api.js"]',
-    );
-
-    const renderTurnstile = () => {
-      if (cancelled || !turnstileRef.current || !window.turnstile) return;
-      if (turnstileWidgetId.current) return;
-
-      turnstileWidgetId.current = window.turnstile.render(turnstileRef.current, {
-        sitekey: TURNSTILE_SITE_KEY,
-        theme: "dark",
-        callback: (token) => setTurnstileToken(token),
-        "error-callback": () => {
-          setTurnstileToken(null);
-          setErrorMessage("Security verification failed. Please try again.");
-          setStatus("error");
-        },
-        "expired-callback": () => setTurnstileToken(null),
-      });
-    };
-
-    if (window.turnstile) {
-      window.turnstile.ready(renderTurnstile);
-    } else {
-      if (!script) {
-        script = document.createElement("script");
-        script.src = "https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit";
-        script.async = true;
-        script.defer = true;
-        document.head.appendChild(script);
-      }
-
-      script.addEventListener("load", renderTurnstile);
-    }
-
-    return () => {
-      cancelled = true;
-
-      if (script) {
-        script.removeEventListener("load", renderTurnstile);
-      }
-
-      if (turnstileWidgetId.current && window.turnstile) {
-        window.turnstile.remove(turnstileWidgetId.current);
-      }
-
-      turnstileWidgetId.current = null;
-    };
-  }, []);
+  const scriptPromise = useRef<Promise<void> | null>(null);
 
   const handleChange = (
     event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
     const { name, value } = event.target;
     setFormState((prev) => ({ ...prev, [name]: value }));
+
+    // Clear an old error as soon as the visitor edits the form.
+    if (status === "error") {
+      setStatus("idle");
+      setErrorMessage("");
+    }
   };
+
+  /**
+   * Load Cloudflare Turnstile once.
+   *
+   * This is deliberately inside useEffect rather than useState so browser-only
+   * DOM operations never execute during SSR.
+   */
+  useEffect(() => {
+    let cancelled = false;
+
+    const renderTurnstile = () => {
+      if (
+        cancelled ||
+        !turnstileRef.current ||
+        !window.turnstile ||
+        turnstileWidgetId.current
+      ) {
+        return;
+      }
+
+      try {
+        turnstileWidgetId.current = window.turnstile.render(
+          turnstileRef.current,
+          {
+            sitekey: TURNSTILE_SITE_KEY,
+            theme: "dark",
+            size: "flexible",
+            action: "contact",
+            callback: (token: string) => {
+              setTurnstileToken(token);
+              setStatus((current) =>
+                current === "error" ? "idle" : current,
+              );
+              setErrorMessage("");
+            },
+            "error-callback": (error) => {
+              console.error("Cloudflare Turnstile error:", error);
+              setTurnstileToken(null);
+              setErrorMessage(
+                "Security verification could not be loaded. Please refresh the page and try again.",
+              );
+              setStatus("error");
+            },
+            "expired-callback": () => {
+              setTurnstileToken(null);
+              setErrorMessage(
+                "Your security verification expired. Please complete it again.",
+              );
+              setStatus("error");
+            },
+          },
+        );
+      } catch (error) {
+        console.error("Failed to render Cloudflare Turnstile:", error);
+        setTurnstileToken(null);
+        setErrorMessage(
+          "Security verification could not be initialized. Please refresh the page and try again.",
+        );
+        setStatus("error");
+      }
+    };
+
+    const loadScript = (): Promise<void> => {
+      if (window.turnstile) {
+        return Promise.resolve();
+      }
+
+      if (scriptPromise.current) {
+        return scriptPromise.current;
+      }
+
+      scriptPromise.current = new Promise<void>((resolve, reject) => {
+        const existingScript = document.querySelector<HTMLScriptElement>(
+          'script[src="https://challenges.cloudflare.com/turnstile/v0/api.js"]',
+        );
+
+        if (existingScript) {
+          // The script may already be loading.
+          const checkReady = () => {
+            if (window.turnstile) {
+              resolve();
+            } else {
+              reject(new Error("Turnstile script loaded without API."));
+            }
+          };
+
+          existingScript.addEventListener("load", checkReady, { once: true });
+          existingScript.addEventListener(
+            "error",
+            () => reject(new Error("Unable to load Turnstile.")),
+            { once: true },
+          );
+
+          // It may have finished before the listeners were attached.
+          if (window.turnstile) {
+            resolve();
+          }
+
+          return;
+        }
+
+        const script = document.createElement("script");
+        script.src =
+          "https://challenges.cloudflare.com/turnstile/v0/api.js";
+        script.async = true;
+        script.defer = true;
+
+        script.onload = () => {
+          if (window.turnstile) {
+            resolve();
+          } else {
+            reject(new Error("Turnstile API is unavailable."));
+          }
+        };
+
+        script.onerror = () => {
+          reject(new Error("Unable to load Cloudflare Turnstile."));
+        };
+
+        document.head.appendChild(script);
+      });
+
+      return scriptPromise.current;
+    };
+
+    loadScript()
+      .then(() => {
+        if (!cancelled) {
+          renderTurnstile();
+        }
+      })
+      .catch((error) => {
+        console.error(error);
+        if (!cancelled) {
+          setErrorMessage(
+            "Security verification could not be loaded. Please refresh the page and try again.",
+          );
+          setStatus("error");
+        }
+      });
+
+    return () => {
+      cancelled = true;
+
+      if (turnstileWidgetId.current && window.turnstile) {
+        try {
+          window.turnstile.remove(turnstileWidgetId.current);
+        } catch (error) {
+          console.warn("Could not remove Turnstile widget:", error);
+        }
+      }
+
+      turnstileWidgetId.current = null;
+      setTurnstileToken(null);
+    };
+  }, []);
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
     if (status === "sending") return;
 
-    // If Turnstile is configured, require a valid token.
-    if (TURNSTILE_SITE_KEY && !turnstileToken) {
+    setErrorMessage("");
+
+    if (!formState.name.trim()) {
+      setErrorMessage("Please enter your name.");
+      setStatus("error");
+      return;
+    }
+
+    if (!formState.email.trim()) {
+      setErrorMessage("Please enter your email address.");
+      setStatus("error");
+      return;
+    }
+
+    if (!formState.message.trim()) {
+      setErrorMessage("Please enter a message.");
+      setStatus("error");
+      return;
+    }
+
+    if (!turnstileToken) {
       setErrorMessage("Please complete the security check.");
       setStatus("error");
       return;
     }
 
     setStatus("sending");
-    setErrorMessage("");
 
     try {
       const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
+          Accept: "application/json",
         },
         body: JSON.stringify({
           access_key: WEB3FORMS_ACCESS_KEY,
           subject: "New Contact Form Submission from BFash",
-          name: formState.name,
-          email: formState.email,
-          message: formState.message,
+          from_name: "BFash Website",
+          name: formState.name.trim(),
+          email: formState.email.trim(),
+          message: formState.message.trim(),
 
-          // Web3Forms honeypot. It is intentionally hidden and should remain unchecked.
-          botcheck: false,
+          // Cloudflare Turnstile token.
+          "cf-turnstile-response": turnstileToken,
 
-          ...(turnstileToken
-            ? { "cf-turnstile-response": turnstileToken }
-            : {}),
+          // Honeypot spam field.
+          botcheck: "",
         }),
       });
 
-      const result = await response.json();
+      const result = await response.json().catch(() => null);
 
-      if (!response.ok || result.success !== true) {
+      if (!response.ok || result?.success !== true) {
         throw new Error(
-          result.message ||
-            result.body?.message ||
-            "Unable to submit. Please try again.",
+          result?.message ||
+            "Unable to submit your message. Please try again.",
         );
       }
 
       setFormState(initialFormState);
-      setTurnstileToken(null);
       setStatus("success");
+      setTurnstileToken(null);
 
       if (turnstileWidgetId.current && window.turnstile) {
-        window.turnstile.reset(turnstileWidgetId.current);
+        try {
+          window.turnstile.reset(turnstileWidgetId.current);
+        } catch (error) {
+          console.warn("Could not reset Turnstile widget:", error);
+        }
       }
     } catch (error) {
+      console.error("Contact form submission error:", error);
+
       setErrorMessage(
         error instanceof Error
           ? error.message
-          : "Unable to submit. Please try again.",
+          : "Unable to submit your message. Please try again.",
       );
       setStatus("error");
+
+      if (turnstileWidgetId.current && window.turnstile) {
+        try {
+          window.turnstile.reset(turnstileWidgetId.current);
+        } catch (resetError) {
+          console.warn("Could not reset Turnstile widget:", resetError);
+        }
+      }
+
+      setTurnstileToken(null);
     }
   };
 
+  // Success state
   if (status === "success") {
     return (
       <div className="glass-card rounded-2xl p-8 md:p-10 text-center">
         <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-brand/20 mb-4">
           <CheckCircle className="h-8 w-8 text-brand" />
         </div>
+
         <h3 className="text-2xl font-display font-bold text-white mb-2">
-          You're all set! 🎉
+          You&apos;re all set! 🎉
         </h3>
+
         <p className="text-muted-foreground max-w-sm mx-auto">
           We received your message and will reply within one business day.
         </p>
+
+        <button
+          type="button"
+          onClick={() => setStatus("idle")}
+          className="mt-6 text-sm text-brand hover:underline"
+        >
+          Send another message
+        </button>
       </div>
     );
   }
@@ -189,24 +355,29 @@ export function ContactForm() {
     <div className="glass-card rounded-2xl p-6 md:p-8">
       <div className="text-center mb-6">
         <h3 className="text-2xl font-display font-bold gradient-text">
-          Let's Talk
+          Let&apos;s Talk
         </h3>
+
         <p className="text-sm text-muted-foreground mt-1">
-          We'll get back to you within 24 hours
+          We&apos;ll get back to you within 24 hours
         </p>
       </div>
 
       <form onSubmit={handleSubmit} noValidate className="space-y-4">
+        {/* Name */}
         <div>
           <label className="text-sm font-medium text-white/80 block mb-1.5">
             Your Name <span className="text-brand">*</span>
           </label>
+
           <div className="relative">
             <User className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+
             <input
               type="text"
               name="name"
               required
+              autoComplete="name"
               value={formState.name}
               onChange={handleChange}
               placeholder="John Doe"
@@ -215,16 +386,20 @@ export function ContactForm() {
           </div>
         </div>
 
+        {/* Email */}
         <div>
           <label className="text-sm font-medium text-white/80 block mb-1.5">
             Email Address <span className="text-brand">*</span>
           </label>
+
           <div className="relative">
             <Mail className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+
             <input
               type="email"
               name="email"
               required
+              autoComplete="email"
               value={formState.email}
               onChange={handleChange}
               placeholder="john@company.com"
@@ -233,12 +408,15 @@ export function ContactForm() {
           </div>
         </div>
 
+        {/* Message */}
         <div>
           <label className="text-sm font-medium text-white/80 block mb-1.5">
             Message <span className="text-brand">*</span>
           </label>
+
           <div className="relative">
             <MessageSquare className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
+
             <textarea
               name="message"
               required
@@ -251,24 +429,23 @@ export function ContactForm() {
           </div>
         </div>
 
-        {/* Honeypot: real visitors never interact with this field. */}
-        <input
-          type="checkbox"
-          name="botcheck"
-          tabIndex={-1}
-          autoComplete="off"
-          className="hidden"
-          style={{ display: "none" }}
+        {/* Cloudflare Turnstile */}
+        <div
+          ref={turnstileRef}
+          className="flex justify-center py-2 min-h-[65px]"
         />
 
-        {TURNSTILE_SITE_KEY && (
-          <div ref={turnstileRef} className="flex justify-center py-2" />
-        )}
-
+        {/* Error */}
         {status === "error" && (
-          <p className="text-sm text-red-400 text-center">{errorMessage}</p>
+          <p
+            role="alert"
+            className="text-sm text-red-400 text-center"
+          >
+            {errorMessage}
+          </p>
         )}
 
+        {/* Submit */}
         <button
           type="submit"
           disabled={status === "sending"}
@@ -288,9 +465,7 @@ export function ContactForm() {
         </button>
 
         <p className="text-xs text-muted-foreground text-center mt-2">
-          {TURNSTILE_SITE_KEY
-            ? "Protected by Cloudflare Turnstile."
-            : "Protected by spam filtering."}
+          Protected by Cloudflare Turnstile. No spam, ever.
         </p>
       </form>
     </div>
