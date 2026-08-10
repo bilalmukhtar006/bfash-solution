@@ -14,8 +14,8 @@ export default defineConfig({
         routesDirectory: "routes",
       },
     }),
-    react(),
     nitro(),
+    react(),
     tsconfigPaths(),
   ],
 });
