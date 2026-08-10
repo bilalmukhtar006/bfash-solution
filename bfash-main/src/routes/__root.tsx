@@ -9,10 +9,12 @@ import {
 } from "@tanstack/react-router";
 import { type ReactNode } from "react";
 
-import appCss from "../index.css?url";
 import { Header } from "../components/site/Header";
 import { Footer } from "../components/site/Footer";
 import { CookieBanner } from "../components/site/CookieBanner";
+
+// ✅ Import CSS directly (not as URL)
+import "../index.css";
 
 function NotFoundComponent() {
   return (
@@ -116,17 +118,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
       {
         property: "og:image",
-        content:
-          "https://bfash.us/logo.png",
+        content: "https://bfash.us/logo.png",
       },
       {
         name: "twitter:image",
-        content:
-          "https://bfash.us/logo.png",
+        content: "https://bfash.us/logo.png",
       },
     ],
     links: [
-      { rel: "stylesheet", href: appCss },
       { rel: "canonical", href: "https://bfash.us/" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       {
@@ -152,7 +151,7 @@ function RootShell({ children }: { children: ReactNode }) {
       <head>
         <HeadContent />
 
-        {/* Google Analytics */}
+        {/* ✅ Google Analytics - moved to head */}
         <script
           async
           src="https://www.googletagmanager.com/gtag/js?id=G-P9KF8CGYBL"
