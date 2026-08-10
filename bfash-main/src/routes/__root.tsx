@@ -43,7 +43,6 @@ function ErrorComponent({
   error: Error;
   reset: () => void;
 }) {
-  // Keep error reporting local and independent of Lovable.
   console.error("[BFash] Route error:", error);
 
   const router = useRouter();
@@ -118,12 +117,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         property: "og:image",
         content:
-          "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/e4d94314-26a0-4976-80ca-01b0580f6cf2",
+          "https://bfash.us/logo.png",
       },
       {
         name: "twitter:image",
         content:
-          "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/e4d94314-26a0-4976-80ca-01b0580f6cf2",
+          "https://bfash.us/logo.png",
       },
     ],
     links: [
