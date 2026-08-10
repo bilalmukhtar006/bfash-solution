@@ -4,25 +4,15 @@ import tailwindcss from '@tailwindcss/vite';
 import tsconfigPaths from 'vite-tsconfig-paths';
 
 export default defineConfig({
-  root: 'public',
+  // ✅ Tell Vite that index.html is in the src folder
+  root: 'src',
   plugins: [
     tailwindcss(),
     react(),
     tsconfigPaths(),
   ],
   build: {
+    // ✅ Output to dist folder at project root
     outDir: '../dist',
-    // ✅ This tells Vite where to find the source files
-    rollupOptions: {
-      input: {
-        main: new URL('./public/index.html', import.meta.url).pathname,
-      },
-    },
-  },
-  // ✅ This tells Vite to resolve from the project root
-  resolve: {
-    alias: {
-      '@': new URL('./src', import.meta.url).pathname,
-    },
   },
 });
