@@ -47,3 +47,36 @@ const html = `<!doctype html>
 
 fs.writeFileSync(path.join(publicDir, 'index.html'), html);
 console.log('Generated static index.html in', publicDir, 'referencing:', css, js);
+
+// If we built into .output/public, also copy to .vercel/output/static so Vercel static-build finds it
+try {
+  const cwd = process.cwd();
+  const localPublic = path.resolve('.output/public');
+  const vercelStatic = path.resolve('.vercel/output/static');
+  if (publicDir === localPublic) {
+    // ensure target exists
+    fs.rmSync(vercelStatic, { recursive: true, force: true });
+    fs.mkdirSync(vercelStatic, { recursive: true });
+
+    // recursive copy function
+    const copyRecursive = (src, dest) => {
+      const entries = fs.readdirSync(src, { withFileTypes: true });
+      for (const entry of entries) {
+        const srcPath = path.join(src, entry.name);
+        const destPath = path.join(dest, entry.name);
+        if (entry.isDirectory()) {
+          fs.mkdirSync(destPath, { recursive: true });
+          copyRecursive(srcPath, destPath);
+        } else if (entry.isFile()) {
+          fs.copyFileSync(srcPath, destPath);
+        }
+      }
+    };
+
+    copyRecursive(publicDir, vercelStatic);
+    console.log('Copied', publicDir, '->', vercelStatic);
+  }
+} catch (err) {
+  console.error('Failed to copy to .vercel/output/static:', err);
+}
+
