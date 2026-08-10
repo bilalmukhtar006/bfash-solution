@@ -10,9 +10,10 @@ if (!fs.existsSync(publicDir)) {
 }
 
 const files = fs.readdirSync(assetsDir);
-const css = files.find(f => f.includes('index-') && f.endsWith('.css'));
-// pick largest index JS (likely the main bundle)
-const jsCandidates = files.filter(f => f.includes('index-') && f.endsWith('.js'));
+const css = files.find(f => f.startsWith('index-') && f.endsWith('.css'));
+// prefer JS files that start with index- (main bundle), fallback to containing index-
+let jsCandidates = files.filter(f => f.startsWith('index-') && f.endsWith('.js'));
+if (jsCandidates.length === 0) jsCandidates = files.filter(f => f.includes('index-') && f.endsWith('.js'));
 let js = jsCandidates.sort((a,b)=>b.length - a.length)[0] || jsCandidates[0];
 
 const cssTag = css ? `<link rel="stylesheet" href="/assets/${css}">` : '';
