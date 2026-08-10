@@ -14,7 +14,6 @@ import { Footer } from "../components/site/Footer";
 import { CookieBanner } from "../components/site/CookieBanner";
 
 // ✅ Import CSS directly (not as URL)
-import "../index.css";
 
 function NotFoundComponent() {
   return (
