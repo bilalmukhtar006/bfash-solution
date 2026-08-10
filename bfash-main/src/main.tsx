@@ -1,17 +1,4 @@
-import ReactDOM from "react-dom/client";
-import { RouterProvider } from "@tanstack/react-router";
-import { getRouter } from "./router";
-import "./index.css";
-
-const router = getRouter();
-
-const rootElement = document.getElementById("root");
-
-if (!rootElement) {
-  throw new Error("Root element #root was not found.");
-}
-
-if (!rootElement.innerHTML) {
-  const root = ReactDOM.createRoot(rootElement);
-  root.render(<RouterProvider router={router} />);
-}
+// TanStack Start uses src/client.tsx as the client entry point.
+// This file is intentionally kept empty so the old Vite SPA entry
+// cannot mount a second router.
+export {};
