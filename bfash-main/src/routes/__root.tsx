@@ -7,10 +7,9 @@ import {
   HeadContent,
   Scripts,
 } from "@tanstack/react-router";
-import { useEffect, type ReactNode, useRef } from "react";
+import { type ReactNode } from "react";
 
 import appCss from "../index.css?url";
-import { reportLovableError } from "../lib/lovable-error-reporting";
 import { Header } from "../components/site/Header";
 import { Footer } from "../components/site/Footer";
 import { CookieBanner } from "../components/site/CookieBanner";
@@ -37,25 +36,29 @@ function NotFoundComponent() {
   );
 }
 
-function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
-  console.error(error);
+function ErrorComponent({
+  error,
+  reset,
+}: {
+  error: Error;
+  reset: () => void;
+}) {
+  // Keep error reporting local and independent of Lovable.
+  console.error("[BFash] Route error:", error);
+
   const router = useRouter();
-  const errorReported = useRef(false);
-  
-  useEffect(() => {
-    if (!errorReported.current) {
-      errorReported.current = true;
-      reportLovableError(error, { boundary: "tanstack_root_error_component" });
-    }
-  }, []);
-  
+
   return (
     <div className="flex min-h-screen items-center justify-center px-4">
       <div className="max-w-md text-center">
         <h1 className="text-xl font-semibold">This page didn't load</h1>
-        <p className="mt-2 text-sm text-muted-foreground">Try refreshing or head back home.</p>
+        <p className="mt-2 text-sm text-muted-foreground">
+          Try refreshing or head back home.
+        </p>
+
         <div className="mt-6 flex flex-wrap justify-center gap-2">
           <button
+            type="button"
             onClick={() => {
               router.invalidate();
               reset();
@@ -64,6 +67,7 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
           >
             Try again
           </button>
+
           <a
             href="/"
             className="rounded-md border border-border bg-background px-4 py-2 text-sm font-medium"
@@ -96,10 +100,16 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "https://bfash.us/" },
-      { name: "robots", content: "index, follow, max-snippet:-1, max-image-preview:large" },
+      {
+        name: "robots",
+        content: "index, follow, max-snippet:-1, max-image-preview:large",
+      },
       { name: "X-Robots-Tag", content: "index, follow" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Affordable SEO Agency – BFash Solution" },
+      {
+        name: "twitter:title",
+        content: "Affordable SEO Agency – BFash Solution",
+      },
       {
         name: "twitter:description",
         content:
@@ -120,7 +130,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "stylesheet", href: appCss },
       { rel: "canonical", href: "https://bfash.us/" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
-      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
+      {
+        rel: "preconnect",
+        href: "https://fonts.gstatic.com",
+        crossOrigin: "anonymous",
+      },
       {
         rel: "stylesheet",
         href: "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap",
@@ -138,8 +152,12 @@ function RootShell({ children }: { children: ReactNode }) {
     <html lang="en">
       <head>
         <HeadContent />
-        {/* ✅ GOOGLE TAG (gtag.js) - Added directly in head */}
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-P9KF8CGYBL"></script>
+
+        {/* Google Analytics */}
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-P9KF8CGYBL"
+        />
         <script
           dangerouslySetInnerHTML={{
             __html: `
@@ -151,6 +169,7 @@ function RootShell({ children }: { children: ReactNode }) {
           }}
         />
       </head>
+
       <body>
         {children}
         <Scripts />
@@ -161,13 +180,15 @@ function RootShell({ children }: { children: ReactNode }) {
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
+
   return (
     <QueryClientProvider client={queryClient}>
-  <Header />
-  <main className="min-h-screen">
-    <Outlet />
-  </main>
-  <Footer />
-</QueryClientProvider>
+      <Header />
+      <main className="min-h-screen">
+        <Outlet />
+      </main>
+      <Footer />
+      <CookieBanner />
+    </QueryClientProvider>
   );
 }
