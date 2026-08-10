@@ -1,8 +1,7 @@
-// src/components/site/ContactForm.tsx
 "use client";
 
 import { FormEvent, useEffect, useRef, useState } from "react";
-import { ArrowRight, CheckCircle, Mail, User, MessageSquare } from "lucide-react";
+import { ArrowRight, CheckCircle, Mail, Phone, MessageSquare } from "lucide-react";
 
 const WEB3FORMS_ACCESS_KEY = "871b202d-31db-4929-9c44-4ab92415006e";
 const TURNSTILE_SITE_KEY = "0x4AAAAAAEKr0mZEnZWnrBwm";
@@ -17,7 +16,7 @@ declare global {
   }
 }
 
-const initialFormState = { name: "", email: "", message: "" };
+const initialFormState = { email: "", phone: "", message: "" };
 
 export function ContactForm() {
   const [form, setForm] = useState(initialFormState);
@@ -110,7 +109,7 @@ export function ContactForm() {
     e.preventDefault();
     if (status === "sending") return;
 
-    if (!form.name.trim() || !form.email.trim() || !form.message.trim()) {
+    if (!form.email.trim() || !form.phone.trim() || !form.message.trim()) {
       setError("Please complete all required fields.");
       setStatus("error");
       return;
@@ -137,8 +136,8 @@ export function ContactForm() {
           access_key: WEB3FORMS_ACCESS_KEY,
           subject: "New Contact Form Submission from BFash",
           from_name: "BFash Website",
-          name: form.name.trim(),
           email: form.email.trim(),
+          phone: form.phone.trim(),
           message: form.message.trim(),
           "cf-turnstile-response": captchaToken,
           botcheck: "",
@@ -191,8 +190,6 @@ export function ContactForm() {
     <div
       className="rounded-2xl border border-white/10 bg-[#211536] p-6 md:p-8"
       style={{
-        // Deliberately avoid backdrop-filter/glass effects while diagnosing
-        // the reported browser-wide freeze.
         backdropFilter: "none",
         WebkitBackdropFilter: "none",
         transform: "none",
@@ -206,24 +203,7 @@ export function ContactForm() {
       </div>
 
       <form onSubmit={submit} noValidate className="space-y-4">
-        <div>
-          <label className="mb-1.5 block text-sm font-medium text-white/80">
-            Your Name <span className="text-brand">*</span>
-          </label>
-          <div className="relative">
-            <User className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
-            <input
-              name="name"
-              type="text"
-              autoComplete="name"
-              value={form.name}
-              onChange={change}
-              placeholder="John Doe"
-              className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 pl-10 text-white placeholder:text-muted-foreground outline-none"
-            />
-          </div>
-        </div>
-
+        {/* Email - Required */}
         <div>
           <label className="mb-1.5 block text-sm font-medium text-white/80">
             Email Address <span className="text-brand">*</span>
@@ -234,14 +214,36 @@ export function ContactForm() {
               name="email"
               type="email"
               autoComplete="email"
+              required
               value={form.email}
               onChange={change}
               placeholder="john@company.com"
-              className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 pl-10 text-white placeholder:text-muted-foreground outline-none"
+              className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 pl-10 text-white placeholder:text-muted-foreground outline-none focus:border-brand/50 focus:ring-1 focus:ring-brand/50"
             />
           </div>
         </div>
 
+        {/* Phone - Required */}
+        <div>
+          <label className="mb-1.5 block text-sm font-medium text-white/80">
+            Phone Number <span className="text-brand">*</span>
+          </label>
+          <div className="relative">
+            <Phone className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
+            <input
+              name="phone"
+              type="tel"
+              autoComplete="tel"
+              required
+              value={form.phone}
+              onChange={change}
+              placeholder="+1 234 567 890"
+              className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 pl-10 text-white placeholder:text-muted-foreground outline-none focus:border-brand/50 focus:ring-1 focus:ring-brand/50"
+            />
+          </div>
+        </div>
+
+        {/* Message - Required */}
         <div>
           <label className="mb-1.5 block text-sm font-medium text-white/80">
             Message <span className="text-brand">*</span>
@@ -251,10 +253,11 @@ export function ContactForm() {
             <textarea
               name="message"
               rows={4}
+              required
               value={form.message}
               onChange={change}
               placeholder="Tell us about your project..."
-              className="w-full resize-none rounded-xl border border-white/10 bg-white/5 px-4 py-3 pl-10 text-white placeholder:text-muted-foreground outline-none"
+              className="w-full resize-none rounded-xl border border-white/10 bg-white/5 px-4 py-3 pl-10 text-white placeholder:text-muted-foreground outline-none focus:border-brand/50 focus:ring-1 focus:ring-brand/50"
             />
           </div>
         </div>
@@ -275,10 +278,19 @@ export function ContactForm() {
         <button
           type="submit"
           disabled={status === "sending"}
-          className="flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-brand to-brand-strong px-6 py-3.5 font-medium text-white disabled:cursor-not-allowed disabled:opacity-60"
+          className="flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-brand to-brand-strong px-6 py-3.5 font-medium text-white transition-all hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-60"
         >
-          {status === "sending" ? "Sending..." : "Send Message"}
-          {status !== "sending" && <ArrowRight className="h-4 w-4" />}
+          {status === "sending" ? (
+            <>
+              <span>Sending</span>
+              <span className="inline-block h-4 w-4 animate-spin rounded-full border-2 border-white/30 border-t-white" />
+            </>
+          ) : (
+            <>
+              Send Message
+              <ArrowRight className="h-4 w-4" />
+            </>
+          )}
         </button>
 
         <p className="mt-2 text-center text-xs text-muted-foreground">
