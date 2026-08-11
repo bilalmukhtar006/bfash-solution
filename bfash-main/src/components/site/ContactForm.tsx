@@ -1,12 +1,47 @@
 "use client";
 
-import { useForm, ValidationError } from '@formspree/react';
-import { Mail, Phone, MessageSquare, ArrowRight, CheckCircle } from 'lucide-react';
+import { useState } from "react";
+import { Mail, Phone, MessageSquare, ArrowRight, CheckCircle } from "lucide-react";
+
+const FORMSPREE_ENDPOINT = "https://formspree.io/f/xnpadqyq";
 
 export function ContactForm() {
-  const [state, handleSubmit] = useForm('xnpadqyq');
+  const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
+  const [error, setError] = useState("");
 
-  if (state.succeeded) {
+  const submit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (status === "sending") return;
+
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+
+    setStatus("sending");
+    setError("");
+
+    try {
+      const response = await fetch(FORMSPREE_ENDPOINT, {
+        method: "POST",
+        body: formData,
+        headers: {
+          Accept: "application/json",
+        },
+      });
+
+      if (response.ok) {
+        setStatus("success");
+        form.reset();
+      } else {
+        const result = await response.json().catch(() => null);
+        throw new Error(result?.error || "Submission failed. Please try again.");
+      }
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Unable to submit. Please try again.");
+      setStatus("error");
+    }
+  };
+
+  if (status === "success") {
     return (
       <div className="rounded-2xl border border-white/10 bg-[#211536] p-8 md:p-10 text-center">
         <div className="mx-auto mb-4 grid h-16 w-16 place-items-center rounded-full bg-brand/20">
@@ -31,7 +66,7 @@ export function ContactForm() {
         </p>
       </div>
 
-      <form onSubmit={handleSubmit} noValidate className="space-y-4">
+      <form onSubmit={submit} noValidate className="space-y-4">
         <div>
           <label className="mb-1.5 block text-sm font-medium text-white/80">
             Email Address <span className="text-brand">*</span>
@@ -46,7 +81,6 @@ export function ContactForm() {
               className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 pl-10 text-white placeholder:text-muted-foreground outline-none focus:border-brand/50 focus:ring-1 focus:ring-brand/50"
             />
           </div>
-          <ValidationError field="email" errors={state.errors} className="text-sm text-red-400 mt-1 block" />
         </div>
 
         <div>
@@ -63,7 +97,6 @@ export function ContactForm() {
               className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 pl-10 text-white placeholder:text-muted-foreground outline-none focus:border-brand/50 focus:ring-1 focus:ring-brand/50"
             />
           </div>
-          <ValidationError field="phone" errors={state.errors} className="text-sm text-red-400 mt-1 block" />
         </div>
 
         <div>
@@ -80,15 +113,20 @@ export function ContactForm() {
               className="w-full resize-none rounded-xl border border-white/10 bg-white/5 px-4 py-3 pl-10 text-white placeholder:text-muted-foreground outline-none focus:border-brand/50 focus:ring-1 focus:ring-brand/50"
             />
           </div>
-          <ValidationError field="message" errors={state.errors} className="text-sm text-red-400 mt-1 block" />
         </div>
+
+        {status === "error" && (
+          <p role="alert" className="text-center text-sm text-red-400">
+            {error}
+          </p>
+        )}
 
         <button
           type="submit"
-          disabled={state.submitting}
+          disabled={status === "sending"}
           className="flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-brand to-brand-strong px-6 py-3.5 font-medium text-white transition-all hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-60"
         >
-          {state.submitting ? (
+          {status === "sending" ? (
             <>
               <span>Sending</span>
               <span className="inline-block h-4 w-4 animate-spin rounded-full border-2 border-white/30 border-t-white" />
