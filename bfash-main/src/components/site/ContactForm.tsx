@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { Mail, Phone, MessageSquare, ArrowRight, CheckCircle } from "lucide-react";
 
-const FORMSPREE_ENDPOINT = "https://formspree.io/f/xnpadqyq";
+const WEB3FORMS_ACCESS_KEY = "871b202d-31db-4929-9c44-4ab92415006e";
 
 export function ContactForm() {
   const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
@@ -16,27 +16,39 @@ export function ContactForm() {
     const form = e.currentTarget;
     const formData = new FormData(form);
 
+    // Add access key to form data
+    formData.append("access_key", WEB3FORMS_ACCESS_KEY);
+
     setStatus("sending");
     setError("");
 
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 15000);
+
     try {
-      const response = await fetch(FORMSPREE_ENDPOINT, {
+      const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
         body: formData,
-        headers: {
-          Accept: "application/json",
-        },
+        signal: controller.signal,
       });
 
-      if (response.ok) {
-        setStatus("success");
-        form.reset();
-      } else {
-        const result = await response.json().catch(() => null);
-        throw new Error(result?.error || "Submission failed. Please try again.");
+      clearTimeout(timeoutId);
+
+      const result = await response.json().catch(() => null);
+
+      if (!response.ok || result?.success !== true) {
+        throw new Error(result?.message || "Unable to submit. Please try again.");
       }
+
+      setStatus("success");
+      form.reset();
     } catch (err) {
-      setError(err instanceof Error ? err.message : "Unable to submit. Please try again.");
+      clearTimeout(timeoutId);
+      if (err instanceof Error && err.name === "AbortError") {
+        setError("Request timed out. Please check your connection.");
+      } else {
+        setError(err instanceof Error ? err.message : "Unable to submit. Please try again.");
+      }
       setStatus("error");
     }
   };
@@ -140,7 +152,7 @@ export function ContactForm() {
         </button>
 
         <p className="mt-2 text-center text-xs text-muted-foreground">
-          We'll reply within 24 hours
+          Protected by Web3Forms. No spam, ever.
         </p>
       </form>
     </div>
