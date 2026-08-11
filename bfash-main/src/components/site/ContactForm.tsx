@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { Mail, Phone, MessageSquare, ArrowRight, CheckCircle } from "lucide-react";
 
 const WEB3FORMS_ACCESS_KEY = "871b202d-31db-4929-9c44-4ab92415006e";
@@ -8,22 +8,21 @@ const WEB3FORMS_ACCESS_KEY = "871b202d-31db-4929-9c44-4ab92415006e";
 export function ContactForm() {
   const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
   const [error, setError] = useState("");
+  const formRef = useRef<HTMLFormElement>(null);
 
-  const submit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (status === "sending") return;
 
     const form = e.currentTarget;
     const formData = new FormData(form);
-
-    // Add access key to form data
     formData.append("access_key", WEB3FORMS_ACCESS_KEY);
 
     setStatus("sending");
     setError("");
 
     const controller = new AbortController();
-    const timeoutId = setTimeout(() => controller.abort(), 15000);
+    const timeout = setTimeout(() => controller.abort(), 15000);
 
     try {
       const response = await fetch("https://api.web3forms.com/submit", {
@@ -32,18 +31,18 @@ export function ContactForm() {
         signal: controller.signal,
       });
 
-      clearTimeout(timeoutId);
+      clearTimeout(timeout);
 
-      const result = await response.json().catch(() => null);
+      const result = await response.json();
 
-      if (!response.ok || result?.success !== true) {
-        throw new Error(result?.message || "Unable to submit. Please try again.");
+      if (!response.ok || !result.success) {
+        throw new Error(result.message || "Something went wrong. Please try again.");
       }
 
       setStatus("success");
       form.reset();
     } catch (err) {
-      clearTimeout(timeoutId);
+      clearTimeout(timeout);
       if (err instanceof Error && err.name === "AbortError") {
         setError("Request timed out. Please check your connection.");
       } else {
@@ -78,7 +77,8 @@ export function ContactForm() {
         </p>
       </div>
 
-      <form onSubmit={submit} noValidate className="space-y-4">
+      <form ref={formRef} onSubmit={handleSubmit} noValidate className="space-y-4">
+        {/* Email - Required */}
         <div>
           <label className="mb-1.5 block text-sm font-medium text-white/80">
             Email Address <span className="text-brand">*</span>
@@ -90,27 +90,28 @@ export function ContactForm() {
               name="email"
               required
               placeholder="john@company.com"
-              className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 pl-10 text-white placeholder:text-muted-foreground outline-none focus:border-brand/50 focus:ring-1 focus:ring-brand/50"
+              className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 pl-10 text-white placeholder:text-muted-foreground outline-none focus:border-brand/50 focus:ring-1 focus:ring-brand/50 transition-all"
             />
           </div>
         </div>
 
+        {/* Phone - Optional */}
         <div>
           <label className="mb-1.5 block text-sm font-medium text-white/80">
-            Phone Number <span className="text-brand">*</span>
+            Phone Number <span className="text-muted-foreground text-xs">(optional)</span>
           </label>
           <div className="relative">
             <Phone className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
             <input
               type="tel"
               name="phone"
-              required
               placeholder="+1 234 567 890"
-              className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 pl-10 text-white placeholder:text-muted-foreground outline-none focus:border-brand/50 focus:ring-1 focus:ring-brand/50"
+              className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 pl-10 text-white placeholder:text-muted-foreground outline-none focus:border-brand/50 focus:ring-1 focus:ring-brand/50 transition-all"
             />
           </div>
         </div>
 
+        {/* Message - Required */}
         <div>
           <label className="mb-1.5 block text-sm font-medium text-white/80">
             Message <span className="text-brand">*</span>
@@ -122,7 +123,7 @@ export function ContactForm() {
               rows={4}
               required
               placeholder="Tell us about your project..."
-              className="w-full resize-none rounded-xl border border-white/10 bg-white/5 px-4 py-3 pl-10 text-white placeholder:text-muted-foreground outline-none focus:border-brand/50 focus:ring-1 focus:ring-brand/50"
+              className="w-full resize-none rounded-xl border border-white/10 bg-white/5 px-4 py-3 pl-10 text-white placeholder:text-muted-foreground outline-none focus:border-brand/50 focus:ring-1 focus:ring-brand/50 transition-all"
             />
           </div>
         </div>
