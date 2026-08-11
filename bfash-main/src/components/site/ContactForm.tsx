@@ -23,86 +23,89 @@ export function ContactForm() {
   const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
   const [error, setError] = useState("");
   const [token, setToken] = useState<string | null>(null);
-  const [showCaptcha, setShowCaptcha] = useState(false);
+  const [captchaReady, setCaptchaReady] = useState(false);
 
   const captchaRef = useRef<HTMLDivElement>(null);
   const widgetRef = useRef<string | null>(null);
+  const isRendered = useRef(false);
 
+  // ✅ Load Turnstile immediately on mount
   useEffect(() => {
+    const loadTurnstile = () => {
+      if (isRendered.current) return;
+
+      const script = document.querySelector<HTMLScriptElement>(
+        'script[data-bfash-turnstile="1"]'
+      );
+
+      const init = () => {
+        if (!captchaRef.current || !window.turnstile) {
+          setTimeout(init, 200);
+          return;
+        }
+
+        if (isRendered.current) return;
+
+        try {
+          widgetRef.current = window.turnstile.render(captchaRef.current, {
+            sitekey: TURNSTILE_SITE_KEY,
+            theme: "dark",
+            callback: (value: string) => {
+              setToken(value);
+              setCaptchaReady(true);
+            },
+            "error-callback": () => {
+              setToken(null);
+              setCaptchaReady(false);
+            },
+            "expired-callback": () => {
+              setToken(null);
+              setCaptchaReady(false);
+            },
+          });
+          isRendered.current = true;
+          setCaptchaReady(true);
+        } catch (err) {
+          console.error("Turnstile render error:", err);
+        }
+      };
+
+      if (!script) {
+        const newScript = document.createElement("script");
+        newScript.src = "https://challenges.cloudflare.com/turnstile/v0/api.js";
+        newScript.async = true;
+        newScript.defer = true;
+        newScript.dataset.bfashTurnstile = "1";
+        newScript.onload = init;
+        newScript.onerror = () => {
+          setError("Security service unavailable. Please refresh.");
+          setStatus("error");
+        };
+        document.head.appendChild(newScript);
+      } else {
+        init();
+      }
+    };
+
+    loadTurnstile();
+
     return () => {
       if (widgetRef.current && window.turnstile) {
-        try { window.turnstile.remove(widgetRef.current); } catch {}
+        try {
+          window.turnstile.remove(widgetRef.current);
+        } catch {}
       }
       widgetRef.current = null;
+      isRendered.current = false;
     };
   }, []);
 
-  const change = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
-  ) => {
+  const change = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setForm((v) => ({ ...v, [e.target.name]: e.target.value }));
     if (status === "error") {
       setStatus("idle");
       setError("");
     }
-  };
-
-  const loadCaptcha = async (): Promise<string> => {
-    setShowCaptcha(true);
-
-    if (!window.turnstile) {
-      await new Promise<void>((resolve, reject) => {
-        const existing = document.querySelector<HTMLScriptElement>(
-          'script[data-bfash-turnstile="1"]',
-        );
-
-        if (existing) {
-          existing.addEventListener("load", () => resolve(), { once: true });
-          existing.addEventListener(
-            "error",
-            () => reject(new Error("Cloudflare Turnstile could not load.")),
-            { once: true },
-          );
-          return;
-        }
-
-        const script = document.createElement("script");
-        script.src = "https://challenges.cloudflare.com/turnstile/v0/api.js";
-        script.async = true;
-        script.defer = true;
-        script.dataset.bfashTurnstile = "1";
-        script.onload = () => resolve();
-        script.onerror = () =>
-          reject(new Error("Cloudflare Turnstile could not load."));
-        document.head.appendChild(script);
-      });
-    }
-
-    if (!captchaRef.current || !window.turnstile) {
-      throw new Error("Security verification is unavailable.");
-    }
-
-    if (widgetRef.current) {
-      return token || "";
-    }
-
-    return await new Promise<string>((resolve, reject) => {
-      widgetRef.current = window.turnstile!.render(captchaRef.current!, {
-        sitekey: TURNSTILE_SITE_KEY,
-        theme: "dark",
-        callback: (value: string) => {
-          setToken(value);
-          resolve(value);
-        },
-        "error-callback": () => {
-          setToken(null);
-          reject(new Error("Cloudflare verification failed. Please try again."));
-        },
-        "expired-callback": () => {
-          setToken(null);
-        },
-      });
-    });
   };
 
   const submit = async (e: FormEvent<HTMLFormElement>) => {
@@ -115,23 +118,27 @@ export function ContactForm() {
       return;
     }
 
+    if (!token) {
+      setError("Please complete the security check.");
+      setStatus("error");
+      return;
+    }
+
+    setStatus("sending");
+    setError("");
+
+    // ✅ 15-second timeout to prevent freezing
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 15000);
+
     try {
-      setError("");
-
-      let captchaToken = token;
-      if (!captchaToken) {
-        setStatus("idle");
-        captchaToken = await loadCaptcha();
-      }
-
-      setStatus("sending");
-
       const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
           Accept: "application/json",
         },
+        signal: controller.signal,
         body: JSON.stringify({
           access_key: WEB3FORMS_ACCESS_KEY,
           subject: "New Contact Form Submission from BFash",
@@ -139,10 +146,12 @@ export function ContactForm() {
           email: form.email.trim(),
           phone: form.phone.trim(),
           message: form.message.trim(),
-          "cf-turnstile-response": captchaToken,
+          "cf-turnstile-response": token,
           botcheck: "",
         }),
       });
+
+      clearTimeout(timeoutId);
 
       const result = await response.json().catch(() => null);
 
@@ -152,21 +161,33 @@ export function ContactForm() {
 
       setForm(initialFormState);
       setToken(null);
+      setCaptchaReady(false);
       setStatus("success");
 
+      // Reset Turnstile
       if (widgetRef.current && window.turnstile) {
-        try { window.turnstile.remove(widgetRef.current); } catch {}
+        try {
+          window.turnstile.reset(widgetRef.current);
+        } catch {}
       }
-      widgetRef.current = null;
-      setShowCaptcha(false);
-    } catch (e) {
-      setError(e instanceof Error ? e.message : "Unable to submit. Please try again.");
+      isRendered.current = false;
+    } catch (err) {
+      clearTimeout(timeoutId);
+      if (err instanceof Error && err.name === "AbortError") {
+        setError("Request timed out. Please check your connection.");
+      } else {
+        setError(err instanceof Error ? err.message : "Unable to submit. Please try again.");
+      }
       setStatus("error");
-      setToken(null);
 
+      // Reset Turnstile on error
       if (widgetRef.current && window.turnstile) {
-        try { window.turnstile.reset(widgetRef.current); } catch {}
+        try {
+          window.turnstile.reset(widgetRef.current);
+        } catch {}
       }
+      setToken(null);
+      setCaptchaReady(false);
     }
   };
 
@@ -187,14 +208,7 @@ export function ContactForm() {
   }
 
   return (
-    <div
-      className="rounded-2xl border border-white/10 bg-[#211536] p-6 md:p-8"
-      style={{
-        backdropFilter: "none",
-        WebkitBackdropFilter: "none",
-        transform: "none",
-      }}
-    >
+    <div className="rounded-2xl border border-white/10 bg-[#211536] p-6 md:p-8">
       <div className="mb-6 text-center">
         <h3 className="text-2xl font-display font-bold gradient-text">Let&apos;s Talk</h3>
         <p className="mt-1 text-sm text-muted-foreground">
@@ -203,7 +217,6 @@ export function ContactForm() {
       </div>
 
       <form onSubmit={submit} noValidate className="space-y-4">
-        {/* Email - Required */}
         <div>
           <label className="mb-1.5 block text-sm font-medium text-white/80">
             Email Address <span className="text-brand">*</span>
@@ -223,7 +236,6 @@ export function ContactForm() {
           </div>
         </div>
 
-        {/* Phone - Required */}
         <div>
           <label className="mb-1.5 block text-sm font-medium text-white/80">
             Phone Number <span className="text-brand">*</span>
@@ -243,7 +255,6 @@ export function ContactForm() {
           </div>
         </div>
 
-        {/* Message - Required */}
         <div>
           <label className="mb-1.5 block text-sm font-medium text-white/80">
             Message <span className="text-brand">*</span>
@@ -262,12 +273,10 @@ export function ContactForm() {
           </div>
         </div>
 
-        {showCaptcha && (
-          <div
-            ref={captchaRef}
-            className="flex min-h-[65px] justify-center py-2"
-          />
-        )}
+        {/* Turnstile - Always visible */}
+        <div className="flex min-h-[65px] justify-center py-2">
+          <div ref={captchaRef} />
+        </div>
 
         {status === "error" && (
           <p role="alert" className="text-center text-sm text-red-400">
@@ -277,7 +286,7 @@ export function ContactForm() {
 
         <button
           type="submit"
-          disabled={status === "sending"}
+          disabled={status === "sending" || !captchaReady}
           className="flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-brand to-brand-strong px-6 py-3.5 font-medium text-white transition-all hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-60"
         >
           {status === "sending" ? (
