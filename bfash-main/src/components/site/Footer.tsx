@@ -149,7 +149,7 @@ export function Footer() {
 
       {/* Copyright */}
       <div className="border-t border-border py-6 text-center text-xs text-muted-foreground">
-        © {new Date().getFullYear()} BFash Solution 2024. All rights reserved.
+        © {new Date().getFullYear()} BFash Solution. All rights reserved.
       </div>
     </footer>
   );
