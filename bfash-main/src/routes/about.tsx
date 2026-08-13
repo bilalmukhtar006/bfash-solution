@@ -9,6 +9,8 @@ import {
   PencilRuler,
   Rocket,
   BarChart3,
+  Linkedin,
+  Mail,
 } from "lucide-react";
 
 export const Route = createFileRoute("/about")({
@@ -20,7 +22,10 @@ export const Route = createFileRoute("/about")({
         content:
           "Meet the team behind BFash Solutions — our mission, values, and the process we use to deliver award-worthy digital work.",
       },
-      { property: "og:title", content: "About BFash Solutions" },
+      {
+        property: "og:title",
+        content: "About BFash Solutions",
+      },
       {
         property: "og:description",
         content:
@@ -84,8 +89,10 @@ const team = [
   },
   {
     name: "Abraham Boutros",
-    role: "Marketing Manager",
+    role: "Marketing Manager / Sales Manager",
     image: "/Boutros.jpg",
+    linkedin: "https://www.linkedin.com/in/abrahamboutros/",
+    email: "abraham@bfash.us",
   },
   {
     name: "Daniel Reyes",
@@ -108,19 +115,24 @@ const team = [
 function About() {
   return (
     <>
+      {/* Hero */}
       <PageHero
         eyebrow="About Us"
         title="We turn ambitious brands into category leaders"
         subtitle="BFash Solutions is a full-service digital agency. We pair strategic thinking with sharp execution to help founders, marketers, and operators win online."
       />
 
+      {/* Mission */}
       <Section
         title="Our Mission"
         subtitle="To make world-class digital craftsmanship — strategy, design, engineering, and growth — accessible to brands ready to scale, without the bloat of a traditional agency."
       >
         <div className="grid md:grid-cols-2 gap-6">
           {values.map((v) => (
-            <div key={v.title} className="glass-card rounded-2xl p-7">
+            <div
+              key={v.title}
+              className="glass-card rounded-2xl p-7"
+            >
               <div className="grid h-11 w-11 place-items-center rounded-xl bg-brand/15 border border-brand/30 mb-4">
                 <v.icon className="h-5 w-5 text-brand" />
               </div>
@@ -137,6 +149,7 @@ function About() {
         </div>
       </Section>
 
+      {/* Process */}
       <Section
         eyebrow="Our Process"
         title="A framework built for clarity and momentum"
@@ -170,6 +183,7 @@ function About() {
         </div>
       </Section>
 
+      {/* Team */}
       <Section
         eyebrow="The Team"
         title="Meet the people building it with you"
@@ -181,11 +195,12 @@ function About() {
               key={t.name}
               className="glass-card rounded-2xl p-6 text-center hover:-translate-y-1 transition-transform"
             >
+              {/* Profile picture */}
               <div className="mx-auto h-20 w-20 rounded-full overflow-hidden bg-gradient-to-br from-brand to-brand-strong grid place-items-center text-2xl font-display font-bold text-white mb-4">
                 {t.image ? (
                   <img
                     src={t.image}
-                    alt={`${t.name} profile`}
+                    alt={`${t.name} profile photo`}
                     className="h-full w-full object-cover"
                   />
                 ) : (
@@ -196,9 +211,40 @@ function About() {
                 )}
               </div>
 
-              <h3 className="font-display font-bold">{t.name}</h3>
+              {/* Name */}
+              <h3 className="font-display font-bold">
+                {t.name}
+              </h3>
 
-              <p className="text-sm text-brand">{t.role}</p>
+              {/* Role */}
+              <p className="text-sm text-brand">
+                {t.role}
+              </p>
+
+              {/* Abraham's contact information */}
+              {t.email && (
+                <a
+                  href={`mailto:${t.email}`}
+                  className="mt-3 flex items-center justify-center gap-2 text-sm text-muted-foreground hover:text-brand transition-colors"
+                >
+                  <Mail className="h-4 w-4" />
+                  <span>{t.email}</span>
+                </a>
+              )}
+
+              {/* Abraham's LinkedIn */}
+              {t.linkedin && (
+                <a
+                  href={t.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`Open ${t.name}'s LinkedIn profile`}
+                  className="mt-3 inline-flex items-center justify-center gap-2 text-sm text-brand hover:text-foreground transition-colors"
+                >
+                  <Linkedin className="h-4 w-4" />
+                  <span>LinkedIn Profile</span>
+                </a>
+              )}
             </div>
           ))}
         </div>
