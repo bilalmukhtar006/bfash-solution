@@ -181,20 +181,20 @@ function About() {
               key={t.name}
               className="glass-card rounded-2xl p-6 text-center hover:-translate-y-1 transition-transform"
             >
-              {t.image ? (
-                <img
-                  src={t.image}
-                  alt={`${t.name} - ${t.role}`}
-                  className="mx-auto h-20 w-20 rounded-full object-cover mb-4 border-2 border-brand/40"
-                />
-              ) : (
-                <div className="mx-auto h-20 w-20 rounded-full bg-gradient-to-br from-brand to-brand-strong grid place-items-center text-2xl font-display font-bold text-white mb-4">
-                  {t.name
+              <div className="mx-auto h-20 w-20 rounded-full overflow-hidden bg-gradient-to-br from-brand to-brand-strong grid place-items-center text-2xl font-display font-bold text-white mb-4">
+                {t.image ? (
+                  <img
+                    src={t.image}
+                    alt={`${t.name} profile`}
+                    className="h-full w-full object-cover"
+                  />
+                ) : (
+                  t.name
                     .split(" ")
                     .map((n) => n[0])
-                    .join("")}
-                </div>
-              )}
+                    .join("")
+                )}
+              </div>
 
               <h3 className="font-display font-bold">{t.name}</h3>
 
