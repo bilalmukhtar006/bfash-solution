@@ -4,10 +4,10 @@ import tailwindcss from "@tailwindcss/vite";
 import tsconfigPaths from "vite-tsconfig-paths";
 
 export default defineConfig({
-  // index.html is located inside the src folder
+  // index.html is inside src
   root: "src",
 
-  // The actual public folder is one level above src
+  // public is beside src, not inside src
   publicDir: "../public",
 
   plugins: [
@@ -17,7 +17,7 @@ export default defineConfig({
   ],
 
   build: {
-    // Build output: bfash-main/dist
+    // Output to bfash-main/dist
     outDir: "../dist",
   },
 });
