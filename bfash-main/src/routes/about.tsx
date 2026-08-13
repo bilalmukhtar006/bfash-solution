@@ -23,7 +23,8 @@ export const Route = createFileRoute("/about")({
       { property: "og:title", content: "About BFash Solutions" },
       {
         property: "og:description",
-        content: "Mission, values and process behind a premium digital agency.",
+        content:
+          "Mission, values and process behind a premium digital agency.",
       },
     ],
   }),
@@ -77,12 +78,31 @@ const steps = [
 ];
 
 const team = [
-  { name: "Bilal Fashan", role: "Founder & Strategy Director" },
-  { name: "Aisha Khan", role: "Head of Design" },
-  { name: "Daniel Reyes", role: "SEO & Growth Lead" },
-  { name: "Sara Lin", role: "Amazon Specialist" },
-  { name: "Marcus Webb", role: "Lead Developer" },
-  { name: "Nora Patel", role: "Client Success" },
+  {
+    name: "Bilal Fashan",
+    role: "Founder & Strategy Director",
+  },
+  {
+    name: "Abraham Boutros",
+    role: "Marketing Manager",
+    image: "/Boutros.jpg",
+  },
+  {
+    name: "Daniel Reyes",
+    role: "SEO & Growth Lead",
+  },
+  {
+    name: "Sara Lin",
+    role: "Amazon Specialist",
+  },
+  {
+    name: "Marcus Webb",
+    role: "Lead Developer",
+  },
+  {
+    name: "Nora Patel",
+    role: "Client Success",
+  },
 ];
 
 function About() {
@@ -104,43 +124,80 @@ function About() {
               <div className="grid h-11 w-11 place-items-center rounded-xl bg-brand/15 border border-brand/30 mb-4">
                 <v.icon className="h-5 w-5 text-brand" />
               </div>
-              <h3 className="font-display font-bold text-lg mb-2">{v.title}</h3>
-              <p className="text-muted-foreground leading-relaxed">{v.desc}</p>
+
+              <h3 className="font-display font-bold text-lg mb-2">
+                {v.title}
+              </h3>
+
+              <p className="text-muted-foreground leading-relaxed">
+                {v.desc}
+              </p>
             </div>
           ))}
         </div>
       </Section>
 
-      <Section eyebrow="Our Process" title="A framework built for clarity and momentum" center>
+      <Section
+        eyebrow="Our Process"
+        title="A framework built for clarity and momentum"
+        center
+      >
         <div className="relative grid md:grid-cols-4 gap-6">
           <div className="absolute top-6 left-0 right-0 h-px bg-gradient-to-r from-transparent via-brand/40 to-transparent hidden md:block" />
+
           {steps.map((s, i) => (
-            <div key={s.title} className="relative glass-card rounded-2xl p-6 text-center">
+            <div
+              key={s.title}
+              className="relative glass-card rounded-2xl p-6 text-center"
+            >
               <div className="mx-auto grid h-12 w-12 place-items-center rounded-full bg-gradient-to-br from-brand to-brand-strong brand-glow mb-4">
                 <s.icon className="h-5 w-5 text-white" />
               </div>
-              <div className="text-xs uppercase tracking-wider text-brand mb-1">Step {i + 1}</div>
-              <h3 className="font-display font-bold text-lg mb-2">{s.title}</h3>
-              <p className="text-sm text-muted-foreground leading-relaxed">{s.desc}</p>
+
+              <div className="text-xs uppercase tracking-wider text-brand mb-1">
+                Step {i + 1}
+              </div>
+
+              <h3 className="font-display font-bold text-lg mb-2">
+                {s.title}
+              </h3>
+
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                {s.desc}
+              </p>
             </div>
           ))}
         </div>
       </Section>
 
-      <Section eyebrow="The Team" title="Meet the people building it with you" center>
+      <Section
+        eyebrow="The Team"
+        title="Meet the people building it with you"
+        center
+      >
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {team.map((t) => (
             <div
               key={t.name}
               className="glass-card rounded-2xl p-6 text-center hover:-translate-y-1 transition-transform"
             >
-              <div className="mx-auto h-20 w-20 rounded-full bg-gradient-to-br from-brand to-brand-strong grid place-items-center text-2xl font-display font-bold text-white mb-4">
-                {t.name
-                  .split(" ")
-                  .map((n) => n[0])
-                  .join("")}
-              </div>
+              {t.image ? (
+                <img
+                  src={t.image}
+                  alt={`${t.name} - ${t.role}`}
+                  className="mx-auto h-20 w-20 rounded-full object-cover mb-4 border-2 border-brand/40"
+                />
+              ) : (
+                <div className="mx-auto h-20 w-20 rounded-full bg-gradient-to-br from-brand to-brand-strong grid place-items-center text-2xl font-display font-bold text-white mb-4">
+                  {t.name
+                    .split(" ")
+                    .map((n) => n[0])
+                    .join("")}
+                </div>
+              )}
+
               <h3 className="font-display font-bold">{t.name}</h3>
+
               <p className="text-sm text-brand">{t.role}</p>
             </div>
           ))}
