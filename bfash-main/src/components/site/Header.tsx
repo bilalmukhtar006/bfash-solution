@@ -43,7 +43,7 @@ export function Header() {
           <div className="flex h-9 w-9 items-center justify-center">
             {!logoError ? (
               <img
-                src="/logo.png"
+                src="/logo.webp"
                 alt="BFash Solution Logo"
                 className="h-9 w-auto object-contain transition-transform group-hover:scale-105"
                 onError={() => setLogoError(true)}

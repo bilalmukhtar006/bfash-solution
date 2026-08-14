@@ -34,7 +34,7 @@ export function Footer() {
         <div>
           <div className="flex items-center gap-2">
             <img
-              src="/logo.png"
+              src="/logo.webp"
               alt="BFash Solution Logo"
               className="h-9 w-auto object-contain"
             />
