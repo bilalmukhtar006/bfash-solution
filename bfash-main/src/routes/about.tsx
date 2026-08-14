@@ -86,7 +86,7 @@ const team = [
   {
     name: "Sehar Aslam",
     role: "COO & Vector Designer",
-    image: "/sehar.jpeg",
+    image: "/sehar.webp",
     linkedin: "https://www.linkedin.com/in/seharaslam/",
     email: "sehar@bfash.us",
   },
@@ -107,7 +107,7 @@ const team = [
   {
     name: "Bilal Mukhtar",
     role: "SEO and BD Manager",
-    image: "/bilal.jpg",
+    image: "/bilal.webp",
     linkedin: "www.linkedin.com/in/thejerryansari",
     email: "bilal@bfash.us",
   },
@@ -121,7 +121,7 @@ const team = [
   {
     name: "Ahmad Mahfooz",
     role: "Advertisement Manager",
-    image: "/ahmad.jpeg",
+    image: "/ahmad.webp",
     linkedin: "https://www.linkedin.com/in/ahmad-mahfooz-9379982b2/",
     email: "ahmad@bfash.us",
   },
