@@ -1,4 +1,3 @@
-```tsx
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import {
   Outlet,
@@ -110,7 +109,7 @@ export const Route =
         {
           name: "description",
           content:
-            "BFASH is a digital marketing agency helping businesses get more reach, leads, and sales through SEO, GEO, social media, ads, email marketing, CRM, virtual assistance, and business growth services.",
+            "BFASH is a digital marketing agency helping businesses get more reach, leads, and sales through SEO, GEO, social media, advertising, email marketing, CRM, virtual assistance, and business growth services.",
         },
 
         {
@@ -165,7 +164,7 @@ export const Route =
         {
           name: "twitter:description",
           content:
-            "Grow your business with BFASH. Get more reach, leads, and sales through SEO, GEO, social media, advertising, email marketing, CRM, and business growth services.",
+            "Grow your business with BFASH through SEO, GEO, social media, advertising, email marketing, CRM, and business growth services.",
         },
 
         {
@@ -206,13 +205,16 @@ export const Route =
     errorComponent: ErrorComponent,
   });
 
-function RootShell({ children }: { children: ReactNode }) {
+function RootShell({
+  children,
+}: {
+  children: ReactNode;
+}) {
   return (
     <html lang="en">
       <head>
         <HeadContent />
 
-        {/* Deferred Google tracking script */}
         <script
           dangerouslySetInnerHTML={{
             __html: `
@@ -271,4 +273,3 @@ function RootComponent() {
     </QueryClientProvider>
   );
 }
-```
