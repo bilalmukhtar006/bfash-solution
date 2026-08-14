@@ -4,6 +4,64 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>BFash Solution</title>
+    <meta name="description" content="Elevating your digital potential. We build, brand, and scale modern businesses online." />
+
+    <!-- ✅ FIXED: Only ONE preconnect set (removed duplicates) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+
+    <!-- ✅ OPTIMIZED: Preload fonts (faster than preconnect) -->
+    <link
+      rel="preload"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+      <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+    </noscript>
+
+    <!-- ✅ OPTIMIZED: Defer non-critical CSS -->
+    <link
+      rel="preload"
+      href="/assets/index-c6isZ4Vl.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+      <link rel="stylesheet" href="/assets/index-c6isZ4Vl.css" />
+    </noscript>
+
+    <!-- ✅ OPTIMIZED: Defer GTM with idle callback -->
+    <script>
+      function loadGTM() {
+        (function (w, d, s, l, i) {
+          w[l] = w[l] || [];
+          w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+          var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s),
+            dl = l != "dataLayer" ? "&l=" + l : "";
+          j.async = true;
+          j.defer = true;
+          j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+          f.parentNode.insertBefore(j, f);
+        })(window, document, "script", "dataLayer", "G-P9KF8CGYBL");
+      }
+
+      if ("requestIdleCallback" in window) {
+        requestIdleCallback(loadGTM);
+      } else {
+        setTimeout(loadGTM, 2000);
+      }
+    </script>
+
+    <!-- ✅ OPTIMIZED: Font-display swap to prevent FOIT -->
+    <style>
+      @font-face {
+        font-family: "Inter";
+        font-display: swap;
+      }
+    </style>
   </head>
   <body>
     <div id="root"></div>
