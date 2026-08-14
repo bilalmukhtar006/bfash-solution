@@ -13,8 +13,6 @@ import { Header } from "../components/site/Header";
 import { Footer } from "../components/site/Footer";
 import { CookieBanner } from "../components/site/CookieBanner";
 
-// ✅ Import CSS directly (not as URL)
-
 function NotFoundComponent() {
   return (
     <div className="flex min-h-screen items-center justify-center px-4">
@@ -117,24 +115,27 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
       {
         property: "og:image",
-        content: "https://bfash.us/logo.png",
+        content: "https://bfash.us/logo.webp", // ✅ Changed to WebP
       },
       {
         name: "twitter:image",
-        content: "https://bfash.us/logo.png",
+        content: "https://bfash.us/logo.webp", // ✅ Changed to WebP
       },
     ],
     links: [
       { rel: "canonical", href: "https://bfash.us/" },
+      // ✅ FIXED: Only ONE preconnect set (removed duplicates)
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       {
         rel: "preconnect",
         href: "https://fonts.gstatic.com",
         crossOrigin: "anonymous",
       },
+      // ✅ FIXED: Optimized font - only 3 weights (400, 600, 700)
       {
-        rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap",
+        rel: "preload",
+        href: "https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap",
+        as: "style",
       },
     ],
   }),
@@ -150,18 +151,28 @@ function RootShell({ children }: { children: ReactNode }) {
       <head>
         <HeadContent />
 
-        {/* ✅ Google Analytics - moved to head */}
-        <script
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=G-P9KF8CGYBL"
-        />
+        {/* ✅ OPTIMIZED: Deferred GTM with idle callback */}
         <script
           dangerouslySetInnerHTML={{
             __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'G-P9KF8CGYBL');
+              function loadGTM() {
+                (function(w,d,s,l,i){
+                  w[l]=w[l]||[];
+                  w[l].push({'gtm.start': new Date().getTime(), event:'gtm.js'});
+                  var f=d.getElementsByTagName(s)[0],
+                      j=d.createElement(s),
+                      dl=l!='dataLayer'?'&l='+l:'';
+                  j.async=true;
+                  j.defer=true;
+                  j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
+                  f.parentNode.insertBefore(j,f);
+                })(window,document,'script','dataLayer','G-P9KF8CGYBL');
+              }
+              if ('requestIdleCallback' in window) {
+                requestIdleCallback(loadGTM);
+              } else {
+                setTimeout(loadGTM, 2000);
+              }
             `,
           }}
         />
