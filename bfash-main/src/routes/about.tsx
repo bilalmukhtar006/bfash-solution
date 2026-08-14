@@ -84,8 +84,11 @@ const steps = [
 
 const team = [
   {
-    name: "Bilal Fashan",
-    role: "Founder & Strategy Director",
+    name: "Sehar Aslam",
+    role: "COO & Vector Designer",
+    image: "/sehar.jpeg",
+    linkedin: "https://www.linkedin.com/in/seharaslam/",
+    email: "sehar@bfash.us",
   },
   {
     name: "Abraham Boutros",
@@ -95,20 +98,32 @@ const team = [
     email: "abraham@bfash.us",
   },
   {
-    name: "Daniel Reyes",
-    role: "SEO & Growth Lead",
+    name: "Faisal",
+    role: "Web Developer & Growth Lead",
+    image: "/Boutos.jpg",
+    linkedin: "www.linkedin.com/",
+    email: "faisal@bfash.us",
   },
   {
-    name: "Sara Lin",
-    role: "Amazon Specialist",
+    name: "Bilal Mukhtar",
+    role: "SEO and BD Manager",
+    image: "/bilal.jpg",
+    linkedin: "www.linkedin.com/in/thejerryansari",
+    email: "bilal@bfash.us",
   },
   {
-    name: "Marcus Webb",
-    role: "Lead Developer",
+    name: "Hafeez",
+    role: "Video Editor & Designer",
+    image: "/Boutos.jpg",
+    linkedin: "www.linkedin.com/",
+    email: "bilal@bfash.us",
   },
   {
-    name: "Nora Patel",
-    role: "Client Success",
+    name: "Ahmad Mahfooz",
+    role: "Advertisement Manager",
+    image: "/ahmad.jpeg",
+    linkedin: "https://www.linkedin.com/in/ahmad-mahfooz-9379982b2/",
+    email: "ahmad@bfash.us",
   },
 ];
 
