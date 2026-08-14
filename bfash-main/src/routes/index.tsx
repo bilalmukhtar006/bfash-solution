@@ -1,4 +1,3 @@
-```tsx
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
 import { Section } from "@/components/site/Section";
@@ -19,7 +18,6 @@ import {
   Users,
   MapPin,
   Megaphone,
-  Bot,
   BriefcaseBusiness,
 } from "lucide-react";
 
@@ -281,6 +279,7 @@ function Home() {
                 <div className="text-2xl font-display font-bold gradient-text">
                   {s.k}
                 </div>
+
                 <div className="text-xs text-muted-foreground mt-1">
                   {s.v}
                 </div>
@@ -296,7 +295,7 @@ function Home() {
         title="A Digital Growth Partner Focused on More Than Marketing"
         center
       >
-        <div className="max-w-4xl mx-auto text-center">
+        <div className="max-w-6xl mx-auto px-6 md:px-8 lg:px-10 text-center">
           <p className="text-lg text-muted-foreground leading-relaxed mb-6">
             BFASH is a full-service digital marketing and business growth
             partner for businesses that want to reach more people and sell
@@ -321,32 +320,34 @@ function Home() {
           title="Digital Marketing Services Designed for Growth"
           center
         >
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {services.map((s, i) => (
-              <Link
-                key={s.title}
-                to={s.to}
-                className="group glass-card rounded-2xl p-8 hover:border-brand/50 transition-all hover:-translate-y-1 animate-fade-up"
-                style={{ animationDelay: `${i * 0.05}s` }}
-              >
-                <div className="grid h-12 w-12 place-items-center rounded-xl bg-gradient-to-br from-brand to-brand-strong mb-5 group-hover:scale-110 transition-transform">
-                  <s.icon className="h-6 w-6 text-white" />
-                </div>
+          <div className="max-w-6xl mx-auto px-6 md:px-8 lg:px-10">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {services.map((s, i) => (
+                <Link
+                  key={s.title}
+                  to={s.to}
+                  className="group glass-card rounded-2xl p-8 hover:border-brand/50 transition-all hover:-translate-y-1 animate-fade-up"
+                  style={{ animationDelay: `${i * 0.05}s` }}
+                >
+                  <div className="grid h-12 w-12 place-items-center rounded-xl bg-gradient-to-br from-brand to-brand-strong mb-5 group-hover:scale-110 transition-transform">
+                    <s.icon className="h-6 w-6 text-white" />
+                  </div>
 
-                <h2 className="text-xl font-display font-bold mb-3">
-                  {s.title}
-                </h2>
+                  <h2 className="text-xl font-display font-bold mb-3">
+                    {s.title}
+                  </h2>
 
-                <p className="text-muted-foreground leading-relaxed mb-5">
-                  {s.desc}
-                </p>
+                  <p className="text-muted-foreground leading-relaxed mb-5">
+                    {s.desc}
+                  </p>
 
-                <span className="inline-flex items-center text-brand text-sm font-medium">
-                  Learn more
-                  <ArrowRight className="ml-1 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                </span>
-              </Link>
-            ))}
+                  <span className="inline-flex items-center text-brand text-sm font-medium">
+                    Learn more
+                    <ArrowRight className="ml-1 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                  </span>
+                </Link>
+              ))}
+            </div>
           </div>
         </Section>
       </div>
@@ -357,8 +358,8 @@ function Home() {
         title="From Getting Attention to Getting Sales"
         center
       >
-        <div className="max-w-4xl mx-auto">
-          <p className="text-lg text-muted-foreground leading-relaxed text-center mb-10">
+        <div className="max-w-6xl mx-auto px-6 md:px-8 lg:px-10">
+          <p className="text-lg text-muted-foreground leading-relaxed text-center max-w-5xl mx-auto mb-10">
             Good marketing is not only about getting more visitors. The real
             goal is to connect with the right people, build trust, and help
             them take the next step.
@@ -369,9 +370,11 @@ function Home() {
               <div className="text-2xl font-display font-bold gradient-text mb-3">
                 01
               </div>
+
               <h3 className="text-xl font-display font-bold mb-3">
                 Get Found
               </h3>
+
               <p className="text-muted-foreground leading-relaxed">
                 SEO, GEO, GMB SEO, content, and digital marketing can help
                 more people discover your business when they are looking for
@@ -383,9 +386,11 @@ function Home() {
               <div className="text-2xl font-display font-bold gradient-text mb-3">
                 02
               </div>
+
               <h3 className="text-xl font-display font-bold mb-3">
                 Build Interest
               </h3>
+
               <p className="text-muted-foreground leading-relaxed">
                 Social media, email marketing, advertising, and useful content
                 help you stay in front of potential customers and build trust.
@@ -396,9 +401,11 @@ function Home() {
               <div className="text-2xl font-display font-bold gradient-text mb-3">
                 03
               </div>
+
               <h3 className="text-xl font-display font-bold mb-3">
                 Increase Sales
               </h3>
+
               <p className="text-muted-foreground leading-relaxed">
                 CRM support, follow-ups, sales-focused campaigns, and better
                 customer journeys can help turn more opportunities into
@@ -415,36 +422,39 @@ function Home() {
         title="SEO and GEO for the Changing Search Landscape"
         center
       >
-        <div className="max-w-4xl mx-auto text-center">
-          <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-            People are finding businesses in more ways than ever. Traditional
-            search engines are still important, while AI-powered tools are
-            changing how people discover information and businesses.
-          </p>
+        <div className="max-w-6xl mx-auto px-6 md:px-8 lg:px-10 text-center">
+          <div className="max-w-5xl mx-auto">
+            <p className="text-lg text-muted-foreground leading-relaxed mb-6">
+              People are finding businesses in more ways than ever. Traditional
+              search engines are still important, while AI-powered tools are
+              changing how people discover information and businesses.
+            </p>
 
-          <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-            BFASH combines{" "}
-            <strong className="text-white">
-              search engine optimization (SEO)
-            </strong>{" "}
-            with{" "}
-            <strong className="text-white">
-              Generative Engine Optimization (GEO)
-            </strong>{" "}
-            to help create a stronger online presence. We focus on useful
-            content, clear website structure, relevant topics, and a trustworthy
-            digital footprint rather than simply repeating keywords.
-          </p>
+            <p className="text-lg text-muted-foreground leading-relaxed mb-8">
+              BFASH combines{" "}
+              <strong className="text-white">
+                search engine optimization (SEO)
+              </strong>{" "}
+              with{" "}
+              <strong className="text-white">
+                Generative Engine Optimization (GEO)
+              </strong>{" "}
+              to help create a stronger online presence. We focus on useful
+              content, clear website structure, relevant topics, and a
+              trustworthy digital footprint rather than simply repeating
+              keywords.
+            </p>
 
-          <Link to="/services/seo">
-            <Button
-              variant="outline"
-              className="border-border bg-surface/40 hover:bg-surface"
-            >
-              Explore SEO & GEO
-              <ArrowRight className="ml-2 h-4 w-4" />
-            </Button>
-          </Link>
+            <Link to="/services/seo">
+              <Button
+                variant="outline"
+                className="border-border bg-surface/40 hover:bg-surface"
+              >
+                Explore SEO & GEO
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Button>
+            </Link>
+          </div>
         </div>
       </Section>
 
@@ -454,19 +464,21 @@ function Home() {
         title="Local Search, Google Ads & Social Advertising"
         center
       >
-        <div className="max-w-4xl mx-auto text-center">
-          <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-            When someone searches for a business, product, or service, being
-            visible at the right moment can make a big difference.
-          </p>
+        <div className="max-w-6xl mx-auto px-6 md:px-8 lg:px-10 text-center">
+          <div className="max-w-5xl mx-auto">
+            <p className="text-lg text-muted-foreground leading-relaxed mb-6">
+              When someone searches for a business, product, or service, being
+              visible at the right moment can make a big difference.
+            </p>
 
-          <p className="text-lg text-muted-foreground leading-relaxed">
-            Our GMB SEO and Google Business Profile support can help improve
-            your local presence, while Google Ads management services and
-            social media ads can help you reach people who are more likely to
-            become customers. We focus on the business goal behind the
-            campaign—not just clicks or impressions.
-          </p>
+            <p className="text-lg text-muted-foreground leading-relaxed">
+              Our GMB SEO and Google Business Profile support can help improve
+              your local presence, while Google Ads management services and
+              social media ads can help you reach people who are more likely to
+              become customers. We focus on the business goal behind the
+              campaign—not just clicks or impressions.
+            </p>
+          </div>
         </div>
       </Section>
 
@@ -476,26 +488,28 @@ function Home() {
         title="One Partner for Your Digital Growth"
         center
       >
-        <div className="grid md:grid-cols-3 gap-6">
-          {values.map((v, i) => (
-            <div
-              key={v.title}
-              className="glass-card rounded-2xl p-8 animate-fade-up"
-              style={{ animationDelay: `${i * 0.1}s` }}
-            >
-              <div className="grid h-12 w-12 place-items-center rounded-xl bg-brand/15 border border-brand/30 mb-5">
-                <v.icon className="h-6 w-6 text-brand" />
+        <div className="max-w-6xl mx-auto px-6 md:px-8 lg:px-10">
+          <div className="grid md:grid-cols-3 gap-6">
+            {values.map((v, i) => (
+              <div
+                key={v.title}
+                className="glass-card rounded-2xl p-8 animate-fade-up"
+                style={{ animationDelay: `${i * 0.1}s` }}
+              >
+                <div className="grid h-12 w-12 place-items-center rounded-xl bg-brand/15 border border-brand/30 mb-5">
+                  <v.icon className="h-6 w-6 text-brand" />
+                </div>
+
+                <h3 className="text-xl font-display font-bold mb-3">
+                  {v.title}
+                </h3>
+
+                <p className="text-muted-foreground leading-relaxed">
+                  {v.desc}
+                </p>
               </div>
-
-              <h3 className="text-xl font-display font-bold mb-3">
-                {v.title}
-              </h3>
-
-              <p className="text-muted-foreground leading-relaxed">
-                {v.desc}
-              </p>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </Section>
 
@@ -505,24 +519,26 @@ function Home() {
         title="TikTok Shop for Businesses"
         center
       >
-        <div className="max-w-4xl mx-auto text-center">
-          <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-            Social commerce is giving businesses new ways to introduce
-            products to potential customers. TikTok Shop can connect product
-            discovery, content, and shopping in one place.
-          </p>
+        <div className="max-w-6xl mx-auto px-6 md:px-8 lg:px-10 text-center">
+          <div className="max-w-5xl mx-auto">
+            <p className="text-lg text-muted-foreground leading-relaxed mb-6">
+              Social commerce is giving businesses new ways to introduce
+              products to potential customers. TikTok Shop can connect product
+              discovery, content, and shopping in one place.
+            </p>
 
-          <p className="text-lg text-muted-foreground leading-relaxed">
-            If TikTok Shop is a good fit for your business, BFASH can help you
-            explore how it can fit into your wider digital marketing and sales
-            strategy.
-          </p>
+            <p className="text-lg text-muted-foreground leading-relaxed">
+              If TikTok Shop is a good fit for your business, BFASH can help
+              you explore how it can fit into your wider digital marketing and
+              sales strategy.
+            </p>
+          </div>
         </div>
       </Section>
 
       {/* OUTBOUND RESOURCE */}
       <Section>
-        <div className="max-w-4xl mx-auto text-center">
+        <div className="max-w-6xl mx-auto px-6 md:px-8 lg:px-10 text-center">
           <p className="text-sm text-muted-foreground">
             Need additional creative support for your business?{" "}
             <a
@@ -540,7 +556,7 @@ function Home() {
 
       {/* FINAL CTA */}
       <Section>
-        <div className="max-w-4xl mx-auto text-center">
+        <div className="max-w-6xl mx-auto px-6 md:px-8 lg:px-10 text-center">
           <div className="inline-flex items-center gap-2 rounded-full border border-brand/30 bg-brand/10 px-3 py-1 text-xs font-medium text-brand uppercase tracking-wider mb-5">
             Grow With BFASH
           </div>
@@ -570,44 +586,45 @@ function Home() {
 
       {/* CONTACT */}
       <Section>
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          <div>
-            <div className="inline-flex items-center gap-2 rounded-full border border-brand/30 bg-brand/10 px-3 py-1 text-xs font-medium text-brand uppercase tracking-wider mb-4">
-              Free Consultation
+        <div className="max-w-6xl mx-auto px-6 md:px-8 lg:px-10">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <div className="inline-flex items-center gap-2 rounded-full border border-brand/30 bg-brand/10 px-3 py-1 text-xs font-medium text-brand uppercase tracking-wider mb-4">
+                Free Consultation
+              </div>
+
+              <h2 className="text-3xl md:text-5xl font-display font-bold tracking-tight mb-5">
+                Ready to <span className="gradient-text">Transform</span> Your
+                Business?
+              </h2>
+
+              <p className="text-lg text-muted-foreground leading-relaxed mb-6">
+                Let's discuss how we can help your business get more reach,
+                generate more opportunities, and increase sales. Send us a
+                message to start the conversation.
+              </p>
+
+              <ul className="space-y-3">
+                {[
+                  "No-pressure discovery call",
+                  "Custom roadmap delivered in 48h",
+                  "Transparent pricing",
+                ].map((p) => (
+                  <li
+                    key={p}
+                    className="flex items-center gap-3 text-muted-foreground"
+                  >
+                    <CheckCircle2 className="h-5 w-5 text-brand" />
+                    {p}
+                  </li>
+                ))}
+              </ul>
             </div>
 
-            <h2 className="text-3xl md:text-5xl font-display font-bold tracking-tight mb-5">
-              Ready to <span className="gradient-text">Transform</span> Your
-              Business?
-            </h2>
-
-            <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-              Let's discuss how we can help your business get more reach,
-              generate more opportunities, and increase sales. Send us a
-              message to start the conversation.
-            </p>
-
-            <ul className="space-y-3">
-              {[
-                "No-pressure discovery call",
-                "Custom roadmap delivered in 48h",
-                "Transparent pricing",
-              ].map((p) => (
-                <li
-                  key={p}
-                  className="flex items-center gap-3 text-muted-foreground"
-                >
-                  <CheckCircle2 className="h-5 w-5 text-brand" />
-                  {p}
-                </li>
-              ))}
-            </ul>
+            <ContactForm />
           </div>
-
-          <ContactForm />
         </div>
       </Section>
     </>
   );
 }
-```
