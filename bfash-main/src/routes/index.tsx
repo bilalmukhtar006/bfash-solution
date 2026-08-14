@@ -1,3 +1,4 @@
+```tsx
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
 import { Section } from "@/components/site/Section";
@@ -13,33 +14,87 @@ import {
   Target,
   Headphones,
   Zap,
+  TrendingUp,
+  Mail,
+  Users,
+  MapPin,
+  Megaphone,
+  Bot,
+  BriefcaseBusiness,
 } from "lucide-react";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Affordable SEO Agency – BFash Solution | Expert SEO Services" },
+      {
+        title:
+          "Best Digital Marketing Agency for Business Growth | BFASH",
+      },
       {
         name: "description",
         content:
-          "Looking for an affordable SEO agency? BFash Solution delivers expert SEO services, affordable SEO packages & local SEO to grow your business.",
+          "BFASH is a digital marketing agency helping businesses get more reach, leads, and sales through SEO, GEO, social media, advertising, email marketing, CRM, virtual assistance, and business growth services.",
       },
-      { property: "og:title", content: "Affordable SEO Agency – BFash Solution" },
+      {
+        name: "keywords",
+        content:
+          "best digital marketing agency, digital marketing agency, digital marketing services, increase sales, business growth consultant, SEO agency, GEO SEO agency, social media manager, social media ads management, Google Ads management services, GMB SEO, GMB SEO services, email marketing, virtual assistance, TikTok Shop",
+      },
+      {
+        name: "author",
+        content: "BFASH",
+      },
+      {
+        name: "robots",
+        content:
+          "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
+      },
+      {
+        property: "og:title",
+        content:
+          "Best Digital Marketing Agency for Business Growth | BFASH",
+      },
       {
         property: "og:description",
         content:
-          "Looking for an affordable SEO agency? BFash Solution delivers expert SEO services, affordable SEO packages & local SEO to grow your business.",
+          "BFASH helps businesses grow through digital marketing, SEO, GEO, social media, advertising, email marketing, CRM support, virtual assistance, and sales-focused strategies.",
       },
-      // ✅ Canonical URL
-      { property: "og:url", content: "https://bfash.us/" },
-      // ✅ Robots Meta Tag
-      { name: "robots", content: "index, follow, max-snippet:-1, max-image-preview:large" },
-      // ✅ X-Robots-Tag (set via meta tag for compatibility)
-      { name: "X-Robots-Tag", content: "index, follow" },
+      {
+        property: "og:type",
+        content: "website",
+      },
+      {
+        property: "og:url",
+        content: "https://bfash.us/",
+      },
+      {
+        property: "og:image",
+        content: "https://bfash.us/logo.webp",
+      },
+      {
+        name: "twitter:card",
+        content: "summary_large_image",
+      },
+      {
+        name: "twitter:title",
+        content:
+          "Best Digital Marketing Agency for Business Growth | BFASH",
+      },
+      {
+        name: "twitter:description",
+        content:
+          "Grow your business with BFASH through SEO, GEO, social media, advertising, email marketing, CRM, virtual assistance, and business growth services.",
+      },
+      {
+        name: "twitter:image",
+        content: "https://bfash.us/logo.webp",
+      },
     ],
     links: [
-      // ✅ Canonical Link Tag
-      { rel: "canonical", href: "https://bfash.us/" },
+      {
+        rel: "canonical",
+        href: "https://bfash.us/",
+      },
     ],
   }),
   component: Home,
@@ -47,28 +102,95 @@ export const Route = createFileRoute("/")({
 
 const services = [
   {
+    icon: TrendingUp,
+    title: "Get More Sales",
+    to: "/contact",
+    desc:
+      "Turn more visitors, leads, and conversations into customers with practical marketing and sales strategies built around your business goals.",
+  },
+  {
+    icon: Users,
+    title: "CRM & Social Media Management",
+    to: "/contact",
+    desc:
+      "Keep your customer relationships and social channels organized while you stay focused on running your business.",
+  },
+  {
     icon: Globe,
-    title: "Website Designing",
-    to: "/services/web-design",
-    desc: "Beautiful, responsive, and high-converting custom websites that turn everyday visitors into paying customers.",
+    title: "Get More Reach",
+    to: "/contact",
+    desc:
+      "Reach the right audience through search, social media, content, advertising, and other digital channels.",
+  },
+  {
+    icon: Mail,
+    title: "Email Marketing",
+    to: "/contact",
+    desc:
+      "Stay connected with leads and customers through useful emails, follow-ups, promotions, and campaigns.",
   },
   {
     icon: Search,
-    title: "Search Engine Optimization",
+    title: "SEO & GEO",
     to: "/services/seo",
-    desc: "Get found by the right audience. Data-driven SEO strategies that drive consistent, organic traffic to your business.",
+    desc:
+      "Improve your visibility in traditional search and prepare your business for the growing world of AI-powered search.",
+  },
+  {
+    icon: Headphones,
+    title: "Virtual Assistance",
+    to: "/contact",
+    desc:
+      "Save time with reliable support for research, customer tasks, marketing activities, data work, and everyday business operations.",
+  },
+  {
+    icon: BriefcaseBusiness,
+    title: "Business Growth",
+    to: "/contact",
+    desc:
+      "Find practical opportunities to improve your marketing, customer journey, online presence, and overall business growth.",
+  },
+  {
+    icon: MapPin,
+    title: "GMB SEO & Google Ads",
+    to: "/contact",
+    desc:
+      "Improve your Google Business Profile visibility and reach potential customers through local SEO and paid search campaigns.",
+  },
+  {
+    icon: Megaphone,
+    title: "Social Media Ads",
+    to: "/contact",
+    desc:
+      "Reach potential customers with targeted advertising campaigns across social platforms and turn attention into opportunities.",
   },
   {
     icon: ShoppingBag,
-    title: "Amazon Business Flourishing",
+    title: "TikTok Shop",
+    to: "/contact",
+    desc:
+      "Explore social commerce and use TikTok Shop to put your products in front of people who are ready to discover and buy.",
+  },
+  {
+    icon: Globe,
+    title: "Website Designing",
+    to: "/services/web-design",
+    desc:
+      "Beautiful, responsive, and conversion-focused websites designed to give your business a strong online presence.",
+  },
+  {
+    icon: ShoppingBag,
+    title: "Amazon Business",
     to: "/services/amazon",
-    desc: "Scale your e-commerce storefront with listing optimization, PPC management, and complete store strategy.",
+    desc:
+      "Grow your e-commerce presence with listing optimization, PPC management, and practical Amazon store support.",
   },
   {
     icon: Palette,
     title: "Graphic & Logo Designing",
     to: "/services/graphic-design",
-    desc: "Visual identities that leave a mark. Striking logos, marketing materials, and brand assets that tell your story.",
+    desc:
+      "Build a memorable brand with professional logos, graphics, marketing materials, and visual assets.",
   },
 ];
 
@@ -76,17 +198,20 @@ const values = [
   {
     icon: Sparkles,
     title: "All-In-One Expertise",
-    desc: "No need to juggle multiple freelancers. We handle design, development, marketing, and e-commerce growth — all under one roof.",
+    desc:
+      "You don't need to manage several different providers. BFASH brings marketing, sales support, SEO, social media, advertising, and business services together.",
   },
   {
     icon: Target,
-    title: "Result-Oriented Approach",
-    desc: "We don't just focus on making things look pretty; we focus on the metrics that grow your bottom line.",
+    title: "Focused on Business Results",
+    desc:
+      "Marketing should do more than create likes or traffic. We focus on practical actions that can help your business generate leads, customers, and sales.",
   },
   {
     icon: Headphones,
-    title: "Dedicated Support",
-    desc: "We walk with you through every step of the process, ensuring your digital assets are always running smoothly.",
+    title: "Simple, Human Support",
+    desc:
+      "You should be able to understand what your marketing is doing. We keep our approach clear, practical, and easy to follow.",
   },
 ];
 
@@ -97,35 +222,43 @@ function Home() {
       <section className="relative pt-36 pb-24 md:pt-44 md:pb-32 overflow-hidden">
         <div className="absolute inset-0 -z-10 pointer-events-none">
           <div className="absolute top-20 left-1/4 h-96 w-96 rounded-full bg-brand/30 blur-3xl animate-float" />
+
           <div
             className="absolute top-40 right-1/4 h-96 w-96 rounded-full bg-brand-strong/30 blur-3xl animate-float"
             style={{ animationDelay: "2s" }}
           />
         </div>
+
         <div className="mx-auto max-w-6xl px-6 text-center animate-fade-up">
           <div className="inline-flex items-center gap-2 rounded-full border border-brand/30 bg-brand/10 px-4 py-1.5 text-xs font-medium text-brand uppercase tracking-wider mb-6">
-            <Zap className="h-3 w-3" /> Premium Digital Agency
+            <Zap className="h-3 w-3" />
+            Digital Marketing & Business Growth
           </div>
+
           <h1 className="text-4xl sm:text-6xl md:text-7xl font-display font-bold tracking-tight leading-[1.05] mb-6">
-            Your Vision. <span className="gradient-text">Our Digital Expertise.</span>
-            <br />
-            Affordable SEO Agency
+            Best Digital Marketing Agency for{" "}
+            <span className="gradient-text">Business Growth</span>
           </h1>
+
           <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed mb-10">
-            As a premier affordable SEO agency, we build stunning websites, design unforgettable
-            branding, and dramatically optimize your search rankings to scale your business online.
-            Discover everything you need to thrive and dominate your market, all delivered
-            seamlessly under one roof.
+            BFASH helps businesses get more reach, more leads, and more sales.
+            From SEO and GEO to social media, advertising, email marketing,
+            CRM support, virtual assistance, and business growth, we bring the
+            pieces together so your marketing can work toward one clear goal:
+            growing your business.
           </p>
+
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href="#services">
               <Button
                 size="lg"
                 className="bg-gradient-to-r from-brand to-brand-strong text-white border-0 brand-glow px-8 h-12"
               >
-                Explore Our Services <ArrowRight className="ml-2 h-4 w-4" />
+                Explore Our Services
+                <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
             </a>
+
             <Link to="/contact">
               <Button
                 size="lg"
@@ -145,8 +278,12 @@ function Home() {
               { k: "24/7", v: "Dedicated Support" },
             ].map((s) => (
               <div key={s.v} className="glass-card rounded-xl p-4">
-                <div className="text-2xl font-display font-bold gradient-text">{s.k}</div>
-                <div className="text-xs text-muted-foreground mt-1">{s.v}</div>
+                <div className="text-2xl font-display font-bold gradient-text">
+                  {s.k}
+                </div>
+                <div className="text-xs text-muted-foreground mt-1">
+                  {s.v}
+                </div>
               </div>
             ))}
           </div>
@@ -156,37 +293,56 @@ function Home() {
       {/* INTRO */}
       <Section
         eyebrow="Who We Are"
-        title="A full-service digital partner built for ambitious brands"
+        title="A Digital Growth Partner Focused on More Than Marketing"
         center
       >
-        <p className="text-lg text-muted-foreground leading-relaxed text-center max-w-4xl mx-auto">
-          At BFash Solution, we bridge the gap between brilliant ideas and digital reality. As a
-          full-service digital provider and your go-to affordable SEO agency, we are dedicated to
-          helping brands stand out, scale up, and dominate their market. Whether you are a brand-new
-          startup looking for a killer logo and web presence, an established business aiming for
-          page one of Google, or an e-commerce seller wanting to skyrocket your Amazon sales — we
-          have the tailored strategy and digital marketing skills to make it happen.
-        </p>
+        <div className="max-w-4xl mx-auto text-center">
+          <p className="text-lg text-muted-foreground leading-relaxed mb-6">
+            BFASH is a full-service digital marketing and business growth
+            partner for businesses that want to reach more people and sell
+            more.
+          </p>
+
+          <p className="text-lg text-muted-foreground leading-relaxed">
+            We help with the parts of digital business that matter every day:
+            getting found online, reaching new customers, managing social
+            media, following up with leads, running ads, sending emails,
+            managing customer relationships, and supporting everyday business
+            tasks. You can use the services you need today and add more as
+            your business grows.
+          </p>
+        </div>
       </Section>
 
       {/* SERVICES */}
       <div id="services">
-        <Section eyebrow="What We Do" title="Digital Solutions Designed for Growth" center>
-          <div className="grid sm:grid-cols-2 gap-6">
+        <Section
+          eyebrow="What We Do"
+          title="Digital Marketing Services Designed for Growth"
+          center
+        >
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {services.map((s, i) => (
               <Link
                 key={s.title}
                 to={s.to}
                 className="group glass-card rounded-2xl p-8 hover:border-brand/50 transition-all hover:-translate-y-1 animate-fade-up"
-                style={{ animationDelay: `${i * 0.08}s` }}
+                style={{ animationDelay: `${i * 0.05}s` }}
               >
                 <div className="grid h-12 w-12 place-items-center rounded-xl bg-gradient-to-br from-brand to-brand-strong mb-5 group-hover:scale-110 transition-transform">
                   <s.icon className="h-6 w-6 text-white" />
                 </div>
-                <h3 className="text-xl font-display font-bold mb-3">{s.title}</h3>
-                <p className="text-muted-foreground leading-relaxed mb-5">{s.desc}</p>
+
+                <h2 className="text-xl font-display font-bold mb-3">
+                  {s.title}
+                </h2>
+
+                <p className="text-muted-foreground leading-relaxed mb-5">
+                  {s.desc}
+                </p>
+
                 <span className="inline-flex items-center text-brand text-sm font-medium">
-                  Learn more{" "}
+                  Learn more
                   <ArrowRight className="ml-1 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                 </span>
               </Link>
@@ -195,8 +351,131 @@ function Home() {
         </Section>
       </div>
 
-      {/* VALUE PROP */}
-      <Section eyebrow="Why BFash" title="Why Partner with BFash Solution?" center>
+      {/* BUSINESS GROWTH CONTENT */}
+      <Section
+        eyebrow="How We Help"
+        title="From Getting Attention to Getting Sales"
+        center
+      >
+        <div className="max-w-4xl mx-auto">
+          <p className="text-lg text-muted-foreground leading-relaxed text-center mb-10">
+            Good marketing is not only about getting more visitors. The real
+            goal is to connect with the right people, build trust, and help
+            them take the next step.
+          </p>
+
+          <div className="grid md:grid-cols-3 gap-6">
+            <div className="glass-card rounded-2xl p-7">
+              <div className="text-2xl font-display font-bold gradient-text mb-3">
+                01
+              </div>
+              <h3 className="text-xl font-display font-bold mb-3">
+                Get Found
+              </h3>
+              <p className="text-muted-foreground leading-relaxed">
+                SEO, GEO, GMB SEO, content, and digital marketing can help
+                more people discover your business when they are looking for
+                what you offer.
+              </p>
+            </div>
+
+            <div className="glass-card rounded-2xl p-7">
+              <div className="text-2xl font-display font-bold gradient-text mb-3">
+                02
+              </div>
+              <h3 className="text-xl font-display font-bold mb-3">
+                Build Interest
+              </h3>
+              <p className="text-muted-foreground leading-relaxed">
+                Social media, email marketing, advertising, and useful content
+                help you stay in front of potential customers and build trust.
+              </p>
+            </div>
+
+            <div className="glass-card rounded-2xl p-7">
+              <div className="text-2xl font-display font-bold gradient-text mb-3">
+                03
+              </div>
+              <h3 className="text-xl font-display font-bold mb-3">
+                Increase Sales
+              </h3>
+              <p className="text-muted-foreground leading-relaxed">
+                CRM support, follow-ups, sales-focused campaigns, and better
+                customer journeys can help turn more opportunities into
+                customers.
+              </p>
+            </div>
+          </div>
+        </div>
+      </Section>
+
+      {/* SEO & GEO */}
+      <Section
+        eyebrow="Search Visibility"
+        title="SEO and GEO for the Changing Search Landscape"
+        center
+      >
+        <div className="max-w-4xl mx-auto text-center">
+          <p className="text-lg text-muted-foreground leading-relaxed mb-6">
+            People are finding businesses in more ways than ever. Traditional
+            search engines are still important, while AI-powered tools are
+            changing how people discover information and businesses.
+          </p>
+
+          <p className="text-lg text-muted-foreground leading-relaxed mb-8">
+            BFASH combines{" "}
+            <strong className="text-white">
+              search engine optimization (SEO)
+            </strong>{" "}
+            with{" "}
+            <strong className="text-white">
+              Generative Engine Optimization (GEO)
+            </strong>{" "}
+            to help create a stronger online presence. We focus on useful
+            content, clear website structure, relevant topics, and a trustworthy
+            digital footprint rather than simply repeating keywords.
+          </p>
+
+          <Link to="/services/seo">
+            <Button
+              variant="outline"
+              className="border-border bg-surface/40 hover:bg-surface"
+            >
+              Explore SEO & GEO
+              <ArrowRight className="ml-2 h-4 w-4" />
+            </Button>
+          </Link>
+        </div>
+      </Section>
+
+      {/* LOCAL & PAID MARKETING */}
+      <Section
+        eyebrow="Reach More Customers"
+        title="Local Search, Google Ads & Social Advertising"
+        center
+      >
+        <div className="max-w-4xl mx-auto text-center">
+          <p className="text-lg text-muted-foreground leading-relaxed mb-6">
+            When someone searches for a business, product, or service, being
+            visible at the right moment can make a big difference.
+          </p>
+
+          <p className="text-lg text-muted-foreground leading-relaxed">
+            Our GMB SEO and Google Business Profile support can help improve
+            your local presence, while Google Ads management services and
+            social media ads can help you reach people who are more likely to
+            become customers. We focus on the business goal behind the
+            campaign—not just clicks or impressions.
+          </p>
+        </div>
+      </Section>
+
+      {/* WHY BFASH */}
+      <Section
+        eyebrow="Why BFASH"
+        title="One Partner for Your Digital Growth"
+        center
+      >
         <div className="grid md:grid-cols-3 gap-6">
           {values.map((v, i) => (
             <div
@@ -207,172 +486,119 @@ function Home() {
               <div className="grid h-12 w-12 place-items-center rounded-xl bg-brand/15 border border-brand/30 mb-5">
                 <v.icon className="h-6 w-6 text-brand" />
               </div>
-              <h3 className="text-xl font-display font-bold mb-3">{v.title}</h3>
-              <p className="text-muted-foreground leading-relaxed">{v.desc}</p>
+
+              <h3 className="text-xl font-display font-bold mb-3">
+                {v.title}
+              </h3>
+
+              <p className="text-muted-foreground leading-relaxed">
+                {v.desc}
+              </p>
             </div>
           ))}
         </div>
       </Section>
 
-      {/* SEO ARTICLE SECTION */}
-      <Section>
-        <div className="max-w-4xl mx-auto">
-          <h1 className="text-4xl md:text-5xl font-display font-bold text-white mb-6">
-            Why You Need an Affordable SEO Agency That Delivers Real Results
-          </h1>
-          
+      {/* TIKTOK SHOP */}
+      <Section
+        eyebrow="Social Commerce"
+        title="TikTok Shop for Businesses"
+        center
+      >
+        <div className="max-w-4xl mx-auto text-center">
           <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-            Finding the right digital partner can feel overwhelming, especially when you're on a budget. However, investing in search engine optimization doesn't have to break the bank. An <strong className="text-white">affordable SEO agency</strong> can help you dominate search results without draining your marketing budget.
-          </p>
-          
-          <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-            In fact, the right <strong className="text-white">affordable SEO company</strong> understands that small and medium businesses need cost-effective strategies to compete. They focus on delivering measurable growth, not just empty promises. That's precisely where BFash Solution stands out from the crowd.
+            Social commerce is giving businesses new ways to introduce
+            products to potential customers. TikTok Shop can connect product
+            discovery, content, and shopping in one place.
           </p>
 
-          <h2 className="text-2xl md:text-3xl font-display font-bold text-white mt-8 mb-4">
-            What Makes an Affordable SEO Agency Truly Effective?
-          </h2>
-
-          <h3 className="text-xl font-display font-bold text-white mt-6 mb-3">
-            Data-Driven Strategies, Not Guesswork
-          </h3>
-          <p className="text-lg text-muted-foreground leading-relaxed mb-4">
-            Many agencies claim to offer <strong className="text-white">affordable SEO services</strong>, but they often rely on outdated tactics. A trustworthy partner uses data to drive every decision. They analyze your market, your competitors, and your customers' behavior to craft a winning plan.
-          </p>
-          <p className="text-lg text-muted-foreground leading-relaxed mb-4">
-            For example, they conduct thorough keyword research to identify high-intent search terms. Then, they optimize your website's content and structure accordingly. This approach ensures that every dollar you spend works hard for your business.
-          </p>
-
-          <h3 className="text-xl font-display font-bold text-white mt-6 mb-3">
-            Transparent Reporting and Communication
-          </h3>
-          <p className="text-lg text-muted-foreground leading-relaxed mb-4">
-            Another hallmark of a reliable <strong className="text-white">affordable SEO agency</strong> is transparency. You should always know exactly what you're paying for and what results you're getting. Regular reports and clear communication build trust and keep your campaign on track.
-          </p>
-          <p className="text-lg text-muted-foreground leading-relaxed mb-4">
-            Moreover, a good agency doesn't just send you a spreadsheet full of numbers. They explain what those numbers mean and how they impact your bottom line. This level of clarity is essential for long-term success.
-          </p>
-
-          <h2 className="text-2xl md:text-3xl font-display font-bold text-white mt-8 mb-4">
-            The Key Benefits of Choosing Affordable SEO Packages
-          </h2>
-
-          <h3 className="text-xl font-display font-bold text-white mt-6 mb-3">
-            Cost-Effective Growth Without Compromising Quality
-          </h3>
-          <p className="text-lg text-muted-foreground leading-relaxed mb-4">
-            One of the biggest misconceptions about SEO is that it's only for big corporations. That couldn't be further from the truth. <strong className="text-white">Affordable SEO packages</strong> make it possible for small businesses to compete with industry giants.
-          </p>
-          <p className="text-lg text-muted-foreground leading-relaxed mb-4">
-            These packages typically include everything from on-page optimization to link building. They also often cover technical SEO and content creation. By bundling these services, agencies can offer better value than à la carte options.
-          </p>
-
-          <h3 className="text-xl font-display font-bold text-white mt-6 mb-3">
-            Scalable Solutions That Grow With Your Business
-          </h3>
-          <p className="text-lg text-muted-foreground leading-relaxed mb-4">
-            Your business isn't static, and neither should your SEO strategy be. The best <strong className="text-white">affordable SEO packages</strong> are flexible and scalable. As your website gains authority and traffic, you can easily upgrade your plan to match your evolving needs.
-          </p>
-          <p className="text-lg text-muted-foreground leading-relaxed mb-4">
-            This scalability ensures that you're never paying for services you don't need. At the same time, you're always ready to seize new opportunities as they arise.
-          </p>
-
-          <h2 className="text-2xl md:text-3xl font-display font-bold text-white mt-8 mb-4">
-            Why Local Businesses Love Affordable Local SEO Services
-          </h2>
-
-          <h3 className="text-xl font-display font-bold text-white mt-6 mb-3">
-            Dominate Your Local Market
-          </h3>
-          <p className="text-lg text-muted-foreground leading-relaxed mb-4">
-            For brick-and-mortar businesses, local visibility is crucial. <strong className="text-white">Affordable local SEO services</strong> help you attract nearby customers who are actively searching for what you offer. This includes optimizing your Google Business Profile, building local citations, and earning positive reviews.
-          </p>
-          <p className="text-lg text-muted-foreground leading-relaxed mb-4">
-            Consequently, your business appears in front of high-intent customers at exactly the right moment. This targeted approach delivers an impressive return on investment.
-          </p>
-
-          <h3 className="text-xl font-display font-bold text-white mt-6 mb-3">
-            Build Trust and Credibility in Your Community
-          </h3>
-          <p className="text-lg text-muted-foreground leading-relaxed mb-4">
-            Appearing in local search results also builds trust with your community. People tend to trust businesses that show up prominently when they search for relevant products or services. An <strong className="text-white">affordable SEO company</strong> helps you establish that credibility.
-          </p>
-          <p className="text-lg text-muted-foreground leading-relaxed mb-4">
-            Furthermore, positive local signals—like reviews and accurate business information—reinforce your reputation. Over time, this translates into more foot traffic, phone calls, and sales.
-          </p>
-
-          <h2 className="text-2xl md:text-3xl font-display font-bold text-white mt-8 mb-4">
-            How to Choose the Right Affordable SEO Services for Your Business
-          </h2>
-
-          <h3 className="text-xl font-display font-bold text-white mt-6 mb-3">
-            Define Your Goals and Budget
-          </h3>
-          <p className="text-lg text-muted-foreground leading-relaxed mb-4">
-            Before you start looking for <strong className="text-white">affordable SEO services</strong>, take a moment to define your objectives. Are you trying to increase website traffic, generate more leads, or boost online sales? Knowing your goals will help you select the right package.
-          </p>
-          <p className="text-lg text-muted-foreground leading-relaxed mb-4">
-            Similarly, set a realistic budget. Remember, the cheapest option isn't always the best. Instead, look for value—a balance of cost and quality that delivers tangible results.
-          </p>
-
-          <h3 className="text-xl font-display font-bold text-white mt-6 mb-3">
-            Evaluate Their Track Record and Expertise
-          </h3>
-          <p className="text-lg text-muted-foreground leading-relaxed mb-4">
-            Next, research potential agencies thoroughly. Check their case studies, client testimonials, and online reviews. A proven track record is a strong indicator of reliability and competence.
-          </p>
-          <p className="text-lg text-muted-foreground leading-relaxed mb-4">
-            Additionally, ask about their approach to SEO. Do they follow white-hat techniques? Are they up to date with the latest algorithm changes? These questions will help you separate true experts from pretenders.
-          </p>
-
-          <h2 className="text-2xl md:text-3xl font-display font-bold text-white mt-8 mb-4">
-            Conclusion – Invest in an Affordable SEO Agency That Works
-          </h2>
-          <p className="text-lg text-muted-foreground leading-relaxed mb-4">
-            To sum up, SEO is one of the smartest investments you can make for your business. By partnering with an <strong className="text-white">affordable SEO agency</strong>, you gain access to expert knowledge and proven strategies at a price you can afford.
-          </p>
-          <p className="text-lg text-muted-foreground leading-relaxed mb-4">
-            Whether you need <strong className="text-white">affordable SEO services</strong>, <strong className="text-white">affordable local SEO services</strong>, or comprehensive <strong className="text-white">affordable SEO packages</strong>, the right partner makes all the difference. So don't wait—start improving your online visibility today and watch your business thrive.
-          </p>
-          
-          {/* ✅ Superside Do-Follow Link */}
-          <p className="text-sm text-muted-foreground mt-8 pt-4 border-t border-border/30">
-            Looking to scale your creative team? Check out{" "}
-            <a 
-              href="https://www.superside.com" 
-              target="_blank" 
-              rel="dofollow"
-              className="text-brand hover:text-brand-strong transition-colors"
-            >
-              Superside
-            </a>
-            — the creative team’s creative team™.
+          <p className="text-lg text-muted-foreground leading-relaxed">
+            If TikTok Shop is a good fit for your business, BFASH can help you
+            explore how it can fit into your wider digital marketing and sales
+            strategy.
           </p>
         </div>
       </Section>
 
-      {/* CONTACT - Working HTML Form with Web3Forms */}
+      {/* OUTBOUND RESOURCE */}
+      <Section>
+        <div className="max-w-4xl mx-auto text-center">
+          <p className="text-sm text-muted-foreground">
+            Need additional creative support for your business?{" "}
+            <a
+              href="https://www.superside.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-brand hover:text-brand-strong transition-colors font-medium"
+            >
+              Explore Superside
+            </a>{" "}
+            for creative and design resources.
+          </p>
+        </div>
+      </Section>
+
+      {/* FINAL CTA */}
+      <Section>
+        <div className="max-w-4xl mx-auto text-center">
+          <div className="inline-flex items-center gap-2 rounded-full border border-brand/30 bg-brand/10 px-3 py-1 text-xs font-medium text-brand uppercase tracking-wider mb-5">
+            Grow With BFASH
+          </div>
+
+          <h2 className="text-3xl md:text-5xl font-display font-bold tracking-tight mb-5">
+            Ready to Get More{" "}
+            <span className="gradient-text">Reach, Leads & Sales?</span>
+          </h2>
+
+          <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto mb-8">
+            You don't need to figure out every part of digital marketing
+            alone. Talk to BFASH about your goals and find out which services
+            can help your business move forward.
+          </p>
+
+          <Link to="/contact">
+            <Button
+              size="lg"
+              className="bg-gradient-to-r from-brand to-brand-strong text-white border-0 brand-glow px-8 h-12"
+            >
+              Talk to BFASH
+              <ArrowRight className="ml-2 h-4 w-4" />
+            </Button>
+          </Link>
+        </div>
+      </Section>
+
+      {/* CONTACT */}
       <Section>
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div>
             <div className="inline-flex items-center gap-2 rounded-full border border-brand/30 bg-brand/10 px-3 py-1 text-xs font-medium text-brand uppercase tracking-wider mb-4">
               Free Consultation
             </div>
+
             <h2 className="text-3xl md:text-5xl font-display font-bold tracking-tight mb-5">
-              Ready to <span className="gradient-text">Transform</span> Your Business?
+              Ready to <span className="gradient-text">Transform</span> Your
+              Business?
             </h2>
+
             <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-              Let's discuss how we can scale your digital presence. Drop us a message for a free
-              consultation.
+              Let's discuss how we can help your business get more reach,
+              generate more opportunities, and increase sales. Send us a
+              message to start the conversation.
             </p>
+
             <ul className="space-y-3">
               {[
                 "No-pressure discovery call",
                 "Custom roadmap delivered in 48h",
                 "Transparent pricing",
               ].map((p) => (
-                <li key={p} className="flex items-center gap-3 text-muted-foreground">
-                  <CheckCircle2 className="h-5 w-5 text-brand" /> {p}
+                <li
+                  key={p}
+                  className="flex items-center gap-3 text-muted-foreground"
+                >
+                  <CheckCircle2 className="h-5 w-5 text-brand" />
+                  {p}
                 </li>
               ))}
             </ul>
@@ -384,3 +610,4 @@ function Home() {
     </>
   );
 }
+```
