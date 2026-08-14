@@ -116,7 +116,7 @@ const team = [
     role: "Video Editor & Designer",
     image: "/Boutos.jpg",
     linkedin: "www.linkedin.com/",
-    email: "bilal@bfash.us",
+    email: "hafeez@bfash.us",
   },
   {
     name: "Ahmad Mahfooz",
