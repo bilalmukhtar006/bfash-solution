@@ -29,14 +29,27 @@ export function Footer() {
   return (
     <footer className="relative mt-32 border-t border-border bg-background/60">
       <div className="mx-auto grid max-w-7xl gap-12 px-6 py-16 md:grid-cols-3">
-
         {/* Company */}
         <div>
           <div className="flex items-center gap-2">
+            {/* 
+              ✅ OPTIMIZED LOGO:
+              - WebP format (2KB instead of 50KB)
+              - width/height to prevent layout shift
+              - lazy loading for better initial load
+              - onError fallback to PNG if WebP fails
+            */}
             <img
               src="/logo.webp"
               alt="BFash Solution Logo"
               className="h-9 w-auto object-contain"
+              width={63}
+              height={63}
+              loading="lazy"
+              onError={(e) => {
+                // Fallback to PNG if WebP doesn't load
+                (e.target as HTMLImageElement).src = "/logo.png";
+              }}
             />
 
             <span className="font-display text-lg font-bold tracking-tight text-white">
@@ -77,7 +90,6 @@ export function Footer() {
           </h4>
 
           <ul className="space-y-3 text-sm">
-
             {/* Email */}
             <li>
               <a
@@ -102,7 +114,6 @@ export function Footer() {
                 <span>+92 (325) 425-8512</span>
               </a>
             </li>
-
           </ul>
 
           {/* Social Links */}

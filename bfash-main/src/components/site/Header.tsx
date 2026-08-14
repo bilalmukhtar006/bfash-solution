@@ -46,6 +46,15 @@ export function Header() {
                 src="/logo.webp"
                 alt="BFash Solution Logo"
                 className="h-9 w-auto object-contain transition-transform group-hover:scale-105"
+                /*
+                  ✅ OPTIMIZED LOGO:
+                  - width/height to prevent layout shift
+                  - eager loading (above-the-fold content)
+                  - onError fallback to show icon if WebP fails
+                */
+                width={63}
+                height={63}
+                loading="eager" // Header is above-the-fold, load immediately
                 onError={() => setLogoError(true)}
               />
             ) : (
