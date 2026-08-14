@@ -31,12 +31,7 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "BFASH is a digital marketing agency helping businesses get more reach, leads, and sales through SEO, GEO, social media, advertising, email marketing, CRM, virtual assistance, and business growth services.",
-      },
-      {
-        name: "keywords",
-        content:
-          "best digital marketing agency, digital marketing agency, digital marketing services, increase sales, business growth consultant, SEO agency, GEO SEO agency, social media manager, social media ads management, Google Ads management services, GMB SEO, GMB SEO services, email marketing, virtual assistance, TikTok Shop",
+          "BFASH is a digital marketing agency helping businesses get more reach, leads, and sales through SEO, GEO, social media, ads, email marketing, CRM, virtual assistance, and business growth services.",
       },
       {
         name: "author",
@@ -95,6 +90,7 @@ export const Route = createFileRoute("/")({
       },
     ],
   }),
+
   component: Home,
 });
 
@@ -217,7 +213,7 @@ function Home() {
   return (
     <>
       {/* HERO */}
-      <section className="relative pt-36 pb-24 md:pt-44 md:pb-32 overflow-hidden">
+      <section className="relative overflow-hidden pt-32 pb-20 md:pt-40 md:pb-28">
         <div className="absolute inset-0 -z-10 pointer-events-none">
           <div className="absolute top-20 left-1/4 h-96 w-96 rounded-full bg-brand/30 blur-3xl animate-float" />
 
@@ -227,23 +223,22 @@ function Home() {
           />
         </div>
 
-        <div className="mx-auto max-w-6xl px-6 text-center animate-fade-up">
+        <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8 text-center animate-fade-up">
           <div className="inline-flex items-center gap-2 rounded-full border border-brand/30 bg-brand/10 px-4 py-1.5 text-xs font-medium text-brand uppercase tracking-wider mb-6">
             <Zap className="h-3 w-3" />
             Digital Marketing & Business Growth
           </div>
 
-          <h1 className="text-4xl sm:text-6xl md:text-7xl font-display font-bold tracking-tight leading-[1.05] mb-6">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-display font-bold tracking-tight leading-[1.05] mb-6">
             Best Digital Marketing Agency for{" "}
             <span className="gradient-text">Business Growth</span>
           </h1>
 
-          <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed mb-10">
+          <p className="text-lg md:text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed mb-10">
             BFASH helps businesses get more reach, more leads, and more sales.
-            From SEO and GEO to social media, advertising, email marketing,
-            CRM support, virtual assistance, and business growth, we bring the
-            pieces together so your marketing can work toward one clear goal:
-            growing your business.
+            We bring SEO, GEO, social media, advertising, email marketing,
+            CRM support, virtual assistance, and business growth services
+            together so you can focus on running your business.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -268,7 +263,7 @@ function Home() {
             </Link>
           </div>
 
-          <div className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl mx-auto">
+          <div className="mt-16 md:mt-20 grid grid-cols-2 md:grid-cols-4 gap-5 max-w-4xl mx-auto">
             {[
               { k: "150+", v: "Projects Shipped" },
               { k: "98%", v: "Client Retention" },
@@ -295,21 +290,23 @@ function Home() {
         title="A Digital Growth Partner Focused on More Than Marketing"
         center
       >
-        <div className="max-w-6xl mx-auto px-6 md:px-8 lg:px-10 text-center">
-          <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-            BFASH is a full-service digital marketing and business growth
-            partner for businesses that want to reach more people and sell
-            more.
-          </p>
+        <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8 text-center">
+          <div className="max-w-5xl mx-auto">
+            <p className="text-lg text-muted-foreground leading-relaxed mb-6">
+              BFASH is a full-service digital marketing and business growth
+              partner for businesses that want to reach more people, generate
+              better opportunities, and sell more.
+            </p>
 
-          <p className="text-lg text-muted-foreground leading-relaxed">
-            We help with the parts of digital business that matter every day:
-            getting found online, reaching new customers, managing social
-            media, following up with leads, running ads, sending emails,
-            managing customer relationships, and supporting everyday business
-            tasks. You can use the services you need today and add more as
-            your business grows.
-          </p>
+            <p className="text-lg text-muted-foreground leading-relaxed">
+              We help with the parts of digital business that matter every
+              day: getting found online, reaching new customers, managing
+              social media, following up with leads, running ads, sending
+              emails, managing customer relationships, and supporting everyday
+              business tasks. You can use the services you need today and add
+              more as your business grows.
+            </p>
+          </div>
         </div>
       </Section>
 
@@ -320,13 +317,13 @@ function Home() {
           title="Digital Marketing Services Designed for Growth"
           center
         >
-          <div className="max-w-6xl mx-auto px-6 md:px-8 lg:px-10">
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6">
               {services.map((s, i) => (
                 <Link
                   key={s.title}
                   to={s.to}
-                  className="group glass-card rounded-2xl p-8 hover:border-brand/50 transition-all hover:-translate-y-1 animate-fade-up"
+                  className="group glass-card rounded-2xl p-7 md:p-8 hover:border-brand/50 transition-all hover:-translate-y-1 animate-fade-up"
                   style={{ animationDelay: `${i * 0.05}s` }}
                 >
                   <div className="grid h-12 w-12 place-items-center rounded-xl bg-gradient-to-br from-brand to-brand-strong mb-5 group-hover:scale-110 transition-transform">
@@ -352,20 +349,21 @@ function Home() {
         </Section>
       </div>
 
-      {/* BUSINESS GROWTH CONTENT */}
+      {/* BUSINESS GROWTH */}
       <Section
         eyebrow="How We Help"
         title="From Getting Attention to Getting Sales"
         center
       >
-        <div className="max-w-6xl mx-auto px-6 md:px-8 lg:px-10">
+        <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
           <p className="text-lg text-muted-foreground leading-relaxed text-center max-w-5xl mx-auto mb-10">
             Good marketing is not only about getting more visitors. The real
             goal is to connect with the right people, build trust, and help
-            them take the next step.
+            them take the next step. That is why BFASH focuses on the complete
+            journey from visibility to sales.
           </p>
 
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-3 gap-5 lg:gap-6">
             <div className="glass-card rounded-2xl p-7">
               <div className="text-2xl font-display font-bold gradient-text mb-3">
                 01
@@ -422,12 +420,13 @@ function Home() {
         title="SEO and GEO for the Changing Search Landscape"
         center
       >
-        <div className="max-w-6xl mx-auto px-6 md:px-8 lg:px-10 text-center">
+        <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8 text-center">
           <div className="max-w-5xl mx-auto">
             <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-              People are finding businesses in more ways than ever. Traditional
-              search engines are still important, while AI-powered tools are
-              changing how people discover information and businesses.
+              People are finding businesses in more ways than ever.
+              Traditional search engines are still important, while
+              AI-powered tools are changing how people discover information,
+              products, services, and businesses.
             </p>
 
             <p className="text-lg text-muted-foreground leading-relaxed mb-8">
@@ -464,7 +463,7 @@ function Home() {
         title="Local Search, Google Ads & Social Advertising"
         center
       >
-        <div className="max-w-6xl mx-auto px-6 md:px-8 lg:px-10 text-center">
+        <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8 text-center">
           <div className="max-w-5xl mx-auto">
             <p className="text-lg text-muted-foreground leading-relaxed mb-6">
               When someone searches for a business, product, or service, being
@@ -488,12 +487,12 @@ function Home() {
         title="One Partner for Your Digital Growth"
         center
       >
-        <div className="max-w-6xl mx-auto px-6 md:px-8 lg:px-10">
-          <div className="grid md:grid-cols-3 gap-6">
+        <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
+          <div className="grid md:grid-cols-3 gap-5 lg:gap-6">
             {values.map((v, i) => (
               <div
                 key={v.title}
-                className="glass-card rounded-2xl p-8 animate-fade-up"
+                className="glass-card rounded-2xl p-7 md:p-8 animate-fade-up"
                 style={{ animationDelay: `${i * 0.1}s` }}
               >
                 <div className="grid h-12 w-12 place-items-center rounded-xl bg-brand/15 border border-brand/30 mb-5">
@@ -519,7 +518,7 @@ function Home() {
         title="TikTok Shop for Businesses"
         center
       >
-        <div className="max-w-6xl mx-auto px-6 md:px-8 lg:px-10 text-center">
+        <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8 text-center">
           <div className="max-w-5xl mx-auto">
             <p className="text-lg text-muted-foreground leading-relaxed mb-6">
               Social commerce is giving businesses new ways to introduce
@@ -538,56 +537,61 @@ function Home() {
 
       {/* OUTBOUND RESOURCE */}
       <Section>
-        <div className="max-w-6xl mx-auto px-6 md:px-8 lg:px-10 text-center">
-          <p className="text-sm text-muted-foreground">
-            Need additional creative support for your business?{" "}
-            <a
-              href="https://www.superside.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-brand hover:text-brand-strong transition-colors font-medium"
-            >
-              Explore Superside
-            </a>{" "}
-            for creative and design resources.
-          </p>
+        <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8 text-center">
+          <div className="max-w-4xl mx-auto">
+            <p className="text-sm text-muted-foreground">
+              Looking for additional creative and design support for your
+              business?{" "}
+              <a
+                href="https://www.superside.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-brand hover:text-brand-strong transition-colors font-medium"
+              >
+                Explore Superside
+              </a>{" "}
+              for additional creative resources.
+            </p>
+          </div>
         </div>
       </Section>
 
       {/* FINAL CTA */}
       <Section>
-        <div className="max-w-6xl mx-auto px-6 md:px-8 lg:px-10 text-center">
-          <div className="inline-flex items-center gap-2 rounded-full border border-brand/30 bg-brand/10 px-3 py-1 text-xs font-medium text-brand uppercase tracking-wider mb-5">
-            Grow With BFASH
+        <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8 text-center">
+          <div className="max-w-4xl mx-auto">
+            <div className="inline-flex items-center gap-2 rounded-full border border-brand/30 bg-brand/10 px-3 py-1 text-xs font-medium text-brand uppercase tracking-wider mb-5">
+              Grow With BFASH
+            </div>
+
+            <h2 className="text-3xl md:text-5xl font-display font-bold tracking-tight mb-5">
+              Ready to Get More{" "}
+              <span className="gradient-text">Reach, Leads & Sales?</span>
+            </h2>
+
+            <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto mb-8">
+              You don't need to figure out every part of digital marketing
+              alone. Talk to BFASH about your goals and find out which
+              services can help your business move forward.
+            </p>
+
+            <Link to="/contact">
+              <Button
+                size="lg"
+                className="bg-gradient-to-r from-brand to-brand-strong text-white border-0 brand-glow px-8 h-12"
+              >
+                Talk to BFASH
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Button>
+            </Link>
           </div>
-
-          <h2 className="text-3xl md:text-5xl font-display font-bold tracking-tight mb-5">
-            Ready to Get More{" "}
-            <span className="gradient-text">Reach, Leads & Sales?</span>
-          </h2>
-
-          <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto mb-8">
-            You don't need to figure out every part of digital marketing
-            alone. Talk to BFASH about your goals and find out which services
-            can help your business move forward.
-          </p>
-
-          <Link to="/contact">
-            <Button
-              size="lg"
-              className="bg-gradient-to-r from-brand to-brand-strong text-white border-0 brand-glow px-8 h-12"
-            >
-              Talk to BFASH
-              <ArrowRight className="ml-2 h-4 w-4" />
-            </Button>
-          </Link>
         </div>
       </Section>
 
       {/* CONTACT */}
       <Section>
-        <div className="max-w-6xl mx-auto px-6 md:px-8 lg:px-10">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">
             <div>
               <div className="inline-flex items-center gap-2 rounded-full border border-brand/30 bg-brand/10 px-3 py-1 text-xs font-medium text-brand uppercase tracking-wider mb-4">
                 Free Consultation
