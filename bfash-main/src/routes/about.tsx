@@ -100,7 +100,7 @@ const team = [
   {
     name: "Faisal",
     role: "Web Developer & Growth Lead",
-    image: "/Boutos.webp",
+    image: "/Boutros.webp",
     linkedin: "www.linkedin.com/",
     email: "faisal@bfash.us",
   },
