@@ -93,14 +93,14 @@ const team = [
   {
     name: "Abraham Boutros",
     role: "Marketing Manager / Sales Manager",
-    image: "/Boutros.jpg",
+    image: "/Boutros.webp",
     linkedin: "https://www.linkedin.com/in/abrahamboutros/",
     email: "abraham@bfash.us",
   },
   {
     name: "Faisal",
     role: "Web Developer & Growth Lead",
-    image: "/Boutros.webp",
+    image: "/Boutos.webp",
     linkedin: "www.linkedin.com/",
     email: "faisal@bfash.us",
   },
