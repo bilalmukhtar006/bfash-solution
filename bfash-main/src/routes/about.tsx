@@ -100,7 +100,7 @@ const team = [
   {
     name: "Faisal",
     role: "Web Developer & Growth Lead",
-    image: "/Boutos.jpg",
+    image: "/Boutos.webp",
     linkedin: "www.linkedin.com/",
     email: "faisal@bfash.us",
   },
@@ -114,8 +114,8 @@ const team = [
   {
     name: "Hafeez",
     role: "Video Editor & Designer",
-    image: "/Boutos.jpg",
-    linkedin: "www.linkedin.com/",
+    image: "/hafeez.webp",
+    linkedin: "https://www.linkedin.com/in/hafeez-ahmad-849940405/",
     email: "hafeez@bfash.us",
   },
   {
