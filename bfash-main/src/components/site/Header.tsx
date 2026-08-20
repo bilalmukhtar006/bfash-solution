@@ -33,7 +33,7 @@ export function Header() {
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-background/95 border-b border-border shadow-sm"
+          ? "bg-background/95 border-b border-border shadow-sm backdrop-blur-md"
           : "bg-transparent"
       }`}
     >
@@ -43,18 +43,12 @@ export function Header() {
           <div className="flex h-9 w-9 items-center justify-center">
             {!logoError ? (
               <img
-                src="/logo.webp"
+                src="/logo.png"
                 alt="BFash Solution Logo"
                 className="h-9 w-auto object-contain transition-transform group-hover:scale-105"
-                /*
-                  ✅ OPTIMIZED LOGO:
-                  - width/height to prevent layout shift
-                  - eager loading (above-the-fold content)
-                  - onError fallback to show icon if WebP fails
-                */
                 width={63}
                 height={63}
-                loading="eager" // Header is above-the-fold, load immediately
+                loading="eager"
                 onError={() => setLogoError(true)}
               />
             ) : (
