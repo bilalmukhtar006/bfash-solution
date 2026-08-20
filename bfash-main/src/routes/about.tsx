@@ -81,11 +81,19 @@ const steps = [
 
 const team = [
   {
-    name: "Bilal Mukhtar",
-    role: "TikTok Shop & SEO Specialist",
-    email: "bilal@bfash.us",
-    image: "/bilal.webp",
-    linkedin: "https://www.linkedin.com/in/thejerryansari/",
+    name: "Sehar Aslam",
+    role: "Vector Artist & SMM",
+    email: "sehar@bfash.us",
+    image: "/sehar.webp",
+    linkedin: "https://www.linkedin.com/in/seharaslam/",
+  },
+  {
+    name: "Faisal Shafqat",
+    role: "Amazon & eBay Specialist & Developer",
+    email: "faisal@bfash.us",
+    image: "/faisal.webp",
+    linkedin:
+      "https://www.linkedin.com/in/faysal-ansari-298064346?utm_source=share_via&utm_content=profile&utm_medium=member_android",
   },
   {
     name: "Abraham Boutros",
@@ -95,20 +103,12 @@ const team = [
     linkedin: "https://www.linkedin.com/in/abrahamboutros/",
   },
   {
-    name: "Faisal Shafqat",
-    role: "Web Developer & Growth Lead",
-    email: "faisal@bfash.us",
-    image: "/faisal.webp",
-    linkedin:
-      "https://www.linkedin.com/in/faysal-ansari-298064346?utm_source=share_via&utm_content=profile&utm_medium=member_android",
-  },
-  {
-    name: "Sehar Aslam",
-    role: "Vector Artist & SMM",
-    email: "sehar@bfash.us",
-    image: "/sehar.webp",
-    linkedin: "https://www.linkedin.com/in/seharaslam/",
-  },
+    name: "Bilal Mukhtar",
+    role: "TikTok Shop & SEO Specialist",
+    email: "bilal@bfash.us",
+    image: "/bilal.webp",
+    linkedin: "https://www.linkedin.com/in/thejerryansari/",
+  }, 
   {
     name: "Hafeez Ahmad",
     role: "Video Editor & Illustration Designer",
