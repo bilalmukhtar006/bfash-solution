@@ -16,17 +16,17 @@ import {
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About Us — BFash Solutions" },
+      { title: "About Us | BFash Solution" },
       {
         name: "description",
         content:
-          "Meet the team behind BFash Solutions — our mission, values, and the process we use to deliver award-worthy digital work.",
+          "Learn more about BFash Solution. We help ambitious businesses grow online through simple, practical digital marketing, SEO, and sales strategies.",
       },
-      { property: "og:title", content: "About BFash Solutions" },
+      { property: "og:title", content: "About BFash Solution" },
       {
         property: "og:description",
         content:
-          "Mission, values and process behind a premium digital agency.",
+          "Discover how BFash Solution helps businesses reach more customers and increase sales.",
       },
     ],
   }),
@@ -36,46 +36,46 @@ export const Route = createFileRoute("/about")({
 const values = [
   {
     icon: Heart,
-    title: "Craft Over Quantity",
-    desc: "Every pixel, line of code, and word is intentional. We obsess over the details others overlook.",
+    title: "Quality First",
+    desc: "We focus on doing things right. Every webpage, post, and campaign is built with care so your business looks great.",
   },
   {
     icon: Target,
-    title: "Outcomes First",
-    desc: "Beautiful work is the baseline. Measurable growth is the goal — and the only thing we ship for.",
+    title: "Focused on Results",
+    desc: "Good design is just the start. Our main goal is to bring you more leads, phone calls, and real sales.",
   },
   {
     icon: Lightbulb,
-    title: "Curious by Default",
-    desc: "The digital landscape never stops evolving. Neither do we — we learn, test, and adapt constantly.",
+    title: "Always Learning",
+    desc: "The online world changes fast. We keep up with the latest AI tools and search trends so you stay ahead.",
   },
   {
     icon: Users,
-    title: "Built on Partnership",
-    desc: "Your wins are our wins. We embed with your team, not above it, to build something lasting.",
+    title: "True Partnership",
+    desc: "We work directly with you as part of your team, making digital growth easy, clear, and stress-free.",
   },
 ];
 
 const steps = [
   {
     icon: Compass,
-    title: "Discover",
-    desc: "Deep-dive workshops to understand your business, customers, competitors, and growth ceiling.",
+    title: "1. Discover",
+    desc: "We learn about your business, your ideal customers, and your biggest goals to build a clear plan.",
   },
   {
     icon: PencilRuler,
-    title: "Design",
-    desc: "Strategy translates into wireframes, brand systems, and conversion-focused experiences.",
+    title: "2. Build & Plan",
+    desc: "We create your strategy, design your pages, and prepare simple campaigns that attract buyers.",
   },
   {
     icon: Rocket,
-    title: "Deliver",
-    desc: "Pixel-perfect engineering, content production, and launch coordination across every channel.",
+    title: "3. Launch",
+    desc: "We launch your campaigns, optimize your search visibility, and make sure everything runs smoothly.",
   },
   {
     icon: BarChart3,
-    title: "Optimize",
-    desc: "Data informs the next sprint. We iterate monthly with full transparency and shared dashboards.",
+    title: "4. Grow & Improve",
+    desc: "We review what works, make regular improvements, and share clear updates with you every step of the way.",
   },
 ];
 
@@ -130,13 +130,13 @@ function About() {
     <>
       <PageHero
         eyebrow="About Us"
-        title="We turn ambitious brands into category leaders"
-        subtitle="BFash Solutions is a full-service digital agency. We pair strategic thinking with sharp execution to help founders, marketers, and operators win online."
+        title="We Help Businesses Grow, Reach More People, and Win Online"
+        subtitle="BFash Solution is your dedicated digital growth partner. We combine practical marketing, modern search optimization, and hands-on support so you can focus on running your business."
       />
 
       <Section
         title="Our Mission"
-        subtitle="To make world-class digital craftsmanship — strategy, design, engineering, and growth — accessible to brands ready to scale, without the bloat of a traditional agency."
+        subtitle="To provide practical, reliable, and high-quality digital marketing support to businesses of all sizes—without complicated jargon or unnecessary agency bloat."
       >
         <div className="grid md:grid-cols-2 gap-6">
           {values.map((v) => (
@@ -159,7 +159,7 @@ function About() {
 
       <Section
         eyebrow="Our Process"
-        title="A framework built for clarity and momentum"
+        title="A Simple 4-Step Path to Clear Results"
         center
       >
         <div className="relative grid md:grid-cols-4 gap-6">
