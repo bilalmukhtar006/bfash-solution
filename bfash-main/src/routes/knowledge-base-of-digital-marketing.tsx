@@ -427,6 +427,7 @@ function KnowledgeBasePage() {
               Core Components of SEO
             </h3>
 
+
             <h4 className="text-xl font-display font-bold text-white mt-4 mb-2">
               1. Keyword Research
             </h4>
