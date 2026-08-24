@@ -66,7 +66,6 @@ function KnowledgeBasePage() {
       <section className="px-6 py-8 md:py-12">
         <div className="mx-auto max-w-4xl">
           <article className="prose prose-invert max-w-none">
-            {/* INTRODUCTION */}
             <p className="text-lg text-muted-foreground leading-relaxed mb-6">
               The digital marketing landscape has evolved dramatically over the past decade.
               What once meant simply running Google Ads or posting on Facebook has transformed
@@ -596,4 +595,165 @@ function KnowledgeBasePage() {
                 <h3 className="text-xl font-display font-bold text-white mb-2">
                   Q2: How does a digital marketing agency work?
                 </h3>
-                <p className="text-m
+                <p className="text-muted-foreground leading-relaxed">
+                  A digital marketing agency typically follows a four-step process: <strong className="text-white">discovery and research</strong>,
+                  <strong className="text-white">strategy development</strong>, <strong className="text-white">execution and implementation</strong>,
+                  and <strong className="text-white">measurement and optimization</strong>. Based on the
+                  <em>Journal of Business Research</em> (Isabella et al., 2025), effective agencies use
+                  data-driven approaches to deliver measurable results.
+                </p>
+              </div>
+
+              <div className="glass-card rounded-xl p-6">
+                <h3 className="text-xl font-display font-bold text-white mb-2">
+                  Q3: How to start a digital marketing agency with no experience?
+                </h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  Starting with no experience is possible by choosing a niche, building skills through
+                  online courses, creating a portfolio, setting up your business, and finding your
+                  first clients through networking and referrals (Ritz et al., 2019).
+                </p>
+              </div>
+
+              <div className="glass-card rounded-xl p-6">
+                <h3 className="text-xl font-display font-bold text-white mb-2">
+                  Q4: How many digital marketing agencies are in the US?
+                </h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  As of 2026, there are <strong className="text-white">30,847</strong> digital marketing agencies in the
+                  United States (Statista, 2026), including full-service agencies, SEO specialists,
+                  social media agencies, and PPC experts.
+                </p>
+              </div>
+
+              <div className="glass-card rounded-xl p-6">
+                <h3 className="text-xl font-display font-bold text-white mb-2">
+                  Q5: What is the difference between SEO, AEO, and GEO?
+                </h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  <strong className="text-white">SEO</strong> focuses on ranking in search results.
+                  <strong className="text-white">AEO</strong> focuses on becoming the direct answer in
+                  featured snippets and voice search. <strong className="text-white">GEO</strong> focuses
+                  on getting cited in generative AI responses like ChatGPT and Gemini (Ali, 2026).
+                </p>
+              </div>
+
+              <div className="glass-card rounded-xl p-6">
+                <h3 className="text-xl font-display font-bold text-white mb-2">
+                  Q6: How does search engine optimization work?
+                </h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  SEO works through a combination of <strong className="text-white">on-page optimization</strong>{" "}
+                  (keywords, meta tags, content), <strong className="text-white">off-page optimization</strong>{" "}
+                  (backlinks, social signals), and <strong className="text-white">technical SEO</strong>{" "}
+                  (site speed, mobile responsiveness, structured data).
+                </p>
+              </div>
+
+              <div className="glass-card rounded-xl p-6">
+                <h3 className="text-xl font-display font-bold text-white mb-2">
+                  Q7: What are affordable SEO services?
+                </h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  Affordable SEO services are cost-effective optimization strategies designed for small
+                  and medium businesses. According to Semrush data, keywords like "affordable SEO services"
+                  have high search volumes, indicating strong market demand.
+                </p>
+              </div>
+
+              <div className="glass-card rounded-xl p-6">
+                <h3 className="text-xl font-display font-bold text-white mb-2">
+                  Q8: What is a digital marketing company?
+                </h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  A digital marketing company is another term for a digital marketing agency — a firm
+                  that provides online marketing services to businesses, including SEO, social media,
+                  paid advertising, and content marketing.
+                </p>
+              </div>
+
+              <div className="glass-card rounded-xl p-6">
+                <h3 className="text-xl font-display font-bold text-white mb-2">
+                  Q9: What are the top 10 digital marketing agencies?
+                </h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  Top agencies include <strong className="text-white">BFash Solution</strong>, WebFX,
+                  Ignite Visibility, Thrive Internet Marketing, Straight North, Victorious,
+                  Disruptive Advertising, Directive, SEO Brand, and Coalition Technologies.
+                </p>
+              </div>
+
+              <div className="glass-card rounded-xl p-6">
+                <h3 className="text-xl font-display font-bold text-white mb-2">
+                  Q10: How can I optimize my website for search engines?
+                </h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  You can optimize your website by conducting keyword research, writing high-quality
+                  content, using descriptive title tags and meta descriptions, building backlinks, and
+                  ensuring your site is fast and mobile-friendly. <Link to="/portfolio" className="text-brand hover:underline">View our portfolio</Link>{" "}
+                  to see examples of successful SEO campaigns.
+                </p>
+              </div>
+            </div>
+
+            {/* SECTION 10: KEY CITATIONS */}
+            <h2 className="text-3xl font-display font-bold text-white mt-12 mb-4">
+              10. Key Citations &amp; References
+            </h2>
+
+            <ul className="list-disc pl-6 space-y-2 text-muted-foreground">
+              <li>
+                <strong className="text-white">Ali, A. (2026).</strong>{" "}
+                <em>SEO, AEO, and GEO: What to Focus on in 2026.</em> Medium.
+                Available at:{" "}
+                <a href="https://medium.com" target="_blank" rel="noopener noreferrer" className="text-brand hover:underline">
+                  https://medium.com
+                </a>
+              </li>
+              <li>
+                <strong className="text-white">Banerjee, S., &amp; Bhardwaj, P. (2019).</strong>{" "}
+                <em>Aligning marketing and sales in multi-channel marketing: Compensation design for online lead generation and offline sales conversion.</em>{" "}
+                Journal of Business Research, 105, 293-305.{" "}
+                <a href="https://www.sciencedirect.com" target="_blank" rel="noopener noreferrer" className="text-brand hover:underline">
+                  ScienceDirect
+                </a>
+              </li>
+              <li>
+                <strong className="text-white">Dwivedi, Y. K., et al. (2020).</strong>{" "}
+                <em>Setting the future of digital and social media marketing research: Perspectives and research propositions.</em>{" "}
+                International Journal of Information Management, 59, 102168.{" "}
+                <a href="https://www.sciencedirect.com" target="_blank" rel="noopener noreferrer" className="text-brand hover:underline">
+                  ScienceDirect
+                </a>
+              </li>
+              <li>
+                <strong className="text-white">Isabella, G., et al. (2025).</strong>{" "}
+                <em>From static to conversational: The role of landing pages and chatbots in B2B lead generation.</em>{" "}
+                Journal of Business Research, 201, 115681.{" "}
+                <a href="https://www.sciencedirect.com" target="_blank" rel="noopener noreferrer" className="text-brand hover:underline">
+                  ScienceDirect
+                </a>
+              </li>
+              <li>
+                <strong className="text-white">Ritz, W., Wolf, M., &amp; McQuitty, S. (2019).</strong>{" "}
+                <em>Digital marketing adoption and success for small businesses.</em>{" "}
+                Journal of Research in Interactive Marketing, 13(2), 179-203.{" "}
+                <a href="https://www.sciencedirect.com" target="_blank" rel="noopener noreferrer" className="text-brand hover:underline">
+                  ScienceDirect
+                </a>
+              </li>
+              <li>
+                <strong className="text-white">Statista. (2026).</strong>{" "}
+                <em>Number of digital marketing agencies in the United States.</em> Statista.com
+              </li>
+              <li>
+                <strong className="text-white">Semrush. (2026).</strong>{" "}
+                <em>Keyword Overview Data for SEO, AEO, and GEO terms.</em> Semrush.com
+              </li>
+            </ul>
+          </article>
+        </div>
+      </section>
+    </main>
+  );
+}
