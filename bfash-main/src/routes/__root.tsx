@@ -215,40 +215,55 @@ function RootShell({
       <head>
         <HeadContent />
 
+        {/* ✅ GOOGLE TAG MANAGER (GTM) - Loaded in head */}
         <script
           dangerouslySetInnerHTML={{
             __html: `
-              function loadGTM() {
-                (function(w,d,s,l,i){
-                  w[l]=w[l]||[];
-                  w[l].push({
-                    'gtm.start': new Date().getTime(),
-                    event:'gtm.js'
-                  });
+              (function(w,d,s,l,i){
+                w[l]=w[l]||[];
+                w[l].push({
+                  'gtm.start': new Date().getTime(),
+                  event:'gtm.js'
+                });
+                var f=d.getElementsByTagName(s)[0],
+                    j=d.createElement(s),
+                    dl=l!='dataLayer'?'&l='+l:'';
+                j.async=true;
+                j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
+                f.parentNode.insertBefore(j,f);
+              })(window,document,'script','dataLayer','GTM-MK7WRDB');
+            `,
+          }}
+        />
 
-                  var f=d.getElementsByTagName(s)[0],
-                      j=d.createElement(s),
-                      dl=l!='dataLayer'?'&l='+l:'';
-
-                  j.async=true;
-                  j.defer=true;
-                  j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
-
-                  f.parentNode.insertBefore(j,f);
-                })(window,document,'script','dataLayer','G-P9KF8CGYBL');
-              }
-
-              if ('requestIdleCallback' in window) {
-                requestIdleCallback(loadGTM);
-              } else {
-                setTimeout(loadGTM, 2000);
-              }
+        {/* ✅ GOOGLE ANALYTICS 4 - Added as fallback */}
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-P9KF8CGYBL"
+        />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-P9KF8CGYBL');
             `,
           }}
         />
       </head>
 
       <body>
+        {/* ✅ GOOGLE TAG MANAGER (noscript) - Immediately after body */}
+        <noscript>
+          <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-MK7WRDB"
+            height="0"
+            width="0"
+            style={{ display: "none", visibility: "hidden" }}
+          />
+        </noscript>
+
         {children}
         <Scripts />
       </body>
