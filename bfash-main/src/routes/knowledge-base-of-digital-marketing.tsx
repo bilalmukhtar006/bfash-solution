@@ -1,4 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { useState } from "react";
+import { ChevronDown, ChevronUp } from "lucide-react";
 
 export const Route = createFileRoute("/knowledge-base-of-digital-marketing")({
   head: () => ({
@@ -35,7 +37,156 @@ export const Route = createFileRoute("/knowledge-base-of-digital-marketing")({
   component: KnowledgeBasePage,
 });
 
+// Accordion Component for FAQ
+function AccordionItem({ question, answer, isOpen, onToggle }: {
+  question: string;
+  answer: React.ReactNode;
+  isOpen: boolean;
+  onToggle: () => void;
+}) {
+  return (
+    <div className="glass-card rounded-xl overflow-hidden border border-border/50">
+      <button
+        onClick={onToggle}
+        className="w-full px-6 py-4 flex items-center justify-between hover:bg-white/5 transition-colors text-left"
+      >
+        <h3 className="text-lg font-display font-semibold text-white">{question}</h3>
+        <span className="text-brand ml-4 flex-shrink-0">
+          {isOpen ? <ChevronUp className="h-5 w-5" /> : <ChevronDown className="h-5 w-5" />}
+        </span>
+      </button>
+      <div
+        className={`overflow-hidden transition-all duration-300 ease-in-out ${
+          isOpen ? "max-h-[800px] opacity-100" : "max-h-0 opacity-0"
+        }`}
+      >
+        <div className="px-6 pb-6 text-muted-foreground leading-relaxed border-t border-border/50 pt-4">
+          {answer}
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function KnowledgeBasePage() {
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
+  const [openCitations, setOpenCitations] = useState(false);
+
+  const toggleFaq = (index: number) => {
+    setOpenFaq(openFaq === index ? null : index);
+  };
+
+  const faqs = [
+    {
+      question: "Q1: What is a digital marketing agency?",
+      answer: (
+        <p>
+          A <strong className="text-white">digital marketing agency</strong> is a company that
+          helps businesses promote their products or services online through SEO, social media,
+          paid advertising, content marketing, and other digital channels. According to
+          <em>ScienceDirect</em> research <sup>[2]</sup>, these agencies have become essential
+          partners for businesses navigating the digital economy.
+        </p>
+      ),
+    },
+    {
+      question: "Q2: How does a digital marketing agency work?",
+      answer: (
+        <p>
+          A digital marketing agency typically follows a four-step process: <strong className="text-white">discovery and research</strong>,
+          <strong className="text-white">strategy development</strong>, <strong className="text-white">execution and implementation</strong>,
+          and <strong className="text-white">measurement and optimization</strong>. Based on the
+          <em>Journal of Business Research</em> <sup>[3]</sup>, effective agencies use data-driven
+          approaches to deliver measurable results.
+        </p>
+      ),
+    },
+    {
+      question: "Q3: How to start a digital marketing agency with no experience?",
+      answer: (
+        <p>
+          Starting with no experience is possible by choosing a niche, building skills through
+          online courses, creating a portfolio, setting up your business, and finding your
+          first clients through networking and referrals <sup>[5]</sup>.
+        </p>
+      ),
+    },
+    {
+      question: "Q4: How many digital marketing agencies are in the US?",
+      answer: (
+        <p>
+          As of 2026, there are <strong className="text-white">30,847</strong> digital marketing agencies in the
+          United States <sup>[6]</sup>, including full-service agencies, SEO specialists,
+          social media agencies, and PPC experts.
+        </p>
+      ),
+    },
+    {
+      question: "Q5: What is the difference between SEO, AEO, and GEO?",
+      answer: (
+        <p>
+          <strong className="text-white">SEO</strong> focuses on ranking in search results.
+          <strong className="text-white">AEO</strong> focuses on becoming the direct answer in
+          featured snippets and voice search. <strong className="text-white">GEO</strong> focuses
+          on getting cited in generative AI responses like ChatGPT and Gemini <sup>[1]</sup>.
+        </p>
+      ),
+    },
+    {
+      question: "Q6: How does search engine optimization work?",
+      answer: (
+        <p>
+          SEO works through a combination of <strong className="text-white">on-page optimization</strong>{" "}
+          (keywords, meta tags, content), <strong className="text-white">off-page optimization</strong>{" "}
+          (backlinks, social signals), and <strong className="text-white">technical SEO</strong>{" "}
+          (site speed, mobile responsiveness, structured data) <sup>[2]</sup>.
+        </p>
+      ),
+    },
+    {
+      question: "Q7: What are affordable SEO services?",
+      answer: (
+        <p>
+          Affordable SEO services are cost-effective optimization strategies designed for small
+          and medium businesses. According to <strong className="text-white">Semrush</strong> data <sup>[7]</sup>,
+          keywords like "affordable SEO services" have high search volumes, indicating strong
+          market demand.
+        </p>
+      ),
+    },
+    {
+      question: "Q8: What is a digital marketing company?",
+      answer: (
+        <p>
+          A digital marketing company is another term for a digital marketing agency — a firm
+          that provides online marketing services to businesses, including SEO, social media,
+          paid advertising, and content marketing.
+        </p>
+      ),
+    },
+    {
+      question: "Q9: What are the top 10 digital marketing agencies?",
+      answer: (
+        <p>
+          Top agencies include <strong className="text-white">BFash Solution</strong>, WebFX,
+          Ignite Visibility, Thrive Internet Marketing, Straight North, Victorious,
+          Disruptive Advertising, Directive, SEO Brand, and Coalition Technologies.
+        </p>
+      ),
+    },
+    {
+      question: "Q10: How can I optimize my website for search engines?",
+      answer: (
+        <p>
+          You can optimize your website by conducting keyword research, writing high-quality
+          content, using descriptive title tags and meta descriptions, building backlinks, and
+          ensuring your site is fast and mobile-friendly. <Link to="/portfolio" className="text-brand hover:underline">View our portfolio</Link>{" "}
+          to see examples of successful SEO campaigns.
+        </p>
+      ),
+    },
+  ];
+
   return (
     <main className="min-h-screen bg-background">
       {/* HERO SECTION */}
@@ -66,6 +217,7 @@ function KnowledgeBasePage() {
       <section className="px-6 py-8 md:py-12">
         <div className="mx-auto max-w-4xl">
           <article className="prose prose-invert max-w-none">
+            {/* INTRODUCTION */}
             <p className="text-lg text-muted-foreground leading-relaxed mb-6">
               The digital marketing landscape has evolved dramatically over the past decade.
               What once meant simply running Google Ads or posting on Facebook has transformed
@@ -82,7 +234,7 @@ function KnowledgeBasePage() {
               But in 2026, the definition of digital marketing has expanded to include
               <strong className="text-white"> Answer Engine Optimization (AEO)</strong> and
               <strong className="text-white"> Generative Engine Optimization (GEO)</strong> —
-              two strategies that are reshaping how brands get discovered online.
+              two strategies that are reshaping how brands get discovered online <sup>[1]</sup>.
             </p>
 
             <p className="text-lg text-muted-foreground leading-relaxed mb-8">
@@ -105,7 +257,7 @@ function KnowledgeBasePage() {
 
             <p className="text-lg text-muted-foreground leading-relaxed mb-6">
               According to research published in the <em>International Journal of Information Management</em>{" "}
-              (Dwivedi et al., 2020), digital marketing agencies have become essential partners for
+              <sup>[2]</sup>, digital marketing agencies have become essential partners for
               businesses navigating the complexities of the digital economy. They bridge the gap
               between traditional marketing and the rapidly evolving digital landscape.
             </p>
@@ -156,7 +308,7 @@ function KnowledgeBasePage() {
             <p className="text-lg text-muted-foreground leading-relaxed mb-4">
               A digital marketing agency typically follows a structured process to deliver results
               for its clients. Drawing from the framework outlined in the <em>Journal of Business Research</em>{" "}
-              (Banerjee &amp; Bhardwaj, 2019), this process involves:
+              <sup>[3]</sup>, this process involves:
             </p>
 
             <h3 className="text-2xl font-display font-bold text-white mt-6 mb-3">
@@ -191,7 +343,7 @@ function KnowledgeBasePage() {
             </h3>
             <p className="text-lg text-muted-foreground leading-relaxed mb-4">
               The agency executes the strategy through various channels. According to <em>ScienceDirect</em>{" "}
-              research on multi-channel marketing (Isabella et al., 2025), effective execution requires:
+              research on multi-channel marketing <sup>[4]</sup>, effective execution requires:
             </p>
             <ul className="list-disc pl-6 space-y-2 text-muted-foreground mb-6">
               <li>Consistent branding across channels</li>
@@ -227,7 +379,7 @@ function KnowledgeBasePage() {
               Step 1: Choose Your Niche
             </h3>
             <p className="text-lg text-muted-foreground leading-relaxed mb-4">
-              Specializing in a specific industry or service can help you stand out. According to Semrush data,
+              Specializing in a specific industry or service can help you stand out. According to <strong className="text-white">Semrush</strong> data <sup>[7]</sup>,
               keywords like "affordable SEO services" and "local SEO agency" have high search volumes,
               indicating strong market demand.
             </p>
@@ -261,8 +413,8 @@ function KnowledgeBasePage() {
             </h3>
             <p className="text-lg text-muted-foreground leading-relaxed mb-4">
               Register your agency, set up a website, and create social media profiles.
-              According to the <em>Journal of Business Research</em>, small businesses that invest in
-              professional branding are more likely to attract clients (Ritz et al., 2019).
+              According to the <em>Journal of Business Research</em> <sup>[5]</sup>, small businesses that invest in
+              professional branding are more likely to attract clients.
             </p>
 
             <h3 className="text-2xl font-display font-bold text-white mt-6 mb-3">
@@ -285,7 +437,7 @@ function KnowledgeBasePage() {
 
             <p className="text-lg text-muted-foreground leading-relaxed mb-4">
               As of 2026, the United States is home to <strong className="text-white">30,847 digital marketing agencies</strong>{" "}
-              (Statista, 2026). This number has grown <strong className="text-white">14.2%</strong> over the past decade,
+              <sup>[6]</sup>. This number has grown <strong className="text-white">14.2%</strong> over the past decade,
               driven by increasing demand for online marketing services.
             </p>
 
@@ -424,7 +576,7 @@ function KnowledgeBasePage() {
             <p className="text-lg text-muted-foreground leading-relaxed mb-4">
               Search Engine Optimization (SEO) is the practice of improving a website's visibility
               in search engine results pages (SERPs). According to <em>ScienceDirect</em> research
-              (Dwivedi et al., 2020), SEO involves both <strong className="text-white">technical</strong> and
+              <sup>[2]</sup>, SEO involves both <strong className="text-white">technical</strong> and
               <strong className="text-white">content-based</strong> strategies.
             </p>
 
@@ -437,7 +589,7 @@ function KnowledgeBasePage() {
             </h4>
             <p className="text-lg text-muted-foreground leading-relaxed mb-4">
               Identifying the words and phrases potential customers use to find your products or services.
-              Tools like Semrush and Google Keyword Planner help with this.
+              Tools like <strong className="text-white">Semrush</strong> and Google Keyword Planner help with this <sup>[7]</sup>.
             </p>
 
             <h4 className="text-xl font-display font-bold text-white mt-4 mb-2">
@@ -486,7 +638,7 @@ function KnowledgeBasePage() {
 
             <p className="text-lg text-muted-foreground leading-relaxed mb-6">
               The digital marketing landscape has expanded beyond traditional SEO. According to a widely
-              cited article by <strong className="text-white">Amir Ali (2026)</strong>, the distinction between
+              cited article by <strong className="text-white">Amir Ali</strong> <sup>[1]</sup>, the distinction between
               SEO, AEO, and GEO is crucial for modern marketers:
             </p>
 
@@ -535,8 +687,8 @@ function KnowledgeBasePage() {
             </h2>
 
             <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-              Based on research from the <em>International Journal of Information Management</em> and
-              <em>Journal of Business Research</em>, here are key strategies for 2026:
+              Based on research from the <em>International Journal of Information Management</em> <sup>[2]</sup> and
+              <em>Journal of Business Research</em> <sup>[3][4]</sup>, here are key strategies for 2026:
             </p>
 
             <h3 className="text-2xl font-display font-bold text-white mt-6 mb-3">
@@ -565,192 +717,146 @@ function KnowledgeBasePage() {
               For GEO:
             </h3>
             <ul className="list-disc pl-6 space-y-2 text-muted-foreground mb-6">
-              <li><strong className="text-white">Add original insights</strong> — Stand out from generic content</li>
+              <li><strong className="text-white">Add original insights</strong> — Stand out from generic content <sup>[1]</sup></li>
               <li><strong className="text-white">Cite authoritative sources</strong> — Build credibility</li>
               <li><strong className="text-white">Use clear entities and terminology</strong> — Help AI understand your content</li>
               <li><strong className="text-white">Include structured sections</strong> — Make content easy to parse</li>
               <li><strong className="text-white">Add author expertise signals</strong> — Build trustworthiness</li>
             </ul>
 
-            {/* SECTION 9: FAQ */}
-            <h2 className="text-3xl font-display font-bold text-white mt-12 mb-4">
-              9. FAQ – Digital Marketing Agency, SEO, AEO, and GEO
+            {/* FAQ SECTION */}
+            <h2 className="text-3xl font-display font-bold text-white mt-12 mb-6">
+              9. Frequently Asked Questions
             </h2>
 
-            <div className="space-y-6">
-              <div className="glass-card rounded-xl p-6">
-                <h3 className="text-xl font-display font-bold text-white mb-2">
-                  Q1: What is a digital marketing agency?
-                </h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  A <strong className="text-white">digital marketing agency</strong> is a company that
-                  helps businesses promote their products or services online through SEO, social media,
-                  paid advertising, content marketing, and other digital channels. According to
-                  <em>ScienceDirect</em> research (Dwivedi et al., 2020), these agencies have become
-                  essential partners for businesses navigating the digital economy.
-                </p>
-              </div>
-
-              <div className="glass-card rounded-xl p-6">
-                <h3 className="text-xl font-display font-bold text-white mb-2">
-                  Q2: How does a digital marketing agency work?
-                </h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  A digital marketing agency typically follows a four-step process: <strong className="text-white">discovery and research</strong>,
-                  <strong className="text-white">strategy development</strong>, <strong className="text-white">execution and implementation</strong>,
-                  and <strong className="text-white">measurement and optimization</strong>. Based on the
-                  <em>Journal of Business Research</em> (Isabella et al., 2025), effective agencies use
-                  data-driven approaches to deliver measurable results.
-                </p>
-              </div>
-
-              <div className="glass-card rounded-xl p-6">
-                <h3 className="text-xl font-display font-bold text-white mb-2">
-                  Q3: How to start a digital marketing agency with no experience?
-                </h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  Starting with no experience is possible by choosing a niche, building skills through
-                  online courses, creating a portfolio, setting up your business, and finding your
-                  first clients through networking and referrals (Ritz et al., 2019).
-                </p>
-              </div>
-
-              <div className="glass-card rounded-xl p-6">
-                <h3 className="text-xl font-display font-bold text-white mb-2">
-                  Q4: How many digital marketing agencies are in the US?
-                </h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  As of 2026, there are <strong className="text-white">30,847</strong> digital marketing agencies in the
-                  United States (Statista, 2026), including full-service agencies, SEO specialists,
-                  social media agencies, and PPC experts.
-                </p>
-              </div>
-
-              <div className="glass-card rounded-xl p-6">
-                <h3 className="text-xl font-display font-bold text-white mb-2">
-                  Q5: What is the difference between SEO, AEO, and GEO?
-                </h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  <strong className="text-white">SEO</strong> focuses on ranking in search results.
-                  <strong className="text-white">AEO</strong> focuses on becoming the direct answer in
-                  featured snippets and voice search. <strong className="text-white">GEO</strong> focuses
-                  on getting cited in generative AI responses like ChatGPT and Gemini (Ali, 2026).
-                </p>
-              </div>
-
-              <div className="glass-card rounded-xl p-6">
-                <h3 className="text-xl font-display font-bold text-white mb-2">
-                  Q6: How does search engine optimization work?
-                </h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  SEO works through a combination of <strong className="text-white">on-page optimization</strong>{" "}
-                  (keywords, meta tags, content), <strong className="text-white">off-page optimization</strong>{" "}
-                  (backlinks, social signals), and <strong className="text-white">technical SEO</strong>{" "}
-                  (site speed, mobile responsiveness, structured data).
-                </p>
-              </div>
-
-              <div className="glass-card rounded-xl p-6">
-                <h3 className="text-xl font-display font-bold text-white mb-2">
-                  Q7: What are affordable SEO services?
-                </h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  Affordable SEO services are cost-effective optimization strategies designed for small
-                  and medium businesses. According to Semrush data, keywords like "affordable SEO services"
-                  have high search volumes, indicating strong market demand.
-                </p>
-              </div>
-
-              <div className="glass-card rounded-xl p-6">
-                <h3 className="text-xl font-display font-bold text-white mb-2">
-                  Q8: What is a digital marketing company?
-                </h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  A digital marketing company is another term for a digital marketing agency — a firm
-                  that provides online marketing services to businesses, including SEO, social media,
-                  paid advertising, and content marketing.
-                </p>
-              </div>
-
-              <div className="glass-card rounded-xl p-6">
-                <h3 className="text-xl font-display font-bold text-white mb-2">
-                  Q9: What are the top 10 digital marketing agencies?
-                </h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  Top agencies include <strong className="text-white">BFash Solution</strong>, WebFX,
-                  Ignite Visibility, Thrive Internet Marketing, Straight North, Victorious,
-                  Disruptive Advertising, Directive, SEO Brand, and Coalition Technologies.
-                </p>
-              </div>
-
-              <div className="glass-card rounded-xl p-6">
-                <h3 className="text-xl font-display font-bold text-white mb-2">
-                  Q10: How can I optimize my website for search engines?
-                </h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  You can optimize your website by conducting keyword research, writing high-quality
-                  content, using descriptive title tags and meta descriptions, building backlinks, and
-                  ensuring your site is fast and mobile-friendly. <Link to="/portfolio" className="text-brand hover:underline">View our portfolio</Link>{" "}
-                  to see examples of successful SEO campaigns.
-                </p>
-              </div>
+            <div className="space-y-3">
+              {faqs.map((faq, index) => (
+                <AccordionItem
+                  key={index}
+                  question={faq.question}
+                  answer={faq.answer}
+                  isOpen={openFaq === index}
+                  onToggle={() => toggleFaq(index)}
+                />
+              ))}
             </div>
 
-            {/* SECTION 10: KEY CITATIONS */}
+            {/* CITATIONS SECTION */}
             <h2 className="text-3xl font-display font-bold text-white mt-12 mb-4">
-              10. Key Citations &amp; References
+              10. References
             </h2>
 
-            <ul className="list-disc pl-6 space-y-2 text-muted-foreground">
-              <li>
-                <strong className="text-white">Ali, A. (2026).</strong>{" "}
-                <em>SEO, AEO, and GEO: What to Focus on in 2026.</em> Medium.
-                Available at:{" "}
-                <a href="https://medium.com" target="_blank" rel="noopener noreferrer" className="text-brand hover:underline">
-                  https://medium.com
-                </a>
-              </li>
-              <li>
-                <strong className="text-white">Banerjee, S., &amp; Bhardwaj, P. (2019).</strong>{" "}
-                <em>Aligning marketing and sales in multi-channel marketing: Compensation design for online lead generation and offline sales conversion.</em>{" "}
-                Journal of Business Research, 105, 293-305.{" "}
-                <a href="https://www.sciencedirect.com" target="_blank" rel="noopener noreferrer" className="text-brand hover:underline">
-                  ScienceDirect
-                </a>
-              </li>
-              <li>
-                <strong className="text-white">Dwivedi, Y. K., et al. (2020).</strong>{" "}
-                <em>Setting the future of digital and social media marketing research: Perspectives and research propositions.</em>{" "}
-                International Journal of Information Management, 59, 102168.{" "}
-                <a href="https://www.sciencedirect.com" target="_blank" rel="noopener noreferrer" className="text-brand hover:underline">
-                  ScienceDirect
-                </a>
-              </li>
-              <li>
-                <strong className="text-white">Isabella, G., et al. (2025).</strong>{" "}
-                <em>From static to conversational: The role of landing pages and chatbots in B2B lead generation.</em>{" "}
-                Journal of Business Research, 201, 115681.{" "}
-                <a href="https://www.sciencedirect.com" target="_blank" rel="noopener noreferrer" className="text-brand hover:underline">
-                  ScienceDirect
-                </a>
-              </li>
-              <li>
-                <strong className="text-white">Ritz, W., Wolf, M., &amp; McQuitty, S. (2019).</strong>{" "}
-                <em>Digital marketing adoption and success for small businesses.</em>{" "}
-                Journal of Research in Interactive Marketing, 13(2), 179-203.{" "}
-                <a href="https://www.sciencedirect.com" target="_blank" rel="noopener noreferrer" className="text-brand hover:underline">
-                  ScienceDirect
-                </a>
-              </li>
-              <li>
-                <strong className="text-white">Statista. (2026).</strong>{" "}
-                <em>Number of digital marketing agencies in the United States.</em> Statista.com
-              </li>
-              <li>
-                <strong className="text-white">Semrush. (2026).</strong>{" "}
-                <em>Keyword Overview Data for SEO, AEO, and GEO terms.</em> Semrush.com
-              </li>
-            </ul>
+            <div className="glass-card rounded-xl overflow-hidden border border-border/50">
+              <button
+                onClick={() => setOpenCitations(!openCitations)}
+                className="w-full px-6 py-4 flex items-center justify-between hover:bg-white/5 transition-colors text-left"
+              >
+                <span className="text-lg font-display font-semibold text-white">
+                  View All Citations
+                </span>
+                <span className="text-brand ml-4 flex-shrink-0">
+                  {openCitations ? <ChevronUp className="h-5 w-5" /> : <ChevronDown className="h-5 w-5" />}
+                </span>
+              </button>
+              <div
+                className={`overflow-hidden transition-all duration-300 ease-in-out ${
+                  openCitations ? "max-h-[2000px] opacity-100" : "max-h-0 opacity-0"
+                }`}
+              >
+                <div className="px-6 pb-6 pt-4 border-t border-border/50">
+                  <ol className="space-y-3 text-sm text-muted-foreground list-decimal pl-5">
+                    <li id="ref-1">
+                      <strong className="text-white">Ali, A.</strong> (2026).{" "}
+                      <em>SEO, AEO, and GEO: What to Focus on in 2026.</em>{" "}
+                      <a
+                        href="https://medium.com"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-brand hover:underline"
+                      >
+                        Medium
+                      </a>
+                    </li>
+                    <li id="ref-2">
+                      <strong className="text-white">Dwivedi, Y. K., et al.</strong> (2020).{" "}
+                      <em>Setting the future of digital and social media marketing research: Perspectives and research propositions.</em>{" "}
+                      International Journal of Information Management, 59, 102168.{" "}
+                      <a
+                        href="https://www.sciencedirect.com"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-brand hover:underline"
+                      >
+                        ScienceDirect
+                      </a>
+                    </li>
+                    <li id="ref-3">
+                      <strong className="text-white">Banerjee, S., &amp; Bhardwaj, P.</strong> (2019).{" "}
+                      <em>Aligning marketing and sales in multi-channel marketing: Compensation design for online lead generation and offline sales conversion.</em>{" "}
+                      Journal of Business Research, 105, 293-305.{" "}
+                      <a
+                        href="https://www.sciencedirect.com"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-brand hover:underline"
+                      >
+                        ScienceDirect
+                      </a>
+                    </li>
+                    <li id="ref-4">
+                      <strong className="text-white">Isabella, G., et al.</strong> (2025).{" "}
+                      <em>From static to conversational: The role of landing pages and chatbots in B2B lead generation.</em>{" "}
+                      Journal of Business Research, 201, 115681.{" "}
+                      <a
+                        href="https://www.sciencedirect.com"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-brand hover:underline"
+                      >
+                        ScienceDirect
+                      </a>
+                    </li>
+                    <li id="ref-5">
+                      <strong className="text-white">Ritz, W., Wolf, M., &amp; McQuitty, S.</strong> (2019).{" "}
+                      <em>Digital marketing adoption and success for small businesses.</em>{" "}
+                      Journal of Research in Interactive Marketing, 13(2), 179-203.{" "}
+                      <a
+                        href="https://www.sciencedirect.com"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-brand hover:underline"
+                      >
+                        ScienceDirect
+                      </a>
+                    </li>
+                    <li id="ref-6">
+                      <strong className="text-white">Statista.</strong> (2026).{" "}
+                      <em>Number of digital marketing agencies in the United States.</em>{" "}
+                      <a
+                        href="https://www.statista.com"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-brand hover:underline"
+                      >
+                        Statista
+                      </a>
+                    </li>
+                    <li id="ref-7">
+                      <strong className="text-white">Semrush.</strong> (2026).{" "}
+                      <em>Keyword Overview Data for SEO, AEO, and GEO terms.</em>{" "}
+                      <a
+                        href="https://www.semrush.com"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-brand hover:underline"
+                      >
+                        Semrush
+                      </a>
+                    </li>
+                  </ol>
+                </div>
+              </div>
+            </div>
           </article>
         </div>
       </section>
