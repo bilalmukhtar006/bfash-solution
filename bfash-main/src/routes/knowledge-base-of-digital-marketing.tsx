@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
-import { ChevronDown, ChevronUp } from "lucide-react";
+import { ChevronDown, ChevronUp, Play } from "lucide-react";
 
 export const Route = createFileRoute("/knowledge-base-of-digital-marketing")({
   head: () => ({
@@ -484,7 +484,7 @@ function KnowledgeBasePage() {
               </table>
             </div>
 
-            {/* SECTION 5: TOP 10 AGENCIES - STYLED TABLE */}
+            {/* SECTION 5: TOP 10 AGENCIES */}
             <div className="mt-12 mb-8">
               <div className="bg-[#0f0728] rounded-2xl p-6 md:p-8 border border-border/50">
                 <h2 className="text-2xl md:text-3xl font-display font-bold text-white mb-2">
@@ -568,6 +568,53 @@ function KnowledgeBasePage() {
                     </tbody>
                   </table>
                 </div>
+              </div>
+            </div>
+
+            {/* VIDEO SECTION */}
+            <div className="mt-8 mb-8">
+              <div className="bg-[#0f0728] rounded-2xl p-6 md:p-8 border border-border/50">
+                <h3 className="text-xl font-display font-bold text-white mb-4 flex items-center gap-2">
+                  <Play className="h-5 w-5 text-brand" />
+                  Watch: The Complete Guide to SEO, AEO, and GEO in 2026
+                </h3>
+                <div className="aspect-video bg-black/50 rounded-xl overflow-hidden border border-border/50 flex items-center justify-center">
+                  <div className="text-center p-8">
+                    <Play className="h-16 w-16 text-brand/50 mx-auto mb-4" />
+                    <p className="text-muted-foreground text-sm">
+                      🎬 Video placeholder: The Complete Guide to SEO, AEO, and GEO in 2026
+                    </p>
+                    <p className="text-muted-foreground/60 text-xs mt-2">
+                      (Replace this with your actual video embed code)
+                    </p>
+                  </div>
+                </div>
+                <p className="text-muted-foreground text-sm mt-3 text-center">
+                  Watch our comprehensive video guide to understand how SEO, AEO, and GEO work together in 2026.
+                </p>
+              </div>
+            </div>
+
+            {/* IMAGE SECTION */}
+            <div className="mt-8 mb-8">
+              <div className="bg-[#0f0728] rounded-2xl p-6 md:p-8 border border-border/50">
+                <div className="aspect-[16/9] bg-black/50 rounded-xl overflow-hidden border border-border/50 flex items-center justify-center">
+                  <div className="text-center p-8">
+                    <div className="text-6xl mb-4">📊</div>
+                    <p className="text-muted-foreground text-sm">
+                      🖼️ Image: The Complete Guide to SEO, AEO, and GEO in 2026
+                    </p>
+                    <p className="text-muted-foreground/60 text-xs mt-2">
+                      (Replace this with your actual image URL)
+                    </p>
+                  </div>
+                </div>
+                <p className="text-muted-foreground text-sm mt-3 text-center">
+                  <strong className="text-white">Figure 1:</strong> The Complete Guide to SEO, AEO, and GEO in 2026 — A visual overview of how search engine optimization, answer engine optimization, and generative engine optimization work together to drive digital marketing success.
+                </p>
+                <p className="text-muted-foreground/60 text-xs text-center mt-1">
+                  Alt text: The Complete Guide to SEO, AEO, and GEO in 2026 — Digital marketing strategies for modern search and AI platforms
+                </p>
               </div>
             </div>
 
