@@ -124,7 +124,7 @@ function RootShell({ children }: { children: ReactNode }) {
       <head>
         <HeadContent />
         
-        {/* ✅ GOOGLE TAG MANAGER - Head Script */}
+        {/* ✅ GOOGLE TAG MANAGER - WITH CORRECT ID GTM-MK7WRDB7 */}
         <script
           dangerouslySetInnerHTML={{
             __html: `
@@ -132,7 +132,7 @@ function RootShell({ children }: { children: ReactNode }) {
               new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
               j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
               'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-              })(window,document,'script','dataLayer','GTM-MK7WRDB');
+              })(window,document,'script','dataLayer','GTM-MK7WRDB7');
             `,
           }}
         />
@@ -154,10 +154,10 @@ function RootShell({ children }: { children: ReactNode }) {
         />
       </head>
       <body>
-        {/* ✅ GOOGLE TAG MANAGER - Noscript (immediately after body) */}
+        {/* ✅ GOOGLE TAG MANAGER (noscript) - CORRECT ID */}
         <noscript>
           <iframe
-            src="https://www.googletagmanager.com/ns.html?id=GTM-MK7WRDB"
+            src="https://www.googletagmanager.com/ns.html?id=GTM-MK7WRDB7"
             height="0"
             width="0"
             style={{ display: "none", visibility: "hidden" }}
