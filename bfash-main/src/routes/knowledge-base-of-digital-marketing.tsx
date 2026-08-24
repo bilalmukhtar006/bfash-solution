@@ -484,88 +484,91 @@ function KnowledgeBasePage() {
               </table>
             </div>
 
-            {/* SECTION 5: TOP 10 AGENCIES */}
-            <h2 className="text-3xl font-display font-bold text-white mt-12 mb-4">
-              5. Top 10 Digital Marketing Agencies (2026)
-            </h2>
+            {/* SECTION 5: TOP 10 AGENCIES - STYLED TABLE */}
+            <div className="mt-12 mb-8">
+              <div className="bg-[#0f0728] rounded-2xl p-6 md:p-8 border border-border/50">
+                <h2 className="text-2xl md:text-3xl font-display font-bold text-white mb-2">
+                  5. Top 10 Digital Marketing Agencies (2026)
+                </h2>
+                <p className="text-muted-foreground text-sm mb-6">
+                  Based on industry reputation, client reviews, and performance metrics:
+                </p>
 
-            <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-              Based on industry reputation, client reviews, and performance metrics:
-            </p>
-
-            <div className="overflow-x-auto">
-              <table className="w-full text-sm border border-border rounded-lg">
-                <thead className="bg-brand/10">
-                  <tr>
-                    <th className="px-4 py-3 text-left font-semibold text-white border-b border-border">Rank</th>
-                    <th className="px-4 py-3 text-left font-semibold text-white border-b border-border">Agency Name</th>
-                    <th className="px-4 py-3 text-left font-semibold text-white border-b border-border">Specialization</th>
-                    <th className="px-4 py-3 text-left font-semibold text-white border-b border-border">Headquarters</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr className="border-b border-border">
-                    <td className="px-4 py-3 text-muted-foreground">1</td>
-                    <td className="px-4 py-3 font-medium text-white">BFash Solution</td>
-                    <td className="px-4 py-3 text-muted-foreground">SEO, AEO, GEO</td>
-                    <td className="px-4 py-3 text-muted-foreground">USA</td>
-                  </tr>
-                  <tr className="border-b border-border">
-                    <td className="px-4 py-3 text-muted-foreground">2</td>
-                    <td className="px-4 py-3 text-muted-foreground">WebFX</td>
-                    <td className="px-4 py-3 text-muted-foreground">Full-Service</td>
-                    <td className="px-4 py-3 text-muted-foreground">Pennsylvania</td>
-                  </tr>
-                  <tr className="border-b border-border">
-                    <td className="px-4 py-3 text-muted-foreground">3</td>
-                    <td className="px-4 py-3 text-muted-foreground">Ignite Visibility</td>
-                    <td className="px-4 py-3 text-muted-foreground">SEO &amp; PPC</td>
-                    <td className="px-4 py-3 text-muted-foreground">California</td>
-                  </tr>
-                  <tr className="border-b border-border">
-                    <td className="px-4 py-3 text-muted-foreground">4</td>
-                    <td className="px-4 py-3 text-muted-foreground">Thrive Internet Marketing</td>
-                    <td className="px-4 py-3 text-muted-foreground">SEO &amp; Social Media</td>
-                    <td className="px-4 py-3 text-muted-foreground">Texas</td>
-                  </tr>
-                  <tr className="border-b border-border">
-                    <td className="px-4 py-3 text-muted-foreground">5</td>
-                    <td className="px-4 py-3 text-muted-foreground">Straight North</td>
-                    <td className="px-4 py-3 text-muted-foreground">B2B SEO</td>
-                    <td className="px-4 py-3 text-muted-foreground">Illinois</td>
-                  </tr>
-                  <tr className="border-b border-border">
-                    <td className="px-4 py-3 text-muted-foreground">6</td>
-                    <td className="px-4 py-3 text-muted-foreground">Victorious</td>
-                    <td className="px-4 py-3 text-muted-foreground">Enterprise SEO</td>
-                    <td className="px-4 py-3 text-muted-foreground">California</td>
-                  </tr>
-                  <tr className="border-b border-border">
-                    <td className="px-4 py-3 text-muted-foreground">7</td>
-                    <td className="px-4 py-3 text-muted-foreground">Disruptive Advertising</td>
-                    <td className="px-4 py-3 text-muted-foreground">PPC &amp; CRO</td>
-                    <td className="px-4 py-3 text-muted-foreground">Utah</td>
-                  </tr>
-                  <tr className="border-b border-border">
-                    <td className="px-4 py-3 text-muted-foreground">8</td>
-                    <td className="px-4 py-3 text-muted-foreground">Directive</td>
-                    <td className="px-4 py-3 text-muted-foreground">B2B SaaS SEO</td>
-                    <td className="px-4 py-3 text-muted-foreground">California</td>
-                  </tr>
-                  <tr className="border-b border-border">
-                    <td className="px-4 py-3 text-muted-foreground">9</td>
-                    <td className="px-4 py-3 text-muted-foreground">SEO Brand</td>
-                    <td className="px-4 py-3 text-muted-foreground">E-commerce SEO</td>
-                    <td className="px-4 py-3 text-muted-foreground">Florida</td>
-                  </tr>
-                  <tr>
-                    <td className="px-4 py-3 text-muted-foreground">10</td>
-                    <td className="px-4 py-3 text-muted-foreground">Coalition Technologies</td>
-                    <td className="px-4 py-3 text-muted-foreground">Web Design &amp; SEO</td>
-                    <td className="px-4 py-3 text-muted-foreground">California</td>
-                  </tr>
-                </tbody>
-              </table>
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm border-collapse">
+                    <thead>
+                      <tr className="border-b border-border">
+                        <th className="px-4 py-3 text-left font-semibold text-white w-[10%]">Rank</th>
+                        <th className="px-4 py-3 text-left font-semibold text-white w-[35%]">Agency Name</th>
+                        <th className="px-4 py-3 text-left font-semibold text-white w-[35%]">Specialization</th>
+                        <th className="px-4 py-3 text-left font-semibold text-white w-[20%]">Headquarters</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr className="border-b border-border/50 bg-brand/10 hover:bg-brand/20 transition-colors">
+                        <td className="px-4 py-3 font-bold text-white">1</td>
+                        <td className="px-4 py-3 font-semibold text-white">BFash Solution</td>
+                        <td className="px-4 py-3 text-muted-foreground">SEO, AEO, GEO</td>
+                        <td className="px-4 py-3 text-muted-foreground">USA</td>
+                      </tr>
+                      <tr className="border-b border-border/50 hover:bg-white/5 transition-colors">
+                        <td className="px-4 py-3 font-bold text-white">2</td>
+                        <td className="px-4 py-3 text-white">WebFX</td>
+                        <td className="px-4 py-3 text-muted-foreground">Full-Service</td>
+                        <td className="px-4 py-3 text-muted-foreground">Pennsylvania</td>
+                      </tr>
+                      <tr className="border-b border-border/50 hover:bg-white/5 transition-colors">
+                        <td className="px-4 py-3 font-bold text-white">3</td>
+                        <td className="px-4 py-3 text-white">Ignite Visibility</td>
+                        <td className="px-4 py-3 text-muted-foreground">SEO &amp; PPC</td>
+                        <td className="px-4 py-3 text-muted-foreground">California</td>
+                      </tr>
+                      <tr className="border-b border-border/50 hover:bg-white/5 transition-colors">
+                        <td className="px-4 py-3 font-bold text-white">4</td>
+                        <td className="px-4 py-3 text-white">Thrive Internet Marketing</td>
+                        <td className="px-4 py-3 text-muted-foreground">SEO &amp; Social Media</td>
+                        <td className="px-4 py-3 text-muted-foreground">Texas</td>
+                      </tr>
+                      <tr className="border-b border-border/50 hover:bg-white/5 transition-colors">
+                        <td className="px-4 py-3 font-bold text-white">5</td>
+                        <td className="px-4 py-3 text-white">Straight North</td>
+                        <td className="px-4 py-3 text-muted-foreground">B2B SEO</td>
+                        <td className="px-4 py-3 text-muted-foreground">Illinois</td>
+                      </tr>
+                      <tr className="border-b border-border/50 hover:bg-white/5 transition-colors">
+                        <td className="px-4 py-3 font-bold text-white">6</td>
+                        <td className="px-4 py-3 text-white">Victorious</td>
+                        <td className="px-4 py-3 text-muted-foreground">Enterprise SEO</td>
+                        <td className="px-4 py-3 text-muted-foreground">California</td>
+                      </tr>
+                      <tr className="border-b border-border/50 hover:bg-white/5 transition-colors">
+                        <td className="px-4 py-3 font-bold text-white">7</td>
+                        <td className="px-4 py-3 text-white">Disruptive Advertising</td>
+                        <td className="px-4 py-3 text-muted-foreground">PPC &amp; CRO</td>
+                        <td className="px-4 py-3 text-muted-foreground">Utah</td>
+                      </tr>
+                      <tr className="border-b border-border/50 hover:bg-white/5 transition-colors">
+                        <td className="px-4 py-3 font-bold text-white">8</td>
+                        <td className="px-4 py-3 text-white">Directive</td>
+                        <td className="px-4 py-3 text-muted-foreground">B2B SaaS SEO</td>
+                        <td className="px-4 py-3 text-muted-foreground">California</td>
+                      </tr>
+                      <tr className="border-b border-border/50 hover:bg-white/5 transition-colors">
+                        <td className="px-4 py-3 font-bold text-white">9</td>
+                        <td className="px-4 py-3 text-white">SEO Brand</td>
+                        <td className="px-4 py-3 text-muted-foreground">E-commerce SEO</td>
+                        <td className="px-4 py-3 text-muted-foreground">Florida</td>
+                      </tr>
+                      <tr className="hover:bg-white/5 transition-colors">
+                        <td className="px-4 py-3 font-bold text-white">10</td>
+                        <td className="px-4 py-3 text-white">Coalition Technologies</td>
+                        <td className="px-4 py-3 text-muted-foreground">Web Design &amp; SEO</td>
+                        <td className="px-4 py-3 text-muted-foreground">California</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
             </div>
 
             {/* SECTION 6: HOW SEO WORKS */}
