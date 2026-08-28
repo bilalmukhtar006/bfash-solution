@@ -602,7 +602,7 @@ function KnowledgeBasePage() {
                   <div className="text-center p-8">
                     <div className="text-6xl mb-4">📊</div>
                     <p className="text-muted-foreground text-sm">
-                      🖼️ Image: The Complete Guide to SEO, AEO, and GEO in 2026
+                      🖼️ Image: "/hafeez.webp",
                     </p>
                     <p className="text-muted-foreground/60 text-xs mt-2">
                       (Replace this with your actual image URL)
