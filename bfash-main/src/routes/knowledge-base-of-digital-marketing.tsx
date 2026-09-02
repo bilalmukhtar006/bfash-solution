@@ -582,7 +582,7 @@ function KnowledgeBasePage() {
                   <video
                     controls
                     className="w-full h-full object-contain"
-                    poster="/The Complete Guide to SEO, AEO, and GEO in 2026.jpg"
+                    poster="/The Complete Guide to SEO, AEO, and GEO in 2026.webp"
                     preload="metadata"
                   >
                     <source src="/The Complete Guide to SEO, AEO, and GEO in 2026.mp4" type="video/mp4" />
@@ -600,7 +600,7 @@ function KnowledgeBasePage() {
               <div className="bg-[#0f0728] rounded-2xl p-6 md:p-8 border border-border/50">
                 <div className="aspect-[16/9] rounded-xl overflow-hidden border border-border/50 bg-black/20">
                   <img
-                    src="/The Complete Guide to SEO, AEO, and GEO in 2026.jpg"
+                    src="/The Complete Guide to SEO, AEO, and GEO in 2026.webp"
                     alt="The Complete Guide to SEO, AEO, and GEO in 2026 — Digital marketing strategies for modern search and AI platforms"
                     className="w-full h-full object-contain"
                     loading="lazy"
