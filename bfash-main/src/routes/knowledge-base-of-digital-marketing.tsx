@@ -571,23 +571,23 @@ function KnowledgeBasePage() {
               </div>
             </div>
 
-            {/* VIDEO SECTION */}
+            {/* VIDEO SECTION - Using public video file */}
             <div className="mt-8 mb-8">
               <div className="bg-[#0f0728] rounded-2xl p-6 md:p-8 border border-border/50">
                 <h3 className="text-xl font-display font-bold text-white mb-4 flex items-center gap-2">
                   <Play className="h-5 w-5 text-brand" />
                   Watch: The Complete Guide to SEO, AEO, and GEO in 2026
                 </h3>
-                <div className="aspect-video bg-black/50 rounded-xl overflow-hidden border border-border/50 flex items-center justify-center">
-                  <div className="text-center p-8">
-                    <Play className="h-16 w-16 text-brand/50 mx-auto mb-4" />
-                    <p className="text-muted-foreground text-sm">
-                      🎬 Video placeholder: The Complete Guide to SEO, AEO, and GEO in 2026
-                    </p>
-                    <p className="text-muted-foreground/60 text-xs mt-2">
-                      (Replace this with your actual video embed code)
-                    </p>
-                  </div>
+                <div className="aspect-video rounded-xl overflow-hidden border border-border/50 bg-black">
+                  <video
+                    controls
+                    className="w-full h-full object-contain"
+                    poster="/The Complete Guide to SEO, AEO, and GEO in 2026.jpg"
+                    preload="metadata"
+                  >
+                    <source src="/The Complete Guide to SEO, AEO, and GEO in 2026.mp4" type="video/mp4" />
+                    Your browser does not support the video tag.
+                  </video>
                 </div>
                 <p className="text-muted-foreground text-sm mt-3 text-center">
                   Watch our comprehensive video guide to understand how SEO, AEO, and GEO work together in 2026.
@@ -595,19 +595,16 @@ function KnowledgeBasePage() {
               </div>
             </div>
 
-            {/* IMAGE SECTION */}
+            {/* IMAGE SECTION - Using public image file */}
             <div className="mt-8 mb-8">
               <div className="bg-[#0f0728] rounded-2xl p-6 md:p-8 border border-border/50">
-                <div className="aspect-[16/9] bg-black/50 rounded-xl overflow-hidden border border-border/50 flex items-center justify-center">
-                  <div className="text-center p-8">
-                    <div className="text-6xl mb-4">📊</div>
-                    <p className="text-muted-foreground text-sm">
-                      🖼️ Image: "/hafeez.webp",
-                    </p>
-                    <p className="text-muted-foreground/60 text-xs mt-2">
-                      (Replace this with your actual image URL)
-                    </p>
-                  </div>
+                <div className="aspect-[16/9] rounded-xl overflow-hidden border border-border/50 bg-black/20">
+                  <img
+                    src="/The Complete Guide to SEO, AEO, and GEO in 2026.jpg"
+                    alt="The Complete Guide to SEO, AEO, and GEO in 2026 — Digital marketing strategies for modern search and AI platforms"
+                    className="w-full h-full object-contain"
+                    loading="lazy"
+                  />
                 </div>
                 <p className="text-muted-foreground text-sm mt-3 text-center">
                   <strong className="text-white">Figure 1:</strong> The Complete Guide to SEO, AEO, and GEO in 2026 — A visual overview of how search engine optimization, answer engine optimization, and generative engine optimization work together to drive digital marketing success.
