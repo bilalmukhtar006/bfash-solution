@@ -68,6 +68,9 @@ const GMB_REVIEW_LINK = "https://g.page/r/CavaEXQZnAMxEAE/review";
 const EXTLINK = "https://share.google/MrbmVI1RP676DI8fh";
 const INTLINK = "/services/seo";
 
+// Google Maps embed link
+const MAP_EMBED_LINK = "https://share.google/h0bipP823hPIO8SPA";
+
 function Contact() {
   const [currentReview, setCurrentReview] = useState(0);
 
@@ -163,21 +166,44 @@ function Contact() {
                 </a>
               ))}
 
-              {/* Google Map - FIXED VERSION */}
-              <div className="glass-card rounded-2xl overflow-hidden aspect-video relative">
-                <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d217439.6754937123!2d74.1857028!3d31.4837421!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3918ebfde1d7d50f%3A0x1c8b5408ca429148!2sLahore%2C%20Punjab%2C%20Pakistan!5e0!3m2!1sen!2s!4v1700000000000"
-                  width="100%"
-                  height="100%"
-                  style={{ border: 0 }}
-                  allowFullScreen
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  className="absolute inset-0 w-full h-full"
-                  title="BFASH Solutions Location - Lahore, Pakistan"
-                  sandbox="allow-scripts allow-same-origin allow-popups allow-forms"
-                />
-                <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-black/20 to-transparent" />
+              {/* Google Map - IMAGE VERSION with embed link below */}
+              <div className="glass-card rounded-2xl overflow-hidden">
+                <a
+                  href={MAP_EMBED_LINK}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block relative w-full hover:opacity-95 transition-opacity"
+                >
+                  <img
+                    src="/BFash-Google-Map.webp"
+                    alt="BFASH Solutions Location Map - Lahore, Pakistan"
+                    className="w-full h-auto aspect-video object-cover"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
+                  <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between pointer-events-none">
+                    <span className="text-white text-sm font-medium bg-black/50 px-3 py-1.5 rounded-lg backdrop-blur-sm">
+                      📍 Lahore, Punjab, Pakistan
+                    </span>
+                    <span className="text-white text-xs bg-brand/80 px-3 py-1.5 rounded-lg backdrop-blur-sm font-medium">
+                      Open in Maps →
+                    </span>
+                  </div>
+                </a>
+                {/* Embed link below the image */}
+                <div className="p-3 sm:p-4 border-t border-border bg-white/5">
+                  <a
+                    href={MAP_EMBED_LINK}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center gap-2 text-sm text-muted-foreground hover:text-brand transition-colors"
+                  >
+                    <MapPin className="h-4 w-4 text-brand" />
+                    <span>View full map location</span>
+                    <ExternalLink className="h-3 w-3" />
+                  </a>
+                </div>
               </div>
             </div>
 
