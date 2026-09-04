@@ -163,10 +163,10 @@ function Contact() {
                 </a>
               ))}
 
-              {/* Google Map */}
+              {/* Google Map - FIXED VERSION */}
               <div className="glass-card rounded-2xl overflow-hidden aspect-video relative">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d1140.9647669446642!2d74.4103253!3d31.4989186!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sen!2s!4v1700000000000"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d217439.6754937123!2d74.1857028!3d31.4837421!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3918ebfde1d7d50f%3A0x1c8b5408ca429148!2sLahore%2C%20Punjab%2C%20Pakistan!5e0!3m2!1sen!2s!4v1700000000000"
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}
@@ -174,7 +174,8 @@ function Contact() {
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
                   className="absolute inset-0 w-full h-full"
-                  title="BFASH Solutions Location Map"
+                  title="BFASH Solutions Location - Lahore, Pakistan"
+                  sandbox="allow-scripts allow-same-origin allow-popups allow-forms"
                 />
                 <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-black/20 to-transparent" />
               </div>
