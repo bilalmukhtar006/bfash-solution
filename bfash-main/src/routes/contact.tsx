@@ -140,7 +140,7 @@ function Contact() {
                 {
                   icon: MapPin,
                   label: "Location",
-                  value: "Lahore, Punjab, Pakistan",
+                  value: "Los Angeles, CA",
                   href: "https://www.google.com/maps/place/31%C2%B029'56.1%22N+74%C2%B024'46.4%22E/@31.4989186,74.4103253,17z/data=!3m1!4b1!4m4!3m3!8m2!3d31.4989186!4d74.4129002?hl=en&entry=ttu",
                 },
                 {
@@ -176,7 +176,7 @@ function Contact() {
                 >
                   <img
                     src="/BFash-Google-Map.webp"
-                    alt="BFASH Solutions Location Map - Lahore, Pakistan"
+                    alt="BFASH Solutions Location Map - , Los Angeles, CA"
                     className="w-full h-auto aspect-video object-cover"
                     loading="lazy"
                     decoding="async"
@@ -184,7 +184,7 @@ function Contact() {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
                   <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between pointer-events-none">
                     <span className="text-white text-sm font-medium bg-black/50 px-3 py-1.5 rounded-lg backdrop-blur-sm">
-                      📍 Lahore, Punjab, Pakistan
+                      📍 Los Angeles, CA
                     </span>
                     <span className="text-white text-xs bg-brand/80 px-3 py-1.5 rounded-lg backdrop-blur-sm font-medium">
                       Open in Maps →
