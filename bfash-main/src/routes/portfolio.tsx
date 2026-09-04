@@ -27,6 +27,7 @@ const projects: {
   category: Exclude<Cat, "All">;
   metric: string;
   gradient: string;
+  image?: string;
 }[] = [
   {
     title: "Lumen Health Rebrand",
@@ -62,6 +63,7 @@ const projects: {
     category: "Amazon Stores",
     metric: "TACoS 14% → 7%",
     gradient: "from-purple-600 to-indigo-500",
+    image: "/Amazon-A-Content.webp",
   },
   {
     title: "Vela Beauty Identity",
@@ -76,6 +78,7 @@ const projects: {
     category: "Amazon Stores",
     metric: "+220% revenue",
     gradient: "from-violet-600 to-purple-500",
+    image: "/Weight-Loss-Amazon-A-Content.webp",
   },
   {
     title: "Ravello Local SEO",
@@ -90,6 +93,14 @@ const projects: {
     category: "Web Design",
     metric: "55% session duration",
     gradient: "from-indigo-600 to-violet-500",
+  },
+  {
+    title: "Beefeaters Pet Treats",
+    client: "Amazon · 2025",
+    category: "Amazon Stores",
+    metric: "Premium A+ Content",
+    gradient: "from-amber-600 to-orange-500",
+    image: "/Pet-Food-Amazon-A-Content.webp",
   },
 ];
 
@@ -134,17 +145,34 @@ function Portfolio() {
               <div
                 className={`aspect-[4/3] bg-gradient-to-br ${p.gradient} relative overflow-hidden`}
               >
-                <div
-                  className="absolute inset-0 opacity-30 mix-blend-overlay"
-                  style={{
-                    backgroundImage:
-                      "radial-gradient(circle at 30% 30%, white 1px, transparent 1px)",
-                    backgroundSize: "24px 24px",
-                  }}
-                />
+                {/* Show image if available, otherwise show gradient pattern */}
+                {p.image ? (
+                  <img
+                    src={p.image}
+                    alt={p.title}
+                    className="w-full h-full object-cover object-center"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                ) : (
+                  <div
+                    className="absolute inset-0 opacity-30 mix-blend-overlay"
+                    style={{
+                      backgroundImage:
+                        "radial-gradient(circle at 30% 30%, white 1px, transparent 1px)",
+                      backgroundSize: "24px 24px",
+                    }}
+                  />
+                )}
                 <div className="absolute top-4 left-4 inline-flex items-center gap-1.5 rounded-full bg-black/40 backdrop-blur px-3 py-1 text-xs text-white">
                   <TrendingUp className="h-3 w-3" /> {p.metric}
                 </div>
+                {/* Amazon badge for Amazon projects */}
+                {p.category === "Amazon Stores" && (
+                  <div className="absolute top-4 right-4 inline-flex items-center gap-1 rounded-full bg-[#FF9900]/80 backdrop-blur px-3 py-1 text-xs text-white font-medium">
+                    Amazon
+                  </div>
+                )}
               </div>
               <div className="p-6">
                 <div className="text-xs uppercase tracking-wider text-brand mb-2">{p.category}</div>
