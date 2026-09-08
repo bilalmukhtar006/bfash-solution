@@ -17,7 +17,9 @@ import { Route as PortfolioRouteImport } from './routes/portfolio'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as KnowledgeBaseOfDigitalMarketingRouteImport } from './routes/knowledge-base-of-digital-marketing' // ✅ ADDED
+import { Route as KnowledgeBaseOfDigitalMarketingRouteImport } from './routes/knowledge-base-of-digital-marketing'
+import { Route as BlogRouteImport } from './routes/blog'
+import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
 import { Route as ServicesIndexRouteImport } from './routes/services.index'
 import { Route as ServicesWebDesignRouteImport } from './routes/services.web-design'
 import { Route as ServicesSeoRouteImport } from './routes/services.seo'
@@ -78,6 +80,20 @@ const KnowledgeBaseOfDigitalMarketingRoute = KnowledgeBaseOfDigitalMarketingRout
   getParentRoute: () => rootRouteImport,
 } as any)
 
+// ============ BLOG ROUTES ADDED ============
+const BlogRoute = BlogRouteImport.update({
+  id: '/blog',
+  path: '/blog',
+  getParentRoute: () => rootRouteImport,
+} as any)
+
+const BlogSlugRoute = BlogSlugRouteImport.update({
+  id: '/blog/$slug',
+  path: '/blog/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+// ===========================================
+
 const ServicesIndexRoute = ServicesIndexRouteImport.update({
   id: '/',
   path: '/',
@@ -117,7 +133,9 @@ export interface FileRoutesByFullPath {
   '/quote': typeof QuoteRoute
   '/services': typeof ServicesRouteWithChildren
   '/sitemap.xml': typeof SitemapDotxmlRoute
-  '/knowledge-base-of-digital-marketing': typeof KnowledgeBaseOfDigitalMarketingRoute // ✅ ADDED
+  '/knowledge-base-of-digital-marketing': typeof KnowledgeBaseOfDigitalMarketingRoute
+  '/blog': typeof BlogRoute // ✅ ADDED
+  '/blog/$slug': typeof BlogSlugRoute // ✅ ADDED
   '/services/amazon': typeof ServicesAmazonRoute
   '/services/graphic-design': typeof ServicesGraphicDesignRoute
   '/services/seo': typeof ServicesSeoRoute
@@ -133,7 +151,9 @@ export interface FileRoutesByTo {
   '/privacy': typeof PrivacyRoute
   '/quote': typeof QuoteRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
-  '/knowledge-base-of-digital-marketing': typeof KnowledgeBaseOfDigitalMarketingRoute // ✅ ADDED
+  '/knowledge-base-of-digital-marketing': typeof KnowledgeBaseOfDigitalMarketingRoute
+  '/blog': typeof BlogRoute // ✅ ADDED
+  '/blog/$slug': typeof BlogSlugRoute // ✅ ADDED
   '/services/amazon': typeof ServicesAmazonRoute
   '/services/graphic-design': typeof ServicesGraphicDesignRoute
   '/services/seo': typeof ServicesSeoRoute
@@ -151,7 +171,9 @@ export interface FileRoutesById {
   '/quote': typeof QuoteRoute
   '/services': typeof ServicesRouteWithChildren
   '/sitemap.xml': typeof SitemapDotxmlRoute
-  '/knowledge-base-of-digital-marketing': typeof KnowledgeBaseOfDigitalMarketingRoute // ✅ ADDED
+  '/knowledge-base-of-digital-marketing': typeof KnowledgeBaseOfDigitalMarketingRoute
+  '/blog': typeof BlogRoute // ✅ ADDED
+  '/blog/$slug': typeof BlogSlugRoute // ✅ ADDED
   '/services/amazon': typeof ServicesAmazonRoute
   '/services/graphic-design': typeof ServicesGraphicDesignRoute
   '/services/seo': typeof ServicesSeoRoute
@@ -170,7 +192,9 @@ export interface FileRouteTypes {
     | '/quote'
     | '/services'
     | '/sitemap.xml'
-    | '/knowledge-base-of-digital-marketing' // ✅ ADDED
+    | '/knowledge-base-of-digital-marketing'
+    | '/blog' // ✅ ADDED
+    | '/blog/$slug' // ✅ ADDED
     | '/services/amazon'
     | '/services/graphic-design'
     | '/services/seo'
@@ -185,7 +209,9 @@ export interface FileRouteTypes {
     | '/privacy'
     | '/quote'
     | '/sitemap.xml'
-    | '/knowledge-base-of-digital-marketing' // ✅ ADDED
+    | '/knowledge-base-of-digital-marketing'
+    | '/blog' // ✅ ADDED
+    | '/blog/$slug' // ✅ ADDED
     | '/services/amazon'
     | '/services/graphic-design'
     | '/services/seo'
@@ -201,7 +227,9 @@ export interface FileRouteTypes {
     | '/quote'
     | '/services'
     | '/sitemap.xml'
-    | '/knowledge-base-of-digital-marketing' // ✅ ADDED
+    | '/knowledge-base-of-digital-marketing'
+    | '/blog' // ✅ ADDED
+    | '/blog/$slug' // ✅ ADDED
     | '/services/amazon'
     | '/services/graphic-design'
     | '/services/seo'
@@ -219,7 +247,9 @@ export interface RootRouteChildren {
   QuoteRoute: typeof QuoteRoute
   ServicesRoute: typeof ServicesRouteWithChildren
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
-  KnowledgeBaseOfDigitalMarketingRoute: typeof KnowledgeBaseOfDigitalMarketingRoute // ✅ ADDED
+  KnowledgeBaseOfDigitalMarketingRoute: typeof KnowledgeBaseOfDigitalMarketingRoute
+  BlogRoute: typeof BlogRoute // ✅ ADDED
+  BlogSlugRoute: typeof BlogSlugRoute // ✅ ADDED
 }
 
 declare module '@tanstack/react-router' {
@@ -285,6 +315,20 @@ declare module '@tanstack/react-router' {
       path: '/knowledge-base-of-digital-marketing'
       fullPath: '/knowledge-base-of-digital-marketing'
       preLoaderRoute: typeof KnowledgeBaseOfDigitalMarketingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/blog': {
+      id: '/blog'
+      path: '/blog'
+      fullPath: '/blog'
+      preLoaderRoute: typeof BlogRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/blog/$slug': {
+      id: '/blog/$slug'
+      path: '/blog/$slug'
+      fullPath: '/blog/$slug'
+      preLoaderRoute: typeof BlogSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/services/': {
@@ -355,6 +399,8 @@ const rootRouteChildren: RootRouteChildren = {
   ServicesRoute: ServicesRouteWithChildren,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   KnowledgeBaseOfDigitalMarketingRoute: KnowledgeBaseOfDigitalMarketingRoute,
+  BlogRoute: BlogRoute, // ✅ ADDED
+  BlogSlugRoute: BlogSlugRoute, // ✅ ADDED
 }
 
 export const routeTree = rootRouteImport
