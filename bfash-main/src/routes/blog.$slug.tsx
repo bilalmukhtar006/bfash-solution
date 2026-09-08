@@ -1,467 +1,183 @@
-function getPostContent(slug: string): string {
-  if (slug === "seo-expert") {
-    return `
-      <h2>Introduction</h2>
-      <p>Search engine optimization is more than putting keywords on a website.</p>
-      <p>A good SEO strategy helps the right people find a business when they are looking for its products or services.</p>
-      <p>At BFASH, we provide <strong>SEO expert services</strong> for businesses that want stronger organic visibility, better website traffic, more qualified leads, and sustainable online growth.</p>
-      <p>Our work covers technical SEO, keyword research, semantic content strategy, on-page SEO, local SEO, Google Business Profile optimization, backlink strategy, B2B SEO, ecommerce SEO, GEO, AEO, and AI-search optimization.</p>
-      <p>We also help with graphic design, videos, vector illustration, Photoshop, CRM management, social media handling, ads management, TikTok Shop, and business accounts.</p>
-      <p>Our goal is simple:</p>
-      <p><strong>Help the right audience discover the right business at the right moment.</strong></p>
+import { createFileRoute, Link } from "@tanstack/react-router";
 
-      <h2>What Does an SEO Expert Do?</h2>
-      <p>An SEO expert studies how search engines, websites, users, and content work together.</p>
-      <p>The work starts with research.</p>
-      <p>An SEO expert examines:</p>
-      <ul>
-        <li>What people search for</li>
-        <li>Why people search for it</li>
-        <li>Which pages already rank</li>
-        <li>How competitive a keyword is</li>
-        <li>What information users expect</li>
-        <li>Whether a website can be crawled</li>
-        <li>Whether important pages are indexed</li>
-        <li>How the website is structured</li>
-        <li>Whether content answers the search intent</li>
-        <li>How strong the website's authority is</li>
-        <li>Where relevant backlinks can come from</li>
-        <li>Whether visitors can become leads or customers</li>
-      </ul>
-      <p>SEO is not one task. It is a connected process.</p>
-      <p><strong>Research → Strategy → Technical SEO → Content → Authority → Measurement → Improvement</strong></p>
-      <p>BFASH follows this broader approach. We do not treat SEO as keyword placement alone.</p>
+const SITE_URL = "https://bfash.us";
+const title = "SEO Expert: How the Right Strategy Helps People Find, Trust, and Choose Your Business | BFASH Blog";
+const description = "Learn how an SEO expert uses keyword research, technical SEO, semantic content, local SEO, B2B strategy, GEO, AEO, and AI automation to grow qualified traffic and business visibility.";
 
-      <h2>Why Keyword Research Comes First</h2>
-      <p>People use different words for the same problem.</p>
-      <p>A business owner may search <em>"SEO expert."</em></p>
-      <p>Another person may search <em>"SEO consultant for small business."</em></p>
-      <p>Another may ask <em>"How can I get more traffic from Google?"</em></p>
-      <p>These searches can describe the same underlying need.</p>
-      <p>That is why keyword research should look at meaning and search intent, not just search volume.</p>
-      <p>Semrush's Zach Paruch describes search intent analysis and information architecture as part of a data-driven SEO process.</p>
+function getPostContent(slug: string) {
+  if (slug !== "seo-expert") return `<p>Article not found.</p>`;
 
-      <h3>Search Intent Matters</h3>
-      <p>A person searching <em>"what is SEO?"</em> is learning.</p>
-      <p>A person searching <em>"best SEO expert for a small business"</em> is comparing options.</p>
-      <p>A person searching <em>"SEO expert near me"</em> may be ready to contact someone.</p>
-      <p>Your content should match the reason behind the search.</p>
+  return `
+    <p class="lead">Search engine optimization is not just about adding keywords to a page. A strong SEO strategy helps the right people find a business, understand its value, trust its information, and take the next step.</p>
+    <p>An <strong>SEO expert</strong> connects search behavior, website technology, content, authority, local visibility, and business goals. At BFASH, SEO is treated as a growth system rather than a list of isolated tasks.</p>
 
-      <h2>SEO Expert + Semantic Content Strategy</h2>
-      <p>Modern SEO should not depend on repeating one phrase many times.</p>
-      <p>Instead, a page should cover the related ideas that help explain the main subject.</p>
-      <p>For an SEO expert page, that means discussing topics such as:</p>
-      <p><strong>SEO</strong></p>
-      <ul>
-        <li>Keyword research</li>
-        <li>Search intent</li>
-        <li>Technical SEO</li>
-        <li>On-page SEO</li>
-        <li>Content strategy</li>
-        <li>Internal linking</li>
-        <li>Backlinks</li>
-        <li>Local SEO</li>
-        <li>Google Business Profile</li>
-        <li>Ecommerce SEO</li>
-        <li>B2B SEO</li>
-        <li>Analytics</li>
-        <li>Conversion tracking</li>
-      </ul>
-      <p><strong>Modern Search Adds Another Layer:</strong></p>
-      <ul>
-        <li>GEO (Generative Engine Optimization)</li>
-        <li>AEO (Answer Engine Optimization)</li>
-        <li>AI search</li>
-        <li>AI Overviews</li>
-        <li>Generative search</li>
-        <li>AI citations</li>
-        <li>Brand mentions</li>
-        <li>Entity understanding</li>
-      </ul>
-      <p>This creates a stronger topical relationship between the terms. It also makes the page more useful to readers.</p>
-      <p>At BFASH, we use AI-assisted workflows to help with keyword clustering, search-intent classification, content briefs, and topic mapping. But we always keep human review in the loop.</p>
+    <div class="my-8 grid gap-4 sm:grid-cols-3">
+      <div class="rounded-2xl border border-border bg-background p-5"><b class="text-brand">Research</b><p>Understand customers, queries, competitors, intent, and market gaps.</p></div>
+      <div class="rounded-2xl border border-border bg-background p-5"><b class="text-brand">Optimize</b><p>Improve technical health, content, structure, internal links, and authority.</p></div>
+      <div class="rounded-2xl border border-border bg-background p-5"><b class="text-brand">Grow</b><p>Measure qualified traffic, leads, conversions, sales, and visibility.</p></div>
+    </div>
 
-      <h2>Technical SEO: The Foundation</h2>
-      <p>A website can have excellent content and still struggle if search engines cannot properly access it.</p>
-      <p>Technical SEO focuses on the foundation.</p>
-      <p>Important areas include:</p>
-      <ul>
-        <li>Crawling</li>
-        <li>Indexing</li>
-        <li>Site architecture</li>
-        <li>XML sitemaps</li>
-        <li>Robots.txt</li>
-        <li>Canonical URLs</li>
-        <li>Redirects</li>
-        <li>Broken links</li>
-        <li>Page speed</li>
-        <li>Mobile usability</li>
-        <li>Structured data</li>
-        <li>Internal linking</li>
-        <li>JavaScript rendering</li>
-        <li>Duplicate content</li>
-        <li>URL structure</li>
-      </ul>
-      <p>Semrush's research on AI visibility also highlights technical accessibility. Websites need to be discoverable and accessible to crawlers if businesses want their information to be found and used by search systems.</p>
-      <p>This is important for both traditional SEO and newer AI-search systems.</p>
-      <p>We conduct technical SEO audits for Shopify, Amazon, eBay, and TikTok Shop businesses to ensure their products and services are discoverable.</p>
+    <h2 id="what">What Does an SEO Expert Actually Do?</h2>
+    <p>An SEO expert studies how people search and how search systems understand websites. The process starts with questions: What does the customer need? What words do they use? What pages already answer the question? What is missing? Can search engines access the important pages?</p>
+    <ul><li>Keyword research and search-intent analysis</li><li>Technical SEO audits and fixes</li><li>Site architecture and URL planning</li><li>On-page SEO and semantic content</li><li>Internal linking and content clusters</li><li>Local SEO and Google Business Profile optimization</li><li>B2B and ecommerce SEO</li><li>Backlink and digital authority strategies</li><li>SEO analytics and conversion tracking</li><li>GEO, AEO, and AI-search visibility</li></ul>
+    <p><strong>Research → Strategy → Technical SEO → Content → Authority → Measurement → Improvement.</strong></p>
 
-      <h2>Content Marketing and SEO</h2>
-      <p>Content helps answer questions. Good content can also build trust before a customer ever contacts a business.</p>
-      <p>The keyword research shows that <strong>Content Marketing</strong> has significant search demand. For example:</p>
-      <table class="min-w-full divide-y divide-border/30">
-        <thead>
-          <tr>
-            <th class="px-4 py-2 text-left text-sm font-semibold">Keyword</th>
-            <th class="px-4 py-2 text-left text-sm font-semibold">Search Volume</th>
-            <th class="px-4 py-2 text-left text-sm font-semibold">Keyword Difficulty</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td class="px-4 py-2 text-sm">"why is content marketing important"</td>
-            <td class="px-4 py-2 text-sm">1,300</td>
-            <td class="px-4 py-2 text-sm">45%</td>
-          </tr>
-          <tr>
-            <td class="px-4 py-2 text-sm">"what is b2b content marketing"</td>
-            <td class="px-4 py-2 text-sm">720</td>
-            <td class="px-4 py-2 text-sm">28%</td>
-          </tr>
-          <tr>
-            <td class="px-4 py-2 text-sm">"how to do keyword research for content marketing"</td>
-            <td class="px-4 py-2 text-sm">480</td>
-            <td class="px-4 py-2 text-sm">43%</td>
-          </tr>
-          <tr>
-            <td class="px-4 py-2 text-sm">"why content marketing"</td>
-            <td class="px-4 py-2 text-sm">480</td>
-            <td class="px-4 py-2 text-sm">45%</td>
-          </tr>
-        </tbody>
-      </table>
-      <p>These figures show that content marketing is not one narrow topic. It has many connected search questions.</p>
-      <p>That creates an opportunity for a website to build a <strong>content cluster</strong> around the subject instead of publishing random articles.</p>
-      <p>This is where our graphic design, video, and vector illustration skills add value — we create visual content that makes complex topics easier to understand.</p>
+    <h2 id="keywords">Keyword Research: Start With What People Need</h2>
+    <p>People often use different words to describe the same problem. One business owner may search <em>"SEO expert"</em>. Another may search <em>"SEO consultant for small business"</em>. Someone else may ask, <em>"How can I get more traffic from Google?"</em></p>
+    <p>These queries have different wording, but they can represent the same need. Keyword research should consider meaning, competition, search intent, and the buyer journey.</p>
+    <h3>Search intent changes the right page</h3>
+    <p>Someone searching <em>"what is SEO?"</em> is usually learning. Someone searching <em>"best SEO expert for a small business"</em> is comparing options. Someone searching <em>"SEO expert near me"</em> may be ready to contact a provider.</p>
+    <p>A good SEO strategy maps each important query to the page that best satisfies it. This also helps prevent keyword cannibalization.</p>
+    <!-- EXTLINK: Replace with the final approved research URL if required. -->
+    <p class="rounded-xl border border-border bg-muted/30 p-4 text-sm"><strong>Research note:</strong> Zach Paruch's Semrush research discusses search-intent analysis and information architecture as parts of a data-driven SEO process. <a href="https://www.semrush.com/blog/" target="_blank" rel="noopener noreferrer">Read related Semrush research</a>.</p>
 
-      <h2>Why Topical Authority Matters</h2>
-      <p>Imagine a website has one article about SEO.</p>
-      <p>Another website has 30 useful pages covering different aspects of SEO.</p>
-      <p>The second website gives search engines and readers much more context about its expertise.</p>
-      <p>This is the basic idea behind <strong>topical authority.</strong></p>
-      <p>The goal is not to publish hundreds of weak pages. The goal is to create useful coverage around important topics.</p>
-      <p>BFASH builds topical authority through pillar content, supporting blog posts, and consistent internal linking.</p>
+    <h2 id="semantic">Semantic SEO: Cover the Topic, Not Just the Keyword</h2>
+    <p>Modern SEO should not depend on repeating one phrase again and again. A useful page should explain the subject naturally and cover the related concepts a reader expects.</p>
+    <p>For an SEO expert topic, that semantic field can include keyword research, search intent, technical SEO, on-page SEO, content strategy, internal linking, backlinks, local SEO, Google Business Profile, B2B SEO, ecommerce SEO, analytics, GEO, AEO, AI search, AI citations, brand mentions, and entity understanding.</p>
+    <p>This creates a stronger topical map for readers and for future supporting articles.</p>
 
-      <h2>SEO for B2B Companies</h2>
-      <p>BFASH specializes in B2B marketing and traffic generation.</p>
-      <p>B2B SEO can be different from consumer SEO.</p>
-      <p>A B2B customer may need several interactions before making a decision.</p>
-      <p>The buyer may:</p>
-      <ol>
-        <li>Discover a problem</li>
-        <li>Search for information</li>
-        <li>Compare solutions</li>
-        <li>Read technical information</li>
-        <li>Compare providers</li>
-        <li>Check reviews and reputation</li>
-        <li>Speak with a sales team</li>
-        <li>Request a proposal</li>
-        <li>Make a purchase</li>
-      </ol>
-      <p>SEO can support each stage.</p>
-      <p><strong>Discovery:</strong> "What is B2B digital marketing?"</p>
-      <p><strong>Research:</strong> "How does SEO help B2B companies?"</p>
-      <p><strong>Evaluation:</strong> "What should a B2B company look for in an SEO agency?"</p>
-      <p><strong>Commercial:</strong> "B2B SEO agency"</p>
-      <p><strong>Conversion:</strong> "Contact an SEO expert"</p>
-      <p>Your website should support the complete journey.</p>
+    <h2 id="technical">Technical SEO: Make the Website Easy to Discover</h2>
+    <p>Great content cannot perform well if important pages are difficult for search systems to discover, render, or index. Technical SEO focuses on the foundation.</p>
+    <div class="my-7 rounded-2xl border border-border bg-background p-6"><h3 class="mt-0">Technical SEO checklist</h3><div class="grid gap-x-8 gap-y-3 sm:grid-cols-2"><span>✓ Crawlability</span><span>✓ Indexing</span><span>✓ XML sitemaps</span><span>✓ Robots.txt</span><span>✓ Canonical URLs</span><span>✓ Redirects</span><span>✓ Broken links</span><span>✓ Page speed</span><span>✓ Mobile usability</span><span>✓ Structured data</span><span>✓ Internal linking</span><span>✓ JavaScript rendering</span><span>✓ Duplicate content</span><span>✓ Clean URL structure</span></div></div>
+    <p>Technical accessibility also matters for modern AI-search systems. If a website cannot be discovered or accessed properly, its information has fewer opportunities to be retrieved and understood.</p>
 
-      <h2>Local SEO and Google Maps</h2>
-      <p>Local businesses need more than normal organic rankings.</p>
-      <p>A customer may search <em>"SEO expert near me"</em> or <em>"digital marketing agency in Los Angeles"</em> or <em>"Google Maps SEO agency."</em></p>
-      <p>Local SEO helps businesses improve their visibility for searches connected to location.</p>
-      <p>A local strategy can include:</p>
-      <ul>
-        <li>Google Business Profile optimization</li>
-        <li>Local keyword research</li>
-        <li>Location pages</li>
-        <li>Reviews</li>
-        <li>Local citations</li>
-        <li>Business information consistency</li>
-        <li>Local content</li>
-        <li>Google Maps visibility</li>
-        <li>Local backlinks</li>
-        <li>Conversion-focused landing pages</li>
-      </ul>
-      <p>This is especially useful for businesses that depend on calls, visits, bookings, or local leads.</p>
+    <h2>Content Marketing and SEO Work Together</h2>
+    <p>Content answers questions before a customer talks to a sales team. It can explain a problem, compare solutions, demonstrate expertise, and move a reader toward a decision.</p>
+    <p>The Semrush keyword research supplied for this project reports <strong>147 keywords</strong>, <strong>16,160 total search volume</strong>, and <strong>26% average keyword difficulty</strong> for the Content Marketing keyword set.</p>
+    <div class="my-7 overflow-x-auto rounded-2xl border border-border"><table class="w-full min-w-[520px] text-left"><thead class="bg-muted/50"><tr><th class="px-4 py-3">Keyword</th><th class="px-4 py-3">Volume</th><th class="px-4 py-3">KD</th></tr></thead><tbody class="divide-y divide-border"><tr><td class="px-4 py-3">why is content marketing important</td><td class="px-4 py-3">1,300</td><td class="px-4 py-3">45%</td></tr><tr><td class="px-4 py-3">what is b2b content marketing</td><td class="px-4 py-3">720</td><td class="px-4 py-3">28%</td></tr><tr><td class="px-4 py-3">how to do keyword research for content marketing</td><td class="px-4 py-3">480</td><td class="px-4 py-3">43%</td></tr><tr><td class="px-4 py-3">why content marketing</td><td class="px-4 py-3">480</td><td class="px-4 py-3">45%</td></tr></tbody></table></div>
+    <p>Volume alone does not decide what a business should publish. The page must match the audience, intent, competition, and business goal.</p>
 
-      <h3>GMB SEO</h3>
-      <p>Google Business Profile can play an important role in local discovery.</p>
-      <p>A properly managed profile should communicate clear and consistent information about:</p>
-      <ul>
-        <li>Business name</li>
-        <li>Category</li>
-        <li>Services</li>
-        <li>Location</li>
-        <li>Website</li>
-        <li>Phone number</li>
-        <li>Hours</li>
-        <li>Photos</li>
-        <li>Reviews</li>
-        <li>Business description</li>
-      </ul>
-      <p>But a profile alone is not a complete SEO strategy.</p>
-      <p>The website, business profile, reviews, local citations, content, and external signals should support the same business identity.</p>
+    <h2 id="topical">Topical Authority and Content Clusters</h2>
+    <p>A website becomes easier to understand when its pages have clear relationships. A pillar page can explain a broad topic. Supporting articles can answer narrower questions. Internal links can connect those pages.</p>
+    <p>An SEO cluster could include technical SEO, keyword research, local SEO, GMB SEO, B2B SEO, ecommerce SEO, link building, GEO, AEO, and AI search. The goal is not hundreds of weak pages. The goal is useful coverage.</p>
 
-      <h2>Backlinks and Authority</h2>
-      <p>Backlinks are links from other websites to your website.</p>
-      <p>They can help search engines discover pages and can contribute to a site's authority.</p>
-      <p>But not every backlink has equal value.</p>
-      <p>A strong link-building strategy should focus on:</p>
-      <p><strong>Relevance + Trust + Editorial Value</strong></p>
-      <p>Rather than simply collecting thousands of links.</p>
-      <p>We ask:</p>
-      <ul>
-        <li>Is the referring website relevant?</li>
-        <li>Is the link useful to readers?</li>
-        <li>Is the website trustworthy?</li>
-        <li>Is the link editorially earned?</li>
-        <li>Does it support the business topic?</li>
-      </ul>
-      <p>The objective should be a healthier authority profile, not an artificial number of links.</p>
+    <h2 id="b2b">SEO for B2B Companies</h2>
+    <p>B2B marketing often has a longer buying journey. A potential customer may first learn about a problem, compare solutions, review providers, speak with sales, and request a proposal.</p>
+    <ol><li><strong>Discovery:</strong> What is B2B digital marketing?</li><li><strong>Research:</strong> How does SEO help B2B companies?</li><li><strong>Evaluation:</strong> What should a B2B company look for in an SEO agency?</li><li><strong>Commercial:</strong> B2B SEO agency</li><li><strong>Conversion:</strong> Contact an SEO expert</li></ol>
+    <p>BFASH combines B2B SEO with content, websites, paid advertising, CRM management, email marketing, and conversion strategy.</p>
 
-      <h2>What Is Black Hat SEO?</h2>
-      <p>Black hat SEO uses tactics that attempt to manipulate search rankings instead of improving the website for users.</p>
-      <p>Examples can include:</p>
-      <ul>
-        <li>Keyword stuffing</li>
-        <li>Hidden text</li>
-        <li>Manipulative link schemes</li>
-        <li>Doorway pages</li>
-        <li>Cloaking</li>
-        <li>Automated spam</li>
-        <li>Low-quality mass content</li>
-      </ul>
-      <p>The keyword research shows substantial interest in the subject.</p>
-      <p>For <em>"black hat SEO,"</em> the data reports:</p>
-      <ul>
-        <li>5,400 US search volume</li>
-        <li>51% keyword difficulty</li>
-        <li>$5.57 CPC</li>
-      </ul>
-      <p>The related query <em>"what is white hat and black hat SEO"</em> shows 1,000 search volume with 26% KD.</p>
-      <p>These searches show that people want to understand both ethical and manipulative SEO practices.</p>
-      <p>BFASH focuses on <strong>sustainable SEO.</strong> That means building useful content, technically healthy websites, relevant authority, and a better user experience instead of relying on tactics designed to trick search engines.</p>
+    <h2 id="local">Local SEO, GMB SEO, and Google Maps</h2>
+    <p>Local businesses often need visibility in both organic search and location-based results. A local SEO strategy can include Google Business Profile optimization, local keyword research, location content, reviews, citations, consistent business information, local links, and conversion-focused landing pages.</p>
+    <p>GMB SEO is a common term for Google Business Profile optimization. The profile should clearly communicate the business category, services, location, website, hours, photos, and reviews. It should support the website, not replace it.</p>
 
-      <h2>SEO, AEO, and GEO</h2>
-      <p>Search is changing.</p>
-      <p><strong>Traditional SEO</strong> focuses on visibility in search engines.</p>
-      <p><strong>AEO — Answer Engine Optimization</strong> focuses on creating content that answers questions clearly.</p>
-      <p><strong>GEO — Generative Engine Optimization</strong> focuses on improving how information can be understood and potentially surfaced by AI-powered search and generative systems.</p>
-      <p>These strategies overlap.</p>
-      <p>A page that clearly answers a real question can help:</p>
-      <ul>
-        <li>Readers</li>
-        <li>Search engines</li>
-        <li>Answer engines</li>
-        <li>AI systems</li>
-        <li>Sales teams</li>
-      </ul>
-      <p>The research emphasizes direct answers, real user questions, clear structure, evidence-backed claims, technical accessibility, indexing, and trustworthy external mentions.</p>
+    <h2 id="backlinks">Backlinks: Relevance Matters More Than Volume</h2>
+    <p>Backlinks are links from other websites to a website. They can help discovery and contribute to authority, but irrelevant links are not the same as a strong authority profile.</p>
+    <p>A practical framework is <strong>Relevance + Trust + Editorial Value.</strong></p>
+    <p>The research supplied for this page includes realistic approaches such as responding to media requests, creating link-worthy assets, and finding broken-link opportunities.</p>
+    <!-- EXTLINK: Add the final approved backlink research URL here later. -->
+    <p class="text-sm text-muted-foreground"><strong>Research source:</strong> Rachel Handley — Semrush, <em>How to Get Backlinks: 10 Realistic Methods</em>.</p>
 
-      <h2>How AI Gets Information About a Business</h2>
-      <p>This is an important part of modern GEO.</p>
-      <p>Zach Paruch of Semrush explains that AI systems can obtain information through several pathways:</p>
-      <ol>
-        <li><strong>Training</strong> — AI models learn from large datasets</li>
-        <li><strong>Retrieving live online information</strong> — AI pulls current web content</li>
-        <li><strong>Licensing partnerships</strong> — AI companies license data</li>
-        <li><strong>User-initiated actions</strong> — People directly ask AI about businesses</li>
-      </ol>
-      <p>Publicly available websites and third-party content contribute to what AI systems know about brands.</p>
-      <p>This creates a useful lesson for businesses:</p>
-      <p><strong>The website is important, but the website is not the entire digital footprint.</strong></p>
-      <p>A business should also build consistent information across relevant third-party sources.</p>
-      <p>Semrush recommends making the brand and offerings clear on the website, allowing appropriate AI crawlers to access the site, creating a Google Business Profile, building directory presence, and earning coverage through digital PR.</p>
+    <h2 id="blackhat">Why Black Hat SEO Is a Bad Long-Term Strategy</h2>
+    <p>Black hat SEO tries to manipulate search results instead of improving the website for users. Examples include keyword stuffing, hidden text, doorway pages, cloaking, manipulative links, misleading redirects, and low-quality automated content.</p>
+    <p>The supplied Semrush research reports <strong>5,400 US searches</strong>, <strong>51% keyword difficulty</strong>, and <strong>$5.57 CPC</strong> for "black hat SEO". The related query "what is white hat and black hat SEO" shows <strong>1,000 searches</strong> and <strong>26% KD</strong>.</p>
+    <p>These figures show interest in the topic. They do not make manipulative SEO a good business strategy. Sustainable SEO focuses on useful content, technical quality, relevance, trust, and user experience.</p>
+    <!-- EXTLINK: Add the final approved Semrush black-hat URL here later. -->
+    <p class="text-sm text-muted-foreground"><strong>Research source:</strong> Connor Lahey — Semrush, <em>What Is Black Hat SEO? 9 Risky Techniques To Avoid</em>.</p>
 
-      <h3>AI Citations Cannot Be Guaranteed</h3>
-      <p>A responsible SEO expert should never promise: <em>"Your website will definitely be cited by ChatGPT."</em></p>
-      <p>AI systems choose sources dynamically. They consider factors such as relevance, retrieval, ranking, available information, and the specific question.</p>
-      <p>The practical goal is different.</p>
-      <p>Build information that is:</p>
-      <p><strong>Clear → Relevant → Accessible → Consistent → Useful → Trustworthy</strong></p>
-      <p>That gives search and AI systems better information to work with.</p>
-      <p>Semrush also provides AI visibility measurement around mentions, citations, and cited pages, which shows that AI visibility can be monitored rather than treated as an imaginary ranking guarantee.</p>
+    <h2 id="geo">SEO, AEO, and GEO: Three Connected Search Concepts</h2>
+    <p>Traditional SEO focuses on organic search visibility. AEO, or Answer Engine Optimization, focuses on answering questions clearly. GEO, or Generative Engine Optimization, focuses on making information easier for generative AI systems to understand and potentially surface.</p>
+    <div class="my-7 rounded-2xl border border-brand/30 bg-brand/5 p-6"><h3 class="mt-0">Practical GEO and AEO checklist</h3><ul><li>Answer real customer questions directly.</li><li>Use clear headings and short sections.</li><li>Support important claims with credible sources.</li><li>Keep business information consistent across the web.</li><li>Make important pages technically accessible.</li><li>Build relevant third-party mentions and authority.</li><li>Measure AI visibility instead of promising guaranteed citations.</li></ul></div>
 
-      <h2>Human Expertise Still Matters</h2>
-      <p>AI can help with research, automation, data processing, content ideation, and repetitive tasks.</p>
-      <p>But AI should not replace human judgment.</p>
-      <p>Research by Yogesh K. Dwivedi and colleagues examines both the opportunities and risks of generative conversational AI. The research discusses benefits while also raising concerns around:</p>
-      <ul>
-        <li>Bias</li>
-        <li>Misinformation</li>
-        <li>Credibility</li>
-        <li>Transparency</li>
-        <li>Privacy</li>
-        <li>Security</li>
-        <li>Responsible use</li>
-      </ul>
-      <p>That is important for SEO.</p>
-      <p>AI can help an SEO team work faster.</p>
-      <p>But strategy still needs:</p>
-      <p><strong>Research + Experience + Verification + Human Judgment</strong></p>
-      <p>BFASH combines SEO knowledge with AI and automation workflows to improve research and marketing processes while keeping human review in the loop.</p>
+    <h2>Where Does AI Get Information About a Business?</h2>
+    <p>Zach Paruch's Semrush research explains that AI systems can obtain information through multiple pathways, including training, live online retrieval, licensing partnerships, and user-initiated actions.</p>
+    <p>The website matters, but it is not the entire digital footprint. Consistent information across relevant third-party sources can help create a clearer picture of the brand.</p>
+    <p>AI citations should never be presented as guaranteed. The responsible goal is to make a business <strong>clear, relevant, accessible, consistent, useful, and trustworthy</strong>.</p>
+    <!-- EXTLINK: Final approved AI-search research URL can replace this source link. -->
+    <p class="rounded-xl border border-border bg-muted/30 p-4 text-sm"><strong>Research:</strong> <a href="https://www.semrush.com/blog/" target="_blank" rel="noopener noreferrer">Zach Paruch — Semrush AI visibility research</a>.</p>
 
-      <h2>SEO Research and AI Automation at BFASH</h2>
-      <p>BFASH does not view AI as a replacement for marketing strategy.</p>
-      <p>AI can help process large amounts of information.</p>
-      <p>For example, AI-assisted workflows can help with:</p>
-      <ul>
-        <li>Keyword clustering</li>
-        <li>Search-intent classification</li>
-        <li>Content briefs</li>
-        <li>Topic mapping</li>
-        <li>Competitor research</li>
-        <li>Content gap analysis</li>
-        <li>Internal-link suggestions</li>
-        <li>FAQ generation</li>
-        <li>Data organization</li>
-        <li>Content audits</li>
-        <li>Reporting</li>
-        <li>Workflow automation</li>
-      </ul>
-      <p>Human review then checks whether the information makes sense.</p>
-      <p>This creates a simple system:</p>
-      <p><strong>AI assists → Human verifies → Strategy improves → Content gets published → Data gets measured</strong></p>
-      <p>The goal is not to publish AI-generated content simply because it is fast. The goal is to use automation where it improves the quality and efficiency of the work.</p>
+    <h2 id="automation">AI Automation at BFASH</h2>
+    <p>AI can make SEO research faster, but automation should support strategy rather than replace human judgment. BFASH uses AI-assisted workflows for repetitive research and organization while keeping human review in the process.</p>
+    <div class="my-7 grid gap-3 sm:grid-cols-2"><div class="rounded-xl border border-border p-4">Keyword clustering</div><div class="rounded-xl border border-border p-4">Search-intent classification</div><div class="rounded-xl border border-border p-4">Content briefs</div><div class="rounded-xl border border-border p-4">Topic mapping</div><div class="rounded-xl border border-border p-4">Competitor research</div><div class="rounded-xl border border-border p-4">Content-gap analysis</div><div class="rounded-xl border border-border p-4">Internal-link suggestions</div><div class="rounded-xl border border-border p-4">Content audits and reporting</div></div>
+    <p><strong>AI assists → Human verifies → Strategy improves → Content gets published → Data gets measured.</strong></p>
+    <p>Academic research by Yogesh K. Dwivedi and colleagues also highlights both the opportunities and risks of generative conversational AI, including credibility, bias, misinformation, transparency, privacy, security, and responsible use.</p>
 
-      <h2>SEO for Ecommerce Businesses</h2>
-      <p>BFASH supports businesses operating through:</p>
-      <ul>
-        <li>Shopify</li>
-        <li>Amazon</li>
-        <li>eBay</li>
-        <li>TikTok Shop</li>
-        <li>Other ecommerce channels</li>
-      </ul>
-      <p>Ecommerce SEO requires more than ranking the homepage.</p>
-      <ul>
-        <li>Product pages need clear information</li>
-        <li>Category pages need useful structure</li>
-        <li>Images need optimization</li>
-        <li>Internal links should help customers move through the site</li>
-        <li>Product descriptions should answer buying questions</li>
-        <li>Technical issues should not prevent search engines from discovering important products</li>
-      </ul>
-      <p>The same principle applies to marketplaces. Better discovery should lead to better product opportunities.</p>
+    <h2>SEO for Shopify, Amazon, eBay, and TikTok Shop Businesses</h2>
+    <p>Ecommerce SEO needs attention to product pages, category structure, images, internal links, buying questions, and technical discovery. BFASH also supports businesses using Shopify, Amazon, eBay, TikTok Shop, and other digital commerce channels.</p>
 
-      <h2>SEO Is About Business Results</h2>
-      <p>Ranking number one is not the only goal.</p>
-      <p>A keyword can bring thousands of visitors and still produce very few customers.</p>
-      <p>Another keyword may bring only 100 visitors but generate several valuable leads.</p>
-      <p>This is why BFASH looks beyond rankings.</p>
-      <p>Important business metrics can include:</p>
-      <ul>
-        <li>Organic traffic</li>
-        <li>Qualified traffic</li>
-        <li>Leads</li>
-        <li>Calls</li>
-        <li>Form submissions</li>
-        <li>Sales</li>
-        <li>Revenue</li>
-        <li>Conversion rate</li>
-        <li>Cost per acquisition</li>
-        <li>Return on investment</li>
-      </ul>
-      <p>SEO should support the business.</p>
-      <p>Traffic is useful. Relevant traffic is better. And traffic that becomes revenue is better still.</p>
+    <h2 id="results">Measure SEO by Business Outcomes</h2>
+    <p>A number-one ranking is not the only measure of SEO success. A keyword can bring thousands of visits and produce few customers. Another can bring fewer visitors but produce qualified leads.</p>
+    <ul><li>Organic traffic</li><li>Qualified traffic</li><li>Leads and calls</li><li>Form submissions</li><li>Sales and revenue</li><li>Conversion rate</li><li>Cost per acquisition</li><li>Return on investment</li></ul>
 
-      <h2>Why Choose BFASH as an SEO Expert Team?</h2>
-      <p>BFASH combines several digital services under one growth-focused strategy.</p>
-      <p>That matters because SEO rarely works in isolation.</p>
-      <p>A business may need:</p>
-      <p><strong>SEO + Website Design + Content + Google Ads + Social Media + CRM + Email + Local SEO + GEO</strong></p>
-      <p>For example:</p>
-      <ul>
-        <li>SEO can bring a visitor</li>
-        <li>The website needs to convert that visitor</li>
-        <li>The CRM needs to capture the lead</li>
-        <li>Email can nurture the prospect</li>
-        <li>Sales needs the right information</li>
-        <li>Paid advertising can bring additional demand</li>
-        <li>Social media can build awareness</li>
-      </ul>
-      <p>This creates a connected growth system rather than isolated marketing tasks.</p>
-      <p>We also bring expertise in graphic design, videos, vector illustration, and Photoshop to create visually compelling content that engages audiences.</p>
+    <h2>Why Choose BFASH for SEO?</h2>
+    <p>BFASH combines SEO with website design, graphic design, video and vector illustration, Photoshop, CRM management, social media handling, Google Ads, social advertising, email marketing, virtual assistance, TikTok Shop, Amazon, eBay, and B2B traffic generation.</p>
+    <p>SEO can create the opportunity. A connected digital system can help turn that opportunity into business growth.</p>
 
-      <h2>Frequently Asked Questions About SEO Experts</h2>
+    <h2 id="faqs">Frequently Asked Questions About SEO Experts</h2>
+    <h3>What is an SEO expert?</h3><p>An SEO expert helps a website improve search visibility through research, technical optimization, content strategy, authority building, and performance analysis.</p>
+    <h3>What does an SEO expert do?</h3><p>The work can include keyword research, technical audits, on-page SEO, content planning, internal linking, local SEO, backlink strategy, analytics, conversion tracking, GEO, and AI-search visibility.</p>
+    <h3>How can an SEO expert increase website traffic?</h3><p>By finding relevant search opportunities, fixing technical barriers, creating useful content, improving existing pages, strengthening internal links, building authority, and matching content to search intent.</p>
+    <h3>Is SEO still important with AI search?</h3><p>Yes. Search engines remain important discovery systems, and AI systems can also retrieve information from the web. GEO and AEO can complement SEO rather than replace it.</p>
+    <h3>What is the difference between SEO and GEO?</h3><p>SEO focuses on organic search visibility. GEO focuses on making information easier for generative AI systems to understand and potentially surface in AI-generated answers.</p>
+    <h3>Can an SEO expert guarantee Google rankings?</h3><p>No responsible SEO provider can guarantee a specific Google position. Rankings depend on competition, intent, technical health, content, authority, location, algorithmic changes, and other factors.</p>
+    <h3>How long does SEO take?</h3><p>There is no universal timeline. Results depend on the website's starting condition, competition, market, authority, technical health, content, and goals.</p>
+    <h3>What is technical SEO?</h3><p>Technical SEO improves the website foundation so search engines can crawl, render, understand, and index important pages.</p>
+    <h3>What is local SEO?</h3><p>Local SEO improves visibility for searches connected to a location. It can include Google Business Profile optimization, local content, reviews, citations, location pages, local links, and conversion-focused pages.</p>
+    <h3>What is GMB SEO?</h3><p>GMB SEO is a common term for Google Business Profile optimization. It focuses on accurate, relevant, and useful business information for local discovery.</p>
+    <h3>What is black hat SEO?</h3><p>Black hat SEO refers to manipulative tactics intended to influence rankings instead of improving the website for users. Sustainable SEO focuses on usefulness, quality, relevance, trust, and legitimate authority.</p>
+    <h3>Can AI replace an SEO expert?</h3><p>AI can automate parts of SEO research and production, but strategy still needs context, verification, experience, business understanding, and human judgment.</p>
+    <h3>Can BFASH help B2B companies?</h3><p>Yes. BFASH combines B2B SEO, content, website strategy, paid advertising, lead generation, CRM, email marketing, and conversion-focused digital marketing.</p>
+    <h3>Can BFASH help ecommerce businesses?</h3><p>Yes. BFASH supports ecommerce businesses across Shopify, Amazon, eBay, TikTok Shop, and other digital commerce channels.</p>
 
-      <h3>What is an SEO expert?</h3>
-      <p>An SEO expert is a professional who helps websites improve their visibility in search engines through research, technical optimization, content strategy, authority building, and performance analysis.</p>
+    <h2>Final Takeaway</h2>
+    <p>Good SEO starts with understanding people. It then connects that understanding to a technically healthy website, useful content, relevant authority, and measurable business goals.</p>
+    <p>The strongest strategy is not to repeat <em>"SEO expert"</em> until a page sounds unnatural. It is to build a page that genuinely explains the subject, answers real questions, uses credible research, and gives readers a clear next step.</p>
 
-      <h3>What does an SEO expert do?</h3>
-      <p>An SEO expert can perform keyword research, technical audits, on-page optimization, content planning, internal linking, local SEO, backlink strategy, analytics, and ongoing search-performance improvements.</p>
+    <div class="my-10 rounded-3xl border border-brand/30 bg-brand/5 p-7 text-center"><p class="text-sm font-semibold uppercase tracking-[0.18em] text-brand">Ready to grow?</p><h2 class="mt-2">Turn search visibility into a real business strategy.</h2><p>Start with the website, market, competitors, audience, and growth goal.</p><!-- INTLINK: Update only if the final quote route changes. --><a href="/quote" class="mt-4 inline-flex rounded-xl bg-brand px-6 py-3 font-semibold text-white no-underline">Request a Growth Strategy</a></div>
 
-      <h3>How can an SEO expert increase website traffic?</h3>
-      <p>An SEO expert can identify relevant search opportunities, improve technical accessibility, create useful content, optimize existing pages, strengthen internal links, build authority, and target search intent.</p>
-
-      <h3>Is SEO still important with AI search?</h3>
-      <p>Yes. SEO remains important because AI systems can retrieve information from the web, and traditional search continues to be a major discovery channel. GEO and AEO can complement SEO rather than replace it.</p>
-
-      <h3>What is the difference between SEO and GEO?</h3>
-      <p>SEO focuses mainly on search visibility and organic rankings. GEO focuses on making useful information easier for generative AI systems to understand and potentially include in answers.</p>
-
-      <h3>Can an SEO expert guarantee Google rankings?</h3>
-      <p>No. Ranking guarantees are not responsible. Search results depend on competition, search intent, technical health, content, authority, location, algorithm changes, and many other factors.</p>
-
-      <h3>How long does SEO take?</h3>
-      <p>There is no universal SEO timeline. Results depend on the website's starting condition, competition, content, authority, technical health, market, and strategy.</p>
-
-      <h3>What is technical SEO?</h3>
-      <p>Technical SEO improves the technical foundation of a website so search engines can crawl, render, understand, and index important pages.</p>
-
-      <h3>What is local SEO?</h3>
-      <p>Local SEO improves a business's visibility for searches connected to a specific location. It can involve Google Business Profile optimization, local content, reviews, citations, location pages, and local authority.</p>
-
-      <h3>What is GMB SEO?</h3>
-      <p>GMB SEO commonly refers to optimizing a Google Business Profile, formerly associated with the name Google My Business, to improve local visibility and customer discovery.</p>
-
-      <h3>What is black hat SEO?</h3>
-      <p>Black hat SEO refers to manipulative techniques intended to influence rankings in ways that violate or attempt to circumvent search-engine guidelines. Sustainable SEO should focus on useful content, technical quality, relevance, and legitimate authority.</p>
-
-      <h3>Can AI replace an SEO expert?</h3>
-      <p>AI can automate parts of SEO work, but strategy still requires research, context, verification, experience, and judgment.</p>
-
-      <h3>Can BFASH help B2B companies?</h3>
-      <p>Yes. BFASH provides B2B-focused digital marketing and traffic-generation services combining SEO, content, website strategy, paid advertising, CRM, email marketing, and related growth services.</p>
-
-      <h3>Can BFASH help Shopify, Amazon, and eBay businesses?</h3>
-      <p>Yes. BFASH supports businesses operating across ecommerce platforms and marketplaces, including Shopify, Amazon, eBay, and TikTok Shop.</p>
-
-      <h2>Start With an SEO Strategy Built Around the Business</h2>
-      <p>SEO should not begin with: <em>"How many times should the keyword appear?"</em></p>
-      <p>It should begin with: <em>"What does the customer need, and how can the website become the best answer?"</em></p>
-      <p>That question leads to better research.</p>
-      <p>Better research leads to better topics.</p>
-      <p>Better topics lead to better content.</p>
-      <p>Better content supports stronger search visibility.</p>
-      <p>And stronger visibility can create more opportunities for leads and sales.</p>
-      <p><strong>BFASH brings SEO, AEO, GEO, AI automation, content strategy, technical SEO, local SEO, B2B marketing, and traffic generation together to help businesses build a stronger digital presence.</strong></p>
-      <p>We also offer graphic design, videos, vector illustration, Photoshop, CRM management, social media handling, ads management, and TikTok Shop management.</p>
-
-      <h2>Ready to Improve Search Visibility?</h2>
-      <p>Talk to the BFASH SEO team about your website, market, competitors, and growth goals.</p>
-      <p><strong>BFASH — Digital Marketing & Business Growth</strong></p>
-
-      <hr />
-
-      <h3>Research Used for This Page</h3>
-      <ul>
-        <li><strong>Zach Paruch — Semrush:</strong> Data-driven SEO strategist with 10+ years of experience in organic growth, on-page and technical SEO, AI-search optimization, content strategy, and AI-driven processes.</li>
-        <li><strong>Ghulam Ali — SEO & GEO research:</strong> Framework around keyword research, search intent, semantic content, technical SEO, direct answers, topical coverage, indexing, and authority building.</li>
-        <li><strong>Yogesh K. Dwivedi and colleagues:</strong> Academic research on responsible AI use, including the balance between AI's productivity benefits and concerns such as credibility, bias, misinformation, transparency, privacy, and human judgment.</li>
-      </ul>
-    `;
-  }
-  return "<p>Content coming soon.</p>";
+    <hr /><h2>Research and Sources</h2>
+    <ul><li><strong>Zach Paruch — Semrush:</strong> AI information pathways, AI visibility, search strategy, technical accessibility, mentions, and citations.</li><li><strong>Ghulam Ali — SEO & GEO research:</strong> keyword research, search intent, semantic content, technical SEO, topical coverage, indexing, and authority.</li><li><strong>Yogesh K. Dwivedi and colleagues:</strong> research on generative conversational AI and responsible use.</li><li><strong>Connor Lahey — Semrush:</strong> black hat SEO and risky manipulative tactics.</li><li><strong>Rachel Handley — Semrush:</strong> practical backlink-building methods.</li></ul>
+  `;
 }
+
+export const Route = createFileRoute("/blog/$slug")({
+  head: ({ params }) => ({
+    meta: [
+      { title: params.slug === "seo-expert" ? title : "BFASH Blog" },
+      { name: "description", content: params.slug === "seo-expert" ? description : "Digital marketing, SEO, GEO, AEO, AI automation, and business growth insights from BFASH." },
+      { name: "keywords", content: "SEO expert, SEO experts, SEO consultant, SEO agency, SEO services, technical SEO, keyword research, semantic SEO, local SEO, GMB SEO, B2B SEO, ecommerce SEO, GEO, AEO, AI SEO, AI search optimization, link building, organic traffic" },
+      { name: "author", content: "BFASH" },
+      { name: "robots", content: "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" },
+      { property: "og:title", content: title },
+      { property: "og:description", content: description },
+      { property: "og:type", content: "article" },
+      { property: "og:url", content: `${SITE_URL}/blog/${params.slug}` },
+      { property: "og:image", content: `${SITE_URL}/logo.webp` },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: title },
+      { name: "twitter:description", content: description },
+      { name: "twitter:image", content: `${SITE_URL}/logo.webp` },
+    ],
+    links: [{ rel: "canonical", href: `${SITE_URL}/blog/${params.slug}` }],
+  }),
+  component: BlogPost,
+});
+
+function BlogPost() {
+  const { slug } = Route.useParams();
+  const isSeoExpert = slug === "seo-expert";
+
+  if (!isSeoExpert) return <main className="min-h-screen px-2 sm:px-4"><div className="mx-auto max-w-6xl py-12"><Link to="/" className="text-brand">← Back to home</Link><div className="mt-8" dangerouslySetInnerHTML={{ __html: getPostContent(slug) }} /></div></main>;
+
+  return (
+    <main className="min-h-screen overflow-hidden px-2 sm:px-3 md:px-4 lg:px-5">
+      <div className="mx-auto w-full max-w-[1180px] py-7 sm:py-10 lg:py-12">
+        <nav aria-label="Breadcrumb" className="mb-6 text-sm text-muted-foreground"><div className="flex flex-wrap items-center gap-2"><Link to="/" className="text-brand no-underline hover:underline">Home</Link><span>/</span><Link to="/blog" className="text-brand no-underline hover:underline">Blog</Link><span>/</span><span>SEO Expert</span></div></nav>
+
+        <header className="relative overflow-hidden rounded-3xl border border-border bg-card px-5 py-8 shadow-sm sm:px-8 sm:py-10 lg:px-12 lg:py-14">
+          <div className="pointer-events-none absolute -right-24 -top-24 h-64 w-64 rounded-full bg-brand/10 blur-3xl" />
+          <div className="relative"><div className="mb-5 inline-flex rounded-full border border-brand/20 bg-brand/5 px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.16em] text-brand">SEO Strategy • GEO • AEO • AI Search</div><h1 className="max-w-5xl text-3xl font-display font-bold leading-[1.08] tracking-tight sm:text-4xl md:text-5xl lg:text-6xl">SEO Expert: How the Right Strategy Helps People Find, Trust, and Choose Your Business</h1><p className="mt-5 max-w-4xl text-base leading-7 text-muted-foreground sm:text-lg sm:leading-8">A practical, research-led guide to keyword research, technical SEO, semantic content, local visibility, B2B growth, GEO, AEO, and AI-assisted SEO workflows.</p><div className="mt-7 flex flex-wrap gap-x-5 gap-y-3 text-sm text-muted-foreground"><span>By <strong className="text-foreground">BFASH</strong></span><span>•</span><span>SEO & Digital Growth Research</span><span>•</span><span>Updated for 2026</span></div></div>
+        </header>
+
+        <div className="mt-8 grid gap-8 lg:grid-cols-[minmax(0,1fr)_280px] lg:items-start">
+          <article className="min-w-0 rounded-3xl border border-border bg-card px-4 py-7 shadow-sm sm:px-7 sm:py-9 md:px-9 lg:px-11 lg:py-12 [&_.lead]:text-lg [&_.lead]:font-medium [&_.lead]:leading-8 [&_.lead]:text-foreground [&_h2]:mt-12 [&_h2]:scroll-mt-24 [&_h2]:text-2xl [&_h2]:font-display [&_h2]:font-bold [&_h2]:leading-tight sm:[&_h2]:text-3xl [&_h3]:mt-8 [&_h3]:text-xl [&_h3]:font-semibold [&_p]:mt-5 [&_p]:leading-7 [&_p]:text-muted-foreground [&_ul]:mt-5 [&_ul]:list-disc [&_ul]:space-y-2 [&_ul]:pl-6 [&_ul]:text-muted-foreground [&_ol]:mt-5 [&_ol]:list-decimal [&_ol]:space-y-2 [&_ol]:pl-6 [&_ol]:text-muted-foreground [&_li]:leading-7 [&_strong]:text-foreground [&_a]:text-brand [&_a]:underline [&_a]:underline-offset-4 [&_hr]:my-10 [&_hr]:border-border [&_table]:border-collapse" itemScope itemType="https://schema.org/Article">
+            <meta itemProp="headline" content={title} /><meta itemProp="author" content="BFASH" /><meta itemProp="publisher" content="BFASH" /><meta itemProp="mainEntityOfPage" content={`${SITE_URL}/blog/seo-expert`} />
+            <div dangerouslySetInnerHTML={{ __html: getPostContent(slug) }} />
+          </article>
+
+          <aside className="lg:sticky lg:top-24"><div className="rounded-3xl border border-border bg-card p-5 shadow-sm sm:p-6"><p className="text-xs font-semibold uppercase tracking-[0.16em] text-brand">On this page</p><nav className="mt-4 space-y-1 text-sm">{[["What does an SEO expert do?","#what"],["Keyword research","#keywords"],["Semantic SEO","#semantic"],["Technical SEO","#technical"],["Topical authority","#topical"],["B2B SEO","#b2b"],["Local SEO & GMB","#local"],["Backlinks","#backlinks"],["Black hat SEO","#blackhat"],["SEO, AEO & GEO","#geo"],["AI automation","#automation"],["Business outcomes","#results"],["FAQs","#faqs"]].map(([label, href]) => <a key={href} href={href} className="block rounded-lg px-3 py-2 text-muted-foreground no-underline transition hover:bg-muted hover:text-foreground">{label}</a>)}</nav><div className="mt-6 border-t border-border pt-6"><p className="text-sm font-semibold">Need an SEO strategy?</p><p className="mt-2 text-sm leading-6 text-muted-foreground">BFASH can review the website, market, competition, and growth goals.</p><!-- INTLINK --><Link to="/quote" className="mt-4 inline-flex w-full items-center justify-center rounded-xl bg-brand px-4 py-2.5 text-sm font-semibold text-white no-underline hover:opacity-90">Get a Strategy</Link></div></div></aside>
+        </div>
+      </div>
+    </main>
+  );
+}
+'''
