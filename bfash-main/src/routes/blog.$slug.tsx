@@ -159,8 +159,8 @@ function BlogPost() {
   if (!isSeoExpert) return <main className="min-h-screen px-2 sm:px-4"><div className="mx-auto max-w-6xl py-12"><Link to="/" className="text-brand">← Back to home</Link><div className="mt-8" dangerouslySetInnerHTML={{ __html: getPostContent(slug) }} /></div></main>;
 
   return (
-    <main className="min-h-screen overflow-hidden px-2 sm:px-3 md:px-4 lg:px-5">
-      <div className="mx-auto w-full max-w-[1180px] py-7 sm:py-10 lg:py-12">
+    <main className="min-h-screen overflow-hidden px-2 sm:px-3 md:px-4">
+      <div className="ml-0 mr-auto w-full max-w-[1400px] py-5 sm:py-8 lg:py-10">
         <nav aria-label="Breadcrumb" className="mb-6 text-sm text-muted-foreground"><div className="flex flex-wrap items-center gap-2"><Link to="/" className="text-brand no-underline hover:underline">Home</Link><span>/</span><Link to="/blog" className="text-brand no-underline hover:underline">Blog</Link><span>/</span><span>SEO Expert</span></div></nav>
 
         <header className="relative overflow-hidden rounded-3xl border border-border bg-card px-5 py-8 shadow-sm sm:px-8 sm:py-10 lg:px-12 lg:py-14">
@@ -168,13 +168,79 @@ function BlogPost() {
           <div className="relative"><div className="mb-5 inline-flex rounded-full border border-brand/20 bg-brand/5 px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.16em] text-brand">SEO Strategy • GEO • AEO • AI Search</div><h1 className="max-w-5xl text-3xl font-display font-bold leading-[1.08] tracking-tight sm:text-4xl md:text-5xl lg:text-6xl">SEO Expert: How the Right Strategy Helps People Find, Trust, and Choose Your Business</h1><p className="mt-5 max-w-4xl text-base leading-7 text-muted-foreground sm:text-lg sm:leading-8">A practical, research-led guide to keyword research, technical SEO, semantic content, local visibility, B2B growth, GEO, AEO, and AI-assisted SEO workflows.</p><div className="mt-7 flex flex-wrap gap-x-5 gap-y-3 text-sm text-muted-foreground"><span>By <strong className="text-foreground">BFASH</strong></span><span>•</span><span>SEO & Digital Growth Research</span><span>•</span><span>Updated for 2026</span></div></div>
         </header>
 
-        <div className="mt-8 grid gap-8 lg:grid-cols-[minmax(0,1fr)_280px] lg:items-start">
+        <div className="mt-6 grid gap-6 lg:grid-cols-[minmax(0,1fr)_320px] lg:items-start">
           <article className="min-w-0 rounded-3xl border border-border bg-card px-4 py-7 shadow-sm sm:px-7 sm:py-9 md:px-9 lg:px-11 lg:py-12 [&_.lead]:text-lg [&_.lead]:font-medium [&_.lead]:leading-8 [&_.lead]:text-foreground [&_h2]:mt-12 [&_h2]:scroll-mt-24 [&_h2]:text-2xl [&_h2]:font-display [&_h2]:font-bold [&_h2]:leading-tight sm:[&_h2]:text-3xl [&_h3]:mt-8 [&_h3]:text-xl [&_h3]:font-semibold [&_p]:mt-5 [&_p]:leading-7 [&_p]:text-muted-foreground [&_ul]:mt-5 [&_ul]:list-disc [&_ul]:space-y-2 [&_ul]:pl-6 [&_ul]:text-muted-foreground [&_ol]:mt-5 [&_ol]:list-decimal [&_ol]:space-y-2 [&_ol]:pl-6 [&_ol]:text-muted-foreground [&_li]:leading-7 [&_strong]:text-foreground [&_a]:text-brand [&_a]:underline [&_a]:underline-offset-4 [&_hr]:my-10 [&_hr]:border-border [&_table]:border-collapse" itemScope itemType="https://schema.org/Article">
             <meta itemProp="headline" content={title} /><meta itemProp="author" content="BFASH" /><meta itemProp="publisher" content="BFASH" /><meta itemProp="mainEntityOfPage" content={`${SITE_URL}/blog/seo-expert`} />
             <div dangerouslySetInnerHTML={{ __html: getPostContent(slug) }} />
           </article>
 
-          <aside className="lg:sticky lg:top-24"><div className="rounded-3xl border border-border bg-card p-5 shadow-sm sm:p-6"><p className="text-xs font-semibold uppercase tracking-[0.16em] text-brand">On this page</p><nav className="mt-4 space-y-1 text-sm">{[["What does an SEO expert do?","#what"],["Keyword research","#keywords"],["Semantic SEO","#semantic"],["Technical SEO","#technical"],["Topical authority","#topical"],["B2B SEO","#b2b"],["Local SEO & GMB","#local"],["Backlinks","#backlinks"],["Black hat SEO","#blackhat"],["SEO, AEO & GEO","#geo"],["AI automation","#automation"],["Business outcomes","#results"],["FAQs","#faqs"]].map(([label, href]) => <a key={href} href={href} className="block rounded-lg px-3 py-2 text-muted-foreground no-underline transition hover:bg-muted hover:text-foreground">{label}</a>)}</nav><div className="mt-6 border-t border-border pt-6"><p className="text-sm font-semibold">Need an SEO strategy?</p><p className="mt-2 text-sm leading-6 text-muted-foreground">BFASH can review the website, market, competition, and growth goals.</p>{/* INTLINK */}<Link to="/quote" className="mt-4 inline-flex w-full items-center justify-center rounded-xl bg-brand px-4 py-2.5 text-sm font-semibold text-white no-underline hover:opacity-90">Get a Strategy</Link></div></div></aside>
+          <aside className="space-y-6 lg:sticky lg:top-24">
+            <div className="rounded-3xl border border-border bg-card p-5 shadow-sm sm:p-6">
+              <p className="text-xs font-semibold uppercase tracking-[0.16em] text-brand">On this page</p>
+              <nav className="mt-4 space-y-1 text-sm">
+                {[
+                  ["What does an SEO expert do?", "#what"],
+                  ["Keyword research", "#keywords"],
+                  ["Semantic SEO", "#semantic"],
+                  ["Technical SEO", "#technical"],
+                  ["Topical authority", "#topical"],
+                  ["B2B SEO", "#b2b"],
+                  ["Local SEO & GMB", "#local"],
+                  ["Backlinks", "#backlinks"],
+                  ["Black hat SEO", "#blackhat"],
+                  ["SEO, AEO & GEO", "#geo"],
+                  ["AI automation", "#automation"],
+                  ["Business outcomes", "#results"],
+                  ["FAQs", "#faqs"],
+                ].map(([label, href]) => (
+                  <a key={href} href={href} className="block rounded-lg px-3 py-2 text-muted-foreground no-underline transition hover:bg-muted hover:text-foreground">
+                    {label}
+                  </a>
+                ))}
+              </nav>
+            </div>
+
+            <div className="rounded-3xl border border-border bg-card p-5 shadow-sm sm:p-6">
+              <div className="mb-5">
+                <p className="text-xs font-semibold uppercase tracking-[0.16em] text-brand">Contact BFASH</p>
+                <h2 className="mt-2 text-2xl font-display font-bold leading-tight">Let's talk about growth</h2>
+                <p className="mt-2 text-sm leading-6 text-muted-foreground">Fill out the form and send the team a message. A clear brief helps BFASH understand the business, website, market, and goals.</p>
+              </div>
+
+              <form action="https://api.web3forms.com/submit" method="POST" id="blog-contact-form" className="space-y-4">
+                <input type="hidden" name="access_key" value="871b202d-31db-4929-9c44-4ab92415006e" />
+                <input type="hidden" name="subject" value="New SEO Strategy Inquiry from BFASH Blog" />
+                <input type="hidden" name="from_name" value="BFASH Blog Contact Form" />
+                <input type="checkbox" name="botcheck" tabIndex={-1} aria-hidden="true" className="hidden" />
+
+                <div>
+                  <label htmlFor="blog-name" className="mb-1.5 block text-sm font-medium text-foreground">Full Name</label>
+                  <input type="text" name="name" id="blog-name" placeholder="John Doe" required className="h-11 w-full rounded-xl border border-border bg-background px-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-brand/40" />
+                </div>
+
+                <div>
+                  <label htmlFor="blog-email" className="mb-1.5 block text-sm font-medium text-foreground">Email Address</label>
+                  <input type="email" name="email" id="blog-email" placeholder="you@company.com" required className="h-11 w-full rounded-xl border border-border bg-background px-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-brand/40" />
+                </div>
+
+                <div>
+                  <label htmlFor="blog-phone" className="mb-1.5 block text-sm font-medium text-foreground">Phone Number</label>
+                  <input type="text" name="phone" id="blog-phone" placeholder="+1 (555) 123-4567" required className="h-11 w-full rounded-xl border border-border bg-background px-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-brand/40" />
+                </div>
+
+                <div>
+                  <label htmlFor="blog-message" className="mb-1.5 block text-sm font-medium text-foreground">Your Message</label>
+                  <textarea rows={5} name="message" id="blog-message" placeholder="Tell us about your website, SEO goals, or growth challenge..." required className="min-h-[120px] w-full resize-y rounded-xl border border-border bg-background px-3 py-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-brand/40" />
+                </div>
+
+                <button type="submit" className="w-full rounded-xl bg-brand px-4 py-3 text-sm font-semibold text-white transition hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-brand/40">
+                  Send Message
+                </button>
+
+                <p className="text-center text-xs leading-5 text-muted-foreground">By submitting this form, the message is sent securely through Web3Forms.</p>
+              </form>
+            </div>
+          </aside>
         </div>
       </div>
     </main>
