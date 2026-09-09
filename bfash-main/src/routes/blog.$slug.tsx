@@ -180,4 +180,3 @@ function BlogPost() {
     </main>
   );
 }
-'''
