@@ -23,11 +23,9 @@ import {
 
 export const Route = createFileRoute("/")({
   head: () => ({
+    // FIXED: Title is now a top-level property, not inside the meta array
+    title: "Best Digital Marketing Agency for Business Growth | BFASH",
     meta: [
-      {
-        title:
-          "Best Digital Marketing Agency for Business Growth | BFASH",
-      },
       {
         name: "description",
         content:
@@ -229,6 +227,7 @@ function Home() {
             Digital Marketing & Business Growth
           </div>
 
+          {/* This is your H1 - it is already correct and unique! */}
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-display font-bold tracking-tight leading-[1.05] mb-6">
             Best Digital Marketing Agency for{" "}
             <span className="gradient-text">Business Growth</span>
