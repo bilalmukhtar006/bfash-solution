@@ -28,7 +28,6 @@ function getPostContent(slug: string) {
     <h3>Search intent changes the right page</h3>
     <p>Someone searching <em>"what is SEO?"</em> is usually learning. Someone searching <em>"best SEO expert for a small business"</em> is comparing options. Someone searching <em>"SEO expert near me"</em> may be ready to contact a provider.</p>
     <p>A good SEO strategy maps each important query to the page that best satisfies it. This also helps prevent keyword cannibalization.</p>
-    <!-- EXTLINK: Replace with the final approved research URL if required. -->
     <p class="rounded-xl border border-border bg-muted/30 p-4 text-sm"><strong>Research note:</strong> Zach Paruch's Semrush research discusses search-intent analysis and information architecture as parts of a data-driven SEO process. <a href="https://www.semrush.com/blog/" target="_blank" rel="noopener noreferrer">Read related Semrush research</a>.</p>
 
     <h2 id="semantic">Semantic SEO: Cover the Topic, Not Just the Keyword</h2>
@@ -64,14 +63,12 @@ function getPostContent(slug: string) {
     <p>Backlinks are links from other websites to a website. They can help discovery and contribute to authority, but irrelevant links are not the same as a strong authority profile.</p>
     <p>A practical framework is <strong>Relevance + Trust + Editorial Value.</strong></p>
     <p>The research supplied for this page includes realistic approaches such as responding to media requests, creating link-worthy assets, and finding broken-link opportunities.</p>
-    <!-- EXTLINK: Add the final approved backlink research URL here later. -->
     <p class="text-sm text-muted-foreground"><strong>Research source:</strong> Rachel Handley — Semrush, <em>How to Get Backlinks: 10 Realistic Methods</em>.</p>
 
     <h2 id="blackhat">Why Black Hat SEO Is a Bad Long-Term Strategy</h2>
     <p>Black hat SEO tries to manipulate search results instead of improving the website for users. Examples include keyword stuffing, hidden text, doorway pages, cloaking, manipulative links, misleading redirects, and low-quality automated content.</p>
     <p>The supplied Semrush research reports <strong>5,400 US searches</strong>, <strong>51% keyword difficulty</strong>, and <strong>$5.57 CPC</strong> for "black hat SEO". The related query "what is white hat and black hat SEO" shows <strong>1,000 searches</strong> and <strong>26% KD</strong>.</p>
     <p>These figures show interest in the topic. They do not make manipulative SEO a good business strategy. Sustainable SEO focuses on useful content, technical quality, relevance, trust, and user experience.</p>
-    <!-- EXTLINK: Add the final approved Semrush black-hat URL here later. -->
     <p class="text-sm text-muted-foreground"><strong>Research source:</strong> Connor Lahey — Semrush, <em>What Is Black Hat SEO? 9 Risky Techniques To Avoid</em>.</p>
 
     <h2 id="geo">SEO, AEO, and GEO: Three Connected Search Concepts</h2>
@@ -82,7 +79,6 @@ function getPostContent(slug: string) {
     <p>Zach Paruch's Semrush research explains that AI systems can obtain information through multiple pathways, including training, live online retrieval, licensing partnerships, and user-initiated actions.</p>
     <p>The website matters, but it is not the entire digital footprint. Consistent information across relevant third-party sources can help create a clearer picture of the brand.</p>
     <p>AI citations should never be presented as guaranteed. The responsible goal is to make a business <strong>clear, relevant, accessible, consistent, useful, and trustworthy</strong>.</p>
-    <!-- EXTLINK: Final approved AI-search research URL can replace this source link. -->
     <p class="rounded-xl border border-border bg-muted/30 p-4 text-sm"><strong>Research:</strong> <a href="https://www.semrush.com/blog/" target="_blank" rel="noopener noreferrer">Zach Paruch — Semrush AI visibility research</a>.</p>
 
     <h2 id="automation">AI Automation at BFASH</h2>
@@ -122,7 +118,7 @@ function getPostContent(slug: string) {
     <p>Good SEO starts with understanding people. It then connects that understanding to a technically healthy website, useful content, relevant authority, and measurable business goals.</p>
     <p>The strongest strategy is not to repeat <em>"SEO expert"</em> until a page sounds unnatural. It is to build a page that genuinely explains the subject, answers real questions, uses credible research, and gives readers a clear next step.</p>
 
-    <div class="my-10 rounded-3xl border border-brand/30 bg-brand/5 p-7 text-center"><p class="text-sm font-semibold uppercase tracking-[0.18em] text-brand">Ready to grow?</p><h2 class="mt-2">Turn search visibility into a real business strategy.</h2><p>Start with the website, market, competitors, audience, and growth goal.</p><!-- INTLINK: Update only if the final quote route changes. --><a href="/quote" class="mt-4 inline-flex rounded-xl bg-brand px-6 py-3 font-semibold text-white no-underline">Request a Growth Strategy</a></div>
+    <div class="my-10 rounded-3xl border border-brand/30 bg-brand/5 p-7 text-center"><p class="text-sm font-semibold uppercase tracking-[0.18em] text-brand">Ready to grow?</p><h2 class="mt-2">Turn search visibility into a real business strategy.</h2><p>Start with the website, market, competitors, audience, and growth goal.</p><a href="/quote" class="mt-4 inline-flex rounded-xl bg-brand px-6 py-3 font-semibold text-white no-underline">Request a Growth Strategy</a></div>
 
     <hr /><h2>Research and Sources</h2>
     <ul><li><strong>Zach Paruch — Semrush:</strong> AI information pathways, AI visibility, search strategy, technical accessibility, mentions, and citations.</li><li><strong>Ghulam Ali — SEO & GEO research:</strong> keyword research, search intent, semantic content, technical SEO, topical coverage, indexing, and authority.</li><li><strong>Yogesh K. Dwivedi and colleagues:</strong> research on generative conversational AI and responsible use.</li><li><strong>Connor Lahey — Semrush:</strong> black hat SEO and risky manipulative tactics.</li><li><strong>Rachel Handley — Semrush:</strong> practical backlink-building methods.</li></ul>
@@ -156,25 +152,72 @@ function BlogPost() {
   const { slug } = Route.useParams();
   const isSeoExpert = slug === "seo-expert";
 
-  if (!isSeoExpert) return <main className="min-h-screen px-2 sm:px-4"><div className="mx-auto max-w-6xl py-12"><Link to="/" className="text-brand">← Back to home</Link><div className="mt-8" dangerouslySetInnerHTML={{ __html: getPostContent(slug) }} /></div></main>;
+  if (!isSeoExpert) {
+    return (
+      <main className="min-h-screen px-4 py-12">
+        <div className="mx-auto max-w-4xl">
+          <Link to="/" className="text-brand">← Back to home</Link>
+          <div className="mt-8" dangerouslySetInnerHTML={{ __html: getPostContent(slug) }} />
+        </div>
+      </main>
+    );
+  }
 
   return (
-    <main className="min-h-screen overflow-hidden px-2 sm:px-3 md:px-4">
-      <div className="ml-0 mr-auto w-full max-w-[1400px] py-5 sm:py-8 lg:py-10">
-        <nav aria-label="Breadcrumb" className="mb-6 text-sm text-muted-foreground"><div className="flex flex-wrap items-center gap-2"><Link to="/" className="text-brand no-underline hover:underline">Home</Link><span>/</span><Link to="/blog" className="text-brand no-underline hover:underline">Blog</Link><span>/</span><span>SEO Expert</span></div></nav>
+    <main className="min-h-screen px-4 py-6 md:py-10">
+      <div className="mx-auto max-w-7xl">
+        {/* Breadcrumb */}
+        <nav aria-label="Breadcrumb" className="mb-6 text-sm text-muted-foreground">
+          <div className="flex flex-wrap items-center gap-2">
+            <Link to="/" className="text-brand no-underline hover:underline">Home</Link>
+            <span>/</span>
+            <Link to="/blog" className="text-brand no-underline hover:underline">Blog</Link>
+            <span>/</span>
+            <span>SEO Expert</span>
+          </div>
+        </nav>
 
+        {/* Header */}
         <header className="relative overflow-hidden rounded-3xl border border-border bg-card px-5 py-8 shadow-sm sm:px-8 sm:py-10 lg:px-12 lg:py-14">
           <div className="pointer-events-none absolute -right-24 -top-24 h-64 w-64 rounded-full bg-brand/10 blur-3xl" />
-          <div className="relative"><div className="mb-5 inline-flex rounded-full border border-brand/20 bg-brand/5 px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.16em] text-brand">SEO Strategy • GEO • AEO • AI Search</div><h1 className="max-w-5xl text-3xl font-display font-bold leading-[1.08] tracking-tight sm:text-4xl md:text-5xl lg:text-6xl">SEO Expert: How the Right Strategy Helps People Find, Trust, and Choose Your Business</h1><p className="mt-5 max-w-4xl text-base leading-7 text-muted-foreground sm:text-lg sm:leading-8">A practical, research-led guide to keyword research, technical SEO, semantic content, local visibility, B2B growth, GEO, AEO, and AI-assisted SEO workflows.</p><div className="mt-7 flex flex-wrap gap-x-5 gap-y-3 text-sm text-muted-foreground"><span>By <strong className="text-foreground">BFASH</strong></span><span>•</span><span>SEO & Digital Growth Research</span><span>•</span><span>Updated for 2026</span></div></div>
+          <div className="relative">
+            <div className="mb-5 inline-flex rounded-full border border-brand/20 bg-brand/5 px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.16em] text-brand">
+              SEO Strategy • GEO • AEO • AI Search
+            </div>
+            <h1 className="max-w-5xl text-3xl font-display font-bold leading-[1.08] tracking-tight sm:text-4xl md:text-5xl lg:text-6xl">
+              SEO Expert: How the Right Strategy Helps People Find, Trust, and Choose Your Business
+            </h1>
+            <p className="mt-5 max-w-4xl text-base leading-7 text-muted-foreground sm:text-lg sm:leading-8">
+              A practical, research-led guide to keyword research, technical SEO, semantic content, local visibility, B2B growth, GEO, AEO, and AI-assisted SEO workflows.
+            </p>
+            <div className="mt-7 flex flex-wrap gap-x-5 gap-y-3 text-sm text-muted-foreground">
+              <span>By <strong className="text-foreground">BFASH</strong></span>
+              <span>•</span>
+              <span>SEO & Digital Growth Research</span>
+              <span>•</span>
+              <span>Updated for 2026</span>
+            </div>
+          </div>
         </header>
 
-        <div className="mt-6 grid gap-6 lg:grid-cols-[minmax(0,1fr)_320px] lg:items-start">
-          <article className="min-w-0 rounded-3xl border border-border bg-card px-4 py-7 shadow-sm sm:px-7 sm:py-9 md:px-9 lg:px-11 lg:py-12 [&_.lead]:text-lg [&_.lead]:font-medium [&_.lead]:leading-8 [&_.lead]:text-foreground [&_h2]:mt-12 [&_h2]:scroll-mt-24 [&_h2]:text-2xl [&_h2]:font-display [&_h2]:font-bold [&_h2]:leading-tight sm:[&_h2]:text-3xl [&_h3]:mt-8 [&_h3]:text-xl [&_h3]:font-semibold [&_p]:mt-5 [&_p]:leading-7 [&_p]:text-muted-foreground [&_ul]:mt-5 [&_ul]:list-disc [&_ul]:space-y-2 [&_ul]:pl-6 [&_ul]:text-muted-foreground [&_ol]:mt-5 [&_ol]:list-decimal [&_ol]:space-y-2 [&_ol]:pl-6 [&_ol]:text-muted-foreground [&_li]:leading-7 [&_strong]:text-foreground [&_a]:text-brand [&_a]:underline [&_a]:underline-offset-4 [&_hr]:my-10 [&_hr]:border-border [&_table]:border-collapse" itemScope itemType="https://schema.org/Article">
-            <meta itemProp="headline" content={title} /><meta itemProp="author" content="BFASH" /><meta itemProp="publisher" content="BFASH" /><meta itemProp="mainEntityOfPage" content={`${SITE_URL}/blog/seo-expert`} />
+        {/* Content Grid - CENTERED with max-width and auto margins */}
+        <div className="mt-6 grid gap-6 lg:grid-cols-[1fr_320px] lg:items-start">
+          {/* Article */}
+          <article 
+            className="min-w-0 rounded-3xl border border-border bg-card px-4 py-7 shadow-sm sm:px-7 sm:py-9 md:px-9 lg:px-11 lg:py-12 [&_.lead]:text-lg [&_.lead]:font-medium [&_.lead]:leading-8 [&_.lead]:text-foreground [&_h2]:mt-12 [&_h2]:scroll-mt-24 [&_h2]:text-2xl [&_h2]:font-display [&_h2]:font-bold [&_h2]:leading-tight sm:[&_h2]:text-3xl [&_h3]:mt-8 [&_h3]:text-xl [&_h3]:font-semibold [&_p]:mt-5 [&_p]:leading-7 [&_p]:text-muted-foreground [&_ul]:mt-5 [&_ul]:list-disc [&_ul]:space-y-2 [&_ul]:pl-6 [&_ul]:text-muted-foreground [&_ol]:mt-5 [&_ol]:list-decimal [&_ol]:space-y-2 [&_ol]:pl-6 [&_ol]:text-muted-foreground [&_li]:leading-7 [&_strong]:text-foreground [&_a]:text-brand [&_a]:underline [&_a]:underline-offset-4 [&_hr]:my-10 [&_hr]:border-border [&_table]:border-collapse"
+            itemScope 
+            itemType="https://schema.org/Article"
+          >
+            <meta itemProp="headline" content={title} />
+            <meta itemProp="author" content="BFASH" />
+            <meta itemProp="publisher" content="BFASH" />
+            <meta itemProp="mainEntityOfPage" content={`${SITE_URL}/blog/seo-expert`} />
             <div dangerouslySetInnerHTML={{ __html: getPostContent(slug) }} />
           </article>
 
-          <aside className="space-y-6 lg:sticky lg:top-24">
+          {/* Sidebar */}
+          <aside className="space-y-6">
+            {/* Table of Contents */}
             <div className="rounded-3xl border border-border bg-card p-5 shadow-sm sm:p-6">
               <p className="text-xs font-semibold uppercase tracking-[0.16em] text-brand">On this page</p>
               <nav className="mt-4 space-y-1 text-sm">
@@ -193,18 +236,25 @@ function BlogPost() {
                   ["Business outcomes", "#results"],
                   ["FAQs", "#faqs"],
                 ].map(([label, href]) => (
-                  <a key={href} href={href} className="block rounded-lg px-3 py-2 text-muted-foreground no-underline transition hover:bg-muted hover:text-foreground">
+                  <a 
+                    key={href} 
+                    href={href} 
+                    className="block rounded-lg px-3 py-2 text-muted-foreground no-underline transition hover:bg-muted hover:text-foreground"
+                  >
                     {label}
                   </a>
                 ))}
               </nav>
             </div>
 
+            {/* Contact Form */}
             <div className="rounded-3xl border border-border bg-card p-5 shadow-sm sm:p-6">
               <div className="mb-5">
                 <p className="text-xs font-semibold uppercase tracking-[0.16em] text-brand">Contact BFASH</p>
                 <h2 className="mt-2 text-2xl font-display font-bold leading-tight">Let's talk about growth</h2>
-                <p className="mt-2 text-sm leading-6 text-muted-foreground">Fill out the form and send the team a message. A clear brief helps BFASH understand the business, website, market, and goals.</p>
+                <p className="mt-2 text-sm leading-6 text-muted-foreground">
+                  Fill out the form and send the team a message. A clear brief helps BFASH understand the business, website, market, and goals.
+                </p>
               </div>
 
               <form action="https://api.web3forms.com/submit" method="POST" id="blog-contact-form" className="space-y-4">
@@ -215,29 +265,62 @@ function BlogPost() {
 
                 <div>
                   <label htmlFor="blog-name" className="mb-1.5 block text-sm font-medium text-foreground">Full Name</label>
-                  <input type="text" name="name" id="blog-name" placeholder="John Doe" required className="h-11 w-full rounded-xl border border-border bg-background px-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-brand/40" />
+                  <input 
+                    type="text" 
+                    name="name" 
+                    id="blog-name" 
+                    placeholder="John Doe" 
+                    required 
+                    className="h-11 w-full rounded-xl border border-border bg-background px-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-brand/40" 
+                  />
                 </div>
 
                 <div>
                   <label htmlFor="blog-email" className="mb-1.5 block text-sm font-medium text-foreground">Email Address</label>
-                  <input type="email" name="email" id="blog-email" placeholder="you@company.com" required className="h-11 w-full rounded-xl border border-border bg-background px-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-brand/40" />
+                  <input 
+                    type="email" 
+                    name="email" 
+                    id="blog-email" 
+                    placeholder="you@company.com" 
+                    required 
+                    className="h-11 w-full rounded-xl border border-border bg-background px-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-brand/40" 
+                  />
                 </div>
 
                 <div>
                   <label htmlFor="blog-phone" className="mb-1.5 block text-sm font-medium text-foreground">Phone Number</label>
-                  <input type="text" name="phone" id="blog-phone" placeholder="+1 (555) 123-4567" required className="h-11 w-full rounded-xl border border-border bg-background px-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-brand/40" />
+                  <input 
+                    type="text" 
+                    name="phone" 
+                    id="blog-phone" 
+                    placeholder="+1 (555) 123-4567" 
+                    required 
+                    className="h-11 w-full rounded-xl border border-border bg-background px-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-brand/40" 
+                  />
                 </div>
 
                 <div>
                   <label htmlFor="blog-message" className="mb-1.5 block text-sm font-medium text-foreground">Your Message</label>
-                  <textarea rows={5} name="message" id="blog-message" placeholder="Tell us about your website, SEO goals, or growth challenge..." required className="min-h-[120px] w-full resize-y rounded-xl border border-border bg-background px-3 py-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-brand/40" />
+                  <textarea 
+                    rows={5} 
+                    name="message" 
+                    id="blog-message" 
+                    placeholder="Tell us about your website, SEO goals, or growth challenge..." 
+                    required 
+                    className="min-h-[120px] w-full resize-y rounded-xl border border-border bg-background px-3 py-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-brand/40" 
+                  />
                 </div>
 
-                <button type="submit" className="w-full rounded-xl bg-brand px-4 py-3 text-sm font-semibold text-white transition hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-brand/40">
+                <button 
+                  type="submit" 
+                  className="w-full rounded-xl bg-brand px-4 py-3 text-sm font-semibold text-white transition hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-brand/40"
+                >
                   Send Message
                 </button>
 
-                <p className="text-center text-xs leading-5 text-muted-foreground">By submitting this form, the message is sent securely through Web3Forms.</p>
+                <p className="text-center text-xs leading-5 text-muted-foreground">
+                  By submitting this form, the message is sent securely through Web3Forms.
+                </p>
               </form>
             </div>
           </aside>
