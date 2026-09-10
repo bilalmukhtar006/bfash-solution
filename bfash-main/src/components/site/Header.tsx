@@ -23,75 +23,82 @@ const nav = [
   { to: "/contact", label: "Contact Us" },
 ] as const;
 
+// UPDATED: Added "to" paths for main categories and sub-items
 const serviceCategories = [
   {
     title: "Search Engine Optimization (SEO)",
+    to: "/services/seo",
     icon: Search,
     goal: "Increase organic visibility, traffic, and AI search presence.",
     items: [
-      "Local SEO & GMB",
-      "Website SEO (On-Page & Technical)",
-      "AEO & GEO (AI Search Optimization)",
-      "Content Marketing & Blog Posts",
-      "Landing Page Optimization",
+      { label: "Local SEO & GMB", to: "/services/seo" },
+      { label: "Website SEO (On-Page & Technical)", to: "/services/seo" },
+      { label: "AEO & GEO (AI Search Optimization)", to: "/services/seo" },
+      { label: "Content Marketing & Blog Posts", to: "/services/seo" },
+      { label: "Landing Page Optimization", to: "/services/seo" },
     ],
   },
   {
     title: "E-commerce & Marketplace Management",
+    to: "/services/ecommerce",
     icon: ShoppingCart,
     goal: "Increase product sales across major online marketplaces.",
     items: [
-      "Amazon Management",
-      "eBay Store Management",
-      "TikTok Shop",
-      "Product Listing Optimization",
+      { label: "Amazon Management", to: "/services/ecommerce" },
+      { label: "eBay Store Management", to: "/services/ecommerce" },
+      { label: "TikTok Shop", to: "/services/ecommerce" },
+      { label: "Product Listing Optimization", to: "/services/ecommerce" },
     ],
   },
   {
     title: "Paid Advertising (Ads Management)",
+    to: "/services/ads",
     icon: Megaphone,
     goal: "Instant visibility, lead generation, and targeted sales.",
     items: [
-      "Google Ads",
-      "Social Media Ads",
-      "Marketplace PPC",
-      "Retargeting & Remarketing",
-      "Ad Copywriting & A/B Testing",
+      { label: "Google Ads", to: "/services/ads" },
+      { label: "Social Media Ads", to: "/services/ads" },
+      { label: "Marketplace PPC", to: "/services/ads" },
+      { label: "Retargeting & Remarketing", to: "/services/ads" },
+      { label: "Ad Copywriting & A/B Testing", to: "/services/ads" },
     ],
   },
   {
     title: "Graphic & Creative Design",
+    to: "/services/graphic-design",
     icon: Palette,
     goal: "Build a memorable brand and visually engaging marketing materials.",
     items: [
-      "Logo & Brand Identity",
-      "Social Media Graphics",
-      "Marketing Collateral",
-      "Packaging & Print Design",
+      { label: "Logo & Brand Identity", to: "/services/graphic-design" },
+      { label: "Social Media Graphics", to: "/services/graphic-design" },
+      { label: "Marketing Collateral", to: "/services/graphic-design" },
+      { label: "Packaging & Print Design", to: "/services/graphic-design" },
     ],
   },
   {
     title: "Website Design & Development",
+    to: "/services/web-design",
     icon: Monitor,
     goal: "Create a strong, fast, and conversion-focused online presence.",
     items: [
-      "Custom Website Design",
-      "E-commerce Websites",
-      "Landing Page Design",
-      "Website Maintenance & Support",
-      "Speed & Performance Optimization",
+      { label: "Custom Website Design", to: "/services/web-design" },
+      { label: "E-commerce Websites", to: "/services/web-design" },
+      { label: "Landing Page Design", to: "/services/web-design" },
+      { label: "Website Maintenance & Support", to: "/services/web-design" },
+      { label: "Speed & Performance Optimization", to: "/services/web-design" },
     ],
   },
   {
     title: "Virtual Assistance & Business Support",
+    to: "/services/virtual-assistance",
     icon: Headphones,
     goal: "Save time and streamline daily business operations.",
     items: [
-      "Administrative Support",
-      "Customer Service",
-      "CRM Management",
-      "Social Media Management",
-      "Research & Lead Generation",
+      { label: "Administrative Support", to: "/services/virtual-assistance" },
+      { label: "Customer Service", to: "/services/virtual-assistance" },
+      { label: "CRM Management", to: "/services/virtual-assistance" },
+      { label: "Social Media Management", to: "/services/virtual-assistance" },
+      { label: "Research & Lead Generation", to: "/services/virtual-assistance" },
     ],
   },
 ] as const;
@@ -107,17 +114,13 @@ export function Header() {
     const onScroll = () => {
       setScrolled(window.scrollY > 20);
     };
-
     onScroll();
-
     window.addEventListener("scroll", onScroll, { passive: true });
-
     return () => {
       window.removeEventListener("scroll", onScroll);
     };
   }, []);
 
-  // Close mobile menu with Escape
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === "Escape") {
@@ -126,22 +129,18 @@ export function Header() {
         setMobileServicesOpen(false);
       }
     };
-
     document.addEventListener("keydown", handleKeyDown);
-
     return () => {
       document.removeEventListener("keydown", handleKeyDown);
     };
   }, []);
 
-  // Prevent body scrolling while mobile menu is open
   useEffect(() => {
     if (open) {
       document.body.style.overflow = "hidden";
     } else {
       document.body.style.overflow = "";
     }
-
     return () => {
       document.body.style.overflow = "";
     };
@@ -155,16 +154,8 @@ export function Header() {
           : "bg-transparent"
       }`}
     >
-      {/* ============================================================
-          DESKTOP / MAIN HEADER
-          ============================================================ */}
-
       <div className="w-full px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12">
         <div className="flex min-h-[72px] items-center justify-between gap-4">
-          {/* ========================================================
-              LOGO
-              ======================================================== */}
-
           <Link
             to="/"
             className="flex shrink-0 items-center gap-2.5 rounded-md group focus:outline-none focus-visible:ring-2 focus-visible:ring-brand"
@@ -184,22 +175,14 @@ export function Header() {
                 />
               ) : (
                 <div className="grid h-10 w-10 place-items-center rounded-lg bg-gradient-to-br from-brand to-brand-strong brand-glow">
-                  <Sparkles
-                    className="h-5 w-5 text-white"
-                    aria-hidden="true"
-                  />
+                  <Sparkles className="h-5 w-5 text-white" aria-hidden="true" />
                 </div>
               )}
             </div>
-
             <span className="font-display text-xl font-bold tracking-tight whitespace-nowrap">
               BFash <span className="text-brand">Solution</span>
             </span>
           </Link>
-
-          {/* ========================================================
-              DESKTOP NAVIGATION
-              ======================================================== */}
 
           <nav
             className="hidden lg:flex flex-1 items-center justify-center gap-1"
@@ -222,10 +205,7 @@ export function Header() {
               </Link>
             ))}
 
-            {/* ======================================================
-                SERVICES DROPDOWN
-                ====================================================== */}
-
+            {/* SERVICES DROPDOWN */}
             <div
               className="relative"
               onMouseEnter={() => setServicesOpen(true)}
@@ -266,7 +246,6 @@ export function Header() {
                           and online growth.
                         </p>
                       </div>
-
                       <Link
                         to="/services"
                         onClick={() => setServicesOpen(false)}
@@ -279,7 +258,6 @@ export function Header() {
                     <div className="grid grid-cols-3 gap-4">
                       {serviceCategories.map((service) => {
                         const Icon = service.icon;
-
                         return (
                           <div
                             key={service.title}
@@ -287,31 +265,34 @@ export function Header() {
                           >
                             <div className="mb-3 flex items-start gap-3">
                               <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-brand/10 text-brand">
-                                <Icon
-                                  className="h-4.5 w-4.5"
-                                  aria-hidden="true"
-                                />
+                                <Icon className="h-4.5 w-4.5" aria-hidden="true" />
                               </div>
-
                               <div>
-                                <h3 className="text-sm font-bold leading-snug text-foreground">
+                                {/* UPDATED: Main title is now a clickable Link */}
+                                <Link
+                                  to={service.to}
+                                  onClick={() => setServicesOpen(false)}
+                                  className="text-sm font-bold leading-snug text-foreground hover:text-brand transition-colors"
+                                >
                                   {service.title}
-                                </h3>
-
+                                </Link>
                                 <p className="mt-1.5 text-xs leading-relaxed text-muted-foreground">
                                   {service.goal}
                                 </p>
                               </div>
                             </div>
-
                             <ul className="space-y-1.5">
                               {service.items.map((item) => (
-                                <li
-                                  key={item}
-                                  className="flex items-start gap-2 text-xs text-muted-foreground"
-                                >
+                                <li key={item.label} className="flex items-start gap-2 text-xs text-muted-foreground">
                                   <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-brand" />
-                                  <span>{item}</span>
+                                  {/* UPDATED: Sub-items are now clickable Links */}
+                                  <Link
+                                    to={item.to}
+                                    onClick={() => setServicesOpen(false)}
+                                    className="hover:text-brand transition-colors"
+                                  >
+                                    {item.label}
+                                  </Link>
                                 </li>
                               ))}
                             </ul>
@@ -324,7 +305,6 @@ export function Header() {
               )}
             </div>
 
-            {/* Remaining navigation */}
             {nav.slice(2).map((item) => (
               <Link
                 key={item.to}
@@ -340,10 +320,6 @@ export function Header() {
             ))}
           </nav>
 
-          {/* ========================================================
-              RIGHT SIDE / QUOTE BUTTON
-              ======================================================== */}
-
           <div className="flex shrink-0 items-center gap-2 sm:gap-3">
             <Button
               asChild
@@ -352,7 +328,6 @@ export function Header() {
               <Link to="/contact">Get a Free Quote</Link>
             </Button>
 
-            {/* Mobile Menu Button */}
             <button
               type="button"
               className="lg:hidden rounded-md p-2.5 hover:bg-surface transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-brand"
@@ -371,10 +346,7 @@ export function Header() {
         </div>
       </div>
 
-      {/* ============================================================
-          MOBILE NAVIGATION
-          ============================================================ */}
-
+      {/* MOBILE NAVIGATION */}
       {open && (
         <div
           id="mobile-navigation"
@@ -383,11 +355,7 @@ export function Header() {
           aria-modal="true"
           aria-label="Mobile navigation"
         >
-          <nav
-            className="flex flex-col gap-1 p-4"
-            aria-label="Mobile navigation"
-          >
-            {/* Main links */}
+          <nav className="flex flex-col gap-1 p-4" aria-label="Mobile navigation">
             {nav.slice(0, 2).map((item) => (
               <Link
                 key={item.to}
@@ -399,18 +367,14 @@ export function Header() {
               </Link>
             ))}
 
-            {/* Mobile Services */}
             <div className="rounded-md">
               <button
                 type="button"
-                onClick={() =>
-                  setMobileServicesOpen((value) => !value)
-                }
+                onClick={() => setMobileServicesOpen((value) => !value)}
                 className="flex w-full items-center justify-between rounded-md px-4 py-3 text-left text-[15px] font-semibold hover:bg-surface transition-colors"
                 aria-expanded={mobileServicesOpen}
               >
                 <span>Services</span>
-
                 <ChevronDown
                   className={`h-5 w-5 transition-transform duration-200 ${
                     mobileServicesOpen ? "rotate-180" : ""
@@ -428,28 +392,29 @@ export function Header() {
                   >
                     View All Services
                   </Link>
-
                   {serviceCategories.map((service) => (
-                    <div
-                      key={service.title}
-                      className="rounded-lg border border-border/60 p-3"
-                    >
-                      <h3 className="text-sm font-bold text-foreground">
+                    <div key={service.title} className="rounded-lg border border-border/60 p-3">
+                      <Link
+                        to={service.to}
+                        onClick={() => setOpen(false)}
+                        className="text-sm font-bold text-foreground hover:text-brand block mb-1"
+                      >
                         {service.title}
-                      </h3>
-
+                      </Link>
                       <p className="mt-1 text-xs leading-relaxed text-muted-foreground">
                         {service.goal}
                       </p>
-
                       <ul className="mt-2 space-y-1">
                         {service.items.map((item) => (
-                          <li
-                            key={item}
-                            className="flex items-start gap-2 text-xs text-muted-foreground"
-                          >
+                          <li key={item.label} className="flex items-start gap-2 text-xs text-muted-foreground">
                             <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-brand" />
-                            <span>{item}</span>
+                            <Link
+                              to={item.to}
+                              onClick={() => setOpen(false)}
+                              className="hover:text-brand transition-colors"
+                            >
+                              {item.label}
+                            </Link>
                           </li>
                         ))}
                       </ul>
@@ -459,7 +424,6 @@ export function Header() {
               )}
             </div>
 
-            {/* Remaining links */}
             {nav.slice(2).map((item) => (
               <Link
                 key={item.to}
@@ -471,7 +435,6 @@ export function Header() {
               </Link>
             ))}
 
-            {/* Mobile quote */}
             <Button
               asChild
               onClick={() => setOpen(false)}
