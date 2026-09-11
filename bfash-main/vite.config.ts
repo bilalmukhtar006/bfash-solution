@@ -2,6 +2,7 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import tailwindcss from "@tailwindcss/vite";
 import tsconfigPaths from "vite-tsconfig-paths";
+import { tanstackRouter } from "@tanstack/router-plugin/vite"; // <-- ADD THIS
 
 export default defineConfig({
   // index.html is inside src
@@ -11,6 +12,7 @@ export default defineConfig({
   publicDir: "../public",
 
   plugins: [
+    tanstackRouter(), // <-- ADD THIS (Must be before react())
     tailwindcss(),
     react(),
     tsconfigPaths(),
