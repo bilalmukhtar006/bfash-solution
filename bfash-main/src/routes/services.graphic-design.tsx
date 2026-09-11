@@ -5,23 +5,26 @@ import { Palette } from "lucide-react";
 export const Route = createFileRoute("/services/graphic-design")({
   head: () => ({
     meta: [
-      { title: "Graphic & Logo Designing — BFash Solutions" },
+      { title: "Graphic Design & Logo Design Agency for B2B Growth | BFASH" },
       {
         name: "description",
         content:
-          "Brand identity, logo design, typography systems and marketing collateral crafted to make brands memorable.",
+          "Looking for a top graphic design agency for B2B growth? BFASH delivers AI-driven visual design, logo design, video editing, and vector illustration for Shopify, Amazon, and eBay. Boost your traffic today.",
       },
-      { property: "og:title", content: "Graphic & Logo Design — BFash Solutions" },
-      { property: "og:description", content: "Visual identities that leave a mark." },
+      { property: "og:title", content: "Graphic Design & Logo Design Agency | BFASH" },
+      { property: "og:description", content: "AI-driven visual identities that drive B2B sales." },
     ],
+    links: [
+      { rel: "canonical", href: "https://bfash.us/services/graphic-design" }
+    ]
   }),
   component: () => (
     <ServicePage
       icon={Palette}
       eyebrow="Graphic & Logo Designing"
-      title="Brand identities that earn attention"
+      title="Visual identities that earn attention and drive B2B sales."
       subtitle="From a single logo mark to a complete visual system — we craft the assets that make brands instantly recognizable and impossible to forget."
-      intro="Senior designers, not template flippers. Every project starts with strategy and ends with a system your team can extend on their own."
+      intro="Senior designers, not template flippers. Every project starts with strategy and ends with a system your team can extend on their own. We combine human creativity with AI automation to deliver high-converting visual assets for Shopify, Amazon, and eBay sellers."
       features={[
         {
           title: "Brand Guidelines Development",
@@ -43,6 +46,10 @@ export const Route = createFileRoute("/services/graphic-design")({
           title: "Illustration & Motion",
           desc: "Custom illustration suites and brand-aligned micro-animations that bring static identities to life across product and marketing surfaces.",
         },
+        {
+          title: "AI-Powered Video & Reel Editing",
+          desc: "High-converting short-form video editing for Instagram Reels, TikTok Shop, and YouTube. We use AI video creation tools to speed up workflows without losing the human touch.",
+        },
       ]}
       deliverables={[
         "Primary logo & marks",
@@ -51,6 +58,8 @@ export const Route = createFileRoute("/services/graphic-design")({
         "Editable source files",
         "Social media templates",
         "Stationery & pitch deck",
+        "AI-enhanced video assets",
+        "Amazon A+ / Enhanced Brand Content",
       ]}
     />
   ),
