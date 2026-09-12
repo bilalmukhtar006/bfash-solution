@@ -20,6 +20,16 @@ export default defineConfig({
     nitro({ preset: "vercel" }),
   ],
 
+  // FIX: Exclude the internal TanStack package from Vite's optimization
+  optimizeDeps: {
+    exclude: ['@tanstack/start-server-core'],
+  },
+
+  // FIX: Prevent the virtual module from being bundled
+  ssr: {
+    noExternal: ['@tanstack/start-server-core'],
+  },
+
   build: {
     outDir: "../dist",
   },
