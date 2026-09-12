@@ -2,7 +2,7 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import tailwindcss from "@tailwindcss/vite";
 import tsconfigPaths from "vite-tsconfig-paths";
-import { tanstackRouter } from "@tanstack/router-plugin/vite";
+import { tanstackStart } from "@tanstack/react-start/plugin/vite";
 import { nitro } from "nitro/vite";
 
 export default defineConfig({
@@ -10,7 +10,7 @@ export default defineConfig({
   publicDir: "../public",
 
   plugins: [
-    tanstackRouter({
+    tanstackStart({
       routesDirectory: './routes',
       generatedRouteTree: './routeTree.gen.ts',
     }),
@@ -19,16 +19,6 @@ export default defineConfig({
     tsconfigPaths(),
     nitro({ preset: "vercel" }),
   ],
-
-  // FIX: Exclude the internal TanStack package from Vite's optimization
-  optimizeDeps: {
-    exclude: ['@tanstack/start-server-core'],
-  },
-
-  // FIX: Prevent the virtual module from being bundled
-  ssr: {
-    noExternal: ['@tanstack/start-server-core'],
-  },
 
   build: {
     outDir: "../dist",
