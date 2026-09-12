@@ -11,16 +11,21 @@ export default defineConfig({
 
   plugins: [
     tanstackStart({
-      srcDirectory: '.', // FIX: root is already src
+      srcDirectory: '.',
       router: {
-        routesDirectory: 'routes', // FIX: resolves to src/routes
-        generatedRouteTree: 'routeTree.gen.ts', // FIX: resolves to src/routeTree.gen.ts
+        routesDirectory: 'routes',
+        generatedRouteTree: 'routeTree.gen.ts',
       },
     }),
     tailwindcss(),
     react(),
     tsconfigPaths(),
-    nitro({ preset: "vercel" }),
+    nitro({ 
+      preset: "vercel",
+      output: {
+        dir: '../.vercel/output'
+      }
+    }),
   ],
 
   build: {
