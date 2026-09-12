@@ -3,26 +3,24 @@ import react from "@vitejs/plugin-react";
 import tailwindcss from "@tailwindcss/vite";
 import tsconfigPaths from "vite-tsconfig-paths";
 import { tanstackRouter } from "@tanstack/router-plugin/vite";
+import { nitro } from "nitro/vite";
 
 export default defineConfig({
-  // index.html is inside src
   root: "src",
-
-  // public is beside src, not inside src
   publicDir: "../public",
 
   plugins: [
     tanstackRouter({
-      routesDirectory: './routes',          // <-- ADD THIS
-      generatedRouteTree: './routeTree.gen.ts', // <-- ADD THIS
+      routesDirectory: './routes',
+      generatedRouteTree: './routeTree.gen.ts',
     }),
     tailwindcss(),
     react(),
     tsconfigPaths(),
+    nitro({ preset: "vercel" }),
   ],
 
   build: {
-    // Output to bfash-main/dist
     outDir: "../dist",
   },
 
