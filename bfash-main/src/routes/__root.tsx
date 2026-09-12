@@ -1,3 +1,5 @@
+import "../index.css"; // <-- ADDED: CSS import (adjust filename if needed)
+
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import {
   Outlet,
@@ -105,10 +107,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "canonical", href: "https://bfash.us/" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
+      // FIXED: Was "preload" but never loaded as stylesheet. Now it actually loads Inter.
       {
-        rel: "preload",
+        rel: "stylesheet",
         href: "https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap",
-        as: "style",
       },
     ],
   }),
@@ -123,8 +125,8 @@ function RootShell({ children }: { children: ReactNode }) {
     <html lang="en">
       <head>
         <HeadContent />
-        
-        {/* ✅ GOOGLE TAG MANAGER - WITH CORRECT ID GTM-MK7WRDB7 */}
+
+        {/* GOOGLE TAG MANAGER */}
         <script
           dangerouslySetInnerHTML={{
             __html: `
@@ -137,7 +139,7 @@ function RootShell({ children }: { children: ReactNode }) {
           }}
         />
 
-        {/* ✅ GOOGLE ANALYTICS 4 */}
+        {/* GOOGLE ANALYTICS 4 */}
         <script
           async
           src="https://www.googletagmanager.com/gtag/js?id=G-P9KF8CGYBL"
@@ -154,7 +156,7 @@ function RootShell({ children }: { children: ReactNode }) {
         />
       </head>
       <body>
-        {/* ✅ GOOGLE TAG MANAGER (noscript) - CORRECT ID */}
+        {/* GOOGLE TAG MANAGER (noscript) */}
         <noscript>
           <iframe
             src="https://www.googletagmanager.com/ns.html?id=GTM-MK7WRDB7"
