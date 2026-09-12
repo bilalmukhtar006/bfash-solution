@@ -1,4 +1,4 @@
-import "../index.css"; // <-- ADDED: CSS import (adjust filename if needed)
+import "../index.css";
 
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import {
@@ -45,7 +45,9 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
     <div className="flex min-h-screen items-center justify-center px-4">
       <div className="max-w-md text-center">
         <h1 className="text-xl font-semibold">This page didn't load</h1>
-        <p className="mt-2 text-sm text-muted-foreground">Try refreshing or head back home.</p>
+        <p className="mt-2 text-sm text-muted-foreground">
+          Try refreshing or head back home.
+        </p>
         <div className="mt-6 flex flex-wrap justify-center gap-2">
           <button
             type="button"
@@ -83,9 +85,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "author", content: "BFASH" },
       {
         name: "robots",
-        content: "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
+        content:
+          "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
       },
-      { property: "og:title", content: "Best Digital Marketing Agency for Business Growth | BFASH" },
+      {
+        property: "og:title",
+        content: "Best Digital Marketing Agency for Business Growth | BFASH",
+      },
       {
         property: "og:description",
         content:
@@ -95,7 +101,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:url", content: "https://bfash.us/" },
       { property: "og:image", content: "https://bfash.us/logo.webp" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Best Digital Marketing Agency for Business Growth | BFASH" },
+      {
+        name: "twitter:title",
+        content: "Best Digital Marketing Agency for Business Growth | BFASH",
+      },
       {
         name: "twitter:description",
         content:
@@ -106,8 +115,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     links: [
       { rel: "canonical", href: "https://bfash.us/" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
-      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
-      // FIXED: Was "preload" but never loaded as stylesheet. Now it actually loads Inter.
+      {
+        rel: "preconnect",
+        href: "https://fonts.gstatic.com",
+        crossOrigin: "anonymous",
+      },
       {
         rel: "stylesheet",
         href: "https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap",

@@ -1,4 +1,4 @@
-@import "tailwindcss" source(none);
+@import "tailwindcss";
 @import "tw-animate-css";
 
 @source "../src";
@@ -75,7 +75,7 @@
 
 @layer base {
   * {
-    border-color: var(--color-border);
+    border-color: var(--border);
   }
 
   html {
@@ -84,12 +84,11 @@
 
   body {
     margin: 0;
-    background-color: var(--color-background);
+    background-color: var(--background);
     color: var(--foreground);
     font-family: var(--font-sans);
+    min-height: 100vh;
 
-    /* Avoid fixed background painting, which can cause scroll/compositing
-       problems on some Chromium/GPU combinations. */
     background-image:
       radial-gradient(
         ellipse 80% 50% at 20% 0%,
@@ -116,7 +115,7 @@
   span,
   li,
   a {
-    color: #ffffff;
+    color: var(--foreground);
   }
 
   a:hover {
@@ -157,13 +156,6 @@
     oklch(1 0 0 / 0.06),
     oklch(1 0 0 / 0.02)
   );
-
-  /*
-   * Deliberately no backdrop-filter here.
-   * The site was reported to freeze during interaction/scrolling,
-   * and backdrop-filter is a common GPU/compositing hotspot when
-   * multiple cards/overlays are present.
-   */
   border: 1px solid oklch(1 0 0 / 0.1);
 }
 
@@ -178,7 +170,6 @@
     opacity: 0;
     transform: translateY(20px);
   }
-
   to {
     opacity: 1;
     transform: translateY(0);
@@ -190,7 +181,6 @@
   100% {
     transform: translateY(0);
   }
-
   50% {
     transform: translateY(-12px);
   }
@@ -201,7 +191,6 @@
   100% {
     box-shadow: 0 0 30px oklch(0.62 0.24 300 / 0.3);
   }
-
   50% {
     box-shadow: 0 0 60px oklch(0.62 0.24 300 / 0.6);
   }
@@ -217,33 +206,4 @@
 
 .animate-pulse-glow {
   animation: pulse-glow 3s ease-in-out infinite;
-}
-
-/* ✅ FORCE PURE WHITE ON ALL TEXT - OVERRIDE TAILWIND */
-body,
-p,
-span,
-li,
-a,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-div:not(.glass-card):not([class*="bg-"]),
-label,
-input,
-textarea,
-button,
-.text-muted-foreground,
-.muted,
-.muted-foreground,
-[class*="text-muted"] {
-  color: #ffffff !important;
-}
-
-/* ✅ OVERRIDE TAILWIND'S MUTED TEXT COLOR */
-.text-muted-foreground {
-  color: #ffffff !important;
 }
