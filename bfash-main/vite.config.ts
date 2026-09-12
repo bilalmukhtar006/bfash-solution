@@ -11,8 +11,11 @@ export default defineConfig({
 
   plugins: [
     tanstackStart({
-      routesDirectory: './routes',
-      generatedRouteTree: './routeTree.gen.ts',
+      srcDirectory: '.', // FIX: root is already src
+      router: {
+        routesDirectory: 'routes', // FIX: resolves to src/routes
+        generatedRouteTree: 'routeTree.gen.ts', // FIX: resolves to src/routeTree.gen.ts
+      },
     }),
     tailwindcss(),
     react(),
