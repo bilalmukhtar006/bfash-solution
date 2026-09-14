@@ -35,14 +35,6 @@ export const Route = createFileRoute("/services/graphic-design")({
                 text: "Open the image in Adobe Illustrator, select Image Trace, choose a preset like High Fidelity Photo or 3-Color, and click Expand. This converts raster pixels into scalable vector paths.",
               },
             },
-                    {/* ADD THIS IMAGE BLOCK HERE */}
-        <div className="my-12 flex justify-center">
-          <img
-            src="/graphic-design.webp" 
-            alt="Why manage one brand with five different vendors? BFASH consolidates your Amazon, SEO, Social Media, Website, and Design management."
-            className="w-full max-w-2xl h-auto rounded-xl shadow-2xl border border-white/10"
-          />
-        </div>
             {
               "@type": "Question",
               name: "What are the best AI video creation tools in 2026?",
@@ -169,6 +161,15 @@ function GraphicDesignPage() {
           assets that do more than look good — they drive real traffic and
           sales.
         </p>
+
+        {/* ---> IMAGE BLOCK PLACED CORRECTLY HERE <--- */}
+        <div className="my-12 flex justify-center">
+          <img
+            src="/graphic-design.webp" 
+            alt="Why manage one brand with five different vendors? BFASH consolidates your Amazon, SEO, Social Media, Website, and Design management."
+            className="w-full max-w-2xl h-auto rounded-xl shadow-2xl border border-white/10"
+          />
+        </div>
 
         {/* CORE SERVICES */}
         <h2 className="text-3xl md:text-4xl font-display font-bold tracking-tight mt-16 mb-6">
