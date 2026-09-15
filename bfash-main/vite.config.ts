@@ -6,30 +6,32 @@ import { tanstackStart } from "@tanstack/react-start/plugin/vite";
 import { nitro } from "nitro/vite";
 
 export default defineConfig({
-  root: "src",
-  publicDir: "../public",
-
   plugins: [
     tanstackStart({
-      srcDirectory: '.',
+      srcDirectory: 'src',
       router: {
         routesDirectory: 'routes',
         generatedRouteTree: 'routeTree.gen.ts',
       },
     }),
+    nitro({ preset: "vercel" }),
     tailwindcss(),
     react(),
     tsconfigPaths(),
-    nitro({ 
-      preset: "vercel",
-      output: {
-        dir: '../.vercel/output'
-      }
-    }),
   ],
 
   build: {
-    outDir: "../dist",
+    outDir: "dist",
+  },
+
+  environments: {
+    ssr: {
+      build: {
+        rollupOptions: {
+          input: "./server.ts",
+        },
+      },
+    },
   },
 
   server: {
