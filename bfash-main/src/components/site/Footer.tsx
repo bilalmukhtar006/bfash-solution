@@ -14,7 +14,7 @@ const links = [
   { to: "/about", label: "About Us" },
   { to: "/services", label: "Services" },
   { to: "/services/web-design", label: "Website Designing" },
-  { to: "/services/seo", label: "SEO" },
+  { to: "/services/technical-seo", label: "SEO" },
   { to: "/services/amazon", label: "Amazon Growth" },
   { to: "/services/graphic-design", label: "Graphic Design" },
   { to: "/portfolio", label: "Portfolio" },

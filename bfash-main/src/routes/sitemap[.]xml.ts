@@ -8,7 +8,7 @@ const paths = [
   "/about",
   "/services",
   "/services/web-design",
-  "/services/seo",
+  "/services/technical-seo",
   "/services/amazon",
   "/services/graphic-design",
   "/portfolio",

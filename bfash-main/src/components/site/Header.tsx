@@ -27,15 +27,15 @@ const nav = [
 const serviceCategories = [
   {
     title: "Search Engine Optimization (SEO)",
-    to: "/services/seo",
+    to: "/services/technical-seo",
     icon: Search,
     goal: "Increase organic visibility, traffic, and AI search presence.",
     items: [
-      { label: "Local SEO & GMB", to: "/services/seo" },
-      { label: "Website SEO (On-Page & Technical)", to: "/services/seo" },
-      { label: "AEO & GEO (AI Search Optimization)", to: "/services/seo" },
-      { label: "Content Marketing & Blog Posts", to: "/services/seo" },
-      { label: "Landing Page Optimization", to: "/services/seo" },
+      { label: "Local SEO & GMB", to: "/services/technical-seo" },
+      { label: "Website SEO (On-Page & Technical)", to: "/services/technical-seo" },
+      { label: "AEO & GEO (AI Search Optimization)", to: "/services/technical-seo" },
+      { label: "Content Marketing & Blog Posts", to: "/services/technical-seo" },
+      { label: "Landing Page Optimization", to: "/services/technical-seo" },
     ],
   },
   {

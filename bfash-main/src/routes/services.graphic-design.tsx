@@ -278,7 +278,7 @@ function GraphicDesignPage() {
         <p className="text-muted-foreground leading-relaxed mb-5">
           Visual design does not exist in a vacuum. It must work alongside
           your{" "}
-          <Link to="/services/seo" className="text-brand hover:text-brand-strong underline">
+          <Link to="/services/technical-seo" className="text-brand hover:text-brand-strong underline">
             SEO
           </Link>
           , AEO (Answer Engine Optimization), and GEO (Generative Engine

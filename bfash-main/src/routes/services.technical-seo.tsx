@@ -226,7 +226,7 @@ function TechnicalSEOPage() {
             >
               Google Search Central explains JavaScript SEO
             </a>
-            . :contentReference[oaicite:1]{index=1}
+            .
           </p>
 
           <h2 className="text-3xl md:text-4xl font-display font-bold tracking-tight mt-16 mb-6">
@@ -299,7 +299,7 @@ function TechnicalSEOPage() {
             >
               Ahrefs: Crawlability
             </a>
-            . :contentReference[oaicite:2]{index=2}
+            .
           </p>
 
           <h3 className="text-2xl font-display font-bold mt-10 mb-4">
@@ -356,7 +356,7 @@ function TechnicalSEOPage() {
             >
               Google Search Central: Canonicalization
             </a>
-            . :contentReference[oaicite:3]{index=3}
+            .
           </p>
 
           <h3 className="text-2xl font-display font-bold mt-10 mb-4">
@@ -405,7 +405,7 @@ function TechnicalSEOPage() {
             >
               Ahrefs: Internal Links for SEO
             </a>
-            . :contentReference[oaicite:4]{index=4}
+            .
           </p>
 
           <h2 className="text-3xl md:text-4xl font-display font-bold tracking-tight mt-16 mb-6">
@@ -437,7 +437,7 @@ function TechnicalSEOPage() {
             >
               Google Search Central: Ecommerce SEO
             </a>
-            . :contentReference[oaicite:5]{index=5}
+            .
           </p>
 
           <h3 className="text-2xl font-display font-bold mt-10 mb-4">
@@ -513,7 +513,7 @@ function TechnicalSEOPage() {
             >
               Google: Pagination and Incremental Page Loading
             </a>
-            . :contentReference[oaicite:6]{index=6}
+            .
           </p>
 
           <h2 className="text-3xl md:text-4xl font-display font-bold tracking-tight mt-16 mb-6">
@@ -555,7 +555,7 @@ function TechnicalSEOPage() {
             >
               web.dev: Web Vitals
             </a>
-            . :contentReference[oaicite:7]{index=7}
+            .
           </p>
 
           <p className="text-muted-foreground leading-relaxed mb-5">
@@ -598,7 +598,7 @@ function TechnicalSEOPage() {
             >
               Google: Structured Data for Ecommerce
             </a>
-            . :contentReference[oaicite:8]{index=8}
+            .
           </p>
 
           <h2 className="text-3xl md:text-4xl font-display font-bold tracking-tight mt-16 mb-6">
@@ -637,7 +637,7 @@ function TechnicalSEOPage() {
             >
               Google Search Central: AI Features and Your Website
             </a>
-            . :contentReference[oaicite:9]{index=9}
+            .
           </p>
 
           <p className="text-muted-foreground leading-relaxed mb-5">
@@ -692,7 +692,7 @@ function TechnicalSEOPage() {
             >
               Google: Guidance on Generative AI Content
             </a>
-            . :contentReference[oaicite:10]{index=10}
+            .
           </p>
 
           <h2 className="text-3xl md:text-4xl font-display font-bold tracking-tight mt-16 mb-6">
@@ -784,14 +784,14 @@ function TechnicalSEOPage() {
             Semrush currently describes technical auditing across areas such as
             crawlability, HTTPS, performance, Core Web Vitals, markup,
             international SEO, internal links, and AI crawler accessibility.
-            :contentReference[oaicite:11]{index=11}
+            
           </p>
 
           <p className="text-muted-foreground leading-relaxed mb-5">
             Ahrefs also describes a technical audit as a process that can
             examine crawlability, indexability, architecture, mobile
             friendliness, on-page elements, links, and other areas that affect
-            organic search performance. :contentReference[oaicite:12]{index=12}
+            organic search performance.
           </p>
 
           <h2 className="text-3xl md:text-4xl font-display font-bold tracking-tight mt-16 mb-6">
@@ -868,7 +868,7 @@ function TechnicalSEOPage() {
             >
               Google Search Console Performance Report
             </a>
-            . :contentReference[oaicite:13]{index=13}
+            .
           </p>
 
           <p className="text-muted-foreground leading-relaxed mb-5">

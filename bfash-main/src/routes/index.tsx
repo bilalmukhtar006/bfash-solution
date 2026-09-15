@@ -126,7 +126,7 @@ const services = [
   {
     icon: Search,
     title: "SEO & GEO",
-    to: "/services/seo",
+    to: "/services/technical-seo",
     desc:
       "Improve your visibility in traditional search and prepare your business for the growing world of AI-powered search.",
   },
@@ -444,7 +444,7 @@ function Home() {
               keywords.
             </p>
 
-            <Link to="/services/seo">
+            <Link to="/services/technical-seo">
               <Button
                 variant="outline"
                 className="border-border bg-surface/40 hover:bg-surface"

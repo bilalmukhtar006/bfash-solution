@@ -21,7 +21,7 @@ export const Route = createFileRoute("/services/")({
 const serviceCategories = [
   {
     title: "Search Engine Optimization (SEO)",
-    to: "/services/seo",
+    to: "/services/technical-seo",
     icon: Search,
     goal: "Increase organic visibility, traffic, and AI search presence.",
     items: [

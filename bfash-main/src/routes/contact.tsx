@@ -66,7 +66,7 @@ const GMB_REVIEW_LINK = "https://g.page/r/CavaEXQZnAMxEAE/review";
 // meant to pass normal search-engine link signals.
 // ============================================================
 const EXTLINK = "https://share.google/MrbmVI1RP676DI8fh";
-const INTLINK = "/services/seo";
+const INTLINK = "/services/technical-seo";
 
 // Google Maps embed link
 const MAP_EMBED_LINK = "https://share.google/h0bipP823hPIO8SPA";
@@ -242,9 +242,9 @@ function Contact() {
                 </p>
                 <div className="grid sm:grid-cols-2 gap-3">
                   {[
-                    ["SEO & content strategy", "/services/seo", "Build relevant organic visibility around customer search intent."],
-                    ["GEO & AI-search visibility", "/services/seo", "Create clear, evidence-backed information that is easier for search and AI systems to understand."],
-                    ["Local SEO & Google visibility", "/services/seo", "Improve local discovery for customers searching by service and location."],
+                    ["SEO & content strategy", "/services/technical-seo", "Build relevant organic visibility around customer search intent."],
+                    ["GEO & AI-search visibility", "/services/technical-seo", "Create clear, evidence-backed information that is easier for search and AI systems to understand."],
+                    ["Local SEO & Google visibility", "/services/technical-seo", "Improve local discovery for customers searching by service and location."],
                     ["Website design", "/services/web-design", "Create a clear, conversion-focused digital experience for visitors and prospects."],
                     ["Amazon business", "/services/amazon", "Support marketplace visibility and e-commerce growth opportunities."],
                     ["Graphic & logo design", "/services/graphic-design", "Strengthen visual identity across digital touchpoints."],
@@ -340,7 +340,7 @@ function Contact() {
                 </p>
                 {/* INTLINK: replace with final local/B2B service pages when available. */}
                 <div className="flex flex-wrap gap-2 mt-5">
-                  <a href="/services/seo" className="px-3 py-2 rounded-lg border border-border text-sm hover:border-brand/50">SEO</a>
+                  <a href="/services/technical-seo" className="px-3 py-2 rounded-lg border border-border text-sm hover:border-brand/50">SEO</a>
                   <a href="/services" className="px-3 py-2 rounded-lg border border-border text-sm hover:border-brand/50">All Services</a>
                   <a href="/about" className="px-3 py-2 rounded-lg border border-border text-sm hover:border-brand/50">About BFASH</a>
                   <a href="/portfolio" className="px-3 py-2 rounded-lg border border-border text-sm hover:border-brand/50">Portfolio</a>
