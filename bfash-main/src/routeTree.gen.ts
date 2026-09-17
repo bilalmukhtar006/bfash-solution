@@ -22,7 +22,6 @@ import { Route as ServicesIndexRouteImport } from './routes/services.index'
 import { Route as ServicesWebDesignRouteImport } from './routes/services.web-design'
 import { Route as ServicesVirtualAssistanceRouteImport } from './routes/services.virtual-assistance'
 import { Route as ServicesTechnicalSeoRouteImport } from './routes/services.technical-seo'
-import { Route as ServicesSeoRouteImport } from './routes/services.seo'
 import { Route as ServicesGraphicDesignRouteImport } from './routes/services.graphic-design'
 import { Route as ServicesEcommerceRouteImport } from './routes/services.ecommerce'
 import { Route as ServicesAmazonRouteImport } from './routes/services.amazon'
@@ -96,11 +95,6 @@ const ServicesTechnicalSeoRoute = ServicesTechnicalSeoRouteImport.update({
   path: '/services/technical-seo',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ServicesSeoRoute = ServicesSeoRouteImport.update({
-  id: '/services/seo',
-  path: '/services/seo',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const ServicesGraphicDesignRoute = ServicesGraphicDesignRouteImport.update({
   id: '/services/graphic-design',
   path: '/services/graphic-design',
@@ -142,7 +136,6 @@ export interface FileRoutesByFullPath {
   '/services/amazon': typeof ServicesAmazonRoute
   '/services/ecommerce': typeof ServicesEcommerceRoute
   '/services/graphic-design': typeof ServicesGraphicDesignRoute
-  '/services/seo': typeof ServicesSeoRoute
   '/services/technical-seo': typeof ServicesTechnicalSeoRoute
   '/services/virtual-assistance': typeof ServicesVirtualAssistanceRoute
   '/services/web-design': typeof ServicesWebDesignRoute
@@ -163,7 +156,6 @@ export interface FileRoutesByTo {
   '/services/amazon': typeof ServicesAmazonRoute
   '/services/ecommerce': typeof ServicesEcommerceRoute
   '/services/graphic-design': typeof ServicesGraphicDesignRoute
-  '/services/seo': typeof ServicesSeoRoute
   '/services/technical-seo': typeof ServicesTechnicalSeoRoute
   '/services/virtual-assistance': typeof ServicesVirtualAssistanceRoute
   '/services/web-design': typeof ServicesWebDesignRoute
@@ -185,7 +177,6 @@ export interface FileRoutesById {
   '/services/amazon': typeof ServicesAmazonRoute
   '/services/ecommerce': typeof ServicesEcommerceRoute
   '/services/graphic-design': typeof ServicesGraphicDesignRoute
-  '/services/seo': typeof ServicesSeoRoute
   '/services/technical-seo': typeof ServicesTechnicalSeoRoute
   '/services/virtual-assistance': typeof ServicesVirtualAssistanceRoute
   '/services/web-design': typeof ServicesWebDesignRoute
@@ -208,7 +199,6 @@ export interface FileRouteTypes {
     | '/services/amazon'
     | '/services/ecommerce'
     | '/services/graphic-design'
-    | '/services/seo'
     | '/services/technical-seo'
     | '/services/virtual-assistance'
     | '/services/web-design'
@@ -229,7 +219,6 @@ export interface FileRouteTypes {
     | '/services/amazon'
     | '/services/ecommerce'
     | '/services/graphic-design'
-    | '/services/seo'
     | '/services/technical-seo'
     | '/services/virtual-assistance'
     | '/services/web-design'
@@ -250,7 +239,6 @@ export interface FileRouteTypes {
     | '/services/amazon'
     | '/services/ecommerce'
     | '/services/graphic-design'
-    | '/services/seo'
     | '/services/technical-seo'
     | '/services/virtual-assistance'
     | '/services/web-design'
@@ -271,7 +259,6 @@ export interface RootRouteChildren {
   ServicesAmazonRoute: typeof ServicesAmazonRoute
   ServicesEcommerceRoute: typeof ServicesEcommerceRoute
   ServicesGraphicDesignRoute: typeof ServicesGraphicDesignRoute
-  ServicesSeoRoute: typeof ServicesSeoRoute
   ServicesTechnicalSeoRoute: typeof ServicesTechnicalSeoRoute
   ServicesVirtualAssistanceRoute: typeof ServicesVirtualAssistanceRoute
   ServicesWebDesignRoute: typeof ServicesWebDesignRoute
@@ -371,13 +358,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ServicesTechnicalSeoRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/services/seo': {
-      id: '/services/seo'
-      path: '/services/seo'
-      fullPath: '/services/seo'
-      preLoaderRoute: typeof ServicesSeoRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/services/graphic-design': {
       id: '/services/graphic-design'
       path: '/services/graphic-design'
@@ -440,7 +420,6 @@ const rootRouteChildren: RootRouteChildren = {
   ServicesAmazonRoute: ServicesAmazonRoute,
   ServicesEcommerceRoute: ServicesEcommerceRoute,
   ServicesGraphicDesignRoute: ServicesGraphicDesignRoute,
-  ServicesSeoRoute: ServicesSeoRoute,
   ServicesTechnicalSeoRoute: ServicesTechnicalSeoRoute,
   ServicesVirtualAssistanceRoute: ServicesVirtualAssistanceRoute,
   ServicesWebDesignRoute: ServicesWebDesignRoute,

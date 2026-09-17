@@ -1,4 +1,3 @@
-```tsx
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ServicePage } from "@/components/site/ServicePage";
 import { Megaphone } from "lucide-react";
@@ -1369,4 +1368,3 @@ function AdsPage() {
     </>
   );
 }
-```
