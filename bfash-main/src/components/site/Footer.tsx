@@ -23,7 +23,7 @@ const links = [
   { to: "/privacy", label: "Privacy Policy" },
 ] as const;
 
-const whatsappUrl = "https://wa.me/923254258512";
+const phoneUrl = "tel:+13654749647";
 
 export function Footer() {
   return (
@@ -101,17 +101,15 @@ export function Footer() {
               </a>
             </li>
 
-            {/* WhatsApp */}
+            {/* Phone */}
             <li>
               <a
-                href={whatsappUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Contact BFash Solution on WhatsApp"
+                href={phoneUrl}
+                aria-label="Call BFash Solution"
                 className="flex items-center gap-2 text-muted-foreground transition-colors hover:text-foreground"
               >
                 <Phone className="h-4 w-4 text-brand" />
-                <span>+92 (325) 425-8512</span>
+                <span>+1 (365) 474-9647</span>
               </a>
             </li>
           </ul>
@@ -163,14 +161,12 @@ export function Footer() {
             </a>
 
             <a
-              href={whatsappUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="WhatsApp"
-              title="WhatsApp"
+              href={phoneUrl}
+              aria-label="Call BFash Solution"
+              title="Call BFash Solution"
               className="grid h-9 w-9 place-items-center rounded-lg border border-border transition-colors hover:border-brand hover:bg-brand"
             >
-              <MessageSquare className="h-4 w-4" />
+              <Phone className="h-4 w-4" />
             </a>
           </div>
         </div>

@@ -293,7 +293,7 @@ function BlogPost() {
                     type="text" 
                     name="phone" 
                     id="blog-phone" 
-                    placeholder="+1 (555) 123-4567" 
+                    placeholder="+1 (365) 474-9647" 
                     required 
                     className="h-11 w-full rounded-xl border border-border bg-background px-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-brand/40" 
                   />

@@ -133,9 +133,9 @@ function Contact() {
                 },
                 {
                   icon: Phone,
-                  label: "Phone / WhatsApp",
-                  value: "+92 325 4258512",
-                  href: "https://wa.me/+923254258512",
+                  label: "Phone",
+                  value: "+1 (365) 474-9647",
+                  href: "tel:+13654749647",
                 },
                 {
                   icon: MapPin,
@@ -152,7 +152,7 @@ function Contact() {
                 <a
                   key={c.label}
                   href={c.href || "#"}
-                  target={c.label === "Phone / WhatsApp" || c.label === "Location" ? "_blank" : "_self"}
+                  target={c.label === "Location" ? "_blank" : "_self"}
                   rel="noopener noreferrer"
                   className="glass-card rounded-2xl p-4 sm:p-5 flex items-start gap-4 hover:border-brand/50 transition-colors block"
                 >
@@ -454,7 +454,7 @@ function Contact() {
                 <div className="space-y-3">
                   {[
                     ["What does BFASH do?", "BFASH is a digital marketing and business growth agency providing SEO, GEO, local SEO, Google Ads, social media advertising, website design, email marketing, CRM management, Amazon business services, TikTok Shop, graphic design, virtual assistance, and related growth services."],
-                    ["What is the best way to contact BFASH?", "The easiest options are email and WhatsApp. Contact BFASH at info@bfash.us or +92 325 4258512."],
+                    ["What is the best way to contact BFASH?", "The easiest options are email or phone. Contact BFASH at info@bfash.us or +1 (365) 474-9647."],
                     ["Can BFASH help a new business with digital marketing?", "Yes. A new business can build its website, search visibility, local presence, content strategy, conversion paths, and digital foundation from the beginning."],
                     ["Can BFASH help a website that is not getting enough traffic?", "Yes. The first step is understanding why visibility is limited. This can involve keyword targeting, search intent, content quality, technical SEO, indexing, internal linking, authority, local SEO, and conversion optimization."],
                     ["Can SEO increase website traffic?", "SEO can increase organic visibility and qualified search traffic when a website targets relevant search intent and provides useful, accessible content. Traffic alone should not be the final objective; qualified visits, leads, sales, and other meaningful conversions matter too."],

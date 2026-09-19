@@ -1,0 +1,107 @@
+Page: __root
+Meta Title: Best Digital Marketing Agency for Business Growth | BFASH
+Meta Description: BFASH is a digital marketing agency helping businesses get more reach, leads, and sales through SEO, GEO, social media, advertising, email marketing, CRM, virtual assistance, and business growth services.
+Primary Keyword: Business Growth
+---
+
+Page: about
+Meta Title: About Us | BFash Solution
+Meta Description: Learn more about BFash Solution. We help ambitious businesses grow online through simple, practical digital marketing, SEO, and sales strategies.
+Primary Keyword: about
+---
+
+Page: blog / $slug
+Meta Title: BFASH Blog
+Meta Description: No description found in meta tags.
+Primary Keyword: Blog
+---
+
+Page: blog
+Meta Title: Digital Marketing Blog | SEO, GEO & Business Growth | BFASH
+Meta Description: Expert insights on SEO, GEO, AI search, content marketing, and business growth from the BFASH team.
+Primary Keyword: Blog SEO GEO Business
+---
+
+Page: contact
+Meta Title: Contact BFASH | Digital Marketing & Business Growth Agency
+Meta Description: Contact BFASH, a digital marketing and business growth agency for SEO, GEO, local SEO, Google Ads, social media, websites, email marketing, Amazon, and lead generation.
+Primary Keyword: Contact Business Growth
+---
+
+Page: index
+Meta Title: Best Digital Marketing Agency for Business Growth | BFASH
+Meta Description: BFASH is a digital marketing agency helping businesses get more reach, leads, and sales through SEO, GEO, social media, ads, email marketing, CRM, virtual assistance, and business growth services.
+Primary Keyword: Business Growth
+---
+
+Page: knowledge base of digital marketing
+Meta Title: Digital Marketing Agency Guide 2026 – SEO, AEO & GEO Explained | BFash Solution
+Meta Description: Learn what a digital marketing agency does, how it works, and how to start one. Explore SEO, AEO, and GEO strategies with expert insights, FAQs, and actionable tips.
+Primary Keyword: Guide 2026 SEO AEO
+---
+
+Page: portfolio
+Meta Title: Portfolio — BFash Solutions
+Meta Description: Selected work across web design, SEO, branding and Amazon growth — real outcomes for ambitious brands.
+Primary Keyword: Portfolio
+---
+
+Page: privacy
+Meta Title: Privacy Policy — BFash Solutions
+Meta Description: How BFash Solutions collects, uses, and protects your data. Cookies, user rights, and terms of service.
+Primary Keyword: Privacy Policy
+---
+
+Page: quote
+Meta Title: Get a Free Quote — BFash Solutions
+Meta Description: A short multi-step assessment to scope your project, budget, and timeline. Receive a tailored proposal within 24 hours.
+Primary Keyword: Get Free Quote
+---
+
+Page: services / ads
+Meta Title: Google Ads Agency & Paid Advertising Services | BFASH
+Meta Description: BFASH is a Google Ads agency providing Google Ads management, social media advertising, Amazon PPC, TikTok Ads, retargeting, conversion tracking, and paid digital marketing for B2B, ecommerce, Shopify, Amazon, eBay, and local businesses.
+Primary Keyword: Google Ads Paid Advertising
+---
+
+Page: services / amazon
+Meta Title: Amazon Business Flourishing — BFash Solutions
+Meta Description: Amazon PPC management, A+ content, listing optimization & inventory strategy for sellers ready to scale.
+Primary Keyword: Amazon Business Flourishing
+---
+
+Page: services / ecommerce
+Meta Title: Ecommerce Digital Marketing Agency for Amazon, Shopify & eBay | BFASH
+Meta Description: BFASH is an ecommerce digital marketing agency helping Amazon, Shopify, eBay, and TikTok Shop businesses grow with marketplace SEO, product listings, PPC, A+ content, CRO, social commerce, and AI automation.
+Primary Keyword: Ecommerce Amazon Shopify eBay
+---
+
+Page: services / graphic design
+Meta Title: Graphic Design & Logo Design Agency for B2B Growth | BFASH
+Meta Description: Looking for a top graphic design agency for B2B growth? BFASH delivers AI-driven visual design, logo design, video editing, and vector illustration for Shopify, Amazon, and eBay. Boost your traffic today.
+Primary Keyword: Graphic Design Logo B2B
+---
+
+Page: services / index
+Meta Title: Digital Marketing & Business Growth Services | BFASH
+Meta Description: Explore BFASH
+Primary Keyword: Business Growth Services
+---
+
+Page: services / technical seo
+Meta Title: Technical SEO Agency for Search, AI & Business Growth | BFASH
+Meta Description: BFASH is a technical SEO agency helping B2B, ecommerce, Shopify, Amazon, eBay and local businesses improve crawlability, indexability, site speed, technical SEO, AEO, GEO and search visibility.
+Primary Keyword: Technical SEO Search AI
+---
+
+Page: services / virtual assistance
+Meta Title: Virtual Assistant Services for Business Growth | BFASH
+Meta Description: BFASH provides virtual assistant services for administration, CRM management, customer support, email management, social media, lead generation, ecommerce, research, and sales support.
+Primary Keyword: Virtual Assistant Services Business
+---
+
+Page: services / web design
+Meta Title: Web Design Agency & Web Design Trends for Business Growth | BFASH
+Meta Description: BFASH is a web design agency creating responsive, SEO-ready, conversion-focused websites for B2B, small businesses, ecommerce, Shopify, WooCommerce, Amazon, and growing brands.
+Primary Keyword: Design Trends Business Growth
+---
