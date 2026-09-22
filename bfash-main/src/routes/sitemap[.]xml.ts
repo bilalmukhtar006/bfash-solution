@@ -17,7 +17,8 @@ const paths = [
   "/privacy",
   "/knowledge-base-of-digital-marketing",
   "/blog",                       // ← ADD BLOG LISTING PAGE
-  "/blog/seo-expert",            // ← ADD EACH BLOG POST
+  "/blog/seo-expert",
+  "/blog/graphic-design-agency-b2b-growth",
   // Add more blog posts here as you create them
   // "/blog/your-next-post",
 ];

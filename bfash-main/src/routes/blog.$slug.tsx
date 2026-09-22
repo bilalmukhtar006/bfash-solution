@@ -3,8 +3,54 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 const SITE_URL = "https://bfash.us";
 const title = "SEO Expert: How the Right Strategy Helps People Find, Trust, and Choose Your Business | BFASH Blog";
 const description = "Learn how an SEO expert uses keyword research, technical SEO, semantic content, local SEO, B2B strategy, GEO, AEO, and AI automation to grow qualified traffic and business visibility.";
+const graphicDesignTitle = "Visual identities that earn attention and drive B2B sales | BFASH Blog";
+const graphicDesignDescription = "Discover how strategic graphic design, brand systems, vector illustration, marketplace visuals, and AI-assisted video help B2B brands grow.";
 
 function getPostContent(slug: string) {
+  if (slug === "graphic-design-agency-b2b-growth") {
+    return `
+      <p class="lead">From a single logo mark to a complete visual system, BFASH crafts the assets that make brands instantly recognizable and impossible to forget.</p>
+      <p>Senior designers, not template flippers. Every project starts with strategy and ends with a system your team can extend on its own. We combine human creativity with AI automation to deliver high-converting visual assets for Shopify, Amazon, and eBay sellers.</p>
+
+      <h2 id="services">Graphic Design Services for B2B Growth</h2>
+      <div class="my-8 grid gap-4 sm:grid-cols-2"><div class="rounded-2xl border border-border bg-background p-5"><h3 class="mt-0">Brand Guidelines Development</h3><p>A complete brand book covering logo usage, color palette, typography, voice, photography direction, and motion principles.</p></div><div class="rounded-2xl border border-border bg-background p-5"><h3 class="mt-0">Typography Systems</h3><p>Custom or curated type pairings with full scale, hierarchy rules, and accessibility considerations for web, print, and motion.</p></div><div class="rounded-2xl border border-border bg-background p-5"><h3 class="mt-0">Custom Vector &amp; Logo Design</h3><p>Original logo marks, monograms, and iconography built to scale from favicon to billboard. Never template-derived.</p></div><div class="rounded-2xl border border-border bg-background p-5"><h3 class="mt-0">Marketing Asset Design</h3><p>Pitch decks, social templates, ad creative, packaging, and trade-show collateral tied to a coherent visual system.</p></div><div class="rounded-2xl border border-border bg-background p-5"><h3 class="mt-0">Illustration &amp; Motion</h3><p>Custom illustration suites and brand-aligned micro-animations that bring static identities to life.</p></div><div class="rounded-2xl border border-border bg-background p-5"><h3 class="mt-0">AI-Powered Video &amp; Reel Editing</h3><p>High-converting short-form editing for Instagram Reels, TikTok Shop, and YouTube, with human creative review.</p></div></div>
+
+      <h2 id="deliverables">What You Walk Away With</h2>
+      <ul><li>Primary logo and marks</li><li>Brand guidelines PDF</li><li>Editable source files</li><li>Stationery and pitch deck</li><li>AI-enhanced video assets</li><li>Amazon A+ and Enhanced Brand Content</li></ul>
+
+      <h2 id="b2b">Why Graphic Design Is the Backbone of B2B Traffic Generation</h2>
+      <p>Good visual design is not about making things pretty. It is about making things work. For B2B businesses, a strong visual identity builds instant trust. When a buyer lands on a Shopify store, Amazon listing, or Google Business Profile, they judge credibility in milliseconds.</p>
+      <p>Keywords like logo design agency carry a CPC of $8.88, showing that businesses are willing to invest seriously in getting this right. At <a href="${SITE_URL}">BFASH</a>, we blend human creativity with AI automation to deliver visual assets that drive real traffic and sales.</p>
+
+      <h2 id="core-services">Our Core Graphic Design Services for Global B2B Brands</h2>
+      <h3>Logo Design &amp; Brand Identity Agency</h3><p>We create custom vector logos that scale from a tiny favicon to a billboard. Our process includes market research, custom typography systems, and complete brand guidelines.</p>
+      <h3>Vector Illustration &amp; Photoshop Services</h3><p>We provide accurate vector illustration and image vectorization for clean, scalable graphics across web and print, removing the learning curve of complex design tools.</p>
+      <h3>Social Media Post &amp; Carousel Design</h3><p>We design high-engagement social posts, Instagram carousel templates, and ad creatives tailored to LinkedIn B2B campaigns and TikTok Shop discovery.</p>
+      <h3>AI Video Creation &amp; Reel Editing Services</h3><p>We use AI video tools to speed up editing for Reels, TikTok Shop videos, and YouTube content while keeping human creative direction and polish.</p>
+      <h3>E-commerce &amp; Marketplace Visuals</h3><ul><li><strong>Amazon:</strong> A+ content and Enhanced Brand Content that answer questions and overcome objections.</li><li><strong>Shopify:</strong> High-converting landing page visuals and product banners.</li><li><strong>eBay:</strong> Listing images designed to stand out in a crowded marketplace.</li></ul>
+
+      <h2 id="automation">How We Use AI Automation for B2B Growth</h2>
+      <p>We use AI to analyze competitor ad creatives, generate variations of social posts, and test which visual directions perform best. This research and development delivers faster turnaround times without replacing human judgment.</p>
+
+      <h2 id="seo">Integrating Visual Design With SEO, AEO, and GEO</h2>
+      <p>Visual design must work alongside <a href="${SITE_URL}/services/technical-seo">SEO</a>, AEO, and GEO. High-quality design keeps visitors engaged, reduces bounce rates, increases dwell time, and helps a business communicate authority to people and search systems.</p>
+
+      <h2 id="why-bfash">Why B2B Businesses Worldwide Choose BFASH</h2>
+      <p>B2B buyers need to see authority, expertise, and reliability. Our graphic design services are built to showcase these qualities. We do not just make things pretty; we make them strategic and help brands command respect in their industries.</p>
+
+      <h2 id="faqs">Frequently Asked Questions About Graphic Design</h2>
+      <h3>How do you vectorize an image in Illustrator?</h3><p>Open the image, select Image Trace, choose a preset, and click Expand to convert raster pixels into scalable vector paths. For simple logos, start with the Black and White preset. BFASH can handle this process professionally when you need crisp graphics at any size.</p>
+      <h3>What are the limitations of using AI for video creation?</h3><p>AI is useful for repetitive tasks such as cutting clips and adding subtitles, but it can struggle with emotional nuance and complex B2B storytelling. We use AI for efficiency and human editors for final creative polish.</p>
+      <h3>What are the best times to post on social media?</h3><p>For B2B audiences, Tuesday through Thursday mornings, generally 9 AM to 1 PM, often see strong LinkedIn engagement. B2C and TikTok Shop audiences may respond better in evenings and on weekends.</p>
+      <h3>How do you design a book cover?</h3><p>A strong book cover considers genre, target reader, market trends, typography, imagery, and thumbnail readability. Professional design helps it stand out in both digital stores and print.</p>
+      <h3>Do I need a graphic design agency for my Shopify or Amazon store?</h3><p>Professional visuals can differentiate a store in crowded marketplaces. Product images, banners, and A+ content should be designed for clarity and conversion rather than relying on generic templates.</p>
+      <h3>What are the best AI video creation tools in 2026?</h3><p>Veo 3, Runway Gen-4, Kling AI 3.0, and CapCut are among the tools businesses may consider for realistic clips, cinematic control, motion, and fast social editing. BFASH evaluates tools according to the project rather than promising one universal solution.</p>
+      <h3>How can I improve my B2B brand's visual design for 2026?</h3><p>Build a flexible design system instead of one-off graphics. Use authentic photography, thoughtful texture, accessible contrast, and consistent rules across your website, social media, marketplace listings, and sales decks.</p>
+
+      <div class="my-10 rounded-3xl border border-brand/30 bg-brand/5 p-7 text-center"><p class="text-sm font-semibold uppercase tracking-[0.18em] text-brand">Ready to grow your brand?</p><h2 class="mt-2">Invest in visual assets that drive real business growth.</h2><p>Whether you need a new logo, social carousel, book cover, or AI-enhanced video, BFASH combines creativity, strategy, and automation.</p><a href="${SITE_URL}/contact" class="mt-4 inline-flex rounded-xl bg-brand px-6 py-3 font-semibold text-white no-underline">Contact Us Today</a></div>
+    `;
+  }
+
   if (slug !== "seo-expert") return `<p>Article not found.</p>`;
 
   return `
@@ -128,19 +174,19 @@ function getPostContent(slug: string) {
 export const Route = createFileRoute("/blog/$slug")({
   head: ({ params }) => ({
     meta: [
-      { title: params.slug === "seo-expert" ? title : "BFASH Blog" },
-      { name: "description", content: params.slug === "seo-expert" ? description : "Digital marketing, SEO, GEO, AEO, AI automation, and business growth insights from BFASH." },
+      { title: params.slug === "seo-expert" ? title : params.slug === "graphic-design-agency-b2b-growth" ? graphicDesignTitle : "BFASH Blog" },
+      { name: "description", content: params.slug === "seo-expert" ? description : params.slug === "graphic-design-agency-b2b-growth" ? graphicDesignDescription : "Digital marketing, SEO, GEO, AEO, AI automation, and business growth insights from BFASH." },
       { name: "keywords", content: "SEO expert, SEO experts, SEO consultant, SEO agency, SEO services, technical SEO, keyword research, semantic SEO, local SEO, GMB SEO, B2B SEO, ecommerce SEO, GEO, AEO, AI SEO, AI search optimization, link building, organic traffic" },
       { name: "author", content: "BFASH" },
       { name: "robots", content: "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" },
-      { property: "og:title", content: title },
-      { property: "og:description", content: description },
+      { property: "og:title", content: params.slug === "graphic-design-agency-b2b-growth" ? graphicDesignTitle : title },
+      { property: "og:description", content: params.slug === "graphic-design-agency-b2b-growth" ? graphicDesignDescription : description },
       { property: "og:type", content: "article" },
       { property: "og:url", content: `${SITE_URL}/blog/${params.slug}` },
       { property: "og:image", content: `${SITE_URL}/logo.webp` },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: title },
-      { name: "twitter:description", content: description },
+      { name: "twitter:title", content: params.slug === "graphic-design-agency-b2b-growth" ? graphicDesignTitle : title },
+      { name: "twitter:description", content: params.slug === "graphic-design-agency-b2b-growth" ? graphicDesignDescription : description },
       { name: "twitter:image", content: `${SITE_URL}/logo.webp` },
     ],
     links: [{ rel: "canonical", href: `${SITE_URL}/blog/${params.slug}` }],
@@ -151,13 +197,16 @@ export const Route = createFileRoute("/blog/$slug")({
 function BlogPost() {
   const { slug } = Route.useParams();
   const isSeoExpert = slug === "seo-expert";
+  const isGraphicDesign = slug === "graphic-design-agency-b2b-growth";
 
-  if (!isSeoExpert) {
+  if (!isSeoExpert || isGraphicDesign) {
     return (
       <main className="min-h-screen px-4 py-12">
         <div className="mx-auto max-w-4xl">
-          <Link to="/" className="text-brand">← Back to home</Link>
-          <div className="mt-8" dangerouslySetInnerHTML={{ __html: getPostContent(slug) }} />
+          <nav aria-label="Breadcrumb" className="mb-6 text-sm text-muted-foreground">
+            <Link to="/" className="text-brand">Home</Link><span className="mx-2">/</span><Link to="/blog" className="text-brand">Blog</Link>
+          </nav>
+          <article className="rounded-3xl border border-border bg-card px-5 py-8 shadow-sm sm:px-8 [&_.lead]:text-lg [&_.lead]:font-medium [&_.lead]:leading-8 [&_h2]:mt-12 [&_h2]:text-3xl [&_h2]:font-display [&_h2]:font-bold [&_h3]:mt-8 [&_h3]:text-xl [&_h3]:font-semibold [&_p]:mt-5 [&_p]:leading-7 [&_p]:text-muted-foreground [&_ul]:mt-5 [&_ul]:list-disc [&_ul]:space-y-2 [&_ul]:pl-6 [&_ul]:text-muted-foreground [&_li]:leading-7 [&_strong]:text-foreground [&_a]:text-brand [&_a]:underline" dangerouslySetInnerHTML={{ __html: getPostContent(slug) }} />
         </div>
       </main>
     );

@@ -50,7 +50,22 @@ export const blogPosts = [
     featured: true,
     trending: true,
   },
-  // Add more blog posts here as you write them
+  {
+    slug: "graphic-design-agency-b2b-growth",
+    title: "Visual identities that earn attention and drive B2B sales",
+    excerpt:
+      "Discover how strategic graphic design, brand systems, vector illustration, marketplace visuals, and AI-assisted video help B2B brands grow.",
+    category: "Graphic Design",
+    categoryColor: "from-rose-500 to-orange-400",
+    date: "September 22, 2026",
+    readTime: "10 min read",
+    author: "BFASH Team",
+    authorImage: "/team/bfash-avatar.webp",
+    featuredImage: "/graphic-design.webp",
+    tags: ["Graphic Design", "Logo Design", "B2B Growth", "Brand Identity", "AI Video"],
+    featured: false,
+    trending: true,
+  },
 ];
 
 function BlogIndex() {
