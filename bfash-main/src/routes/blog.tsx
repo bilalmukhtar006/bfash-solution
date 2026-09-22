@@ -102,7 +102,7 @@ function BlogIndex() {
       </section>
 
       {featuredPost && (
-        <Section>
+        <Section className="pb-4 md:pb-6">
           <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
             <Link
               to="/blog/$slug"
