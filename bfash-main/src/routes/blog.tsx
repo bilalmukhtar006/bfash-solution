@@ -171,13 +171,83 @@ function BlogIndex() {
         </Section>
       )}
 
+      {regularPosts.map((post) => (
+        <Section key={post.slug} className="pt-0">
+          <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
+            <Link
+              to="/blog/$slug"
+              params={{ slug: post.slug }}
+              className="group block"
+            >
+              <div className="glass-card rounded-2xl overflow-hidden hover:border-brand/50 transition-all hover:-translate-y-1">
+                <div className="grid md:grid-cols-2 gap-0">
+                  <div className="relative h-64 md:h-auto bg-gradient-to-br from-brand/20 to-brand-strong/10">
+                    {post.featuredImage ? (
+                      <img
+                        src={post.featuredImage}
+                        alt={post.title}
+                        className="w-full h-full object-cover"
+                      />
+                    ) : (
+                      <div className="w-full h-full flex items-center justify-center">
+                        <Search className="h-16 w-16 text-brand/30" />
+                      </div>
+                    )}
+                    <div className="absolute top-4 left-4">
+                      <span className={`inline-block px-3 py-1 rounded-full text-xs font-medium text-white bg-gradient-to-r ${post.categoryColor}`}>
+                        {post.category}
+                      </span>
+                    </div>
+                  </div>
+
+                  <div className="p-6 md:p-8 flex flex-col justify-center">
+                    <div className="flex items-center gap-4 text-xs text-muted-foreground mb-3">
+                      <span className="flex items-center gap-1">
+                        <Calendar className="h-3.5 w-3.5" />
+                        {post.date}
+                      </span>
+                      <span className="flex items-center gap-1">
+                        <Clock className="h-3.5 w-3.5" />
+                        {post.readTime}
+                      </span>
+                    </div>
+
+                    <h2 className="text-2xl md:text-3xl font-display font-bold mb-3 group-hover:text-brand transition-colors">
+                      {post.title}
+                    </h2>
+
+                    <p className="text-muted-foreground leading-relaxed mb-4">
+                      {post.excerpt}
+                    </p>
+
+                    <div className="flex items-center gap-3 mb-4">
+                      <div className="h-8 w-8 rounded-full bg-brand/20 flex items-center justify-center">
+                        <User className="h-4 w-4 text-brand" />
+                      </div>
+                      <span className="text-sm text-muted-foreground">
+                        By {post.author}
+                      </span>
+                    </div>
+
+                    <span className="inline-flex items-center text-brand font-medium group-hover:gap-2 transition-all">
+                      Read Article
+                      <ArrowRight className="ml-1 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </Link>
+          </div>
+        </Section>
+      ))}
+
       <Section
         eyebrow="Latest Articles"
         title="Explore Our Latest Insights"
         center
       >
         <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
-          {regularPosts.length === 0 && blogPosts.length <= 1 ? (
+          {blogPosts.length <= 2 ? (
             <div className="text-center py-12">
               <p className="text-muted-foreground">
                 More articles coming soon. Check back for fresh insights.
