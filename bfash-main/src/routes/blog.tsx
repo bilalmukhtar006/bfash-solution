@@ -1,4 +1,4 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute, Link, Outlet, useRouterState } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
 import { Section } from "@/components/site/Section";
 import {
@@ -29,7 +29,7 @@ export const Route = createFileRoute("/blog")({
       },
     ],
   }),
-  component: BlogIndex,
+  component: BlogRouteComponent,
 });
 
 // ✅ EXPORT THIS SO blog.$slug.tsx CAN USE IT
@@ -247,4 +247,10 @@ function BlogIndex() {
       </Section>
     </>
   );
+}
+
+function BlogRouteComponent() {
+  const pathname = useRouterState({ select: (state) => state.location.pathname });
+
+  return pathname === "/blog" ? <BlogIndex /> : <Outlet />;
 }
