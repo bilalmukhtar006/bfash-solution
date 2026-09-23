@@ -26,7 +26,7 @@ export function getPostContent(slug: string) {
       <h3>Logo Design &amp; Brand Identity Agency</h3><p>We create custom vector logos that scale from a tiny favicon to a billboard. Our process includes market research, custom typography systems, and complete brand guidelines.</p>
       <h3>Vector Illustration &amp; Photoshop Services</h3><p>We provide accurate vector illustration and image vectorization for clean, scalable graphics across web and print, removing the learning curve of complex design tools. <a href="https://helpx.adobe.com/illustrator/using/image-trace.html" target="_blank" rel="noopener noreferrer">Adobe's Image Trace guide</a> explains the underlying workflow.</p>
       <h3>Social Media Post &amp; Carousel Design</h3><p>We design high-engagement social posts, Instagram carousel templates, and ad creatives tailored to LinkedIn B2B campaigns and TikTok Shop discovery.</p>
-      <h3>AI Video Creation &amp; Reel Editing Services</h3><p>We use AI video tools to speed up editing for Reels, TikTok Shop videos, and YouTube content while keeping human creative direction and polish. For hands-on editing, <a href="https://www.capcut.com/" target="_blank" rel="noopener noreferrer">CapCut</a> is one tool businesses can evaluate.</p>
+      <h3>AI Video Creation &amp; Reel Editing Services</h3><p>We use AI video tools to speed up editing for Reels, TikTok Shop videos, and YouTube content while keeping human creative direction and polish. For hands-on editing, <a href="https://www.capcut.com/" target="_blank" rel="noopener noreferrer">CapCut</a> is one tool businesses can evaluate. For quick branded layouts, businesses can also compare <a href="https://www.canva.com/" target="_blank" rel="noopener noreferrer">Canva</a> and <a href="https://www.adobe.com/express/" target="_blank" rel="noopener noreferrer">Adobe Express</a>.</p>
       <h3>E-commerce &amp; Marketplace Visuals</h3><ul><li><strong>Amazon:</strong> A+ content and Enhanced Brand Content that answer questions and overcome objections. See <a href="https://sell.amazon.com/tools/a-content" target="_blank" rel="noopener noreferrer">Amazon's A+ Content guidance</a>.</li><li><strong>Shopify:</strong> High-converting landing page visuals and product banners. See <a href="${SITE_URL}/services/ecommerce">BFASH ecommerce services</a>.</li><li><strong>eBay:</strong> Listing images designed to stand out in a crowded marketplace. Review <a href="https://www.ebay.com/help/selling/advertising/ebay-advertising-overview?id=5477" target="_blank" rel="noopener noreferrer">eBay's seller advertising guidance</a>.</li></ul>
 
       <h2 id="automation">How We Use AI Automation for B2B Growth</h2>
@@ -47,7 +47,7 @@ export function getPostContent(slug: string) {
       <h3>What are the best AI video creation tools in 2026?</h3><p>Veo 3, Runway Gen-4, Kling AI 3.0, and CapCut are among the tools businesses may consider for realistic clips, cinematic control, motion, and fast social editing. BFASH evaluates tools according to the project rather than promising one universal solution.</p>
       <h3>How can I improve my B2B brand's visual design for 2026?</h3><p>Build a flexible design system instead of one-off graphics. Use authentic photography, thoughtful texture, accessible contrast, and consistent rules across your website, social media, marketplace listings, and sales decks.</p>
 
-      <div class="my-10 rounded-3xl border border-brand/30 bg-brand/5 p-7 text-center"><p class="text-sm font-semibold uppercase tracking-[0.18em] text-brand">Ready to grow your brand?</p><h2 class="mt-2">Invest in visual assets that drive real business growth.</h2><p>Whether you need a new logo, social carousel, book cover, or AI-enhanced video, BFASH combines creativity, strategy, and automation.</p><a href="${SITE_URL}/contact" class="mt-4 inline-flex rounded-xl bg-brand px-6 py-3 font-semibold text-white no-underline">Contact Us Today</a></div>
+      <div class="my-10 rounded-3xl border border-brand/30 bg-brand/5 p-7 text-center"><p class="text-sm font-semibold uppercase tracking-[0.18em] text-brand">Ready to grow your brand?</p><h2 class="mt-2">Invest in visual assets that drive real business growth.</h2><p>Whether you need a new logo, social carousel, book cover, or AI-enhanced video, BFASH combines creativity, strategy, and automation.</p><a href="${SITE_URL}/quote" class="mt-4 inline-flex rounded-xl bg-brand px-6 py-3 font-semibold text-white no-underline">Start a Project</a></div>
     `;
   }
 
@@ -164,7 +164,7 @@ export function getPostContent(slug: string) {
     <p>Good SEO starts with understanding people. It then connects that understanding to a technically healthy website, useful content, relevant authority, and measurable business goals.</p>
     <p>The strongest strategy is not to repeat <em>"SEO expert"</em> until a page sounds unnatural. It is to build a page that genuinely explains the subject, answers real questions, uses credible research, and gives readers a clear next step.</p>
 
-    <div class="my-10 rounded-3xl border border-brand/30 bg-brand/5 p-7 text-center"><p class="text-sm font-semibold uppercase tracking-[0.18em] text-brand">Ready to grow?</p><h2 class="mt-2">Turn search visibility into a real business strategy.</h2><p>Start with the website, market, competitors, audience, and growth goal.</p><a href="/quote" class="mt-4 inline-flex rounded-xl bg-brand px-6 py-3 font-semibold text-white no-underline">Request a Growth Strategy</a></div>
+    <div class="my-10 rounded-3xl border border-brand/30 bg-brand/5 p-7 text-center"><p class="text-sm font-semibold uppercase tracking-[0.18em] text-brand">Ready to grow?</p><h2 class="mt-2">Turn search visibility into a real business strategy.</h2><p>Start with the website, market, competitors, audience, and growth goal.</p><a href="${SITE_URL}/quote" class="mt-4 inline-flex rounded-xl bg-brand px-6 py-3 font-semibold text-white no-underline">Start a Project</a></div>
 
     <hr /><h2>Research and Sources</h2>
     <ul><li><strong>Zach Paruch — Semrush:</strong> AI information pathways, AI visibility, search strategy, technical accessibility, mentions, and citations.</li><li><strong>Ghulam Ali — SEO & GEO research:</strong> keyword research, search intent, semantic content, technical SEO, topical coverage, indexing, and authority.</li><li><strong>Yogesh K. Dwivedi and colleagues:</strong> research on generative conversational AI and responsible use.</li><li><strong>Connor Lahey — Semrush:</strong> black hat SEO and risky manipulative tactics.</li><li><strong>Rachel Handley — Semrush:</strong> practical backlink-building methods.</li></ul>
@@ -381,4 +381,28 @@ export function BlogArticle({ slug }: { slug: string }) {
 function BlogPost() {
   const { slug } = Route.useParams();
   return <BlogArticle slug={slug} />;
+}
+
+export function BlogContactForm({ subject }: { subject: string }) {
+  return (
+    <div className="rounded-3xl border border-border bg-card p-5 shadow-sm sm:p-6">
+      <div className="mb-5">
+        <p className="text-xs font-semibold uppercase tracking-[0.16em] text-brand">Contact BFASH</p>
+        <h2 className="mt-2 text-2xl font-display font-bold leading-tight">Let's talk about growth</h2>
+        <p className="mt-2 text-sm leading-6 text-muted-foreground">Fill out the form and send the team a message. A clear brief helps BFASH understand the business, website, market, and goals.</p>
+      </div>
+      <form action="https://api.web3forms.com/submit" method="POST" className="space-y-4">
+        <input type="hidden" name="access_key" value="871b202d-31db-4929-9c44-4ab92415006e" />
+        <input type="hidden" name="subject" value={subject} />
+        <input type="hidden" name="from_name" value="BFASH Blog Contact Form" />
+        <input type="checkbox" name="botcheck" tabIndex={-1} aria-hidden="true" className="hidden" />
+        <input type="text" name="name" placeholder="Full Name" required className="h-11 w-full rounded-xl border border-border bg-background px-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-brand/40" />
+        <input type="email" name="email" placeholder="Email Address" required className="h-11 w-full rounded-xl border border-border bg-background px-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-brand/40" />
+        <input type="text" name="phone" placeholder="Phone Number" required className="h-11 w-full rounded-xl border border-border bg-background px-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-brand/40" />
+        <textarea name="message" rows={5} placeholder="Tell us about your brand or design goals..." required className="min-h-[120px] w-full resize-y rounded-xl border border-border bg-background px-3 py-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-brand/40" />
+        <button type="submit" className="w-full rounded-xl bg-brand px-4 py-3 text-sm font-semibold text-white transition hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-brand/40">Send Message</button>
+        <p className="text-center text-xs leading-5 text-muted-foreground">By submitting this form, the message is sent securely through Web3Forms.</p>
+      </form>
+    </div>
+  );
 }

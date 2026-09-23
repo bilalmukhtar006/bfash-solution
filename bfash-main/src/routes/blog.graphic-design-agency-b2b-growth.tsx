@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { getPostContent } from "./blog.$slug";
+import { BlogContactForm, getPostContent } from "./blog.$slug";
 
 const SITE_URL = "https://bfash.us";
 const title = "Graphic Design Agency: Visual identities that earn attention and drive B2B sales | BFASH Blog";
@@ -50,7 +50,7 @@ function GraphicDesignAgencyBlog() {
       </section>
 
       <section className="px-6 py-8 md:py-12">
-        <div className="mx-auto max-w-6xl">
+        <div className="mx-auto max-w-7xl">
           <nav aria-label="Breadcrumb" className="mb-8 text-sm text-muted-foreground">
             <Link to="/" className="text-brand hover:underline">Home</Link>
             <span className="mx-2">/</span>
@@ -58,17 +58,22 @@ function GraphicDesignAgencyBlog() {
             <span className="mx-2">/</span>
             <span>Graphic Design Agency</span>
           </nav>
-          <article
-            className="prose prose-invert max-w-none rounded-2xl border border-border bg-card px-5 py-8 shadow-sm sm:px-8 md:px-12 md:py-12 [&_.lead]:text-lg [&_.lead]:font-medium [&_.lead]:leading-8 [&_.lead]:text-foreground [&_h2]:mt-12 [&_h2]:scroll-mt-24 [&_h2]:text-2xl [&_h2]:font-display [&_h2]:font-bold [&_h2]:leading-tight md:[&_h2]:text-3xl [&_h3]:mt-8 [&_h3]:text-xl [&_h3]:font-semibold [&_p]:mt-5 [&_p]:leading-7 [&_p]:text-muted-foreground [&_ul]:mt-5 [&_ul]:list-disc [&_ul]:space-y-2 [&_ul]:pl-6 [&_ul]:text-muted-foreground [&_li]:leading-7 [&_strong]:text-foreground [&_a]:text-brand [&_a]:underline [&_a]:underline-offset-4 [&_hr]:my-10 [&_hr]:border-border [&_table]:border-collapse"
-            itemScope
-            itemType="https://schema.org/Article"
-          >
-            <meta itemProp="headline" content={title} />
-            <meta itemProp="author" content="BFASH" />
-            <meta itemProp="publisher" content="BFASH" />
-            <meta itemProp="mainEntityOfPage" content={`${SITE_URL}/blog/graphic-design-agency-b2b-growth`} />
-            <div dangerouslySetInnerHTML={{ __html: getPostContent("graphic-design-agency-b2b-growth") }} />
-          </article>
+          <div className="mt-6 grid gap-6 lg:grid-cols-[1fr_320px] lg:items-start">
+            <article
+              className="prose prose-invert min-w-0 max-w-none rounded-3xl border border-border bg-card px-5 py-8 shadow-sm sm:px-8 md:px-10 md:py-12 [&_.lead]:text-lg [&_.lead]:font-medium [&_.lead]:leading-8 [&_.lead]:text-foreground [&_h2]:mt-12 [&_h2]:scroll-mt-24 [&_h2]:text-2xl [&_h2]:font-display [&_h2]:font-bold [&_h2]:leading-tight md:[&_h2]:text-3xl [&_h3]:mt-8 [&_h3]:text-xl [&_h3]:font-semibold [&_p]:mt-5 [&_p]:leading-7 [&_p]:text-muted-foreground [&_ul]:mt-5 [&_ul]:list-disc [&_ul]:space-y-2 [&_ul]:pl-6 [&_ul]:text-muted-foreground [&_li]:leading-7 [&_strong]:text-foreground [&_a]:text-brand [&_a]:underline [&_a]:underline-offset-4 [&_hr]:my-10 [&_hr]:border-border [&_table]:border-collapse"
+              itemScope
+              itemType="https://schema.org/Article"
+            >
+              <meta itemProp="headline" content={title} />
+              <meta itemProp="author" content="BFASH" />
+              <meta itemProp="publisher" content="BFASH" />
+              <meta itemProp="mainEntityOfPage" content={`${SITE_URL}/blog/graphic-design-agency-b2b-growth`} />
+              <div dangerouslySetInnerHTML={{ __html: getPostContent("graphic-design-agency-b2b-growth") }} />
+            </article>
+            <aside className="space-y-6">
+              <BlogContactForm subject="New Graphic Design Agency Inquiry from BFASH Blog" />
+            </aside>
+          </div>
         </div>
       </section>
     </main>
