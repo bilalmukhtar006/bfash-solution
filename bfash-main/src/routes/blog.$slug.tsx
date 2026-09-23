@@ -5,6 +5,7 @@ const title = "SEO Expert: How the Right Strategy Helps People Find, Trust, and 
 const description = "Learn how an SEO expert uses keyword research, technical SEO, semantic content, local SEO, B2B strategy, GEO, AEO, and AI automation to grow qualified traffic and business visibility.";
 const graphicDesignTitle = "Visual identities that earn attention and drive B2B sales | BFASH Blog";
 const graphicDesignDescription = "Discover how strategic graphic design, brand systems, vector illustration, marketplace visuals, and AI-assisted video help B2B brands grow.";
+
 const getRelatedArticlesBlock = (slug: string) => {
   const otherSlug = slug === "seo-expert" ? "graphic-design-agency-b2b-growth" : "seo-expert";
   const otherTitle = slug === "seo-expert" ? graphicDesignTitle : title;
@@ -13,7 +14,7 @@ const getRelatedArticlesBlock = (slug: string) => {
     <div class="my-8 rounded-3xl border border-brand/30 bg-brand/5 p-6 text-left">
       <p class="text-sm font-semibold uppercase tracking-[0.18em] text-brand">Explore More Blogs</p>
       <div class="mt-4 space-y-3">
-        <a href="${SITE_URL}/blog/${otherSlug}" class="block rounded-2xl border border-border bg-background/70 px-4 py-3 text-sm font-medium text-foreground no-underline transition hover:border-brand/50 hover:text-brand">${otherTitle}</a>
+        <a href="${SITE_URL}/blog/${otherSlug}" class="!text-brand block rounded-2xl border border-border bg-background/70 px-4 py-3 text-sm font-medium !no-underline transition hover:border-brand/50 hover:!text-brand">${otherTitle}</a>
       </div>
     </div>
   `;
@@ -61,7 +62,7 @@ export function getPostContent(slug: string) {
       <h3>How can I improve my B2B brand's visual design for 2026?</h3><p>Build a flexible design system instead of one-off graphics. Use authentic photography, thoughtful texture, accessible contrast, and consistent rules across your website, social media, marketplace listings, and sales decks.</p>
 
       ${getRelatedArticlesBlock(slug)}
-      <div class="my-10 rounded-3xl border border-brand/30 bg-brand/5 p-7 text-center"><p class="text-sm font-semibold uppercase tracking-[0.18em] text-brand">Ready to grow your brand?</p><h2 class="mt-2">Invest in visual assets that drive real business growth.</h2><p>Whether you need a new logo, social carousel, book cover, or AI-enhanced video, BFASH combines creativity, strategy, and automation.</p><a href="${SITE_URL}/quote" class="mt-4 inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-brand to-brand-strong px-7 py-3.5 font-semibold text-white no-underline shadow-lg shadow-brand/30 transition hover:opacity-90">Start a Project</a></div>
+      <div class="my-10 rounded-3xl border border-brand/30 bg-brand/5 p-7 text-center"><p class="text-sm font-semibold uppercase tracking-[0.18em] text-brand">Ready to grow your brand?</p><h2 class="mt-2">Invest in visual assets that drive real business growth.</h2><p>Whether you need a new logo, social carousel, book cover, or AI-enhanced video, BFASH combines creativity, strategy, and automation.</p><a href="${SITE_URL}/quote" class="!text-white !no-underline mt-4 inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-brand to-brand-strong px-7 py-3.5 font-semibold shadow-lg shadow-brand/30 transition hover:opacity-90">Start a Project</a></div>
     `;
   }
 
@@ -179,7 +180,7 @@ export function getPostContent(slug: string) {
     <p>The strongest strategy is not to repeat <em>"SEO expert"</em> until a page sounds unnatural. It is to build a page that genuinely explains the subject, answers real questions, uses credible research, and gives readers a clear next step.</p>
 
     ${getRelatedArticlesBlock(slug)}
-    <div class="my-10 rounded-3xl border border-brand/30 bg-brand/5 p-7 text-center"><p class="text-sm font-semibold uppercase tracking-[0.18em] text-brand">Ready to grow?</p><h2 class="mt-2">Turn search visibility into a real business strategy.</h2><p>Start with the website, market, competitors, audience, and growth goal.</p><a href="${SITE_URL}/quote" class="mt-4 inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-brand to-brand-strong px-7 py-3.5 font-semibold text-white no-underline shadow-lg shadow-brand/30 transition hover:opacity-90">Start a Project</a></div>
+    <div class="my-10 rounded-3xl border border-brand/30 bg-brand/5 p-7 text-center"><p class="text-sm font-semibold uppercase tracking-[0.18em] text-brand">Ready to grow?</p><h2 class="mt-2">Turn search visibility into a real business strategy.</h2><p>Start with the website, market, competitors, audience, and growth goal.</p><a href="${SITE_URL}/quote" class="!text-white !no-underline mt-4 inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-brand to-brand-strong px-7 py-3.5 font-semibold shadow-lg shadow-brand/30 transition hover:opacity-90">Start a Project</a></div>
 
     <hr /><h2>Research and Sources</h2>
     <ul><li><strong>Zach Paruch — Semrush:</strong> AI information pathways, AI visibility, search strategy, technical accessibility, mentions, and citations.</li><li><strong>Ghulam Ali — SEO & GEO research:</strong> keyword research, search intent, semantic content, technical SEO, topical coverage, indexing, and authority.</li><li><strong>Yogesh K. Dwivedi and colleagues:</strong> research on generative conversational AI and responsible use.</li><li><strong>Connor Lahey — Semrush:</strong> black hat SEO and risky manipulative tactics.</li><li><strong>Rachel Handley — Semrush:</strong> practical backlink-building methods.</li></ul>
