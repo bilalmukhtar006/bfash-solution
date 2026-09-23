@@ -34,7 +34,7 @@ export function ServicePage({
             <h3 className="font-display font-bold text-xl mb-3">{title}</h3>
             <p className="text-muted-foreground text-sm leading-relaxed mb-5">{intro}</p>
             <Link to="/quote">
-              <Button className="w-full bg-gradient-to-r from-brand to-brand-strong text-white border-0">
+              <Button className="w-full bg-gradient-to-r from-brand to-brand-strong text-white border-0 hover:text-white">
                 Start a Project <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
             </Link>
@@ -64,7 +64,7 @@ export function ServicePage({
           <Link to="/quote">
             <Button
               size="lg"
-              className="bg-gradient-to-r from-brand to-brand-strong text-white border-0 brand-glow px-8 h-12"
+              className="bg-gradient-to-r from-brand to-brand-strong text-white border-0 brand-glow px-8 h-12 hover:text-white"
             >
               Start a Project <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
