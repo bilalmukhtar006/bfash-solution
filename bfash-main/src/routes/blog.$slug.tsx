@@ -194,8 +194,7 @@ export const Route = createFileRoute("/blog/$slug")({
   component: BlogPost,
 });
 
-function BlogPost() {
-  const { slug } = Route.useParams();
+export function BlogArticle({ slug }: { slug: string }) {
   const isSeoExpert = slug === "seo-expert";
   const isGraphicDesign = slug === "graphic-design-agency-b2b-growth";
 
@@ -377,4 +376,9 @@ function BlogPost() {
       </div>
     </main>
   );
+}
+
+function BlogPost() {
+  const { slug } = Route.useParams();
+  return <BlogArticle slug={slug} />;
 }

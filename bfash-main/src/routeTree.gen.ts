@@ -26,6 +26,8 @@ import { Route as ServicesGraphicDesignRouteImport } from './routes/services.gra
 import { Route as ServicesEcommerceRouteImport } from './routes/services.ecommerce'
 import { Route as ServicesAmazonRouteImport } from './routes/services.amazon'
 import { Route as ServicesAdsRouteImport } from './routes/services.ads'
+import { Route as BlogSeoExpertRouteImport } from './routes/blog.seo-expert'
+import { Route as BlogGraphicDesignAgencyB2bGrowthRouteImport } from './routes/blog.graphic-design-agency-b2b-growth'
 import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
 
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
@@ -115,6 +117,17 @@ const ServicesAdsRoute = ServicesAdsRouteImport.update({
   path: '/services/ads',
   getParentRoute: () => rootRouteImport,
 } as any)
+const BlogSeoExpertRoute = BlogSeoExpertRouteImport.update({
+  id: '/seo-expert',
+  path: '/seo-expert',
+  getParentRoute: () => BlogRoute,
+} as any)
+const BlogGraphicDesignAgencyB2bGrowthRoute =
+  BlogGraphicDesignAgencyB2bGrowthRouteImport.update({
+    id: '/graphic-design-agency-b2b-growth',
+    path: '/graphic-design-agency-b2b-growth',
+    getParentRoute: () => BlogRoute,
+  } as any)
 const BlogSlugRoute = BlogSlugRouteImport.update({
   id: '/$slug',
   path: '/$slug',
@@ -132,6 +145,8 @@ export interface FileRoutesByFullPath {
   '/quote': typeof QuoteRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/blog/$slug': typeof BlogSlugRoute
+  '/blog/graphic-design-agency-b2b-growth': typeof BlogGraphicDesignAgencyB2bGrowthRoute
+  '/blog/seo-expert': typeof BlogSeoExpertRoute
   '/services/ads': typeof ServicesAdsRoute
   '/services/amazon': typeof ServicesAmazonRoute
   '/services/ecommerce': typeof ServicesEcommerceRoute
@@ -152,6 +167,8 @@ export interface FileRoutesByTo {
   '/quote': typeof QuoteRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/blog/$slug': typeof BlogSlugRoute
+  '/blog/graphic-design-agency-b2b-growth': typeof BlogGraphicDesignAgencyB2bGrowthRoute
+  '/blog/seo-expert': typeof BlogSeoExpertRoute
   '/services/ads': typeof ServicesAdsRoute
   '/services/amazon': typeof ServicesAmazonRoute
   '/services/ecommerce': typeof ServicesEcommerceRoute
@@ -173,6 +190,8 @@ export interface FileRoutesById {
   '/quote': typeof QuoteRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/blog/$slug': typeof BlogSlugRoute
+  '/blog/graphic-design-agency-b2b-growth': typeof BlogGraphicDesignAgencyB2bGrowthRoute
+  '/blog/seo-expert': typeof BlogSeoExpertRoute
   '/services/ads': typeof ServicesAdsRoute
   '/services/amazon': typeof ServicesAmazonRoute
   '/services/ecommerce': typeof ServicesEcommerceRoute
@@ -195,6 +214,8 @@ export interface FileRouteTypes {
     | '/quote'
     | '/sitemap.xml'
     | '/blog/$slug'
+    | '/blog/graphic-design-agency-b2b-growth'
+    | '/blog/seo-expert'
     | '/services/ads'
     | '/services/amazon'
     | '/services/ecommerce'
@@ -215,6 +236,8 @@ export interface FileRouteTypes {
     | '/quote'
     | '/sitemap.xml'
     | '/blog/$slug'
+    | '/blog/graphic-design-agency-b2b-growth'
+    | '/blog/seo-expert'
     | '/services/ads'
     | '/services/amazon'
     | '/services/ecommerce'
@@ -235,6 +258,8 @@ export interface FileRouteTypes {
     | '/quote'
     | '/sitemap.xml'
     | '/blog/$slug'
+    | '/blog/graphic-design-agency-b2b-growth'
+    | '/blog/seo-expert'
     | '/services/ads'
     | '/services/amazon'
     | '/services/ecommerce'
@@ -386,6 +411,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ServicesAdsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/blog/seo-expert': {
+      id: '/blog/seo-expert'
+      path: '/seo-expert'
+      fullPath: '/blog/seo-expert'
+      preLoaderRoute: typeof BlogSeoExpertRouteImport
+      parentRoute: typeof BlogRoute
+    }
+    '/blog/graphic-design-agency-b2b-growth': {
+      id: '/blog/graphic-design-agency-b2b-growth'
+      path: '/graphic-design-agency-b2b-growth'
+      fullPath: '/blog/graphic-design-agency-b2b-growth'
+      preLoaderRoute: typeof BlogGraphicDesignAgencyB2bGrowthRouteImport
+      parentRoute: typeof BlogRoute
+    }
     '/blog/$slug': {
       id: '/blog/$slug'
       path: '/$slug'
@@ -398,10 +437,14 @@ declare module '@tanstack/react-router' {
 
 interface BlogRouteChildren {
   BlogSlugRoute: typeof BlogSlugRoute
+  BlogGraphicDesignAgencyB2bGrowthRoute: typeof BlogGraphicDesignAgencyB2bGrowthRoute
+  BlogSeoExpertRoute: typeof BlogSeoExpertRoute
 }
 
 const BlogRouteChildren: BlogRouteChildren = {
   BlogSlugRoute: BlogSlugRoute,
+  BlogGraphicDesignAgencyB2bGrowthRoute: BlogGraphicDesignAgencyB2bGrowthRoute,
+  BlogSeoExpertRoute: BlogSeoExpertRoute,
 }
 
 const BlogRouteWithChildren = BlogRoute._addFileChildren(BlogRouteChildren)
