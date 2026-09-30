@@ -2,6 +2,7 @@ import { Link } from "@tanstack/react-router";
 import {
   Mail,
   Phone,
+  MapPin,
   Linkedin,
   Instagram,
   Twitter,
@@ -24,6 +25,8 @@ const links = [
 ] as const;
 
 const phoneUrl = "tel:+13654749647";
+const mailingAddress = "100 Business Park Ln, Unit E, Ste US712212, Milton, Delaware 19968, United States";
+const mailingAddressMapLink = "https://www.google.com/maps/search/?api=1&query=100+Business+Park+Ln%2C+Unit+E%2C+Ste+US712212%2C+Milton%2C+Delaware+19968%2C+United+States";
 
 export function Footer() {
   return (
@@ -110,6 +113,19 @@ export function Footer() {
               >
                 <Phone className="h-4 w-4 text-brand" />
                 <span>+1 (365) 474-9647</span>
+              </a>
+            </li>
+
+            {/* Mailing Address */}
+            <li>
+              <a
+                href={mailingAddressMapLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-start gap-2 text-muted-foreground transition-colors hover:text-foreground"
+              >
+                <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-brand" />
+                <span>{mailingAddress}</span>
               </a>
             </li>
           </ul>

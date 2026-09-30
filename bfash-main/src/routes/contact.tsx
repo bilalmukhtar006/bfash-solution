@@ -67,6 +67,8 @@ const GMB_REVIEW_LINK = "https://g.page/r/CavaEXQZnAMxEAE/review";
 // ============================================================
 const EXTLINK = "https://share.google/MrbmVI1RP676DI8fh";
 const INTLINK = "/services/technical-seo";
+const MAILING_ADDRESS = "100 Business Park Ln, Unit E, Ste US712212, Milton, Delaware 19968, United States";
+const MAILING_ADDRESS_MAP_LINK = "https://www.google.com/maps/search/?api=1&query=100+Business+Park+Ln%2C+Unit+E%2C+Ste+US712212%2C+Milton%2C+Delaware+19968%2C+United+States";
 
 // Google Maps embed link
 const MAP_EMBED_LINK = "https://share.google/h0bipP823hPIO8SPA";
@@ -144,6 +146,12 @@ function Contact() {
                   href: "https://www.google.com/maps/place/31%C2%B029'56.1%22N+74%C2%B024'46.4%22E/@31.4989186,74.4103253,17z/data=!3m1!4b1!4m4!3m3!8m2!3d31.4989186!4d74.4129002?hl=en&entry=ttu",
                 },
                 {
+                  icon: MapPin,
+                  label: "Mailing Address",
+                  value: MAILING_ADDRESS,
+                  href: MAILING_ADDRESS_MAP_LINK,
+                },
+                {
                   icon: Clock,
                   label: "Hours",
                   value: "Mon–Fri · 9am – 7pm (EST)",
@@ -152,7 +160,7 @@ function Contact() {
                 <a
                   key={c.label}
                   href={c.href || "#"}
-                  target={c.label === "Location" ? "_blank" : "_self"}
+                  target={c.label === "Location" || c.label === "Mailing Address" ? "_blank" : "_self"}
                   rel="noopener noreferrer"
                   className="glass-card rounded-2xl p-4 sm:p-5 flex items-start gap-4 hover:border-brand/50 transition-colors block"
                 >
