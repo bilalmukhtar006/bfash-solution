@@ -20,6 +20,7 @@ const links = [
   { to: "/services/graphic-design", label: "Graphic Design" },
   { to: "/portfolio", label: "Portfolio" },
   { to: "/contact", label: "Contact Us" },
+  { to: "/get-started", label: "Get Started" },
   { to: "/quote", label: "Get a Free Quote" },
   { to: "/privacy", label: "Privacy Policy" },
 ] as const;

@@ -14,6 +14,7 @@ import { Route as QuoteRouteImport } from './routes/quote'
 import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as PortfolioRouteImport } from './routes/portfolio'
 import { Route as KnowledgeBaseOfDigitalMarketingRouteImport } from './routes/knowledge-base-of-digital-marketing'
+import { Route as GetStartedRouteImport } from './routes/get-started'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as BlogRouteImport } from './routes/blog'
 import { Route as AboutRouteImport } from './routes/about'
@@ -56,6 +57,11 @@ const KnowledgeBaseOfDigitalMarketingRoute =
     path: '/knowledge-base-of-digital-marketing',
     getParentRoute: () => rootRouteImport,
   } as any)
+const GetStartedRoute = GetStartedRouteImport.update({
+  id: '/get-started',
+  path: '/get-started',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ContactRoute = ContactRouteImport.update({
   id: '/contact',
   path: '/contact',
@@ -139,6 +145,7 @@ export interface FileRoutesByFullPath {
   '/about': typeof AboutRoute
   '/blog': typeof BlogRouteWithChildren
   '/contact': typeof ContactRoute
+  '/get-started': typeof GetStartedRoute
   '/knowledge-base-of-digital-marketing': typeof KnowledgeBaseOfDigitalMarketingRoute
   '/portfolio': typeof PortfolioRoute
   '/privacy': typeof PrivacyRoute
@@ -161,6 +168,7 @@ export interface FileRoutesByTo {
   '/about': typeof AboutRoute
   '/blog': typeof BlogRouteWithChildren
   '/contact': typeof ContactRoute
+  '/get-started': typeof GetStartedRoute
   '/knowledge-base-of-digital-marketing': typeof KnowledgeBaseOfDigitalMarketingRoute
   '/portfolio': typeof PortfolioRoute
   '/privacy': typeof PrivacyRoute
@@ -184,6 +192,7 @@ export interface FileRoutesById {
   '/about': typeof AboutRoute
   '/blog': typeof BlogRouteWithChildren
   '/contact': typeof ContactRoute
+  '/get-started': typeof GetStartedRoute
   '/knowledge-base-of-digital-marketing': typeof KnowledgeBaseOfDigitalMarketingRoute
   '/portfolio': typeof PortfolioRoute
   '/privacy': typeof PrivacyRoute
@@ -208,6 +217,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/blog'
     | '/contact'
+    | '/get-started'
     | '/knowledge-base-of-digital-marketing'
     | '/portfolio'
     | '/privacy'
@@ -230,6 +240,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/blog'
     | '/contact'
+    | '/get-started'
     | '/knowledge-base-of-digital-marketing'
     | '/portfolio'
     | '/privacy'
@@ -252,6 +263,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/blog'
     | '/contact'
+    | '/get-started'
     | '/knowledge-base-of-digital-marketing'
     | '/portfolio'
     | '/privacy'
@@ -275,6 +287,7 @@ export interface RootRouteChildren {
   AboutRoute: typeof AboutRoute
   BlogRoute: typeof BlogRouteWithChildren
   ContactRoute: typeof ContactRoute
+  GetStartedRoute: typeof GetStartedRoute
   KnowledgeBaseOfDigitalMarketingRoute: typeof KnowledgeBaseOfDigitalMarketingRoute
   PortfolioRoute: typeof PortfolioRoute
   PrivacyRoute: typeof PrivacyRoute
@@ -325,6 +338,13 @@ declare module '@tanstack/react-router' {
       path: '/knowledge-base-of-digital-marketing'
       fullPath: '/knowledge-base-of-digital-marketing'
       preLoaderRoute: typeof KnowledgeBaseOfDigitalMarketingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/get-started': {
+      id: '/get-started'
+      path: '/get-started'
+      fullPath: '/get-started'
+      preLoaderRoute: typeof GetStartedRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/contact': {
@@ -454,6 +474,7 @@ const rootRouteChildren: RootRouteChildren = {
   AboutRoute: AboutRoute,
   BlogRoute: BlogRouteWithChildren,
   ContactRoute: ContactRoute,
+  GetStartedRoute: GetStartedRoute,
   KnowledgeBaseOfDigitalMarketingRoute: KnowledgeBaseOfDigitalMarketingRoute,
   PortfolioRoute: PortfolioRoute,
   PrivacyRoute: PrivacyRoute,

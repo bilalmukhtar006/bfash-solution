@@ -325,7 +325,7 @@ export function Header() {
               asChild
               className="hidden sm:inline-flex h-10 bg-gradient-to-r from-brand to-brand-strong px-5 text-[15px] font-semibold text-white border-0 brand-glow shadow-md hover:shadow-lg hover:opacity-90 transition-all duration-300"
             >
-              <Link to="/contact">Get a Free Quote</Link>
+              <Link to="/get-started">Get Started</Link>
             </Button>
 
             <button
@@ -440,7 +440,7 @@ export function Header() {
               onClick={() => setOpen(false)}
               className="mt-3 h-11 bg-gradient-to-r from-brand to-brand-strong text-[15px] font-semibold text-white hover:opacity-90 shadow-md"
             >
-              <Link to="/contact">Get a Free Quote</Link>
+              <Link to="/get-started">Get Started</Link>
             </Button>
           </nav>
         </div>

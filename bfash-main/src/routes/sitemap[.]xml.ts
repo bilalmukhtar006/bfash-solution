@@ -13,6 +13,7 @@ const paths = [
   "/services/graphic-design",
   "/portfolio",
   "/contact",
+  "/get-started",
   "/quote",
   "/privacy",
   "/knowledge-base-of-digital-marketing",
