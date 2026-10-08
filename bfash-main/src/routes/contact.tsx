@@ -18,6 +18,7 @@ export const Route = createFileRoute("/contact")({
       { property: "og:title", content: "Contact BFASH | Digital Marketing & Business Growth" },
       { property: "og:description", content: "Talk to BFASH about SEO, GEO, local SEO, paid advertising, website design, lead generation, and business growth." },
     ],
+    links: [{ rel: "canonical", href: "https://bfash.us/contact" }],
   }),
   component: Contact,
 });

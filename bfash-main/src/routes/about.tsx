@@ -29,6 +29,7 @@ export const Route = createFileRoute("/about")({
           "Discover how BFash Solution helps businesses reach more customers and increase sales.",
       },
     ],
+    links: [{ rel: "canonical", href: "https://bfash.us/about" }],
   }),
   component: About,
 });

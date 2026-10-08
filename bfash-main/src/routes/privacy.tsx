@@ -13,6 +13,7 @@ export const Route = createFileRoute("/privacy")({
       { property: "og:title", content: "Privacy Policy — BFash Solutions" },
       { property: "og:description", content: "Our approach to data protection and privacy." },
     ],
+    links: [{ rel: "canonical", href: "https://bfash.us/privacy" }],
   }),
   component: Privacy,
 });

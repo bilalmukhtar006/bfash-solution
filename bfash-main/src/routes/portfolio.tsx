@@ -15,6 +15,7 @@ export const Route = createFileRoute("/portfolio")({
       { property: "og:title", content: "BFash Solutions — Portfolio" },
       { property: "og:description", content: "Selected case studies across our service lines." },
     ],
+    links: [{ rel: "canonical", href: "https://bfash.us/portfolio" }],
   }),
   component: Portfolio,
 });

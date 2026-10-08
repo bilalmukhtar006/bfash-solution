@@ -22,6 +22,7 @@ export const Route = createFileRoute("/quote")({
         content: "Tell us about your project. Get a tailored proposal.",
       },
     ],
+    links: [{ rel: "canonical", href: "https://bfash.us/quote" }],
   }),
   component: Quote,
 });

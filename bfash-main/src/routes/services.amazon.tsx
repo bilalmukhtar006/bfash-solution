@@ -17,6 +17,7 @@ export const Route = createFileRoute("/services/amazon")({
         content: "Scale your Amazon storefront with proven specialists.",
       },
     ],
+    links: [{ rel: "canonical", href: "https://bfash.us/services/amazon" }],
   }),
   component: () => (
     <ServicePage
