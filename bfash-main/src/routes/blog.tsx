@@ -11,7 +11,7 @@ import {
 } from "lucide-react";
 
 export const Route = createFileRoute("/blog")({
-  head: () => ({
+  head: ({ matches }) => ({
     meta: [
       {
         title: "Digital Marketing Blog | SEO, GEO & Business Growth | BFASH",
@@ -22,12 +22,10 @@ export const Route = createFileRoute("/blog")({
           "Expert insights on SEO, GEO, AI search, content marketing, and business growth from the BFASH team.",
       },
     ],
-    links: [
-      {
-        rel: "canonical",
-        href: "https://bfash.us/blog",
-      },
-    ],
+    links:
+      matches[matches.length - 1]?.routeId === "/blog"
+        ? [{ rel: "canonical", href: "https://bfash.us/blog" }]
+        : [],
   }),
   component: BlogRouteComponent,
 });
