@@ -268,6 +268,26 @@ function About() {
             </a>{" "}
             to explore our services or contact us to discuss your goals.
           </p>
+          <h3 className="mt-10 text-2xl font-display font-bold tracking-tight mb-4">
+              A flexible team for the work behind online growth
+          </h3>
+          <p className="text-muted-foreground leading-relaxed mb-5">
+              Building a stronger online presence often involves more than one
+              task. A business may need a website that explains its offer, search
+              content that answers customer questions, creative assets that feel
+              consistent, and a dependable way to follow up with new enquiries.
+              BFASH brings these capabilities together so the pieces can support
+              the same business priorities.
+          </p>
+          <p className="text-muted-foreground leading-relaxed">
+              We aim to make collaboration straightforward: understand the goal,
+              agree on what is in scope, complete the work, and review what to
+              improve next. Whether you need a focused project or ongoing help,
+              our team works to keep recommendations practical and communication
+              clear. We do not assume every company needs every service; the
+              right plan depends on your customers, resources, and current stage
+              of growth.
+          </p>
         </div>
       </Section>
     </>

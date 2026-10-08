@@ -190,6 +190,39 @@ function ServicesIndex() {
             </Link>{" "}
             for an overview, or contact us to discuss your next step.
           </p>
+          <h2 className="mt-10 text-2xl font-display font-bold tracking-tight mb-4">
+              A practical plan, not a one-size-fits-all package
+          </h2>
+          <p className="text-muted-foreground leading-relaxed mb-5">
+              The right mix of digital marketing services depends on where
+              customers currently find you and what happens when they arrive. A
+              local business may prioritize its Google Business Profile, local
+              search visibility, and a clear path to call or request an
+              appointment. An online store may need stronger product pages,
+              marketplace support, paid campaigns, or a smoother checkout
+              experience. A B2B company may focus on explaining a complex offer,
+              attracting qualified enquiries, and following up consistently.
+          </p>
+          <p className="text-muted-foreground leading-relaxed mb-5">
+              We can help connect those activities. Website design and
+              development provide a useful foundation; SEO and content help
+              people discover and understand your offer; paid advertising can
+              support a defined campaign; and creative design keeps your
+              materials coherent across channels. Virtual assistance can help
+              with the operational tasks that keep marketing and customer
+              communication moving.
+          </p>
+          <p className="text-muted-foreground leading-relaxed">
+              A clear first step is to identify the outcome that matters most,
+              such as more qualified leads, improved product discovery, or a
+              more effective website. We can then review the current situation,
+              agree on a focused scope, and determine how progress should be
+              evaluated. Explore the individual services above or{" "}
+              <Link to="/quote" className="text-brand underline hover:text-brand-strong">
+                request a free quote
+              </Link>{" "}
+              to discuss priorities with BFASH.
+          </p>
         </div>
       </Section>
     </>

@@ -337,6 +337,38 @@ function BlogIndex() {
             </Link>
             .
           </p>
+          <h3 className="mt-10 text-2xl font-display font-bold tracking-tight mb-4">
+            Topics for every stage of your growth
+          </h3>
+          <p className="text-muted-foreground leading-relaxed mb-5">
+            If you are building your online presence, start by clarifying who
+            you serve and what makes your offer useful. A website should help
+            visitors understand that offer, find answers to their questions,
+            and take a relevant next step. Our website and branding articles
+            explore how content, page structure, and visual consistency can
+            make that experience clearer.
+          </p>
+          <p className="text-muted-foreground leading-relaxed mb-5">
+            If you already have a site, our search topics cover the foundations
+            of SEO: understanding search intent, creating helpful content,
+            making pages accessible to search engines, and reviewing traffic
+            and enquiries together. We also discuss GEO and AI search as
+            emerging ways people discover information. These channels evolve,
+            so sustainable work still begins with accurate, useful information
+            for real people.
+          </p>
+          <p className="text-muted-foreground leading-relaxed">
+            For ecommerce and marketing teams, the right next step may be
+            improving a product listing, reviewing an advertising campaign, or
+            making follow-up more consistent. Use the articles as a starting
+            point, then check recommendations against your own audience, data,
+            and budget. When you are ready to put a plan into action, explore
+            the{" "}
+            <Link to="/portfolio" className="text-brand underline hover:text-brand-strong">
+              BFASH portfolio
+            </Link>{" "}
+            or tell us what you want to accomplish.
+          </p>
         </div>
       </Section>
 

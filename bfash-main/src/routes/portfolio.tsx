@@ -216,6 +216,38 @@ function Portfolio() {
             </Link>{" "}
             or contact our team to discuss a project with similar goals.
           </p>
+          <h2 className="mt-10 text-2xl font-display font-bold tracking-tight mb-4">
+            How We Approach Each Project
+          </h2>
+          <p className="text-muted-foreground leading-relaxed mb-5">
+            Good digital work starts with understanding the people a business
+            wants to reach. Before choosing a design direction or marketing
+            tactic, we consider the offer, audience, existing website or store,
+            and the action a customer should take. This helps keep the work
+            connected to a real business need instead of treating design,
+            search, or advertising as an isolated task.
+          </p>
+          <p className="text-muted-foreground leading-relaxed mb-5">
+            For a website, that can mean making information easier to find,
+            improving the experience on mobile, and giving important pages a
+            clearer next step. For SEO, it can mean finding relevant search
+            opportunities, strengthening useful page content, and addressing
+            technical issues that make a site harder to use or discover. For
+            marketplace work, the focus may be product detail pages, store
+            presentation, campaign structure, or a more consistent brand
+            experience.
+          </p>
+          <p className="text-muted-foreground leading-relaxed">
+            The examples above represent different kinds of goals and services;
+            results depend on a project's starting point, scope, market, and
+            measurement period. They are not a guarantee of future performance.
+            If you have a similar challenge, share what you are trying to
+            improve and we can discuss a suitable approach. Visit our{" "}
+            <Link to="/quote" className="text-brand underline hover:text-brand-strong">
+              free quote page
+            </Link>{" "}
+            to tell us about your project.
+          </p>
         </div>
       </Section>
     </>

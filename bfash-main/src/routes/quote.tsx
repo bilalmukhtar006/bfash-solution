@@ -91,6 +91,41 @@ function Quote() {
               </Link>{" "}
               before getting started.
             </p>
+            <h3 className="mt-8 text-xl font-display font-bold mb-3">
+              What happens after you share your project?
+            </h3>
+            <p className="text-muted-foreground leading-relaxed mb-4">
+              We use the details in your request to understand the outcome you
+              want, the service area involved, and any practical constraints.
+              For example, a website request is easier to scope when we know
+              whether you need a new site, a redesign, an ecommerce store, or
+              help improving a few existing pages. For SEO or advertising, it
+              is useful to describe your target customers, current challenges,
+              and the locations or products you want to focus on.
+            </p>
+            <p className="text-muted-foreground leading-relaxed mb-4">
+              Your budget and timing help us suggest a realistic starting
+              point. They do not lock you into a package, and it is fine to
+              choose a flexible timeline or explain that you are still
+              deciding. If several services could help, mention the main
+              business goal first; we can discuss priorities and whether a
+              phased approach makes sense.
+            </p>
+            <p className="text-muted-foreground leading-relaxed">
+              After reviewing your answers, our team can follow up to clarify
+              the scope and discuss suitable next steps. Please avoid including
+              passwords, payment details, or other sensitive information in
+              this form. The request is a starting conversation, not a
+              commitment to purchase. If you would rather talk through your
+              needs first, use the{" "}
+              <Link
+                to="/contact"
+                className="text-brand underline hover:text-brand-strong"
+              >
+                contact page
+              </Link>
+              .
+            </p>
           </div>
           {done ? (
             <div className="glass-card rounded-2xl p-12 text-center animate-fade-up">
