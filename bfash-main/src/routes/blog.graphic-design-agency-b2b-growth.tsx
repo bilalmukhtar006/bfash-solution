@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { BlogContactForm, getPostContent } from "./blog.$slug";
 
 const SITE_URL = "https://bfash.us";
-const title = "Graphic Design Agency: Visual identities that earn attention and drive B2B sales | BFASH Blog";
+const title = "Graphic Design for B2B Growth | BFASH";
 const description = "Discover how a graphic design agency uses strategic brand systems, vector illustration, marketplace visuals, and AI-assisted video to help B2B brands grow.";
 
 export const Route = createFileRoute("/blog/graphic-design-agency-b2b-growth")({

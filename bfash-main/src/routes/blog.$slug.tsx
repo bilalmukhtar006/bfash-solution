@@ -1,9 +1,9 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 
 const SITE_URL = "https://bfash.us";
-const title = "SEO Expert: How the Right Strategy Helps People Find, Trust, and Choose Your Business | BFASH Blog";
+const title = "SEO Expert: Choose the Right Strategy | BFASH";
 const description = "Learn how an SEO expert uses keyword research, technical SEO, semantic content, local SEO, B2B strategy, GEO, AEO, and AI automation to grow qualified traffic and business visibility.";
-const graphicDesignTitle = "Visual identities that earn attention and drive B2B sales | BFASH Blog";
+const graphicDesignTitle = "Graphic Design for B2B Growth | BFASH";
 const graphicDesignDescription = "Discover how strategic graphic design, brand systems, vector illustration, marketplace visuals, and AI-assisted video help B2B brands grow.";
 
 const getRelatedArticlesBlock = (slug: string) => {

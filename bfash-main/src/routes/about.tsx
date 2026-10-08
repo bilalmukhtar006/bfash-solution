@@ -242,6 +242,34 @@ function About() {
           ))}
         </div>
       </Section>
+
+      <Section eyebrow="Our Approach" title="Practical support that fits your business">
+        <div className="mx-auto max-w-4xl">
+          <p className="text-muted-foreground leading-relaxed mb-5">
+            Every business starts from a different place. Some need a clearer
+            website or a stronger search presence. Others need help with
+            advertising, ecommerce, customer follow-up, or daily operations.
+            We begin by learning how your business works and what you want to
+            improve.
+          </p>
+          <p className="text-muted-foreground leading-relaxed mb-5">
+            From there, we agree on priorities and a practical plan. Our team
+            can bring together design, SEO, content, paid media, marketplace
+            support, and virtual assistance when those services help meet the
+            goal. You can work with us on a focused project or add support as
+            your needs change.
+          </p>
+          <p className="text-muted-foreground leading-relaxed">
+            Clear communication matters throughout the work. We explain what
+            is being done, review progress, and use the results to guide next
+            steps. Visit the{" "}
+            <a href="/" className="text-brand underline hover:text-brand-strong">
+              BFASH home page
+            </a>{" "}
+            to explore our services or contact us to discuss your goals.
+          </p>
+        </div>
+      </Section>
     </>
   );
 }

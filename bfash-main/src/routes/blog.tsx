@@ -34,7 +34,7 @@ export const Route = createFileRoute("/blog")({
 export const blogPosts = [
   {
     slug: "seo-expert",
-    title: "SEO Expert: How the Right Strategy Helps People Find, Trust, and Choose Your Business",
+    title: "SEO Expert: Choose the Right Strategy for Your Business",
     excerpt:
       "Learn what an SEO expert does, why keyword research matters, and how SEO, GEO, and AI search work together to help businesses grow.",
     category: "SEO",
@@ -49,7 +49,7 @@ export const blogPosts = [
   },
   {
     slug: "graphic-design-agency-b2b-growth",
-    title: "Visual identities that earn attention and drive B2B sales",
+    title: "Graphic Design Strategies for B2B Growth",
     excerpt:
       "Discover how strategic graphic design, brand systems, vector illustration, marketplace visuals, and AI-assisted video help B2B brands grow.",
     category: "Graphic Design",
@@ -300,6 +300,43 @@ function BlogIndex() {
               ))}
             </div>
           )}
+        </div>
+      </Section>
+
+      <Section eyebrow="Explore the Blog" title="Clear ideas for better digital marketing">
+        <div className="mx-auto max-w-4xl">
+          <p className="text-muted-foreground leading-relaxed mb-5">
+            The BFASH blog shares practical guidance for business owners and
+            marketing teams. Topics include search engine optimization,
+            AI-powered search, content, graphic design, ecommerce, and online
+            growth. Our articles explain what these areas involve and how to
+            think about the next step for your business.
+          </p>
+          <p className="text-muted-foreground leading-relaxed mb-5">
+            You can use the articles to understand common terms, compare
+            approaches, and prepare better questions for your team or agency.
+            Every business has different customers and goals, so advice should
+            be tested against your own data and resources rather than treated
+            as a one-size-fits-all checklist.
+          </p>
+          <p className="text-muted-foreground leading-relaxed">
+            Start with our{" "}
+            <Link
+              to="/knowledge-base-of-digital-marketing"
+              className="text-brand underline hover:text-brand-strong"
+            >
+              digital marketing guide
+            </Link>{" "}
+            for an overview, then read the latest articles above. For help
+            putting an idea into practice, see our{" "}
+            <Link
+              to="/services"
+              className="text-brand underline hover:text-brand-strong"
+            >
+              digital marketing services
+            </Link>
+            .
+          </p>
         </div>
       </Section>
 

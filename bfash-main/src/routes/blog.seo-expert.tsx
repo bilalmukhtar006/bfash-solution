@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { BlogArticle } from "./blog.$slug";
 
 const SITE_URL = "https://bfash.us";
-const title = "SEO Expert: How the Right Strategy Helps People Find, Trust, and Choose Your Business | BFASH Blog";
+const title = "SEO Expert: Choose the Right Strategy | BFASH";
 const description = "Learn how an SEO expert uses keyword research, technical SEO, semantic content, local SEO, B2B strategy, GEO, AEO, and AI automation to grow qualified traffic and business visibility.";
 
 export const Route = createFileRoute("/blog/seo-expert")({

@@ -164,6 +164,33 @@ function ServicesIndex() {
             </div>
           ))}
         </div>
+        <div className="mx-auto mt-20 max-w-4xl">
+          <h2 className="text-3xl font-display font-bold tracking-tight mb-5">
+            Choose Services Around Your Business Goals
+          </h2>
+          <p className="text-muted-foreground leading-relaxed mb-5">
+            A useful marketing plan starts with what your business needs.
+            You may want more local enquiries, stronger organic visibility,
+            better online sales, or a website that makes it easier for
+            customers to take action. We look at your goals, audience, and
+            current marketing before recommending the services that fit.
+          </p>
+          <p className="text-muted-foreground leading-relaxed mb-5">
+            Many projects combine several services. Search optimization can
+            bring relevant visitors to a website. Clear page content and
+            thoughtful design can help those visitors understand your offer.
+            Advertising can support timely campaigns, while CRM and email
+            workflows help teams follow up with leads and customers.
+          </p>
+          <p className="text-muted-foreground leading-relaxed">
+            You can start with one priority and add support as your needs
+            change. Explore a service above, visit the{" "}
+            <Link to="/" className="text-brand underline hover:text-brand-strong">
+              BFASH home page
+            </Link>{" "}
+            for an overview, or contact us to discuss your next step.
+          </p>
+        </div>
       </Section>
     </>
   );

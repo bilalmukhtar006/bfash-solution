@@ -1,0 +1,27 @@
+# BFASH Solution
+
+> BFASH is a digital marketing and business growth agency helping businesses improve visibility, generate leads, and grow online.
+
+## Services
+
+- [All services](https://bfash.us/services): Overview of BFASH digital marketing and business support services.
+- [Technical SEO](https://bfash.us/services/technical-seo): Technical audits, crawlability, indexability, and search visibility.
+- [Ecommerce marketing](https://bfash.us/services/ecommerce): Support for Amazon, Shopify, eBay, and TikTok Shop businesses.
+- [Paid advertising](https://bfash.us/services/ads): Google Ads and paid advertising services.
+- [Graphic design](https://bfash.us/services/graphic-design): Brand identity, logos, illustration, and marketing design.
+- [Web design](https://bfash.us/services/web-design): Website design for business, ecommerce, and lead generation.
+- [Virtual assistance](https://bfash.us/services/virtual-assistance): Administrative, CRM, customer service, and marketing support.
+- [Amazon services](https://bfash.us/services/amazon): Amazon listing, content, advertising, and account support.
+
+## Company
+
+- [About BFASH](https://bfash.us/about)
+- [Portfolio](https://bfash.us/portfolio)
+- [Contact BFASH](https://bfash.us/contact)
+- [Request a quote](https://bfash.us/quote)
+
+## Resources
+
+- [Digital marketing guide](https://bfash.us/knowledge-base-of-digital-marketing)
+- [BFASH blog](https://bfash.us/blog)
+- [XML sitemap](https://bfash.us/sitemap.xml)

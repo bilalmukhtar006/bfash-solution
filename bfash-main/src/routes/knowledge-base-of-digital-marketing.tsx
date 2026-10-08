@@ -7,7 +7,7 @@ export const Route = createFileRoute("/knowledge-base-of-digital-marketing")({
     meta: [
       {
         title:
-          "Digital Marketing Agency Guide 2026 – SEO, AEO & GEO Explained | BFash Solution",
+          "Digital Marketing Guide: SEO, AEO & GEO | BFASH",
       },
       {
         name: "description",
@@ -19,7 +19,7 @@ export const Route = createFileRoute("/knowledge-base-of-digital-marketing")({
         content:
           "digital marketing agency, SEO, AEO, GEO, answer engine optimization, generative engine optimization, digital marketing guide, SEO guide, how to start a digital marketing agency, affordable SEO agency",
       },
-      { property: "og:title", content: "Digital Marketing Agency Guide 2026 – SEO, AEO & GEO Explained" },
+      { property: "og:title", content: "Digital Marketing Guide: SEO, AEO & GEO | BFASH" },
       {
         property: "og:description",
         content:

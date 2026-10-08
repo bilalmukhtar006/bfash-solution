@@ -133,7 +133,7 @@ const services = [
   {
     icon: Headphones,
     title: "Virtual Assistance",
-    to: "/contact",
+    to: "/services/virtual-assistance",
     desc:
       "Save time with reliable support for research, customer tasks, marketing activities, data work, and everyday business operations.",
   },

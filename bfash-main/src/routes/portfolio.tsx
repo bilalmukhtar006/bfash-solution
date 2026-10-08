@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { PageHero, Section } from "@/components/site/Section";
 import { TrendingUp, ExternalLink } from "lucide-react";
@@ -6,7 +6,7 @@ import { TrendingUp, ExternalLink } from "lucide-react";
 export const Route = createFileRoute("/portfolio")({
   head: () => ({
     meta: [
-      { title: "Portfolio — BFash Solutions" },
+      { title: "BFASH Portfolio: Web Design, SEO & Branding" },
       {
         name: "description",
         content:
@@ -187,6 +187,35 @@ function Portfolio() {
               </div>
             </article>
           ))}
+        </div>
+
+        <div className="mx-auto mt-20 max-w-4xl">
+          <h2 className="text-3xl font-display font-bold tracking-tight mb-5">
+            Work Across Digital Growth
+          </h2>
+          <p className="text-muted-foreground leading-relaxed mb-5">
+            This portfolio brings together examples of web design, brand
+            identity, search optimization, and ecommerce support. Each project
+            type calls for a different approach. A website project may focus
+            on clearer navigation and a smoother path to contact. A design
+            project may focus on consistent visuals across a brand's website,
+            marketplace listings, and advertising.
+          </p>
+          <p className="text-muted-foreground leading-relaxed mb-5">
+            Search and marketplace projects start with the business goal,
+            audience, and current challenges. From there, the work can include
+            research, content or listing updates, campaign management, and
+            regular performance reviews. The right measures depend on the
+            project, so we look at useful outcomes such as qualified leads,
+            sales, visibility, and customer experience.
+          </p>
+          <p className="text-muted-foreground leading-relaxed">
+            Browse the examples above by service type, then explore{" "}
+            <Link to="/" className="text-brand underline hover:text-brand-strong">
+              BFASH's digital growth services
+            </Link>{" "}
+            or contact our team to discuss a project with similar goals.
+          </p>
         </div>
       </Section>
     </>

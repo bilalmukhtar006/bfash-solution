@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { PageHero, Section } from "@/components/site/Section";
 import { Button } from "@/components/ui/button";
@@ -57,6 +57,41 @@ function Quote() {
 
       <Section>
         <div className="max-w-2xl mx-auto">
+          <div className="mb-10">
+            <h2 className="text-2xl font-display font-bold mb-3">
+              Tell us what you want to improve
+            </h2>
+            <p className="text-muted-foreground leading-relaxed mb-4">
+              Use this short form to share your project goals, the services
+              you need, and your preferred timeline. Your answers help our
+              team understand the scope before we prepare a proposal. You do
+              not need to have every detail decided. A clear description of
+              your priorities is a useful place to start.
+            </p>
+            <p className="text-muted-foreground leading-relaxed mb-4">
+              BFASH supports businesses with SEO, website design, ecommerce,
+              paid advertising, graphic design, and virtual assistance. We
+              review each request and recommend next steps based on your
+              needs. A quote request does not commit you to a project.
+            </p>
+            <p className="text-muted-foreground leading-relaxed">
+              Not sure which service is right for you? Browse our{" "}
+              <Link
+                to="/services"
+                className="text-brand underline hover:text-brand-strong"
+              >
+                service options
+              </Link>{" "}
+              or{" "}
+              <Link
+                to="/contact"
+                className="text-brand underline hover:text-brand-strong"
+              >
+                contact the BFASH team
+              </Link>{" "}
+              before getting started.
+            </p>
+          </div>
           {done ? (
             <div className="glass-card rounded-2xl p-12 text-center animate-fade-up">
               <CheckCircle2 className="h-16 w-16 text-brand mx-auto mb-5" />
