@@ -433,8 +433,9 @@ function WebDesignPage() {
 
         <p className="text-muted-foreground leading-relaxed mb-5">
           A small business website should focus on clarity. Visitors should
-          quickly understand what the company does, where it operates, who it
-          serves, why it is different, and how to contact or buy from it.
+          quickly understand what the company does and who it serves. They
+          should also see where it works, what makes it different, and how
+          to contact or buy.
         </p>
 
         <p className="text-muted-foreground leading-relaxed mb-5">
@@ -637,17 +638,15 @@ function WebDesignPage() {
         </p>
 
         <p className="text-muted-foreground leading-relaxed mb-5">
-          Answer Engine Optimization and Generative Engine Optimization build
-          on the same fundamental idea: useful information should be clear,
-          well organized, factually supported, and easy for systems and people
-          to understand.
+          Answer Engine Optimization and Generative Engine Optimization share
+          a simple goal. They make useful information clear, well organized,
+          and easy for people and systems to understand.
         </p>
 
         <p className="text-muted-foreground leading-relaxed mb-5">
-          That means FAQ sections, entity information, structured data,
-          descriptive headings, internal links, clear definitions, supporting
-          evidence, and strong topical relationships can all play a role in
-          the broader website strategy.
+          A website strategy can include FAQ sections, structured data,
+          clear headings, and internal links. It should also use clear
+          definitions, evidence, and links between related topics.
         </p>
 
         {/* PERFORMANCE */}
@@ -690,10 +689,9 @@ function WebDesignPage() {
         </p>
 
         <p className="text-muted-foreground leading-relaxed mb-5">
-          Depending on the business, that action could be buying a product,
-          requesting a quote, booking an appointment, calling the company,
-          submitting a lead form, downloading a resource, joining an email
-          list, or contacting sales.
+          The right action depends on the business. Visitors may buy a product,
+          request a quote, book an appointment, or call. They may also submit
+          a form, download a resource, join an email list, or contact sales.
         </p>
 
         <p className="text-muted-foreground leading-relaxed mb-5">
@@ -718,10 +716,9 @@ function WebDesignPage() {
         </p>
 
         <p className="text-muted-foreground leading-relaxed mb-5">
-          BFASH can connect web design with SEO, Google Ads, social media
-          management, social advertising, email marketing, CRM workflows,
-          graphic design, video content, Google Business Profile optimization,
-          TikTok Shop, Amazon, eBay, and Shopify.
+          BFASH can connect web design with SEO, Google Ads, social media,
+          email, CRM, graphic design, and video. We can also support Google
+          Business Profile, TikTok Shop, Amazon, eBay, and Shopify.
         </p>
 
         <p className="text-muted-foreground leading-relaxed mb-5">
@@ -750,10 +747,9 @@ function WebDesignPage() {
         </p>
 
         <p className="text-muted-foreground leading-relaxed mb-5">
-          Our R&amp;D approach includes testing new AI-assisted workflows for
-          content planning, design exploration, image preparation, code
-          assistance, quality checks, customer research, SEO analysis, and
-          marketing automation.
+          Our R&amp;D team tests AI-assisted workflows for content, design,
+          images, code, and quality checks. We also test them for customer
+          research, SEO analysis, and marketing automation.
         </p>
 
         <p className="text-muted-foreground leading-relaxed mb-5">
@@ -920,9 +916,9 @@ function WebDesignPage() {
         </h3>
 
         <p className="text-muted-foreground leading-relaxed mb-5">
-          Launch is not the end. The website can continue to grow through SEO,
-          content marketing, paid advertising, social media, email campaigns,
-          landing pages, CRO testing, and new service or product content.
+          Launch is not the end. Keep improving the site with SEO, content,
+          ads, social media, email, landing pages, and new product or service
+          information.
         </p>
 
         {/* TOPICAL AUTHORITY */}
@@ -936,11 +932,10 @@ function WebDesignPage() {
         </p>
 
         <p className="text-muted-foreground leading-relaxed mb-5">
-          For web design, that structure may include the main service page,
-          industry-specific pages, Shopify and WooCommerce resources, UI/UX
-          content, ecommerce guides, website platform comparisons, technical
-          SEO resources, design trend articles, and conversion optimization
-          content.
+          A web design site may include a main service page and pages for
+          specific industries. It can also cover Shopify, WooCommerce, UI/UX,
+          ecommerce, platform comparisons, technical SEO, design trends,
+          and conversion tips.
         </p>
 
         <p className="text-muted-foreground leading-relaxed mb-5">
@@ -987,13 +982,11 @@ function WebDesignPage() {
               What are the most important web design trends for 2026?
             </h3>
             <p className="text-muted-foreground leading-relaxed">
-              Useful web design trends include responsive and mobile-first
-              layouts, accessible interfaces, strong content hierarchy,
-              faster experiences, purposeful animation, personalization,
-              structured content, and websites designed to work across
-              traditional search and AI-powered discovery. The most important
-              trend is not a visual effect. It is designing around what users
-              need to accomplish.
+              Useful trends include mobile-friendly layouts and accessible
+              interfaces. Other examples are clear content, faster pages,
+              purposeful animation, personalization, and support for search
+              and AI discovery. The most important trend is designing around
+              what users need to do.
             </p>
           </div>
 
@@ -1029,10 +1022,9 @@ function WebDesignPage() {
             </h3>
             <p className="text-muted-foreground leading-relaxed">
               Yes. SEO should be considered during planning and development.
-              Page architecture, URLs, headings, internal links, semantic HTML,
-              metadata, structured data, images, performance, mobile
-              usability, and content organization are easier to build
-              correctly from the beginning than to repair later.
+              Plan the page structure, URLs, headings, links, and metadata early.
+              Also plan for structured data, images, speed, mobile use, and content.
+              It is easier to build these parts well than to fix them later.
             </p>
           </div>
 
@@ -1054,11 +1046,9 @@ function WebDesignPage() {
               Is Shopify good for ecommerce website design?
             </h3>
             <p className="text-muted-foreground leading-relaxed">
-              Shopify can be a practical choice for businesses that want a
-              managed ecommerce platform with built-in commerce functionality,
-              payment options, hosting, and an extensive app ecosystem. The
-              right platform depends on the store's catalog, operations,
-              integrations, budget, and customization requirements.
+              Shopify is a managed ecommerce platform with store tools,
+              payment options, hosting, and many apps. The best platform
+              depends on your products, operations, budget, and integrations.
             </p>
           </div>
 
@@ -1067,12 +1057,10 @@ function WebDesignPage() {
               Can a website generate B2B leads?
             </h3>
             <p className="text-muted-foreground leading-relaxed">
-              Yes. A B2B website can generate leads through clear service
-              positioning, useful content, industry pages, case studies,
-              trust signals, landing pages, forms, calls to action, SEO,
-              advertising, and analytics. The website should make it easy for
-              qualified visitors to understand the offer and contact the
-              business.
+              Yes. A B2B website can attract leads with clear service pages,
+              useful content, case studies, and trust signals. Landing pages,
+              forms, SEO, ads, and analytics can also help. Make it easy for
+              visitors to understand your offer and contact you.
             </p>
           </div>
 
@@ -1081,11 +1069,10 @@ function WebDesignPage() {
               Can BFASH redesign an existing website?
             </h3>
             <p className="text-muted-foreground leading-relaxed">
-              Yes. A redesign can address outdated visual design, confusing
-              navigation, weak mobile usability, poor content structure,
-              technical SEO problems, slow pages, weak calls to action, and
-              inconsistent branding. Existing content and search value can be
-              reviewed before changes are made.
+              Yes. A redesign can improve outdated design, confusing menus,
+              mobile usability, and content structure. It can also address
+              technical SEO, slow pages, weak calls to action, and inconsistent
+              branding. We can review existing content before making changes.
             </p>
           </div>
 
@@ -1094,11 +1081,10 @@ function WebDesignPage() {
               Can BFASH build an ecommerce website?
             </h3>
             <p className="text-muted-foreground leading-relaxed">
-              Yes. BFASH can support ecommerce website projects involving
-              Shopify and WooCommerce, including store structure, product
-              pages, collections, visual assets, landing pages, SEO
-              foundations, analytics, conversion strategy, and connections
-              with broader digital marketing campaigns.
+              Yes. BFASH can help with Shopify and WooCommerce projects.
+              This includes store structure, product pages, collections,
+              images, landing pages, SEO, analytics, and conversion planning.
+              We can also connect the store to your wider marketing campaigns.
             </p>
           </div>
 
@@ -1107,12 +1093,10 @@ function WebDesignPage() {
               Why should web design and SEO be handled together?
             </h3>
             <p className="text-muted-foreground leading-relaxed">
-              Web design determines much of the structure that SEO depends on.
-              If SEO is considered from the beginning, the website can be
-              organized around useful topics, logical URLs, internal links,
-              readable content, technical foundations, structured data, and
-              user experience instead of requiring major structural changes
-              later.
+              Web design sets much of the structure that SEO depends on.
+              Plan for SEO from the start. This helps organize topics, URLs,
+              internal links, content, and structured data. It can also reduce
+              the need for major changes later.
             </p>
           </div>
 
@@ -1131,17 +1115,15 @@ function WebDesignPage() {
         </p>
 
         <p className="text-muted-foreground leading-relaxed mb-8">
-          Whether the project is a small business website, B2B website,
-          ecommerce store, Shopify project, WooCommerce website, marketplace
-          brand, or complete website redesign,{" "}
+          Need a small business website, a B2B site, an online store, or a redesign?{" "}
           <Link
             to="/"
             className="text-brand hover:text-brand-strong underline"
           >
             BFASH
           </Link>{" "}
-          combines web design, SEO, digital marketing, creative services,
-          automation, and business growth strategy under one team.
+          can bring web design, SEO, marketing, creative work, and automation
+          together in one team.
         </p>
 
         <div className="text-center">

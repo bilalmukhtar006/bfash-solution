@@ -31,7 +31,7 @@ export function ServicePage({
             <div className="grid h-14 w-14 place-items-center rounded-xl bg-gradient-to-br from-brand to-brand-strong mb-5 brand-glow">
               <Icon className="h-7 w-7 text-white" />
             </div>
-            <h3 className="font-display font-bold text-xl mb-3">{title}</h3>
+            <h2 className="font-display font-bold text-xl mb-3">{title}</h2>
             <p className="text-muted-foreground text-sm leading-relaxed mb-5">{intro}</p>
             <Link to="/quote">
               <Button className="w-full bg-gradient-to-r from-brand to-brand-strong text-white border-0 hover:text-white">
@@ -43,7 +43,7 @@ export function ServicePage({
           <div className="space-y-6">
             {features.map((f) => (
               <div key={f.title} className="glass-card rounded-2xl p-7">
-                <h4 className="font-display font-bold text-lg mb-2">{f.title}</h4>
+                <h3 className="font-display font-bold text-lg mb-2">{f.title}</h3>
                 <p className="text-muted-foreground leading-relaxed">{f.desc}</p>
               </div>
             ))}

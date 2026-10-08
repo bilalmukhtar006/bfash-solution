@@ -81,11 +81,11 @@ function KnowledgeBasePage() {
       question: "Q1: What is a digital marketing agency?",
       answer: (
         <p>
-          A <strong className="text-white">digital marketing agency</strong> is a company that
-          helps businesses promote their products or services online through SEO, social media,
-          paid advertising, content marketing, and other digital channels. According to
-          <em>ScienceDirect</em> research <sup>[2]</sup>, these agencies have become essential
-          partners for businesses navigating the digital economy.
+          A <strong className="text-white">digital marketing agency</strong> helps
+          businesses promote products and services online. Services may include
+          SEO, social media, paid ads, and content. Research from
+          <em> ScienceDirect</em> <sup>[2]</sup> discusses the role of agencies
+          in the digital economy.
         </p>
       ),
     },
@@ -93,11 +93,11 @@ function KnowledgeBasePage() {
       question: "Q2: How does a digital marketing agency work?",
       answer: (
         <p>
-          A digital marketing agency typically follows a four-step process: <strong className="text-white">discovery and research</strong>,
-          <strong className="text-white">strategy development</strong>, <strong className="text-white">execution and implementation</strong>,
-          and <strong className="text-white">measurement and optimization</strong>. Based on the
-          <em>Journal of Business Research</em> <sup>[3]</sup>, effective agencies use data-driven
-          approaches to deliver measurable results.
+          Agencies often follow four steps: <strong className="text-white">discovery</strong>,
+          <strong className="text-white"> strategy</strong>, <strong className="text-white">implementation</strong>,
+          and <strong className="text-white">measurement</strong>. Research in the
+          <em> Journal of Business Research</em> <sup>[3]</sup> supports using data
+          to measure results.
         </p>
       ),
     },
@@ -105,9 +105,8 @@ function KnowledgeBasePage() {
       question: "Q3: How to start a digital marketing agency with no experience?",
       answer: (
         <p>
-          Starting with no experience is possible by choosing a niche, building skills through
-          online courses, creating a portfolio, setting up your business, and finding your
-          first clients through networking and referrals <sup>[5]</sup>.
+          Choose a niche and learn the core skills. Build a portfolio, set up
+          your business, and find clients through networking and referrals <sup>[5]</sup>.
         </p>
       ),
     },
@@ -115,9 +114,9 @@ function KnowledgeBasePage() {
       question: "Q4: How many digital marketing agencies are in the US?",
       answer: (
         <p>
-          As of 2026, there are <strong className="text-white">30,847</strong> digital marketing agencies in the
-          United States <sup>[6]</sup>, including full-service agencies, SEO specialists,
-          social media agencies, and PPC experts.
+          A 2026 estimate counts <strong className="text-white">30,847</strong>
+          digital marketing agencies in the United States <sup>[6]</sup>.
+          These include full-service agencies and specialists in SEO, social media, and PPC.
         </p>
       ),
     },
@@ -136,10 +135,10 @@ function KnowledgeBasePage() {
       question: "Q6: How does search engine optimization work?",
       answer: (
         <p>
-          SEO works through a combination of <strong className="text-white">on-page optimization</strong>{" "}
-          (keywords, meta tags, content), <strong className="text-white">off-page optimization</strong>{" "}
-          (backlinks, social signals), and <strong className="text-white">technical SEO</strong>{" "}
-          (site speed, mobile responsiveness, structured data) <sup>[2]</sup>.
+          SEO combines several types of work.{" "}
+          <strong className="text-white">On-page optimization</strong> improves page content and metadata.
+          <strong className="text-white"> Off-page optimization</strong> builds signals such as backlinks.
+          <strong className="text-white"> Technical SEO</strong> improves speed, mobile use, and structured data <sup>[2]</sup>.
         </p>
       ),
     },
@@ -147,10 +146,9 @@ function KnowledgeBasePage() {
       question: "Q7: What are affordable SEO services?",
       answer: (
         <p>
-          Affordable SEO services are cost-effective optimization strategies designed for small
-          and medium businesses. According to <strong className="text-white">Semrush</strong> data <sup>[7]</sup>,
-          keywords like "affordable SEO services" have high search volumes, indicating strong
-          market demand.
+          Affordable SEO services help small and medium businesses improve search visibility
+          within their budget. <strong className="text-white">Semrush</strong> data <sup>[7]</sup>
+          shows strong search demand for terms such as "affordable SEO services."
         </p>
       ),
     },
@@ -158,9 +156,8 @@ function KnowledgeBasePage() {
       question: "Q8: What is a digital marketing company?",
       answer: (
         <p>
-          A digital marketing company is another term for a digital marketing agency — a firm
-          that provides online marketing services to businesses, including SEO, social media,
-          paid advertising, and content marketing.
+          A digital marketing company is another name for an agency.
+          It may provide SEO, social media, paid ads, and content marketing.
         </p>
       ),
     },
@@ -178,10 +175,10 @@ function KnowledgeBasePage() {
       question: "Q10: How can I optimize my website for search engines?",
       answer: (
         <p>
-          You can optimize your website by conducting keyword research, writing high-quality
-          content, using descriptive title tags and meta descriptions, building backlinks, and
-          ensuring your site is fast and mobile-friendly. <Link to="/portfolio" className="text-brand hover:underline">View our portfolio</Link>{" "}
-          to see examples of successful SEO campaigns.
+          Start with keyword research and useful content. Add clear page titles and descriptions.
+          Build links and make sure your website works well on mobile.
+          <Link to="/portfolio" className="text-brand hover:underline"> View our portfolio</Link>{" "}
+          to see examples of our work.
         </p>
       ),
     },
@@ -219,28 +216,24 @@ function KnowledgeBasePage() {
           <article className="prose prose-invert max-w-none">
             {/* INTRODUCTION */}
             <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-              The digital marketing landscape has evolved dramatically over the past decade.
-              What once meant simply running Google Ads or posting on Facebook has transformed
-              into a sophisticated ecosystem involving search engines, answer engines, and
-              generative AI platforms. For businesses and aspiring agency owners alike,
-              understanding this ecosystem is no longer optional — it is essential.
+              Digital marketing has changed a lot over the past decade.
+              It now includes search engines, answer engines, and generative AI.
+              Businesses need to understand these channels to reach customers.
             </p>
 
             <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-              A <strong className="text-white">digital marketing agency</strong> is a company
-              that helps businesses promote their products or services online through various
-              digital channels. These agencies handle everything from search engine optimization
-              (SEO) and content creation to social media management and paid advertising.
-              But in 2026, the definition of digital marketing has expanded to include
+              A <strong className="text-white">digital marketing agency</strong> helps
+              businesses promote products and services online. Agencies may provide
+              search engine optimization (SEO), content, social media, and paid ads.
+              In 2026, digital marketing also includes
               <strong className="text-white"> Answer Engine Optimization (AEO)</strong> and
-              <strong className="text-white"> Generative Engine Optimization (GEO)</strong> —
-              two strategies that are reshaping how brands get discovered online <sup>[1]</sup>.
+              <strong className="text-white"> Generative Engine Optimization (GEO)</strong>.
+              These approaches can help people discover brands online <sup>[1]</sup>.
             </p>
 
             <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-              This comprehensive guide will walk you through what a digital marketing agency does,
-              how it works, how to start one, and how modern SEO, AEO, and GEO strategies can
-              help your business dominate search results and AI-driven platforms.
+              This guide explains what agencies do and how they work.
+              It also covers how to start an agency and use SEO, AEO, and GEO.
             </p>
 
             {/* SECTION 1: WHAT IS A DIGITAL MARKETING AGENCY */}
@@ -249,17 +242,15 @@ function KnowledgeBasePage() {
             </h2>
 
             <p className="text-lg text-muted-foreground leading-relaxed mb-4">
-              A <strong className="text-white">digital marketing agency</strong> is a professional
-              service firm that provides online marketing solutions to businesses. These agencies
-              employ specialists in various disciplines, including SEO, content marketing, social
-              media, paid advertising, email marketing, and analytics.
+              A <strong className="text-white">digital marketing agency</strong> helps
+              businesses market their products and services online. Its team may work
+              on SEO, content, social media, paid ads, email, and analytics.
             </p>
 
             <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-              According to research published in the <em>International Journal of Information Management</em>{" "}
-              <sup>[2]</sup>, digital marketing agencies have become essential partners for
-              businesses navigating the complexities of the digital economy. They bridge the gap
-              between traditional marketing and the rapidly evolving digital landscape.
+              Research in the <em>International Journal of Information Management</em>{" "}
+              <sup>[2]</sup> describes agencies as partners for businesses in the digital economy.
+              They connect traditional marketing with newer online channels.
             </p>
 
             <h3 className="text-2xl font-display font-bold text-white mt-8 mb-4">
@@ -371,8 +362,8 @@ function KnowledgeBasePage() {
             </h2>
 
             <p className="text-lg text-muted-foreground leading-relaxed mb-4">
-              Starting a digital marketing agency with no prior experience is challenging but achievable.
-              Based on insights from industry experts and academic research, here is a step-by-step guide:
+              Starting an agency without experience can be challenging, but it is possible.
+              Use these steps to get started:
             </p>
 
             <h3 className="text-2xl font-display font-bold text-white mt-6 mb-3">
@@ -400,7 +391,7 @@ function KnowledgeBasePage() {
               Step 3: Create a Portfolio
             </h3>
             <p className="text-lg text-muted-foreground leading-relaxed mb-4">
-              Demonstrate your capabilities by:
+              Show what you can do by:
             </p>
             <ul className="list-disc pl-6 space-y-2 text-muted-foreground mb-6">
               <li>Offering free services to friends or non-profits</li>
@@ -607,7 +598,7 @@ function KnowledgeBasePage() {
                   />
                 </div>
                 <p className="text-muted-foreground text-sm mt-3 text-center">
-                  <strong className="text-white">Figure 1:</strong> The Complete Guide to SEO, AEO, and GEO in 2026 — A visual overview of how search engine optimization, answer engine optimization, and generative engine optimization work together to drive digital marketing success.
+                  <strong className="text-white">Figure 1:</strong> A visual guide to SEO, AEO, GEO, and digital marketing.
                 </p>
                 <p className="text-muted-foreground/60 text-xs text-center mt-1">
                   Alt text: The Complete Guide to SEO, AEO, and GEO in 2026 — Digital marketing strategies for modern search and AI platforms

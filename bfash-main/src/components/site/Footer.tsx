@@ -65,9 +65,9 @@ export function Footer() {
 
         {/* Quick Links */}
         <div>
-          <h4 className="mb-4 font-display text-sm font-semibold uppercase tracking-wider text-brand">
+          <h2 className="mb-4 font-display text-sm font-semibold uppercase tracking-wider text-brand">
             Quick Links
-          </h4>
+          </h2>
 
           <ul className="grid grid-cols-2 gap-x-4 gap-y-2 text-sm">
             {links.map((link) => (
@@ -85,9 +85,9 @@ export function Footer() {
 
         {/* Contact */}
         <div>
-          <h4 className="mb-4 font-display text-sm font-semibold uppercase tracking-wider text-brand">
+          <h2 className="mb-4 font-display text-sm font-semibold uppercase tracking-wider text-brand">
             Get in Touch
-          </h4>
+          </h2>
 
           <ul className="space-y-3 text-sm">
             {/* Email */}

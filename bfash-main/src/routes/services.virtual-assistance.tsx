@@ -253,10 +253,9 @@ function VirtualAssistancePage() {
         </p>
 
         <p className="text-muted-foreground leading-relaxed mb-5">
-          BFASH takes this model further. Instead of treating virtual
-          assistance as simple data entry, we connect virtual assistant
-          support with digital marketing, CRM, SEO, social media, ecommerce,
-          lead generation, email marketing, advertising, and business growth.
+          BFASH connects virtual assistant support with your wider business
+          goals. Our team can help with marketing, CRM, SEO, social media,
+          ecommerce, lead generation, and email.
         </p>
 
         <div className="my-12 flex justify-center">
@@ -542,7 +541,7 @@ function VirtualAssistancePage() {
           >
             Graphic & Logo Designing
           </Link>{" "}
-          so social posts, ads, videos, product graphics, and brand assets can
+          so posts, ads, videos, product graphics, and other brand assets
           follow one visual system.
         </p>
 
@@ -755,10 +754,9 @@ function VirtualAssistancePage() {
         </p>
 
         <p className="text-muted-foreground leading-relaxed mb-5">
-          A virtual sales assistant can help maintain the sales pipeline by
-          updating lead stages, creating reminders, organizing prospect
-          information, scheduling meetings, preparing reports, and supporting
-          email campaigns.
+          A virtual sales assistant can update lead stages and organize
+          prospect details. They can also schedule meetings, prepare reports,
+          and support email campaigns.
         </p>
 
         <p className="text-muted-foreground leading-relaxed mb-5">
@@ -780,16 +778,15 @@ function VirtualAssistancePage() {
         </ul>
 
         <p className="text-muted-foreground leading-relaxed mb-5">
-          For businesses that need a stronger marketing system, BFASH can
-          combine virtual assistance with{" "}
+          BFASH can also connect assistant support with your marketing.
+          This may include{" "}
           <Link
             to="/services/ads"
             className="text-brand hover:text-brand-strong underline"
           >
             paid advertising
           </Link>
-          , SEO, social media, email marketing, CRM management, and lead
-          generation.
+          , SEO, social media, email, CRM, and lead generation.
         </p>
 
         {/* AI */}
@@ -877,8 +874,8 @@ function VirtualAssistancePage() {
 
         <p className="text-muted-foreground leading-relaxed mb-5">
           Standard operating procedures help create consistency. A good SOP
-          explains what needs to be done, when it needs to be done, what tools
-          are required, and what the finished result should look like.
+          explains the task and when to do it. It lists the tools and describes
+          what a finished task should look like.
         </p>
 
         <h3 className="text-2xl font-display font-bold mt-10 mb-4">
@@ -937,10 +934,9 @@ function VirtualAssistancePage() {
         </p>
 
         <p className="text-muted-foreground leading-relaxed mb-5">
-          For example, a B2B company could use a virtual sales assistant to
-          research prospects, a CRM assistant to update records, a marketing
-          assistant to manage content, and a digital marketing team to drive
-          traffic and generate demand.
+          A B2B company might ask a virtual sales assistant to research
+          prospects and update CRM records. A marketing assistant could manage
+          content while the marketing team attracts visitors and new leads.
         </p>
 
         <p className="text-muted-foreground leading-relaxed mb-5">
@@ -1283,12 +1279,9 @@ function VirtualAssistancePage() {
         </p>
 
         <p className="text-muted-foreground leading-relaxed mb-8">
-          Whether the requirement is a virtual administrative assistant, a
-          virtual marketing assistant, a social media virtual assistant, an
-          ecommerce virtual assistant, CRM support, lead generation, customer
-          service, or sales assistance, the objective remains the same:
-          reduce operational pressure and give the business more capacity to
-          grow.
+          We can help with admin, marketing, social media, ecommerce, CRM,
+          leads, customer service, or sales. Our goal is to reduce your daily
+          workload and give your business room to grow.
         </p>
 
         <div className="text-center">
