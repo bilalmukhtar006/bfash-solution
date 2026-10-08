@@ -248,6 +248,41 @@ function Portfolio() {
             </Link>{" "}
             to tell us about your project.
           </p>
+          <h2 className="mt-10 text-2xl font-display font-bold tracking-tight mb-4">
+            How to Evaluate Portfolio Results
+          </h2>
+          <p className="text-muted-foreground leading-relaxed mb-5">
+            A project metric is most useful when it is considered alongside the
+            work that produced it. Conversion rate, organic traffic, page speed,
+            brand recognition, and advertising efficiency measure different
+            things. They should not be compared as if they share the same
+            baseline or time frame. When reviewing an example, consider the
+            original business challenge, the audience, the changes made, and
+            how success was measured.
+          </p>
+          <p className="text-muted-foreground leading-relaxed mb-5">
+            The right priorities also vary by service. A web design engagement
+            may focus on clear messaging, accessible navigation, mobile
+            usability, and a straightforward path to contact or purchase.
+            Branding work may bring consistency to a company's identity across
+            its website, sales materials, and product listings. SEO work
+            typically combines relevant content with technical and on-page
+            improvements, while an Amazon engagement may address listing
+            quality, storefront presentation, or advertising efficiency.
+          </p>
+          <p className="text-muted-foreground leading-relaxed">
+            If you are considering similar work, start with the outcome your
+            business needs and the obstacles preventing it today. Useful
+            context can include your current website or store, the customers
+            you want to reach, existing performance data, and any timing or
+            budget constraints. With that information, the project scope can
+            prioritize the most relevant improvements and define practical
+            measures for reviewing progress.{" "}
+            <Link to="/contact" className="text-brand underline hover:text-brand-strong">
+              Contact BFASH
+            </Link>{" "}
+            to discuss your goals.
+          </p>
         </div>
       </Section>
     </>
