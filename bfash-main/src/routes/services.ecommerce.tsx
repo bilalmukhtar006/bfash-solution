@@ -7,12 +7,12 @@ export const Route = createFileRoute("/services/ecommerce")({
     meta: [
       {
         title:
-          "Ecommerce Digital Marketing Agency for Amazon, Shopify & eBay | BFASH",
+          "Ecommerce Marketing Services for Amazon, Shopify & eBay | BFASH",
       },
       {
         name: "description",
         content:
-          "BFASH is an ecommerce digital marketing agency helping Amazon, Shopify, eBay, and TikTok Shop businesses grow with marketplace SEO, product listings, PPC, A+ content, CRO, social commerce, and AI automation.",
+          "BFASH is an ecommerce marketing services agency helping Amazon, Shopify, eBay, and TikTok Shop businesses grow with marketplace SEO, product listings, PPC, A+ content, CRO, social commerce, and AI automation.",
       },
       {
         name: "keywords",
@@ -22,12 +22,12 @@ export const Route = createFileRoute("/services/ecommerce")({
       {
         property: "og:title",
         content:
-          "Ecommerce Digital Marketing Agency for Amazon, Shopify & eBay | BFASH",
+          "Ecommerce Marketing Services for Amazon, Shopify & eBay | BFASH",
       },
       {
         property: "og:description",
         content:
-          "Grow Amazon, Shopify, eBay, and TikTok Shop businesses with marketplace management, SEO, PPC, product listing optimization, social commerce, and AI-powered ecommerce marketing.",
+          "Grow Amazon, Shopify, eBay, and TikTok Shop businesses with marketplace management, SEO, PPC, product listing optimization, social commerce, and AI-powered ecommerce marketing services.",
       },
       {
         property: "og:url",
@@ -124,7 +124,7 @@ export const Route = createFileRoute("/services/ecommerce")({
               acceptedAnswer: {
                 "@type": "Answer",
                 text:
-                  "Yes. BFASH can help with Shopify store design, theme research, product pages, banners, landing pages, SEO, conversion optimization, and ecommerce marketing.",
+                  "Yes. BFASH can help with Shopify store design, theme research, product pages, banners, landing pages, SEO, conversion optimization, and ecommerce marketing services.",
               },
             },
             {
@@ -305,8 +305,8 @@ function EcommercePage() {
 
         <div className="my-12 flex justify-center">
           <img
-            src="/ecommerce.webp"
-            alt="BFASH ecommerce digital marketing and marketplace management for Amazon Shopify eBay and TikTok Shop"
+            src="/ecommerce-marketing-services.webp"
+            alt="BFASH ecommerce marketing services for Amazon Shopify eBay and TikTok Shop"
             className="w-full max-w-2xl h-auto rounded-xl shadow-2xl border border-white/10"
           />
         </div>
@@ -904,7 +904,7 @@ function EcommercePage() {
         {/* B2B SECTION */}
 
         <h2 className="text-3xl md:text-4xl font-display font-bold tracking-tight mt-16 mb-6">
-          Ecommerce Marketing for B2B Businesses
+          Ecommerce Marketing Services for B2B Businesses
         </h2>
 
         <p className="text-muted-foreground leading-relaxed mb-5">
@@ -979,7 +979,7 @@ function EcommercePage() {
         </p>
 
         <p className="text-muted-foreground leading-relaxed mb-5">
-          BFASH can connect ecommerce marketing with CRM management, email
+          BFASH can connect ecommerce marketing services with CRM management, email
           marketing, social media management, lead organization, customer
           segmentation, and follow-up workflows.
         </p>
@@ -1089,7 +1089,7 @@ function EcommercePage() {
         </h2>
 
         <p className="text-muted-foreground leading-relaxed mb-5">
-          Good ecommerce marketing needs measurement.
+          Good ecommerce marketing services needs measurement.
         </p>
 
         <ul className="list-disc pl-6 space-y-2 text-muted-foreground mb-5">
@@ -1287,7 +1287,7 @@ function EcommercePage() {
             <p className="text-muted-foreground leading-relaxed">
               Yes. BFASH can help with Shopify store design, theme research,
               product pages, banners, landing pages, SEO, conversion
-              optimization, and ecommerce marketing.
+              optimization, and ecommerce marketing services.
             </p>
           </div>
 
@@ -1490,7 +1490,7 @@ function EcommercePage() {
           Whether the goal is to launch an Amazon product, improve an existing
           Shopify store, build an eBay presence, grow TikTok Shop sales,
           improve product listings, reduce wasted PPC spending, generate B2B
-          traffic, or create a complete ecommerce marketing system, BFASH can
+          traffic, or create a complete ecommerce marketing services system, BFASH can
           help.
         </p>
 
