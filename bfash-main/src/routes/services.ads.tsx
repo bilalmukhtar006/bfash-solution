@@ -279,7 +279,7 @@ function AdsPage() {
         {/* IMAGE */}
         <div className="my-12 flex justify-center">
           <img
-            src="/ads.webp"
+            src="/Google-Ads-Agency.webp"
             alt="BFASH Google Ads agency and paid advertising services for B2B, ecommerce, Shopify, Amazon, eBay, and social media businesses"
             className="w-full max-w-2xl h-auto rounded-xl shadow-2xl border border-white/10"
           />
