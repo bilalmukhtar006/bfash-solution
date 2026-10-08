@@ -17,7 +17,7 @@ export const Route = createFileRoute("/services/ecommerce")({
       {
         name: "keywords",
         content:
-          "ecommerce digital marketing agency, Amazon product research, Amazon product listing services, Amazon product listing optimization, Amazon A+ content, Amazon PPC advertising management, eBay store setup, Shopify store design, Shopify themes, TikTok Shop management, ecommerce PPC advertising, Amazon inventory management, marketplace management agency",
+          "ecommerce marketing services, ecommerce marketing agency, ecommerce digital marketing agency, Amazon product research, Amazon product listing services, Amazon product listing optimization, Amazon A+ content, Amazon PPC advertising management, eBay store setup, Shopify store design, Shopify themes, TikTok Shop management, ecommerce PPC advertising, Amazon inventory management, marketplace management agency",
       },
       {
         property: "og:title",
@@ -1089,7 +1089,7 @@ function EcommercePage() {
         </h2>
 
         <p className="text-muted-foreground leading-relaxed mb-5">
-          Good ecommerce marketing services needs measurement.
+          Good ecommerce marketing needs measurement.
         </p>
 
         <ul className="list-disc pl-6 space-y-2 text-muted-foreground mb-5">
