@@ -50,10 +50,6 @@ export function Footer() {
               width={63}
               height={63}
               loading="lazy"
-              onError={(e) => {
-                // Fallback to PNG if WebP doesn't load
-                (e.target as HTMLImageElement).src = "/logo.png";
-              }}
             />
 
             <span className="font-display text-lg font-bold tracking-tight text-white">

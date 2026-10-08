@@ -259,14 +259,19 @@ function VirtualAssistancePage() {
           lead generation, email marketing, advertising, and business growth.
         </p>
 
-        {/* IMAGE */}
-
         <div className="my-12 flex justify-center">
-          <img
-            src="/virtual-assistance.webp"
-            alt="BFASH virtual assistant services for administration CRM social media customer support ecommerce and business growth"
-            className="w-full max-w-2xl h-auto rounded-xl shadow-2xl border border-white/10"
-          />
+          <div
+            role="img"
+            aria-label="Virtual assistant services"
+            className="flex aspect-[16/9] w-full max-w-2xl items-center justify-center rounded-xl border border-white/10 bg-gradient-to-br from-brand/20 via-background to-brand-strong/20 shadow-2xl"
+          >
+            <div className="flex h-24 w-24 items-center justify-center rounded-full border border-brand/30 bg-brand/10">
+              <Headphones
+                aria-hidden="true"
+                className="h-12 w-12 text-brand"
+              />
+            </div>
+          </div>
         </div>
 
         {/* CORE SERVICES */}
