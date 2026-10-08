@@ -106,8 +106,8 @@ function Contact() {
     <>
       <PageHero
         eyebrow="Contact BFASH"
-        title="Let's build a smarter growth strategy for your business"
-        subtitle="Tell us what your business does, what is not working, and where you want to go. BFASH can help identify the right digital marketing, SEO, GEO, website, advertising, or business growth opportunity."
+        title="Let's find the right way to grow your business"
+        subtitle="Tell us about your business, your main challenge, and your goals. We will help you find a practical next step."
       />
 
       <Section>
@@ -117,12 +117,11 @@ function Contact() {
               <div className="glass-card rounded-2xl p-5 sm:p-6">
                 <p className="text-sm uppercase tracking-wider text-brand mb-2">Talk to BFASH</p>
                 <h2 className="text-2xl md:text-3xl font-display font-bold mb-3">
-                  Digital marketing starts with the right business problem
+                  Start with your main business goal
                 </h2>
                 <p className="text-muted-foreground leading-7">
-                  Whether the goal is more qualified leads, stronger Google visibility, better local search performance,
-                  more online sales, AI-search visibility, or a website that converts visitors into customers, start by
-                  telling us what the business needs. You do not need to know complicated marketing terminology.
+                  Do you need more leads, better visibility, or more online sales? Maybe your website needs work.
+                  Tell us what you want to improve. You do not need to know marketing terms.
                 </p>
               </div>
 
@@ -225,9 +224,9 @@ function Contact() {
                 </h2>
                 <div className="grid sm:grid-cols-3 gap-4">
                   {[
-                    ["01", "Tell us about the business", "Share the website, market, location, services, current marketing, challenges, and goals."],
-                    ["02", "Identify the opportunity", "We look at the business objective and the channels that can realistically support it."],
-                    ["03", "Choose the next step", "The next step may involve SEO, GEO, local SEO, ads, content, website work, CRM, or another growth service."],
+                    ["01", "Tell us about your business", "Share your website, location, services, and goals. Tell us what is getting in the way."],
+                    ["02", "Explore your options", "We review your goals and find the channels that may help."],
+                    ["03", "Plan your next step", "Your plan may include SEO, ads, content, website updates, or CRM support."],
                   ].map(([number, title, description]) => (
                     <div key={number} className="rounded-xl border border-border bg-white/5 p-4">
                       <div className="text-brand font-bold mb-2">{number}</div>
@@ -239,23 +238,22 @@ function Contact() {
               </div>
 
               <div className="glass-card rounded-2xl p-5 sm:p-7">
-                <p className="text-sm uppercase tracking-wider text-brand mb-2">Digital marketing services</p>
+                <p className="text-sm uppercase tracking-wider text-brand mb-2">How we can help</p>
                 <h2 className="text-2xl md:text-3xl font-display font-bold mb-3">
-                  One growth strategy, connected across the right channels
+                  Choose the services that fit your goals
                 </h2>
                 <p className="text-muted-foreground leading-7 mb-5">
-                  BFASH helps businesses connect search visibility, AI-search readiness, local discovery, paid media,
-                  websites, content, social media, email, CRM, marketplaces, and conversion opportunities. The right mix
-                  depends on the business rather than forcing every company into the same marketing package.
+                  We offer search, advertising, website, content, and marketplace services.
+                  Your plan will depend on your business and your goals.
                 </p>
                 <div className="grid sm:grid-cols-2 gap-3">
                   {[
-                    ["SEO & content strategy", "/services/technical-seo", "Build relevant organic visibility around customer search intent."],
-                    ["GEO & AI-search visibility", "/services/technical-seo", "Create clear, evidence-backed information that is easier for search and AI systems to understand."],
-                    ["Local SEO & Google visibility", "/services/technical-seo", "Improve local discovery for customers searching by service and location."],
-                    ["Website design", "/services/web-design", "Create a clear, conversion-focused digital experience for visitors and prospects."],
-                    ["Amazon business", "/services/amazon", "Support marketplace visibility and e-commerce growth opportunities."],
-                    ["Graphic & logo design", "/services/graphic-design", "Strengthen visual identity across digital touchpoints."],
+                    ["SEO & content strategy", "/services/technical-seo", "Help customers find useful pages through search."],
+                    ["GEO & AI search", "/services/technical-seo", "Make your business information clear for AI search tools."],
+                    ["Local SEO", "/services/technical-seo", "Help nearby customers find your business."],
+                    ["Website design", "/services/web-design", "Make your website clear and easy to use."],
+                    ["Amazon business", "/services/amazon", "Improve your marketplace listings and reach."],
+                    ["Graphic & logo design", "/services/graphic-design", "Build a consistent look for your business."],
                   ].map(([title, href, description]) => (
                     <a
                       key={title}
@@ -273,32 +271,28 @@ function Contact() {
               <div className="glass-card rounded-2xl p-5 sm:p-7">
                 <p className="text-sm uppercase tracking-wider text-brand mb-2">SEO + GEO expertise</p>
                 <h2 className="text-2xl md:text-3xl font-display font-bold mb-4">
-                  Search visibility now includes traditional search and AI-powered discovery
+                  Help people find your business in search
                 </h2>
                 <div className="space-y-4 text-muted-foreground leading-7">
                   <p>
-                    Traditional SEO helps a business earn visibility in search results, while Generative Engine Optimization
-                    (GEO) focuses on making useful business information easier for AI-powered search systems to understand
-                    and potentially include in generated answers. These approaches work together rather than replacing one another.
+                    SEO helps people find your website in search results. GEO, or Generative Engine Optimization,
+                    helps make your information easier for AI search tools to understand. Both can support your online visibility.
                   </p>
                   <p>
-                    A modern search strategy can connect keyword research, search intent, topical coverage, technical SEO,
-                    internal linking, local signals, authoritative mentions, useful content, and conversion paths. The goal
-                    is not simply more traffic. The goal is to attract the right audience and make it easier for that audience
-                    to understand why the business is relevant.
+                    A good search plan starts with the questions your customers ask. It also considers your website,
+                    local presence, useful content, and the steps visitors take to become customers.
                   </p>
                   <p>
-                    The supplied SEO/GEO research also emphasizes direct answers, real user questions, scannable structure,
-                    evidence-backed claims, crawlability, indexing, fresh information, and trustworthy external mentions.
+                    We aim to give clear answers, support claims with evidence, and keep important pages easy to find.
+                    We also keep information useful and up to date.
                   </p>
                 </div>
 
                 <div className="mt-6 rounded-xl border border-brand/20 bg-brand/5 p-4">
                   <h3 className="font-semibold mb-2">Research perspective: Ghulam Ali</h3>
                   <p className="text-sm text-muted-foreground leading-6">
-                    Ghulam Ali's supplied SEO and GEO guidance emphasizes answering real questions directly, organizing content
-                    into clear sections, supporting claims with evidence, keeping important pages technically discoverable,
-                    and building trusted visibility beyond the website itself.
+                    Ghulam Ali's SEO and GEO guidance recommends clear answers, useful sections, and evidence for important claims.
+                    It also highlights making key pages easy to find and building trust beyond your website.
                   </p>
                   {/* EXTLINK: replace this research hub with the final authoritative source URL when ready. */}
                   <a
@@ -315,17 +309,17 @@ function Contact() {
               <div className="glass-card rounded-2xl p-5 sm:p-7">
                 <p className="text-sm uppercase tracking-wider text-brand mb-2">Topical authority</p>
                 <h2 className="text-2xl md:text-3xl font-display font-bold mb-4">
-                  Useful content should answer the questions customers actually ask
+                  Answer the questions your customers ask
                 </h2>
                 <p className="text-muted-foreground leading-7 mb-5">
-                  A strong digital presence is not built from disconnected blog posts. It is built around related topics and
-                  the questions customers ask before, during, and after a buying decision.
+                  Useful content covers related topics. It helps customers at each stage, from first learning about a need
+                  to choosing a service.
                 </p>
                 <div className="grid md:grid-cols-3 gap-4">
                   {[
-                    ["Discovery", "What is SEO? What is GEO? How can digital marketing help a business?"],
-                    ["Evaluation", "How much does digital marketing cost? What should a business look for in an agency?"],
-                    ["Decision", "Which service is right for the business? What should happen next?"],
+                    ["Learn", "What are SEO and GEO? How can marketing help?"],
+                    ["Compare", "What does marketing cost? How do I choose an agency?"],
+                    ["Choose", "Which service fits my needs? What happens next?"],
                   ].map(([title, questions]) => (
                     <div key={title} className="rounded-xl border border-border p-4">
                       <h3 className="font-semibold text-brand mb-2">{title}</h3>
@@ -338,13 +332,12 @@ function Contact() {
               <div className="glass-card rounded-2xl p-5 sm:p-7">
                 <p className="text-sm uppercase tracking-wider text-brand mb-2">Local & B2B growth</p>
                 <h2 className="text-2xl md:text-3xl font-display font-bold mb-4">
-                  Digital marketing should match the market and customer journey
+                  Reach local and business customers
                 </h2>
                 <p className="text-muted-foreground leading-7">
-                  Local businesses may need stronger Google Maps and location-based visibility, while B2B companies often
-                  need a longer research journey involving content, SEO, paid media, lead generation, CRM, and email nurturing.
-                  Businesses targeting markets such as California can also build location-specific search strategies around
-                  cities and services instead of relying on one generic keyword.
+                  Local businesses can improve their visibility on Google Maps and in nearby searches.
+                  B2B companies may need SEO, content, ads, email, and lead support over a longer sales process.
+                  We can also target specific cities and services, including markets in California.
                 </p>
                 {/* INTLINK: replace with final local/B2B service pages when available. */}
                 <div className="flex flex-wrap gap-2 mt-5">
@@ -358,17 +351,15 @@ function Contact() {
               <div className="glass-card rounded-2xl p-5 sm:p-7">
                 <p className="text-sm uppercase tracking-wider text-brand mb-2">Research & credibility</p>
                 <h2 className="text-2xl md:text-3xl font-display font-bold mb-4">
-                  Evidence matters when discussing SEO, AI, and business growth
+                  Make informed choices about SEO and AI
                 </h2>
                 <p className="text-muted-foreground leading-7">
-                  The research used for this page includes Semrush guidance from Zach Paruch on AI search visibility and
-                  third-party mentions, SEO/GEO guidance attributed to Ghulam Ali, and the multidisciplinary academic study
-                  led by Yogesh K. Dwivedi on the opportunities and limitations of generative conversational AI.
+                  Our research draws on SEO and AI-search guidance, along with academic work on generative AI.
+                  These sources help us consider both the benefits and limits of AI tools.
                 </p>
                 <p className="text-muted-foreground leading-7 mt-4">
-                  The academic research highlights benefits of generative AI while also discussing concerns around bias,
-                  misinformation, credibility, transparency, privacy, security, and the importance of human judgment. AI can
-                  support marketing workflows, but strategy still requires context, verification, experience, and responsible judgment.
+                  AI can help with marketing tasks, but it can also produce errors or biased information.
+                  We check its work and use human judgment when making decisions.
                 </p>
                 {/* EXTLINK: replace each external research href with the final approved source URL. */}
                 <a
@@ -457,26 +448,26 @@ function Contact() {
               <div className="glass-card rounded-2xl p-5 sm:p-7">
                 <p className="text-sm uppercase tracking-wider text-brand mb-2">Frequently asked questions</p>
                 <h2 className="text-2xl md:text-3xl font-display font-bold mb-5">
-                  Questions businesses often ask before contacting a digital marketing agency
+                  Questions about working with BFASH
                 </h2>
                 <div className="space-y-3">
                   {[
-                    ["What does BFASH do?", "BFASH is a digital marketing and business growth agency providing SEO, GEO, local SEO, Google Ads, social media advertising, website design, email marketing, CRM management, Amazon business services, TikTok Shop, graphic design, virtual assistance, and related growth services."],
-                    ["What is the best way to contact BFASH?", "The easiest options are email or phone. Contact BFASH at info@bfash.us or +1 (365) 474-9647."],
-                    ["Can BFASH help a new business with digital marketing?", "Yes. A new business can build its website, search visibility, local presence, content strategy, conversion paths, and digital foundation from the beginning."],
-                    ["Can BFASH help a website that is not getting enough traffic?", "Yes. The first step is understanding why visibility is limited. This can involve keyword targeting, search intent, content quality, technical SEO, indexing, internal linking, authority, local SEO, and conversion optimization."],
-                    ["Can SEO increase website traffic?", "SEO can increase organic visibility and qualified search traffic when a website targets relevant search intent and provides useful, accessible content. Traffic alone should not be the final objective; qualified visits, leads, sales, and other meaningful conversions matter too."],
-                    ["What is GEO?", "GEO stands for Generative Engine Optimization. It focuses on making useful information easier for AI-powered search and generative systems to understand and potentially use when producing answers."],
-                    ["Is GEO replacing SEO?", "No. SEO and GEO can work together. SEO supports visibility in traditional search results, while GEO focuses on visibility within AI-generated answers and conversational search experiences."],
-                    ["Can BFASH help with AI-search visibility?", "Yes. A modern AI-search visibility strategy can involve clear content, topical coverage, technical accessibility, indexing, consistent brand information, authoritative mentions, and content structured around real user questions."],
-                    ["Does appearing in AI search guarantee a citation?", "No. AI visibility and citations cannot responsibly be guaranteed. AI systems determine which sources they use based on retrieval, relevance, ranking, and generation processes. The practical objective is to build information that is discoverable, useful, authoritative, consistent, and technically accessible."],
-                    ["Why are citations and external mentions important?", "External references can contribute to a broader digital footprint. Third-party mentions can also help create a more consistent picture of a business across the web."],
-                    ["Can BFASH help local businesses?", "Yes. Local businesses can benefit from local SEO, Google Business Profile optimization, location-specific content, reviews, local search visibility, paid advertising, and conversion-focused websites."],
-                    ["Can BFASH help B2B companies?", "Yes. B2B marketing can combine SEO, content marketing, website strategy, paid advertising, lead generation, CRM, email marketing, and conversion optimization."],
-                    ["Does BFASH guarantee Google rankings?", "No responsible SEO agency should promise a guaranteed Google position. Search rankings depend on competition, intent, technical accessibility, content quality, authority, location, algorithmic changes, and other variables."],
-                    ["How long does SEO take?", "SEO has no universal timeline. A new website, an established site with technical problems, and a strong website entering a competitive market can have very different starting points. The timeline depends on the website, competition, target market, authority, technical health, content, and goals."],
-                    ["Can BFASH help with Google Ads and social media advertising?", "Yes. Google Ads can reach people actively searching for relevant products and services, while social media advertising can support awareness, demand generation, lead generation, remarketing, and product promotion depending on the business model."],
-                    ["Why contact BFASH before choosing a marketing service?", "Because the right solution depends on the actual business problem. A local business needing qualified leads may need a different strategy from an e-commerce brand focused on sales or a B2B company generating enterprise opportunities."],
+                    ["What does BFASH do?", "We help businesses with SEO, ads, websites, content, ecommerce, and virtual assistance."],
+                    ["How can I contact BFASH?", "Email info@bfash.us or call +1 (365) 474-9647."],
+                    ["Can you help a new business?", "Yes. We can help build your website, improve search visibility, and plan your marketing."],
+                    ["Can you help if my website gets little traffic?", "Yes. We can review your content, keywords, website setup, and search visibility to find areas to improve."],
+                    ["Can SEO bring more visitors to my website?", "SEO can help people find useful pages in search. Results vary, and more traffic is not guaranteed."],
+                    ["What is GEO?", "GEO means Generative Engine Optimization. It helps make useful information easier for AI search tools to understand."],
+                    ["Is GEO replacing SEO?", "No. SEO and GEO can work together. SEO supports search results, while GEO focuses on AI-generated answers."],
+                    ["Can BFASH help with AI search visibility?", "Yes. We can make your content clear, useful, and easy to access. AI tools decide which sources they use, so visibility is not guaranteed."],
+                    ["Can you guarantee a mention in AI search?", "No. AI tools choose their own sources. We cannot guarantee a mention or citation."],
+                    ["Why do mentions on other websites matter?", "Trusted mentions can help people learn about your business and provide useful context about your brand."],
+                    ["Can BFASH help local businesses?", "Yes. We can help with local SEO, Google Business Profile, ads, and location-focused websites."],
+                    ["Can BFASH help B2B companies?", "Yes. We can support B2B companies with SEO, content, ads, lead generation, CRM, and email."],
+                    ["Does BFASH guarantee Google rankings?", "No. Search rankings depend on many factors, including competition, content, and changes to search systems."],
+                    ["How long does SEO take?", "There is no set timeline. It depends on your website, competition, goals, and the work needed."],
+                    ["Can BFASH help with Google Ads and social media ads?", "Yes. Ads can help promote products and services, reach new people, and generate leads. The best approach depends on your business."],
+                    ["Why contact BFASH before choosing a service?", "The right service depends on your needs. Tell us your goal, and we can discuss which options may fit."],
                   ].map(([question, answer]) => (
                     <details key={question} className="group rounded-xl border border-border bg-white/5 px-4 py-3">
                       <summary className="cursor-pointer list-none font-semibold pr-6 relative">
@@ -492,12 +483,11 @@ function Contact() {
               <div className="rounded-2xl border border-brand/30 bg-brand/10 p-6 md:p-8 text-center">
                 <p className="text-sm uppercase tracking-wider text-brand mb-2">Ready to start?</p>
                 <h2 className="text-2xl md:text-4xl font-display font-bold mb-3">
-                  Tell BFASH where the business is today and where it wants to go.
+                  Tell us where you are and where you want to go.
                 </h2>
                 <p className="text-muted-foreground leading-7 max-w-3xl mx-auto mb-5">
-                  Share the challenge, target market, website, and business goal. BFASH can then identify the most practical
-                  next step across SEO, GEO, local search, paid advertising, websites, content, social media, CRM, marketplaces,
-                  or broader business growth.
+                  Share your website, target market, and main goal. We will help you explore practical next steps,
+                  such as SEO, local search, ads, website updates, content, or CRM support.
                 </p>
                 {/* INTLINK: replace with the final quote/contact conversion URL if the route changes. */}
                 <a
