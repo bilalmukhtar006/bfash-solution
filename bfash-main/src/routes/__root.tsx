@@ -14,6 +14,7 @@ import { type ReactNode } from "react";
 import { Header } from "../components/site/Header";
 import { Footer } from "../components/site/Footer";
 import { CookieBanner } from "../components/site/CookieBanner";
+import { CursorTrail } from "../components/site/CursorTrail";
 
 function NotFoundComponent() {
   return (
@@ -195,6 +196,7 @@ function RootComponent() {
       </main>
       <Footer />
       <CookieBanner />
+      <CursorTrail />
     </QueryClientProvider>
   );
 }
