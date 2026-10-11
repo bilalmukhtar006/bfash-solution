@@ -161,20 +161,20 @@ export function Header() {
             className="flex shrink-0 items-center gap-2.5 rounded-md group focus:outline-none focus-visible:ring-2 focus-visible:ring-brand"
             aria-label="BFash Solution Home"
           >
-            <div className="flex h-28 w-28 shrink-0 items-center justify-center">
+            <div className="flex h-[150px] w-[150px] shrink-0 items-center justify-center">
               {!logoError ? (
                 <img
                   src="/logo.webp"
                   alt="BFash logo"
-                  className="h-28 w-auto object-contain transition-transform group-hover:scale-105"
-                  width={176}
-                  height={176}
+                  className="h-[150px] w-auto object-contain transition-transform group-hover:scale-105"
+                  width={150}
+                  height={150}
                   loading="eager"
                   decoding="async"
                   onError={() => setLogoError(true)}
                 />
               ) : (
-                <div className="grid h-28 w-28 place-items-center rounded-lg bg-gradient-to-br from-brand to-brand-strong brand-glow">
+                <div className="grid h-[150px] w-[150px] place-items-center rounded-lg bg-gradient-to-br from-brand to-brand-strong brand-glow">
                   <Sparkles className="h-5 w-5 text-white" aria-hidden="true" />
                 </div>
               )}
