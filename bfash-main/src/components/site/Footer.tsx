@@ -36,25 +36,14 @@ export function Footer() {
         {/* Company */}
         <div>
           <div className="flex items-center gap-2">
-            {/* 
-              ✅ OPTIMIZED LOGO:
-              - WebP format (2KB instead of 50KB)
-              - width/height to prevent layout shift
-              - lazy loading for better initial load
-              - onError fallback to PNG if WebP fails
-            */}
             <img
               src="/logo.webp"
-              alt="BFash Solution Logo"
-              className="h-9 w-auto object-contain"
-              width={63}
-              height={63}
+              alt="BFash logo"
+              className="h-14 w-auto object-contain"
+              width={88}
+              height={88}
               loading="lazy"
             />
-
-            <span className="font-display text-lg font-bold tracking-tight text-white">
-              BFash <span className="text-brand">Solution</span>
-            </span>
           </div>
 
           <p className="mt-4 max-w-xs text-sm leading-relaxed text-muted-foreground">
