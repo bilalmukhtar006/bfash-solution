@@ -39,9 +39,9 @@ export function Footer() {
             <img
               src="/logo.webp"
               alt="BFash logo"
-              className="h-14 w-auto object-contain"
-              width={88}
-              height={88}
+              className="h-28 w-auto object-contain"
+              width={176}
+              height={176}
               loading="lazy"
             />
           </div>
