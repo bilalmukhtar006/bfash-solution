@@ -34,7 +34,8 @@ export function getPostContent(slug: string) {
       <p><strong>Price:</strong> Free plan available; Platinum was listed from $99/month on annual billing in the supplied pricing. Verify current plan terms. <strong>Best for:</strong> Sellers who want product research, keyword research, listing tools, and advertising features in one platform.</p>
       <p>Helium 10 combines more than 30 seller tools, including Cerebro, Magnet, Black Box, the Xray browser extension, and advertising and profitability features. The company reports serving more than 4 million sellers, with a database of more than 450 million products and 2 billion data points processed monthly; as with any vendor-reported figure, check its current materials for the latest details.</p>
       <h3>Cerebro: Reverse ASIN research</h3>
-      <p>Enter a competitor's ASIN to find relevant keyword opportunities and available estimates such as search volume and ranking information. Use the results to compare keyword coverage and identify terms to investigate—not as a guarantee of a competitor's traffic or sales.</p>
+      <p>Enter a competitor's ASIN to find relevant keyword opportunities and available estimates such as search volume and ranking information. Use the results to compare keyword coverage and identify terms to investigate—not as a guarantee of a competitor's traffic or sales. You can <a href="https://chromewebstore.google.com/detail/helium-10-for-amazon-sell/njmehopjdpcckochcggncklnlmikcbnb" target="_blank" rel="noopener noreferrer">install the Helium 10 Chrome extension</a> to access research tools while browsing.</p>
+      <p>For additional keyword ideation, the <a href="https://chromewebstore.google.com/detail/amz-suggestion-expander/cpeaihkccbeemkfefcapijechkbfjlhb" target="_blank" rel="noopener noreferrer">AMZ Suggestion Expander Chrome extension</a> can expand Amazon search suggestions; it is a supplementary browser tool, not a full seller platform.</p>
       <h3>Black Box and Xray: Product discovery</h3>
       <p>Black Box lets sellers filter product ideas using marketplace criteria such as category, price, revenue estimates, and review counts. Xray surfaces estimates and product details while browsing Amazon pages, including information useful for checking fees and competition.</p>
       <h3>Adtomic, Profits, and Keyword Tracker</h3>
@@ -44,17 +45,17 @@ export function getPostContent(slug: string) {
 
       <h2 id="jungle-scout">2. Jungle Scout: A beginner-friendly option</h2>
       <p><strong>Price:</strong> Plans were listed from $29/month; check current pricing. <strong>Best for:</strong> New sellers who want a guided interface for product and keyword research.</p>
-      <p>Jungle Scout offers an Opportunity Finder for exploring niches, a Supplier Database, product sales estimates, and Keyword Scout for search-term research. Its guided workflows can be approachable for sellers learning product validation.</p>
+      <p>Jungle Scout offers an Opportunity Finder for exploring niches, a Supplier Database, product sales estimates, and Keyword Scout for search-term research. Its guided workflows can be approachable for sellers learning product validation. <a href="https://chromewebstore.google.com/detail/jungle-scout-extension-li/lfgpfhoadcpndoogjiogflmgegfbekec" target="_blank" rel="noopener noreferrer">Install the Jungle Scout Chrome extension</a> to use its browser-based research features.</p>
       <p><strong>Verdict:</strong> Consider Jungle Scout if ease of use and supplier research are priorities. Compare the current feature limits and plan prices with other tools before committing.</p>
 
       <h2 id="keepa">3. Keepa: Price and sales-rank history</h2>
       <p><strong>Price:</strong> Free basic version; subscriptions were listed at about $19/month. Check current pricing. <strong>Best for:</strong> Arbitrage, wholesale, and private-label sellers who need historical context.</p>
-      <p>Keepa charts historical Amazon prices and sales rank, helping you check whether a deal is unusual, whether a product's price is volatile, and how demand may vary seasonally. Historical patterns are useful context, but do not guarantee future prices or sales.</p>
+      <p>Keepa charts historical Amazon prices and sales rank, helping you check whether a deal is unusual, whether a product's price is volatile, and how demand may vary seasonally. Historical patterns are useful context, but do not guarantee future prices or sales. <a href="https://chromewebstore.google.com/detail/keepa-amazon-price-tracke/neebplgakaahbhdphmkckjjcegoiijjo" target="_blank" rel="noopener noreferrer">Install the Keepa Chrome extension</a> to view price history while browsing Amazon.</p>
       <p><strong>Verdict:</strong> A focused research tool that pairs well with a broader seller toolkit. Review the paid plan's current data access and limits before subscribing.</p>
 
       <h2 id="amz-scout">4. AMZScout: A budget-oriented research suite</h2>
       <p><strong>Price:</strong> Plans were listed from $16.49/month, with a lifetime license also offered; check current terms. <strong>Best for:</strong> Sellers looking for basic product validation and browser-based research.</p>
-      <p>AMZScout provides product database filters, a browser extension, sales estimates, and an FBA calculator to help model fees and margins. Its toolset is more focused than an all-in-one suite, so sellers needing deeper keyword or advertising workflows should compare alternatives.</p>
+      <p>AMZScout provides product database filters, a browser extension, sales estimates, and an FBA calculator to help model fees and margins. <a href="https://chromewebstore.google.com/detail/amazon-product-finder-amz/njopapoodmifmcogpingplfphojnfeea" target="_blank" rel="noopener noreferrer">Install the AMZScout PRO Chrome extension</a> to access product research from Amazon pages. Its toolset is more focused than an all-in-one suite, so sellers needing deeper keyword or advertising workflows should compare alternatives.</p>
       <p><strong>Verdict:</strong> A possible fit for straightforward product research. Evaluate any lifetime offer's included features, updates, and support terms before purchasing.</p>
 
       <h2 id="viral-launch">5. Viral Launch: Product discovery and launch support</h2>
@@ -64,7 +65,7 @@ export function getPostContent(slug: string) {
 
       <h2 id="seller-app">6. SellerApp: Advertising and listing insights</h2>
       <p><strong>Price:</strong> Paid plans; check current pricing. <strong>Best for:</strong> Sellers who want campaign analytics and listing guidance.</p>
-      <p>SellerApp offers PPC analysis and automation features alongside listing quality insights. Compare its supported marketplace, automation controls, reporting, and fee structure with your advertising needs and account size.</p>
+      <p>SellerApp offers PPC analysis and automation features alongside listing quality insights. Compare its supported marketplace, automation controls, reporting, and fee structure with your advertising needs and account size. As another PPC platform to compare, <a href="https://www.teikametrics.com/" target="_blank" rel="noopener noreferrer">explore Teikametrics and its risk-free trial</a>; trial terms may change, so confirm details with the provider.</p>
       <p><strong>Verdict:</strong> A specialist option to evaluate when advertising management is a priority. Test proposed automation carefully and review campaign changes regularly.</p>
 
       <h2 id="feedback-whiz">7. FeedbackWhiz: Review and customer communication workflows</h2>
@@ -75,25 +76,12 @@ export function getPostContent(slug: string) {
       <h2 id="veeqo">8. Veeqo: Shipping and order management</h2>
       <p><strong>Price:</strong> Free, according to Veeqo's current offering. <strong>Best for:</strong> Sellers coordinating orders and shipping across sales channels.</p>
       <p>Veeqo supports shipping workflows, bulk label creation, shipping rules, and connections to carriers and selling channels. Check the carrier rates, supported integrations, and feature availability for your locations and account before moving fulfillment operations.</p>
-      <p><strong>Verdict:</strong> A useful option to evaluate if shipping efficiency is a priority. Confirm the latest terms directly with <a href="https://www.veeqo.com/" target="_blank" rel="noopener noreferrer">Veeqo</a>.</p>
+      <p><strong>Verdict:</strong> A useful option to evaluate if shipping efficiency is a priority. <a href="https://www.veeqo.com/" target="_blank" rel="noopener noreferrer">Sign up for a free Veeqo account</a> and confirm the latest terms directly with the provider.</p>
 
       <h2 id="free-price-tracking">9. Keepa's free features and CamelCamelCamel</h2>
       <p><strong>Price:</strong> Free options. <strong>Best for:</strong> Sellers who want a starting point for price monitoring without another subscription.</p>
       <p>Keepa offers some price-history features without a subscription, while CamelCamelCamel provides price charts and drop alerts. Compare their available history, notification options, and coverage for your marketplace; the free tiers may not include all data or features.</p>
       <p><strong>Verdict:</strong> Start with free price tracking if it meets your needs, and upgrade only when a specific research requirement justifies the cost.</p>
-
-      <h2 id="quick-installation-links">Quick installation and trial links</h2>
-      <p>Use the links below to visit the providers' official listings or websites. Check permissions, supported browsers, marketplace availability, and current trial terms before installing or signing up.</p>
-      <ul>
-        <li><strong>Helium 10:</strong> <a href="https://chromewebstore.google.com/detail/helium-10-for-amazon-sell/njmehopjdpcckochcggncklnlmikcbnb" target="_blank" rel="noopener noreferrer">Install the Helium 10 Chrome extension</a>.</li>
-        <li><strong>AMZ Suggestion Expander:</strong> <a href="https://chromewebstore.google.com/detail/amz-suggestion-expander/cpeaihkccbeemkfefcapijechkbfjlhb" target="_blank" rel="noopener noreferrer">Install the AMZ Suggestion Expander Chrome extension</a>.</li>
-        <li><strong>Keepa:</strong> <a href="https://chromewebstore.google.com/detail/keepa-amazon-price-tracke/neebplgakaahbhdphmkckjjcegoiijjo" target="_blank" rel="noopener noreferrer">Install the Keepa Chrome extension</a>.</li>
-        <li><strong>AMZScout PRO:</strong> <a href="https://chromewebstore.google.com/detail/amazon-product-finder-amz/njopapoodmifmcogpingplfphojnfeea" target="_blank" rel="noopener noreferrer">Install the AMZScout PRO Chrome extension</a>.</li>
-        <li><strong>Jungle Scout:</strong> <a href="https://chromewebstore.google.com/detail/jungle-scout-extension-li/lfgpfhoadcpndoogjiogflmgegfbekec" target="_blank" rel="noopener noreferrer">Install the Jungle Scout Chrome extension</a>.</li>
-        <li><strong>Veeqo:</strong> <a href="https://www.veeqo.com/" target="_blank" rel="noopener noreferrer">Create a free account on the Veeqo website</a>.</li>
-        <li><strong>Teikametrics:</strong> <a href="https://www.teikametrics.com/" target="_blank" rel="noopener noreferrer">Explore a risk-free Teikametrics trial</a>.</li>
-      </ul>
-      <p>Teikametrics is an additional advertising platform to compare; it is not one of the nine tools reviewed above. The AMZ Suggestion Expander is a supplementary keyword-ideation extension, not a replacement for a full seller platform.</p>
 
       <h2 id="choosing-tools">How to choose the right Amazon seller tools</h2>
       <ul>
