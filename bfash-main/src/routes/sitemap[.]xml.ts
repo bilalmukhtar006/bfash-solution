@@ -23,6 +23,7 @@ const paths = [
   "/blog",                       // ← ADD BLOG LISTING PAGE
   "/blog/seo-expert",
   "/blog/graphic-design-agency-b2b-growth",
+  "/blog/amazon-seller-tools-2026",
   // Add more blog posts here as you create them
   // "/blog/your-next-post",
 ];

@@ -20,6 +20,7 @@ import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as QuoteRouteImport } from './routes/quote'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
+import { Route as BlogAmazonSellerTools2026RouteImport } from './routes/blog.amazon-seller-tools-2026'
 import { Route as BlogGraphicDesignAgencyB2bGrowthRouteImport } from './routes/blog.graphic-design-agency-b2b-growth'
 import { Route as BlogSeoExpertRouteImport } from './routes/blog.seo-expert'
 import { Route as ServicesIndexRouteImport } from './routes/services.index'
@@ -87,6 +88,12 @@ const BlogSlugRoute = BlogSlugRouteImport.update({
   path: '/$slug',
   getParentRoute: () => BlogRoute,
 } as any)
+const BlogAmazonSellerTools2026Route =
+  BlogAmazonSellerTools2026RouteImport.update({
+    id: '/amazon-seller-tools-2026',
+    path: '/amazon-seller-tools-2026',
+    getParentRoute: () => BlogRoute,
+  } as any)
 const BlogGraphicDesignAgencyB2bGrowthRoute =
   BlogGraphicDesignAgencyB2bGrowthRouteImport.update({
     id: '/graphic-design-agency-b2b-growth',
@@ -152,6 +159,7 @@ export interface FileRoutesByFullPath {
   '/quote': typeof QuoteRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/blog/$slug': typeof BlogSlugRoute
+  '/blog/amazon-seller-tools-2026': typeof BlogAmazonSellerTools2026Route
   '/blog/graphic-design-agency-b2b-growth': typeof BlogGraphicDesignAgencyB2bGrowthRoute
   '/blog/seo-expert': typeof BlogSeoExpertRoute
   '/services/ads': typeof ServicesAdsRoute
@@ -175,6 +183,7 @@ export interface FileRoutesByTo {
   '/quote': typeof QuoteRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/blog/$slug': typeof BlogSlugRoute
+  '/blog/amazon-seller-tools-2026': typeof BlogAmazonSellerTools2026Route
   '/blog/graphic-design-agency-b2b-growth': typeof BlogGraphicDesignAgencyB2bGrowthRoute
   '/blog/seo-expert': typeof BlogSeoExpertRoute
   '/services/ads': typeof ServicesAdsRoute
@@ -199,6 +208,7 @@ export interface FileRoutesById {
   '/quote': typeof QuoteRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/blog/$slug': typeof BlogSlugRoute
+  '/blog/amazon-seller-tools-2026': typeof BlogAmazonSellerTools2026Route
   '/blog/graphic-design-agency-b2b-growth': typeof BlogGraphicDesignAgencyB2bGrowthRoute
   '/blog/seo-expert': typeof BlogSeoExpertRoute
   '/services/ads': typeof ServicesAdsRoute
@@ -224,6 +234,7 @@ export interface FileRouteTypes {
     | '/quote'
     | '/sitemap.xml'
     | '/blog/$slug'
+    | '/blog/amazon-seller-tools-2026'
     | '/blog/graphic-design-agency-b2b-growth'
     | '/blog/seo-expert'
     | '/services/ads'
@@ -247,6 +258,7 @@ export interface FileRouteTypes {
     | '/quote'
     | '/sitemap.xml'
     | '/blog/$slug'
+    | '/blog/amazon-seller-tools-2026'
     | '/blog/graphic-design-agency-b2b-growth'
     | '/blog/seo-expert'
     | '/services/ads'
@@ -270,6 +282,7 @@ export interface FileRouteTypes {
     | '/quote'
     | '/sitemap.xml'
     | '/blog/$slug'
+    | '/blog/amazon-seller-tools-2026'
     | '/blog/graphic-design-agency-b2b-growth'
     | '/blog/seo-expert'
     | '/services/ads'
@@ -382,6 +395,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BlogSlugRouteImport
       parentRoute: typeof BlogRoute
     }
+    '/blog/amazon-seller-tools-2026': {
+      id: '/blog/amazon-seller-tools-2026'
+      path: '/amazon-seller-tools-2026'
+      fullPath: '/blog/amazon-seller-tools-2026'
+      preLoaderRoute: typeof BlogAmazonSellerTools2026RouteImport
+      parentRoute: typeof BlogRoute
+    }
     '/blog/graphic-design-agency-b2b-growth': {
       id: '/blog/graphic-design-agency-b2b-growth'
       path: '/graphic-design-agency-b2b-growth'
@@ -457,12 +477,14 @@ declare module '@tanstack/react-router' {
 
 interface BlogRouteChildren {
   BlogSlugRoute: typeof BlogSlugRoute
+  BlogAmazonSellerTools2026Route: typeof BlogAmazonSellerTools2026Route
   BlogGraphicDesignAgencyB2bGrowthRoute: typeof BlogGraphicDesignAgencyB2bGrowthRoute
   BlogSeoExpertRoute: typeof BlogSeoExpertRoute
 }
 
 const BlogRouteChildren: BlogRouteChildren = {
   BlogSlugRoute: BlogSlugRoute,
+  BlogAmazonSellerTools2026Route: BlogAmazonSellerTools2026Route,
   BlogGraphicDesignAgencyB2bGrowthRoute: BlogGraphicDesignAgencyB2bGrowthRoute,
   BlogSeoExpertRoute: BlogSeoExpertRoute,
 }

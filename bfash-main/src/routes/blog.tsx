@@ -62,6 +62,21 @@ export const blogPosts = [
     featured: false,
     trending: true,
   },
+  {
+    slug: "amazon-seller-tools-2026",
+    title: "Amazon Seller Tools: 9 Paid and Free Options for 2026",
+    excerpt:
+      "Compare Amazon tools for product research, keyword tracking, price history, PPC, reviews, and shipping, including free options and installation links.",
+    category: "Amazon",
+    categoryColor: "from-amber-500 to-orange-400",
+    date: "October 12, 2026",
+    readTime: "14 min read",
+    author: "BFASH Digital Growth Team",
+    featuredImage: "/Amazon-A-Content.webp",
+    tags: ["Amazon Seller Tools", "Helium 10", "Jungle Scout", "Keepa", "Amazon PPC"],
+    featured: false,
+    trending: true,
+  },
 ];
 
 function BlogIndex() {
